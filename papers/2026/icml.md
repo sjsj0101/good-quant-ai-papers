@@ -264,11 +264,17 @@
 
 **Topics:** Synthetic Data · Risk Management
 
-**Assets / frequency:** Not specified
+**Assets / frequency:** Equities
 
-**Focus:** Applies tail-annealed flow matching to heavy-tailed targets and validates generated samples on Fama–French return data.
+**Tasks:** extreme-quantile estimation · CVaR99 estimation
 
-**Why it matters:** More faithful extreme quantiles support CVaR estimation and financial stress analysis where tail errors dominate risk.
+**Methods:** tail-annealed flow matching
+
+**Datasets:** Fama–French factors
+
+**Focus:** Evaluates extreme-tail and CVaR99 fidelity on controlled heavy-tailed benchmarks, then validates generation on real Fama–French equity-factor returns.
+
+**Why it matters:** Combining CVaR99 fidelity with Fama–French validation makes the generator directly relevant to tail-sensitive market-risk scenario analysis.
 
 **Links:** [Official venue record](<https://icml.cc/virtual/2026/poster/60665>) · [Paper](<https://icml.cc/virtual/2026/poster/60665>)
 
@@ -576,7 +582,7 @@
 
 ---
 
-### [TradeFM: A Generative Foundation Model for Trade-flow and Market Microstructure](<https://arxiv.org/abs/2602.23784>)
+### [TradeFM: A Generative Foundation Model for Trade-flow and Market Microstructure](<https://openreview.net/forum?id=anK6dppdfa>)
 
 **Catalog ID:** 2026-icml-sood-tradefm
 
@@ -598,8 +604,8 @@
 
 **Why it matters:** Supports cross-asset order-flow simulation and synthetic microstructure data without asset-specific tokenization.
 
-**Notes:** 2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026); non-archival workshop paper.
+**Notes:** 2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026); non-archival workshop paper. Authors follow the accepted FMSD record; the later arXiv version has a revised author list.
 
-**Links:** [Official venue record](<https://openreview.net/forum?id=anK6dppdfa>) · [Paper](<https://arxiv.org/abs/2602.23784>)
+**Links:** [Official venue record](<https://openreview.net/forum?id=anK6dppdfa>) · [Paper](<https://openreview.net/forum?id=anK6dppdfa>)
 
 ---

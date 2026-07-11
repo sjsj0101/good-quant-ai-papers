@@ -1,11 +1,17 @@
 from __future__ import annotations
 
+import contextlib
 import copy
+import io
+import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
-from scripts.catalog import load_catalog, validate_catalog, validate_file
+import scripts.validate as validate_cli
+from scripts.catalog import URL_FIELDS, load_catalog, validate_catalog, validate_file
 
 
 VALID = {
@@ -249,6 +255,81 @@ class CatalogValidationTests(unittest.TestCase):
             errors = validate_file(path)
 
         self.assertEqual(errors, [])
+
+    def test_duplicate_yaml_key_reports_key_and_source_line_by_file_and_cli(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory, "papers.yaml")
+            path.write_text(
+                "- id: 2026-icml-doe-duplicate-field\n"
+                "  summary: First summary.\n"
+                "  summary: Second summary.\n",
+                encoding="utf-8",
+            )
+
+            errors = validate_file(path)
+            stdout = io.StringIO()
+            with mock.patch.object(validate_cli, "CATALOG_PATH", path):
+                with contextlib.redirect_stdout(stdout):
+                    status = validate_cli.main()
+
+        self.assertEqual(len(errors), 1, errors)
+        self.assertIn("<catalog>: file:", errors[0])
+        self.assertIn("duplicate key 'summary'", errors[0])
+        self.assertIn("line 3", errors[0])
+        self.assertEqual(status, 1)
+        self.assertIn(errors[0], stdout.getvalue())
+
+    def test_schema_and_runtime_share_url_contract_for_every_url_field(self) -> None:
+        schema_path = Path(__file__).resolve().parents[1] / "schema" / "paper.schema.json"
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        url_contract = schema["$defs"]["http_url"]
+        pattern = re.compile(url_contract["pattern"])
+        valid_urls = (
+            "https://example.com/paper",
+            "http://sub.example.org:8080/a%20b?download=1#results",
+            "https://[2001:db8::1]/paper",
+        )
+        invalid_urls = (
+            "http://user@:80/x",
+            "https://example.com/a b",
+            "https://example.com:not-a-port/x",
+            "https://example.com:65536/x",
+            "https://example.com:/x",
+            "https://example.com/%zz",
+        )
+
+        for field in URL_FIELDS:
+            self.assertEqual(
+                schema["properties"][field],
+                {"$ref": "#/$defs/http_url"},
+                field,
+            )
+            for value in valid_urls:
+                with self.subTest(field=field, value=value, expected="valid"):
+                    self.assertIsNotNone(pattern.search(value))
+                    record = copy.deepcopy(VALID)
+                    record[field] = value
+                    errors = validate_catalog([record])
+                    self.assertFalse(
+                        any(
+                            error.startswith(f"{VALID['id']}: {field}:")
+                            for error in errors
+                        ),
+                        errors,
+                    )
+            for value in invalid_urls:
+                with self.subTest(field=field, value=value, expected="invalid"):
+                    self.assertIsNone(pattern.search(value))
+                    record = copy.deepcopy(VALID)
+                    record[field] = value
+                    errors = validate_catalog([record])
+                    self.assertTrue(
+                        any(
+                            error.startswith(f"{VALID['id']}: {field}:")
+                            for error in errors
+                        ),
+                        errors,
+                    )
 
 
 if __name__ == "__main__":

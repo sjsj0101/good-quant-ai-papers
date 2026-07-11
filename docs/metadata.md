@@ -229,7 +229,7 @@ are simply omitted.
   track: workshop
   presentation: poster
   official_url: https://openreview.net/forum?id=anK6dppdfa
-  paper_url: https://arxiv.org/abs/2602.23784
+  paper_url: https://openreview.net/forum?id=anK6dppdfa
   arxiv_id: "2602.23784"
   openreview_id: anK6dppdfa
   topics:
@@ -238,7 +238,7 @@ are simply omitted.
     - synthetic-data
   summary: Trains a generative trade-event model with scale-invariant features designed to transfer across equity markets.
   why_it_matters: Supports cross-asset order-flow simulation and synthetic microstructure data without asset-specific tokenization.
-  notes: "2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026); non-archival workshop paper."
+  notes: "2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026); non-archival workshop paper. Authors follow the accepted FMSD record; the later arXiv version has a revised author list."
   status: accepted
   verified_on: "2026-07-11"
 ```

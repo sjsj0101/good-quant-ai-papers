@@ -331,7 +331,7 @@ def _optional_list_line(record: dict, field: str, label: str) -> Optional[str]:
     values = record.get(field)
     if not values:
         return None
-    return _metadata_line(label, " · ".join(_display_label(value) for value in values))
+    return _metadata_line(label, " · ".join(_clean_inline(value) for value in values))
 
 
 def _venue_record_block(record: dict) -> list[str]:
@@ -495,6 +495,37 @@ def _write_outputs(root: Path, outputs: Mapping[Path, str]) -> None:
         path.write_text(outputs[relative_path], encoding="utf-8")
 
 
+def _remove_obsolete_generated_venue_pages(
+    root: Path, outputs: Mapping[Path, str]
+) -> list[str]:
+    expected = set(outputs)
+    papers_dir = root / "papers"
+    if not papers_dir.exists():
+        return []
+
+    problems: list[str] = []
+    for path in sorted(papers_dir.rglob("*.md")):
+        if not path.is_file():
+            continue
+        relative_path = path.relative_to(root)
+        if relative_path in expected:
+            continue
+        try:
+            with path.open("r", encoding="utf-8") as stream:
+                first_line = stream.readline().rstrip("\r\n")
+        except (OSError, UnicodeError):
+            continue
+        if first_line != GENERATED_NOTICE:
+            continue
+        try:
+            path.unlink()
+        except OSError as error:
+            problems.append(
+                f"could not remove {relative_path.as_posix()}: {error}"
+            )
+    return problems
+
+
 def main(
     argv: Optional[Sequence[str]] = None, *, root: Optional[Path] = None
 ) -> int:
@@ -531,6 +562,13 @@ def main(
         print("Generated files are current")
         return 0
 
+    cleanup_problems = _remove_obsolete_generated_venue_pages(
+        repository_root, outputs
+    )
+    if cleanup_problems:
+        print("Could not remove obsolete generated venue pages:")
+        print("\n".join(cleanup_problems))
+        return 1
     _write_outputs(repository_root, outputs)
     print(f"Rendered {len(outputs)} files")
     return 0

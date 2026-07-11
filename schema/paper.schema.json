@@ -3,6 +3,13 @@
   "$id": "https://github.com/sjsj0101/good-quant-ai-papers/blob/main/schema/paper.schema.json",
   "title": "Quantitative AI paper record",
   "description": "Metadata contract for one record in data/papers.yaml.",
+  "$defs": {
+    "http_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(?!.*\\s)(?!.*%(?![0-9A-Fa-f]{2}))[Hh][Tt][Tt][Pp][Ss]?://(?:[^/?#@\\s]+(?::[^/?#@\\s]*)?@)?(?:\\[[0-9A-Fa-f:.]+\\]|[^/?#:@\\s]+)(?::0*(?:[0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]))?(?:[/?#][^\\s]*)?$"
+    }
+  },
   "type": "object",
   "additionalProperties": false,
   "required": [
@@ -66,14 +73,10 @@
       "enum": ["oral", "spotlight", "poster", "not-specified"]
     },
     "official_url": {
-      "type": "string",
-      "format": "uri",
-      "pattern": "^[Hh][Tt][Tt][Pp][Ss]?://"
+      "$ref": "#/$defs/http_url"
     },
     "paper_url": {
-      "type": "string",
-      "format": "uri",
-      "pattern": "^[Hh][Tt][Tt][Pp][Ss]?://"
+      "$ref": "#/$defs/http_url"
     },
     "topics": {
       "type": "array",
@@ -132,14 +135,10 @@
       "pattern": "\\S"
     },
     "code_url": {
-      "type": "string",
-      "format": "uri",
-      "pattern": "^[Hh][Tt][Tt][Pp][Ss]?://"
+      "$ref": "#/$defs/http_url"
     },
     "project_url": {
-      "type": "string",
-      "format": "uri",
-      "pattern": "^[Hh][Tt][Tt][Pp][Ss]?://"
+      "$ref": "#/$defs/http_url"
     },
     "asset_classes": {
       "type": "array",

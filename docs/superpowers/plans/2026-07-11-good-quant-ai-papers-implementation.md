@@ -6,7 +6,7 @@
 
 **Architecture:** A single YAML catalog is the source of truth. Small Python programs validate records and deterministically render a polished README plus year/venue pages; tests and GitHub Actions keep data and generated views synchronized. The first release contains 23 verified ICML 2026 records and no PDFs or copied abstracts.
 
-**Tech Stack:** Python 3.11+, PyYAML 6.0.2, `unittest`, YAML, JSON Schema documentation, Markdown, GitHub Actions, GitHub CLI or authenticated GitHub web UI.
+**Tech Stack:** Python 3.11+, PyYAML 6.0.3, `unittest`, YAML, JSON Schema documentation, Markdown, GitHub Actions, GitHub CLI or authenticated GitHub web UI.
 
 ## Global Constraints
 

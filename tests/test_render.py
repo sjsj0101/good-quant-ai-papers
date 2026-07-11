@@ -9,6 +9,7 @@ from pathlib import Path
 
 from scripts.catalog import load_catalog
 from scripts.render import (
+    GENERATED_NOTICE,
     check_generated_files,
     main,
     render_outputs,
@@ -149,6 +150,22 @@ class VenueRenderingTests(unittest.TestCase):
         self.assertIn("[Project](<https://example.org/project>)", venue)
         self.assertIn(r"**Notes:** Accepted \| camera-ready.", venue)
 
+    def test_free_text_metadata_preserves_source_terminology(self) -> None:
+        record = copy.deepcopy(CATALOG[0])
+        record.update(
+            {
+                "tasks": ["CVaR99 estimation"],
+                "methods": ["TailFM-X"],
+                "datasets": ["Fama–French factors"],
+            }
+        )
+
+        rendered = render_venue_pages([record])[Path("papers/2026/icml.md")]
+
+        self.assertIn("**Tasks:** CVaR99 estimation", rendered)
+        self.assertIn("**Methods:** TailFM-X", rendered)
+        self.assertIn("**Datasets:** Fama–French factors", rendered)
+
 
 class FreshnessTests(unittest.TestCase):
     def test_check_reports_missing_stale_and_unexpected_generated_files(self) -> None:
@@ -196,6 +213,41 @@ class FreshnessTests(unittest.TestCase):
 
         self.assertEqual(status, 1)
         self.assertIn("stale: README.md", stdout.getvalue())
+
+    def test_render_removes_only_obsolete_generated_venue_pages(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            data = root / "data"
+            data.mkdir()
+            (data / "papers.yaml").write_text(
+                (ROOT / "data" / "papers.yaml").read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
+            obsolete = root / "papers" / "2025" / "old-venue.md"
+            obsolete.parent.mkdir(parents=True)
+            obsolete.write_text(
+                f"{GENERATED_NOTICE}\n\n# Obsolete generated page\n",
+                encoding="utf-8",
+            )
+            manual = root / "papers" / "research-notes.md"
+            manual.write_text("# Manual research notes\n", encoding="utf-8")
+
+            render_stdout = io.StringIO()
+            with contextlib.redirect_stdout(render_stdout):
+                render_status = main([], root=root)
+
+            self.assertEqual(render_status, 0)
+            self.assertFalse(obsolete.exists())
+            self.assertEqual(
+                manual.read_text(encoding="utf-8"), "# Manual research notes\n"
+            )
+
+            check_stdout = io.StringIO()
+            with contextlib.redirect_stdout(check_stdout):
+                check_status = main(["--check"], root=root)
+
+            self.assertEqual(check_status, 1)
+            self.assertIn("unexpected: papers/research-notes.md", check_stdout.getvalue())
 
 
 if __name__ == "__main__":

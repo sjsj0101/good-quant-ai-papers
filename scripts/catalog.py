@@ -98,7 +98,31 @@ _INVALID_PERCENT_ESCAPE = re.compile(r"%(?![0-9A-Fa-f]{2})")
 
 
 class _CatalogLoader(yaml.SafeLoader):
-    """Safe YAML loader that leaves ISO dates as strings."""
+    """Safe YAML loader that preserves dates and rejects duplicate keys."""
+
+    def construct_mapping(
+        self, node: yaml.MappingNode, deep: bool = False
+    ) -> dict:
+        self.flatten_mapping(node)
+        seen: dict[object, yaml.error.Mark] = {}
+        for key_node, _ in node.value:
+            key = self.construct_object(key_node, deep=deep)
+            try:
+                first_mark = seen.get(key)
+            except TypeError:
+                continue
+            if first_mark is not None:
+                raise yaml.constructor.ConstructorError(
+                    "while constructing a mapping",
+                    node.start_mark,
+                    (
+                        f"found duplicate key {key!r}; first occurrence is at "
+                        f"line {first_mark.line + 1}, column {first_mark.column + 1}"
+                    ),
+                    key_node.start_mark,
+                )
+            seen[key] = key_node.start_mark
+        return super().construct_mapping(node, deep=deep)
 
 
 _CatalogLoader.yaml_implicit_resolvers = {
@@ -185,6 +209,8 @@ def _is_http_url(value: object) -> bool:
         return False
     try:
         parsed = urlsplit(value)
+        if parsed.netloc.endswith(":"):
+            return False
         _ = parsed.port  # Access validates an explicitly supplied port.
         return parsed.scheme.lower() in {"http", "https"} and bool(parsed.hostname)
     except ValueError:

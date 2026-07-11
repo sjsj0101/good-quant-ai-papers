@@ -269,8 +269,17 @@
   topics:
     - synthetic-data
     - risk-management
-  summary: Applies tail-annealed flow matching to heavy-tailed targets and validates generated samples on Fama–French return data.
-  why_it_matters: More faithful extreme quantiles support CVaR estimation and financial stress analysis where tail errors dominate risk.
+  asset_classes:
+    - equities
+  tasks:
+    - extreme-quantile estimation
+    - CVaR99 estimation
+  methods:
+    - tail-annealed flow matching
+  datasets:
+    - Fama–French factors
+  summary: Evaluates extreme-tail and CVaR99 fidelity on controlled heavy-tailed benchmarks, then validates generation on real Fama–French equity-factor returns.
+  why_it_matters: Combining CVaR99 fidelity with Fama–French validation makes the generator directly relevant to tail-sensitive market-risk scenario analysis.
   status: accepted
   verified_on: 2026-07-11
 
@@ -359,7 +368,7 @@
   track: workshop
   presentation: poster
   official_url: https://openreview.net/forum?id=anK6dppdfa
-  paper_url: https://arxiv.org/abs/2602.23784
+  paper_url: https://openreview.net/forum?id=anK6dppdfa
   arxiv_id: "2602.23784"
   openreview_id: anK6dppdfa
   topics:
@@ -368,7 +377,7 @@
     - synthetic-data
   summary: Trains a generative trade-event model with scale-invariant features designed to transfer across equity markets.
   why_it_matters: Supports cross-asset order-flow simulation and synthetic microstructure data without asset-specific tokenization.
-  notes: "2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026); non-archival workshop paper."
+  notes: "2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026); non-archival workshop paper. Authors follow the accepted FMSD record; the later arXiv version has a revised author list."
   status: accepted
   verified_on: 2026-07-11
 
