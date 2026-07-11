@@ -83,6 +83,30 @@ class CoverageValidationTests(unittest.TestCase):
         errors = validate_coverage(make_coverage(), [paper])
         self.assertTrue(any("has no coverage unit" in error for error in errors), errors)
 
+    def test_list_valued_paper_year_returns_a_coverage_error(self) -> None:
+        paper = copy.deepcopy(VALID)
+        paper["id"] = "malformed-year-paper"
+        paper["year"] = [2026]
+
+        errors = validate_coverage(make_coverage(), [paper])
+
+        self.assertEqual(
+            errors,
+            ["malformed-year-paper: coverage: has no coverage unit"],
+        )
+
+    def test_list_valued_paper_venue_returns_a_coverage_error(self) -> None:
+        paper = copy.deepcopy(VALID)
+        paper["id"] = "malformed-venue-paper"
+        paper["venue"] = ["ICML"]
+
+        errors = validate_coverage(make_coverage(), [paper])
+
+        self.assertEqual(
+            errors,
+            ["malformed-venue-paper: coverage: has no coverage unit"],
+        )
+
     def test_schema_matches_runtime_constants(self) -> None:
         schema_path = (
             Path(__file__).resolve().parents[1] / "schema" / "coverage.schema.json"

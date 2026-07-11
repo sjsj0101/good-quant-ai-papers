@@ -180,8 +180,13 @@ def validate_coverage(records: list[dict], papers: Sequence[dict]) -> list[str]:
     for paper in papers:
         if not isinstance(paper, dict):
             continue
-        key = (paper.get("year"), paper.get("venue"))
+        year = paper.get("year")
+        venue = paper.get("venue")
         paper_id = paper.get("id", "<paper>")
+        if type(year) is not int or not isinstance(venue, str):
+            _error(errors, str(paper_id), "coverage", "has no coverage unit")
+            continue
+        key = (year, venue)
         if key not in expected:
             _error(errors, str(paper_id), "coverage", "has no coverage unit")
             continue
