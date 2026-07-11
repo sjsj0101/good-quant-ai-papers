@@ -151,16 +151,17 @@
     - Jinghua Piao
     - zhentao liu
     - Cheng Huang
-    - Huang Jiarui
+    - Jiarui Huang
     - Songwei Li
-    - Wang Ranran
+    - Ranran Wang
     - Yong Li
   venue: ICML
   year: 2026
   track: main
   presentation: poster
   official_url: https://icml.cc/virtual/2026/poster/65297
-  paper_url: https://icml.cc/virtual/2026/poster/65297
+  paper_url: https://openreview.net/forum?id=EzpJxPDqXB
+  openreview_id: EzpJxPDqXB
   topics:
     - market-simulation
     - synthetic-data
@@ -215,7 +216,7 @@
   authors:
     - Cheng Huang
     - Jinghua Piao
-    - Wang Ranran
+    - Ranran Wang
     - Yong Li
   venue: ICML
   year: 2026
@@ -250,8 +251,8 @@
   topics:
     - financial-agents
     - evaluation
-  summary: Benchmarks finance-oriented language models with bilingual user tasks across offline tests and online interactions.
-  why_it_matters: Tests reliability under realistic financial use rather than relying only on static English-language question sets.
+  summary: Benchmarks bilingual language models on authentic Chinese and U.S. equity-market tasks, including quantitative computation and stock-price prediction.
+  why_it_matters: Tests whether models can handle real investment queries across markets and online or offline settings, not only scripted finance questions.
   status: accepted
   verified_on: 2026-07-11
 
@@ -268,8 +269,8 @@
   topics:
     - synthetic-data
     - risk-management
-  summary: Introduces an annealing strategy for flow models that must learn distributions with unusually heavy tails.
-  why_it_matters: Better tail generation can improve synthetic financial data and stress scenarios where rare extremes drive risk.
+  summary: Applies tail-annealed flow matching to heavy-tailed targets and validates generated samples on Fama–French return data.
+  why_it_matters: More faithful extreme quantiles support CVaR estimation and financial stress analysis where tail errors dominate risk.
   status: accepted
   verified_on: 2026-07-11
 
@@ -295,15 +296,16 @@
   topics:
     - evaluation
     - financial-agents
-  summary: Argues that financial language-model evaluation must identify and report biases that can distort downstream decisions.
-  why_it_matters: Makes bias analysis part of judging whether model outputs are dependable for investment and market applications.
+  summary: Argues that finance LLM evaluation must explicitly control look-ahead, survivorship, and trading-cost biases.
+  why_it_matters: Point-in-time universes and realistic trading frictions determine whether reported forecasting and investment performance is valid.
   status: accepted
   verified_on: 2026-07-11
 
-- id: 2026-icml-anonymous-forecast-to-trade
+- id: 2026-icml-zhao-forecast-to-trade
   title: "Forecast-to-Trade: Hierarchical Reinforcement Learning for Decision-Aware Financial Forecasting"
   authors:
-    - Anonymous Authors
+    - Zijie Zhao
+    - Roy E. Welsch
   venue: ICML
   year: 2026
   track: workshop
@@ -312,12 +314,13 @@
   paper_url: https://openreview.net/forum?id=pTiRAPtDzK
   openreview_id: pTiRAPtDzK
   topics:
+    - financial-forecasting
     - asset-allocation
     - execution
     - financial-agents
   summary: Separates directional asset selection from constrained portfolio-weight execution in a hierarchical reinforcement-learning trader.
   why_it_matters: Evaluates forecasts through implementable rebalancing decisions that account for turnover, downside risk, and trading costs.
-  notes: "ICML 2026 Workshop on Forecasting as a New Frontier of Intelligence; non-archival workshop paper. The accepted OpenReview PDF remained anonymized on the verification date."
+  notes: "Forecast@ICML26, the ICML 2026 Workshop on Forecasting as a New Frontier of Intelligence; non-archival workshop paper."
   status: accepted
   verified_on: 2026-07-11
 
@@ -388,7 +391,7 @@
     - risk-management
   summary: Pretrains a general time-series model on a mixture that deliberately includes financial series and multiple sampling frequencies.
   why_it_matters: Addresses negative transfer that can make broad time-series foundation models weak on volatility and risk forecasts.
-  notes: "2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026); non-archival workshop paper."
+  notes: "Forecast@ICML26, the ICML 2026 Workshop on Forecasting as a New Frontier of Intelligence; non-archival workshop paper."
   status: accepted
   verified_on: 2026-07-11
 
@@ -437,10 +440,10 @@
   status: accepted
   verified_on: 2026-07-11
 
-- id: 2026-icml-anonymous-mechanism-inspired-aggregation
+- id: 2026-icml-kumar-mechanism-inspired-aggregation
   title: "Mechanism-Inspired Aggregation for Multi-Agent Alpha Discovery: Optimizing Agent Distributions in Heterogeneous LLM Markets"
   authors:
-    - Anonymous Authors
+    - Ajitabh Kumar
   venue: ICML
   year: 2026
   track: workshop
@@ -453,7 +456,7 @@
     - financial-agents
   summary: Aggregates heterogeneous language-model agents by optimizing their population mix for multi-agent alpha discovery.
   why_it_matters: Treats agent diversity and weighting as part of the investment signal design rather than relying on simple voting.
-  notes: "ICML 2026 Workshop on Forecasting as a New Frontier of Intelligence; non-archival workshop paper. The accepted OpenReview record remained anonymized on the verification date."
+  notes: "ICML 2026 NExT-Game Workshop; non-archival workshop paper."
   status: accepted
   verified_on: 2026-07-11
 
