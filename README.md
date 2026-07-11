@@ -1,4 +1,4 @@
-<!-- Generated from data/papers.yaml by scripts/render.py. Do not edit directly. -->
+<!-- Generated from data/papers.yaml and data/coverage.yaml by scripts/render.py. Do not edit directly. -->
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 
 Curated top-conference research for quantitative finance and asset management.
 
-[![Papers-23](https://img.shields.io/badge/Papers-23-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-1](https://img.shields.io/badge/Venues-1-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--11](https://img.shields.io/badge/Last_verified-2026--07--11-5F3DC4?style=flat-square)](data/papers.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
+[![Papers-23](https://img.shields.io/badge/Papers-23-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--11](https://img.shields.io/badge/Last_verified-2026--07--11-5F3DC4?style=flat-square)](data/papers.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
 
 </div>
 
@@ -19,6 +19,22 @@ This catalog admits only officially accepted computer-science conference work wi
 **Excluded:** General banking, credit scoring, fraud detection, payments, accounting QA, regulatory technology, and generic financial NLP without a clear investment, trading, portfolio, or market-risk contribution.
 
 The catalog stores original one-sentence editorial summaries and links—not paper PDFs or copied abstracts.
+
+## Coverage: 2024–2026
+
+| Venue | 2026 | 2025 | 2024 |
+| --- | ---: | ---: | ---: |
+| ICML | [23 papers](papers/2026/icml.md) · Pending | 0 papers · Pending | 0 papers · Pending |
+| NeurIPS | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
+| ICLR | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
+| KDD | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
+| AAAI | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
+| IJCAI | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
+| WWW | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
+| WSDM | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
+| SIGIR | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
+| AISTATS | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
+| ACM ICAIF | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
 
 ## Browse by Topic
 

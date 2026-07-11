@@ -1,6 +1,14 @@
-<!-- Generated from data/papers.yaml by scripts/render.py. Do not edit directly. -->
+<!-- Generated from data/papers.yaml and data/coverage.yaml by scripts/render.py. Do not edit directly. -->
 
 # ICML 2026
+
+**Coverage status:** Pending
+
+**Checked on:** 2026-07-11
+
+**Official audit sources:** [Source 1](<https://icml.cc/virtual/2026/papers.html>)
+
+**Coverage notes:** The official main-paper list is available; the broader cross-track finance-scope audit remains pending.
 
 23 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
 

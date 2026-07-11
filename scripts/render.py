@@ -6,7 +6,7 @@ from __future__ import annotations
 import argparse
 import html
 import re
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Iterable, Mapping, Optional, Sequence
 from urllib.parse import urlencode
@@ -14,17 +14,19 @@ from urllib.parse import urlencode
 import yaml
 
 if __package__:
-    from .catalog import load_catalog, validate_catalog
+    from .catalog import VENUE_ORDER, load_catalog, validate_catalog
+    from .coverage import COVERAGE_YEARS, load_coverage, validate_coverage
 else:
-    from catalog import load_catalog, validate_catalog
+    from catalog import VENUE_ORDER, load_catalog, validate_catalog
+    from coverage import COVERAGE_YEARS, load_coverage, validate_coverage
 
 
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = "sjsj0101/good-quant-ai-papers"
 REPOSITORY_URL = f"https://github.com/{REPOSITORY}"
 GENERATED_NOTICE = (
-    "<!-- Generated from data/papers.yaml by scripts/render.py. "
-    "Do not edit directly. -->"
+    "<!-- Generated from data/papers.yaml and data/coverage.yaml by "
+    "scripts/render.py. Do not edit directly. -->"
 )
 
 TRACK_ORDER = ("main", "position", "workshop", "affinity")
@@ -39,6 +41,11 @@ TRACK_HEADINGS = {
     "position": "Position Papers",
     "workshop": "Workshops",
     "affinity": "Affinity Tracks",
+}
+COVERAGE_LABELS = {
+    "complete": "Complete",
+    "no-eligible-papers": "No eligible papers",
+    "pending": "Pending",
 }
 
 
@@ -92,12 +99,23 @@ def _track_sort_key(track: str) -> tuple:
         return (len(TRACK_ORDER), track.casefold())
 
 
+def _coverage_by_key(coverage: Iterable[dict]) -> dict[tuple[int, str], dict]:
+    return {(row["year"], row["venue"]): row for row in coverage}
+
+
+def _venue_sort_key(venue: str) -> tuple[int, str]:
+    try:
+        return (VENUE_ORDER.index(venue), "")
+    except ValueError:
+        return (len(VENUE_ORDER), venue.casefold())
+
+
 def _sorted_records(records: Iterable[dict]) -> list[dict]:
     return sorted(
         records,
         key=lambda record: (
             -record["year"],
-            record["venue"].casefold(),
+            _venue_sort_key(record["venue"]),
             _track_sort_key(record["track"]),
             record["title"].casefold(),
             record["id"],
@@ -118,7 +136,9 @@ def _records_by_venue(records: Iterable[dict]) -> dict[tuple[int, str], list[dic
                 record["id"],
             ),
         )
-        for key in sorted(grouped, key=lambda item: (-item[0], item[1].casefold()))
+        for key in sorted(
+            grouped, key=lambda item: (-item[0], _venue_sort_key(item[1]))
+        )
     }
 
 
@@ -135,8 +155,10 @@ def _assets_and_frequency(record: dict, *, missing: str) -> str:
 
 def _track_cell(record: dict) -> str:
     track = TRACK_LABELS.get(record["track"], _display_label(record["track"]))
-    presentation = _display_label(record["presentation"])
-    return f"{track}<br><sub>{presentation}</sub>"
+    parts = [track, f"<sub>{_display_label(record['presentation'])}</sub>"]
+    if record.get("subvenue"):
+        parts.append(f"<sub>{_escape_markdown(record['subvenue'])}</sub>")
+    return "<br>".join(parts)
 
 
 def _paper_cell(record: dict) -> str:
@@ -176,15 +198,46 @@ def _badge(alt: str, image_path: str, target: str) -> str:
     return f"[![{alt}]({image})]({target})"
 
 
-def render_readme(records: list[dict]) -> str:
+def _render_coverage_matrix(
+    records: Iterable[dict], coverage: Iterable[dict]
+) -> list[str]:
+    counts = Counter((record["year"], record["venue"]) for record in records)
+    by_key = _coverage_by_key(coverage)
+    years = tuple(sorted(COVERAGE_YEARS, reverse=True))
+    lines = [
+        "## Coverage: 2024–2026",
+        "",
+        "| Venue | " + " | ".join(str(year) for year in years) + " |",
+        "| --- | " + " | ".join("---:" for _ in years) + " |",
+    ]
+    for venue in VENUE_ORDER:
+        cells: list[str] = []
+        for year in years:
+            count = counts[(year, venue)]
+            noun = "paper" if count == 1 else "papers"
+            count_text = f"{count} {noun}"
+            if count:
+                path = f"papers/{year}/{_venue_slug(venue)}.md"
+                count_text = f"[{count_text}]({path})"
+            status = COVERAGE_LABELS[by_key[(year, venue)]["status"]]
+            cells.append(f"{count_text} · {status}")
+        lines.append(
+            f"| {_escape_markdown(venue)} | " + " | ".join(cells) + " |"
+        )
+    return lines
+
+
+def render_readme(records: list[dict], coverage: list[dict]) -> str:
     """Return the repository README generated from validated *records*."""
 
     ordered = _sorted_records(records)
     grouped = _records_by_venue(ordered)
     paper_count = len(ordered)
-    venue_count = len({record["venue"] for record in ordered})
+    venue_count = len(VENUE_ORDER)
     last_verified = max(
-        (record["verified_on"] for record in ordered), default="Not available"
+        [record["verified_on"] for record in ordered]
+        + [row["checked_on"] for row in coverage],
+        default="Not available",
     )
     badge_date = last_verified.replace("-", "--").replace(" ", "_")
     latest_page = (
@@ -256,11 +309,10 @@ def render_readme(records: list[dict]) -> str:
             "The catalog stores original one-sentence editorial summaries and "
             "links—not paper PDFs or copied abstracts."
         ),
-        "",
-        "## Browse by Topic",
-        "",
     ]
 
+    lines.extend(["", *_render_coverage_matrix(ordered, coverage), ""])
+    lines.extend(["## Browse by Topic", ""])
     topics = sorted({topic for record in ordered for topic in record["topics"]})
     lines.append(" · ".join(_topic_link(topic) for topic in topics) or "No topics yet.")
 
@@ -349,18 +401,24 @@ def _venue_record_block(record: dict) -> list[str]:
         _metadata_line("Venue / year", f"{record['venue']} · {record['year']}"),
         "",
         _metadata_line("Track / presentation", f"{track} · {presentation}"),
-        "",
-        _metadata_line(
-            "Status / verified", f"{status} · {record['verified_on']}"
-        ),
-        "",
-        _metadata_line("Topics", topics),
-        "",
-        _metadata_line(
-            "Assets / frequency",
-            _assets_and_frequency(record, missing="Not specified"),
-        ),
     ]
+    if record.get("subvenue"):
+        lines.extend(["", _metadata_line("Subvenue", record["subvenue"])])
+    lines.extend(
+        [
+            "",
+            _metadata_line(
+                "Status / verified", f"{status} · {record['verified_on']}"
+            ),
+            "",
+            _metadata_line("Topics", topics),
+            "",
+            _metadata_line(
+                "Assets / frequency",
+                _assets_and_frequency(record, missing="Not specified"),
+            ),
+        ]
+    )
 
     for field, label in (
         ("tasks", "Tasks"),
@@ -406,11 +464,30 @@ def _venue_record_block(record: dict) -> list[str]:
     return lines
 
 
-def _render_venue_page(year: int, venue: str, records: list[dict]) -> str:
+def _render_venue_page(
+    year: int, venue: str, records: list[dict], coverage_record: dict
+) -> str:
+    source_links = " · ".join(
+        _markdown_link(f"Source {index}", url)
+        for index, url in enumerate(coverage_record["official_sources"], start=1)
+    )
+    coverage_lines = [
+        _metadata_line(
+            "Coverage status", COVERAGE_LABELS[coverage_record["status"]]
+        ),
+        "",
+        _metadata_line("Checked on", coverage_record["checked_on"]),
+        "",
+        f"**Official audit sources:** {source_links}",
+        "",
+        _metadata_line("Coverage notes", coverage_record["notes"]),
+    ]
     lines = [
         GENERATED_NOTICE,
         "",
         f"# {_escape_markdown(venue)} {year}",
+        "",
+        *coverage_lines,
         "",
         (
             f"{len(records)} verified papers curated for direct relevance to "
@@ -435,21 +512,26 @@ def _render_venue_page(year: int, venue: str, records: list[dict]) -> str:
     return "\n".join(lines).rstrip() + "\n"
 
 
-def render_venue_pages(records: list[dict]) -> dict[Path, str]:
+def render_venue_pages(
+    records: list[dict], coverage: list[dict]
+) -> dict[Path, str]:
     """Return all generated venue pages, keyed by repository-relative path."""
 
     pages: dict[Path, str] = {}
+    by_key = _coverage_by_key(coverage)
     for (year, venue), venue_records in _records_by_venue(records).items():
         path = Path("papers", str(year), f"{_venue_slug(venue)}.md")
-        pages[path] = _render_venue_page(year, venue, venue_records)
+        pages[path] = _render_venue_page(
+            year, venue, venue_records, by_key[(year, venue)]
+        )
     return pages
 
 
-def render_outputs(records: list[dict]) -> dict[Path, str]:
+def render_outputs(records: list[dict], coverage: list[dict]) -> dict[Path, str]:
     """Return every generated repository file in deterministic path order."""
 
-    outputs = {Path("README.md"): render_readme(records)}
-    outputs.update(render_venue_pages(records))
+    outputs = {Path("README.md"): render_readme(records, coverage)}
+    outputs.update(render_venue_pages(records, coverage))
     return outputs
 
 
@@ -540,19 +622,21 @@ def main(
     args = parser.parse_args(argv)
     repository_root = ROOT if root is None else Path(root)
     catalog_path = repository_root / "data" / "papers.yaml"
+    coverage_path = repository_root / "data" / "coverage.yaml"
 
     try:
         records = load_catalog(catalog_path)
+        coverage = load_coverage(coverage_path)
     except (OSError, UnicodeError, ValueError, yaml.YAMLError) as error:
-        print(f"Catalog error: could not load {catalog_path}: {error}")
+        print(f"Metadata error: {error}")
         return 1
 
-    errors = validate_catalog(records)
+    errors = validate_catalog(records) + validate_coverage(coverage, records)
     if errors:
         print("\n".join(errors))
         return 1
 
-    outputs = render_outputs(records)
+    outputs = render_outputs(records, coverage)
     if args.check:
         problems = check_generated_files(repository_root, outputs)
         if problems:

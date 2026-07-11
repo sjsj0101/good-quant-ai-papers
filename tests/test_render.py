@@ -8,6 +8,7 @@ import unittest
 from pathlib import Path
 
 from scripts.catalog import load_catalog
+from scripts.coverage import load_coverage
 from scripts.render import (
     GENERATED_NOTICE,
     check_generated_files,
@@ -16,15 +17,17 @@ from scripts.render import (
     render_readme,
     render_venue_pages,
 )
+from tests.test_coverage import make_coverage
 
 
 ROOT = Path(__file__).resolve().parents[1]
 CATALOG = load_catalog(ROOT / "data" / "papers.yaml")
+COVERAGE = load_coverage(ROOT / "data" / "coverage.yaml")
 
 
 class ReadmeRenderingTests(unittest.TestCase):
     def test_readme_is_polished_browsable_and_complete(self) -> None:
-        rendered = render_readme(CATALOG)
+        rendered = render_readme(CATALOG, COVERAGE)
 
         self.assertIn('<div align="center">\n\n# Good Quant AI Papers', rendered)
         self.assertIn(
@@ -32,13 +35,19 @@ class ReadmeRenderingTests(unittest.TestCase):
             rendered,
         )
         self.assertIn("Papers-23", rendered)
-        self.assertIn("Venues-1", rendered)
+        self.assertIn("Venues-11", rendered)
         self.assertIn("Last verified-2026--07--11", rendered)
         self.assertIn("License-CC BY 4.0", rendered)
         self.assertIn("sjsj0101/good-quant-ai-papers", rendered)
         self.assertIn("## Scope", rendered)
         self.assertIn("officially accepted computer-science conference work", rendered)
         self.assertIn("General banking, credit scoring, fraud detection", rendered)
+        self.assertIn("## Coverage: 2024–2026", rendered)
+        self.assertIn("| Venue | 2026 | 2025 | 2024 |", rendered)
+        self.assertIn("| ICML |", rendered)
+        self.assertIn("| NeurIPS |", rendered)
+        self.assertIn("| ACM ICAIF |", rendered)
+        self.assertIn("[23 papers](papers/2026/icml.md) · Pending", rendered)
         self.assertIn("## Browse by Topic", rendered)
         self.assertIn("Asset Allocation", rendered)
         self.assertIn("Market Microstructure", rendered)
@@ -50,10 +59,12 @@ class ReadmeRenderingTests(unittest.TestCase):
         self.assertIn("[ICML 2026](papers/2026/icml.md) — 23 papers", rendered)
         self.assertIn("## Contributing", rendered)
         self.assertIn("## License", rendered)
-        self.assertEqual(rendered.count("| ["), 23)
+        self.assertEqual(
+            sum(line.startswith("| [") for line in rendered.splitlines()), 23
+        )
 
     def test_readme_rows_link_titles_show_authors_and_label_tracks(self) -> None:
-        rendered = render_readme(CATALOG)
+        rendered = render_readme(CATALOG, COVERAGE)
 
         self.assertIn(
             "[Signature-Informed Transformer for Asset Allocation]"
@@ -72,7 +83,7 @@ class ReadmeRenderingTests(unittest.TestCase):
 
 class VenueRenderingTests(unittest.TestCase):
     def test_venue_page_has_every_record_sorted_by_title_within_tracks(self) -> None:
-        pages = render_venue_pages(list(reversed(CATALOG)))
+        pages = render_venue_pages(list(reversed(CATALOG)), COVERAGE)
 
         self.assertEqual(list(pages), [Path("papers/2026/icml.md")])
         rendered = pages[Path("papers/2026/icml.md")]
@@ -105,7 +116,9 @@ class VenueRenderingTests(unittest.TestCase):
             )
 
     def test_venue_page_exposes_full_human_readable_metadata(self) -> None:
-        rendered = render_venue_pages(CATALOG)[Path("papers/2026/icml.md")]
+        rendered = render_venue_pages(CATALOG, COVERAGE)[
+            Path("papers/2026/icml.md")
+        ]
 
         self.assertIn("# ICML 2026", rendered)
         self.assertIn(
@@ -139,8 +152,10 @@ class VenueRenderingTests(unittest.TestCase):
             }
         )
 
-        readme = render_readme([record])
-        venue = render_venue_pages([record])[Path("papers/2026/icml.md")]
+        readme = render_readme([record], COVERAGE)
+        venue = render_venue_pages([record], COVERAGE)[
+            Path("papers/2026/icml.md")
+        ]
 
         self.assertIn(r"[Alpha \| Beta \[Study\]]", readme)
         self.assertIn(r"Ada \| Lovelace", readme)
@@ -160,11 +175,53 @@ class VenueRenderingTests(unittest.TestCase):
             }
         )
 
-        rendered = render_venue_pages([record])[Path("papers/2026/icml.md")]
+        rendered = render_venue_pages([record], COVERAGE)[
+            Path("papers/2026/icml.md")
+        ]
 
         self.assertIn("**Tasks:** CVaR99 estimation", rendered)
         self.assertIn("**Methods:** TailFM-X", rendered)
         self.assertIn("**Datasets:** Fama–French factors", rendered)
+
+    def test_multi_venue_matrix_and_subvenue_metadata(self) -> None:
+        main = copy.deepcopy(CATALOG[0])
+        main.update(
+            {
+                "id": "2025-neurips-doe-portfolio-learning",
+                "title": "Portfolio Learning",
+                "authors": ["Jane Doe"],
+                "venue": "NeurIPS",
+                "year": 2025,
+                "track": "main",
+                "official_url": "https://neurips.cc/virtual/2025/poster/100",
+                "paper_url": "https://example.org/portfolio-learning",
+            }
+        )
+        workshop = copy.deepcopy(main)
+        workshop.update(
+            {
+                "id": "2025-neurips-roe-market-simulation",
+                "title": "Market Simulation",
+                "authors": ["Richard Roe"],
+                "track": "workshop",
+                "subvenue": "Workshop on Financial AI",
+                "official_url": "https://neurips.cc/virtual/2025/workshop/200",
+                "paper_url": "https://example.org/market-simulation",
+            }
+        )
+        coverage = make_coverage()
+
+        readme = render_readme([workshop, main], coverage)
+        venue = render_venue_pages([workshop, main], coverage)[
+            Path("papers/2025/neurips.md")
+        ]
+
+        self.assertLess(readme.index("| ICML |"), readme.index("| NeurIPS |"))
+        self.assertIn("Workshop on Financial AI", readme)
+        self.assertIn("**Coverage status:** Pending", venue)
+        self.assertIn("**Checked on:** 2026-07-11", venue)
+        self.assertIn("**Official audit sources:**", venue)
+        self.assertIn("**Subvenue:** Workshop on Financial AI", venue)
 
 
 class FreshnessTests(unittest.TestCase):
@@ -200,7 +257,11 @@ class FreshnessTests(unittest.TestCase):
                 (ROOT / "data" / "papers.yaml").read_text(encoding="utf-8"),
                 encoding="utf-8",
             )
-            outputs = render_outputs(CATALOG)
+            (data / "coverage.yaml").write_text(
+                (ROOT / "data" / "coverage.yaml").read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
+            outputs = render_outputs(CATALOG, COVERAGE)
             for relative_path, content in outputs.items():
                 path = root / relative_path
                 path.parent.mkdir(parents=True, exist_ok=True)
@@ -221,6 +282,10 @@ class FreshnessTests(unittest.TestCase):
             data.mkdir()
             (data / "papers.yaml").write_text(
                 (ROOT / "data" / "papers.yaml").read_text(encoding="utf-8"),
+                encoding="utf-8",
+            )
+            (data / "coverage.yaml").write_text(
+                (ROOT / "data" / "coverage.yaml").read_text(encoding="utf-8"),
                 encoding="utf-8",
             )
             obsolete = root / "papers" / "2025" / "old-venue.md"
