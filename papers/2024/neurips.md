@@ -384,7 +384,7 @@
 
 **Status / verified:** Accepted · 2026-07-11
 
-**Topics:** Alpha Modeling
+**Topics:** Market Microstructure
 
 **Assets / frequency:** Not specified
 
@@ -392,7 +392,7 @@
 
 **Methods:** machine learning
 
-**Focus:** Develops machine-learning strategies for virtual bids that trade financially settled gaps between day-ahead and real-time electricity prices.
+**Focus:** Proposes using machine learning to explore green virtual-bidding strategies in financially settled day-ahead and real-time electricity markets.
 
 **Why it matters:** Connects algorithmic bidding decisions to both market profitability and lower-carbon electricity-market operation.
 
@@ -412,7 +412,7 @@
 
 **Venue / year:** NeurIPS · 2024
 
-**Track / presentation:** Affinity · Poster
+**Track / presentation:** Affinity · Oral
 
 **Subvenue:** LatinX in AI
 
@@ -431,6 +431,8 @@
 **Focus:** Combines COMTE and LEFTIST to explain a Bitcoin time-series classifier that turns one-minute closes into 30-minute sell-or-hold recommendations.
 
 **Why it matters:** Makes a short-horizon crypto trading signal more interpretable by showing which time-series changes drive each recommendation.
+
+**Notes:** The official NeurIPS child record at https://neurips.cc/virtual/2024/107799 labels this work Poster in Affinity Event; the official LatinX in AI program selects the same paper as Oral 3 and links the timed oral event at https://neurips.cc/virtual/2024/108336, while also including it in the affinity poster program. The catalog uses the selected oral presentation while preserving both official facts here.
 
 **Links:** [Official venue record](<https://neurips.cc/virtual/2024/107799>) · [Paper](<https://openreview.net/forum?id=IepDSQDWWv>)
 

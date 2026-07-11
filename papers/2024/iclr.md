@@ -46,7 +46,7 @@
 
 ### [FinMem: A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design](<https://arxiv.org/abs/2311.13743>)
 
-**Catalog ID:** 2024-iclr-yu-finmem
+**Catalog ID:** 2024-iclr-li-finmem
 
 **Authors:** Haohang Li, Yangyang Yu, Zhi Chen, Yuechen Jiang, Yang Li, Denghui Zhang, Rong Liu, Jordan W. Suchow, Khaldoun Khashanah
 

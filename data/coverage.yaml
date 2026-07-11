@@ -238,7 +238,7 @@
     - https://openreview.net/group?id=ICML.cc%2F2024%2FWorkshop%2FLLMs_and_Cognition
     - https://icml.cc/virtual/2024/session/35291
   notes: >-
-    All 2,610 PMLR records and all 75 position papers were screened. The side-program audit accounted for all 34 official units: 30 workshops, three affinity-roster events, and the Affinity Joint Poster Session. Twenty-seven workshops have complete paper-level screens, and one eligible workshop paper was already cataloged. Workshop and affinity remain omitted from tracks_checked because four exact roster blockers remain: Long-Context Foundation Models (29970) lacks its physical and virtual poster titles; ML for Life and Material Science (29955) lacks both poster rosters and its linked OpenReview venue is challenged; Large Language Models and Cognition (29963) lacks complete contributed-talk and poster rosters and its OpenReview venue is challenged; and the Affinity Joint Poster Session (35291) is an empty official shell with no poster titles, authors, event mapping, or paper links.
+    All 2,610 PMLR records and all 75 position papers were screened. The side-program audit accounted for all 34 official units: 30 workshops, three affinity-roster events, and the Affinity Joint Poster Session. Twenty-seven workshops have complete paper-level screens, and two eligible workshop papers were already cataloged. Workshop and affinity remain omitted from tracks_checked because four exact roster blockers remain: Long-Context Foundation Models (29970) lacks its physical and virtual poster titles; ML for Life and Material Science (29955) lacks both poster rosters and its linked OpenReview venue is challenged; Large Language Models and Cognition (29963) lacks complete contributed-talk and poster rosters and its OpenReview venue is challenged; and the Affinity Joint Poster Session (35291) is an empty official shell with no poster titles, authors, event mapping, or paper links.
 
 - venue: NeurIPS
   year: 2024
@@ -314,6 +314,23 @@
     - https://aaai.org/aaai-24-conference/program-overview/
     - https://ojs.aaai.org/index.php/AAAI/issue/archive
     - https://ojs.aaai.org/index.php/AAAI/issue/view/576
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/577
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/578
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/579
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/580
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/581
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/582
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/583
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/584
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/585
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/586
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/587
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/588
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/589
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/590
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/591
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/592
+    - https://ojs.aaai.org/index.php/AAAI/issue/view/593
     - https://ojs.aaai.org/index.php/AAAI/issue/view/594
     - https://ojs.aaai.org/index.php/AAAI/issue/view/595
     - https://ojs.aaai.org/index.php/AAAI/issue/view/596
@@ -323,8 +340,78 @@
     - https://aaai.org/aaai-conference/aaai-24-student-abstracts/
     - https://aaai.org/aaai-24-conference/aaai-24-workshop-program/
     - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws01
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws02
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws03
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws04
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws05
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws06
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws07
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws08
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws09
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws10
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws11
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws12
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws13
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws14
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws15
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws16
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws17
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws18
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws19
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws20
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws21
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws22
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws23
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws24
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws25
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws26
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws27
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws28
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws29
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws30
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws31
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws32
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws33
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws34
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws35
+    - https://llmcp.cause-lab.net/llmcp
+    - https://digitalhumanworkshop.github.io/
+    - https://ai4ed.cc/workshops/aaai2024
+    - https://sites.google.com/view/aifin-aaai2024/home
+    - https://openreview.net/group?id=AAAI.org/2024/Workshop/AIBED
+    - https://sites.google.com/view/aibed2024/
+    - http://aics.site/AICS2024/
+    - https://ai-or.github.io/2024/
+    - https://ai4ts.github.io/aaai2024
+    - https://aibsdworkshop.github.io/2024/index.html
+    - https://www.is3rlab.org/aaai24-cmasdl-workshop.github.io/
+    - https://sites.google.com/view/dai-2024/home
+    - https://eiw2024.github.io/
+    - https://sites.google.com/view/gclr2024/
+    - http://w3phiai2024.w3phi.com/
+    - https://hcrl-workshop.github.io/2024/
+    - https://openreview.net/group?id=AAAI.org/2024/Workshop/Imageomics
+    - https://llms4science-community.github.io/aaai2024.html
+    - https://winterlightlabs.github.io/ml4cmh2024/
+    - https://winterlightlabs.github.io/ml4cmh2024/program/index.html
+    - https://openreview.net/group?id=AAAI.org/2024/Workshop/NuCLeaR
+    - https://nuclear-workshop.github.io/
+    - https://ppai-workshop.github.io/
+    - https://openreview.net/group?id=AAAI.org/2024/Workshop/PubLLM
+    - https://sites.google.com/vectorinstitute.ai/relm2024/home
+    - https://sites.google.com/view/sdu-aaai24
+    - https://ceur-ws.org/
+    - https://personal.ntu.edu.sg/xlli/sai.htm
+    - https://sites.google.com/view/rl-llm-aaai2024
+    - https://openreview.net/group?id=AAAI.org/2024/Workshop/XAI4DRL
+    - https://xai4drl.github.io/
   notes: >-
-    AAAI 2024 remains pending and tracks_checked must not be read as a full-universe main screen. The main/non-workshop audit mapped all 21 OJS issue containers (576-596) but retained seven blocker groups: Technical Tracks issues 576-593, issue 594, issue 595, issue 596, Bridge, Demonstrations, and Student Abstracts/Posters. The official 35-workshop order and names were recovered; W8 and W15 were officially cancelled, while each of the other 33 workshops has an exact missing accepted-paper/program-roster blocker. Live AAAI/OJS and organizer access was unavailable under the audit's access constraints. The five existing AAAI records are a verified lower bound, no new AAAI candidate was established, and neither main nor workshop coverage is complete; workshop is therefore omitted from tracks_checked.
+    AAAI 2024 remains pending, and tracks_checked must be read as a partial main-paper screen rather than a full-universe main audit. The main/non-workshop audit maps all 21 OJS issue containers 576-596 but retains seven exact blocker groups: Technical Tracks issues 576-593 need a complete article-and-abstract screen; issue 594 needs its complete Safe, Robust and Responsible AI article-and-abstract screen; issue 595 needs its complete AI for Social Impact, Senior Member, New Faculty, and Journal Track article/section screen; issue 596 needs its complete IAAI, EAAI, Student Abstracts, Undergraduate Consortium, and Demonstrations article/section screen; and the Bridge, Demonstrations, and Student Abstracts/Posters programs each need complete title-and-author rosters and issue mappings. The five existing AAAI papers are a verified lower bound, not an exhaustive result.
+    The cached official workshop list and schedule establish this exact W1-W35 ledger. W1 “Are Large Language Models Simply Causal Parrots?” (LLM-CP) — unresolved; missing complete accepted/contributed-paper roster with titles, ordered authors, acceptance status, and presentation type. W2 AI for Credible Elections: A Call To Action with Trusted AI — unresolved; missing organizer/program URL plus every accepted/contributed title and ordered author. W3 AI for Digital Human — unresolved; missing complete 2024 accepted oral/poster program with titles, ordered authors, and public artifacts. W4 AI for Education: Bridging Innovation and Responsibility — unresolved; missing complete AI4ED accepted/contributed-paper list or program with titles, ordered authors, and paper links. W5 AI in Finance for Social Impact — unresolved high-priority finance blocker; missing complete AIFinSI accepted-paper/program roster with every title, ordered author, acceptance status, presentation type, and public paper/forum URL. W6 AI to Accelerate Science and Engineering — unresolved; missing organizer/program URL plus complete accepted/contributed-paper roster with titles and ordered authors. W7 AI-based Planning for Cyber-Physical Systems (CAIPI) — unresolved; missing organizer/program URL plus complete accepted/contributed-paper roster with titles and ordered authors. W8 AIBED: Artificial Intelligence for Brain Encoding and Decoding — resolved as officially cancelled; no missing paper artifact. W9 Artificial Intelligence for Cyber Security (AICS) — unresolved; missing complete accepted/contributed-paper program with titles, ordered authors, presentation types, and public artifacts. W10 Artificial Intelligence for Operations Research — unresolved; missing complete AI-OR accepted-paper roster with titles, ordered authors, workshop acceptance/presentation status, and public paper links. W11 Artificial Intelligence for Time Series Analysis (AI4TS): Theory, Algorithms, and Applications — unresolved; missing complete AAAI-24 program or accepted-paper list with every title, ordered author, presentation type, and paper link. W12 Artificial Intelligence with Biased or Scarce Data — unresolved; missing complete accepted/contributed-paper program with titles, ordered authors, presentation types, and public artifacts.
+    W13 Cooperative Multi-Agent Systems Decision-Making and Learning: From Individual Needs to Swarm Intelligence — unresolved; missing final organizer program/accepted-paper roster, ordered authors, presentation mapping, and hosted paper links. W14 Deployable AI (DAI) — unresolved; missing final accepted-paper roster, contributed-talk titles, poster titles, ordered authors, and public paper links. W15 Bootstrapping Developmental AIs: From Simple Competences to Intelligent Human-Compatible AIs — resolved as officially cancelled; no missing paper artifact. W16 EIW-III: The 3rd Edge Intelligence Workshop on Large Language and Vision Models — unresolved; missing final accepted-paper roster across both poster sessions, oral selections, ordered authors, and public paper links. W17 FACTIFY 3.0 – Workshop Series on Multimodal Fact-Checking and Hate Speech Detection — unresolved; missing official organizer/program URL plus complete accepted-paper roster, ordered authors, presentation mapping, and paper links. W18 Graphs and more Complex Structures For Learning and Reasoning (GCLR) — unresolved; missing final accepted-paper roster, poster titles, oral selections, ordered authors, and paper links. W19 Health Intelligence (W3PHIAI-24) — unresolved; missing final accepted full/short-paper, poster, demonstration, and special-track roster with ordered authors and paper links. W20 Human-Centric Representation Learning (HCRL) — unresolved; missing complete accepted-paper list, ordered authors, oral/poster mapping, and hosted paper links. W21 Imageomics: Discovering Biological Knowledge from Images using AI — unresolved; missing complete accepted-note list with decisions, titles, ordered authors, forum IDs, presentation types, and paper links. W22 Large Language Models for Biological Discoveries (LLMs4Bio) — unresolved; missing final program/accepted-paper roster with titles, ordered authors, presentation types, and linked manuscripts. W23 Learnable Optimization (LEANOPT) — unresolved; missing official organizer/program URL plus complete accepted-paper roster, ordered authors, presentation mapping, and paper links. W24 Machine Learning for Cognitive and Mental Health — unresolved; missing final accepted paper/poster titles, ordered authors, presentation mapping, and manuscript links.
+    W25 Neuro-Symbolic Learning and Reasoning in the era of Large Language Models (NuCLeaR) — unresolved; missing complete accepted/contributed-paper roster with titles, ordered authors, forum/paper URLs, and presentation mapping. W26 Privacy-Preserving Artificial Intelligence — unresolved; missing accepted technical/short/position-paper roster with titles, ordered authors, presentation status, and public artifact URLs. W27 Public Sector Large Language Models: Algorithmic and Sociotechnical Design — unresolved; missing public accepted-submission list with titles, ordered authors, forum IDs, acceptance decisions/venues, presentation types, and paper links. W28 Recommendation Ecosystems: Modeling, Optimization and Incentive Design — unresolved; missing organizer/program URL plus complete accepted-paper roster with titles, ordered authors, and public artifacts. W29 Responsible Language Models (ReLM) — unresolved; missing complete accepted-paper/program list with titles, ordered authors, presentation types, and public paper URLs. W30 Scientific Document Understanding — unresolved; missing exact CEUR proceedings volume/index or organizer-hosted accepted-paper list with titles, ordered authors, presentation types, and paper URLs. W31 Sustainable AI — unresolved; missing accepted oral/poster roster with titles, ordered authors, presentation types, and public paper URLs. W32 Synergy of Reinforcement Learning and Large Language Models — unresolved; missing complete paper-presentation/poster roster with titles, ordered authors, acceptance status, and public artifacts. W33 Workshop on Ad Hoc Teamwork (WAHT) — unresolved; missing organizer/program URL plus complete accepted-paper roster with titles, ordered authors, presentation mapping, and public artifacts. W34 XAI4DRL: eXplainable Artificial Intelligence for Deep Reinforcement Learning — unresolved; missing accepted long/short-paper list with titles, ordered authors, OpenReview forum IDs, acceptance decisions/venues, presentation mapping, and public artifacts. W35 XAI4Sci: Explainable machine learning for sciences — unresolved; missing organizer/program URL plus complete accepted-paper roster with titles, ordered authors, presentation types, and public artifacts.
+    Final workshop disposition is 2/35 resolved by official cancellation and 33/35 access-constrained unresolved because complete paper rosters are absent from the recovered evidence. This is not a demonstrated zero-eligible result or proof that current official/organizer sources are genuinely unavailable. No complete workshop roster was recovered, no AAAI workshop paper was verified for addition or exhaustive exclusion, and W5 remains the highest-priority blocker. Workshop therefore remains omitted from tracks_checked; neither main nor workshop coverage is complete.
 
 - venue: IJCAI
   year: 2024
