@@ -6,9 +6,9 @@
 
 **Checked on:** 2026-07-11
 
-**Official audit sources:** [Source 1](<https://proceedings.mlr.press/v235/>) · [Source 2](<https://proceedings.mlr.press/v235/assets/bib/bibliography.bib>) · [Source 3](<https://icml.cc/virtual/2024/papers.html>) · [Source 4](<https://icml.cc/virtual/2024/events/workshop>) · [Source 5](<https://icml.cc/virtual/2024/affinity_events>)
+**Official audit sources:** [Source 1](<https://proceedings.mlr.press/v235/>) · [Source 2](<https://proceedings.mlr.press/v235/assets/bib/bibliography.bib>) · [Source 3](<https://icml.cc/virtual/2024/papers.html>) · [Source 4](<https://icml.cc/virtual/2024/events/workshop>) · [Source 5](<https://icml.cc/virtual/2024/affinity_events>) · [Source 6](<https://icml.cc/virtual/2024/affinity-event/29945>) · [Source 7](<https://icml.cc/virtual/2024/affinity-event/29952>)
 
-**Coverage notes:** All 2,610 PMLR records and all 75 position papers were screened, and the workshop and affinity rosters were reviewed; the conference exposes no consolidated paper-level list for those side programs, WiML exposed no contributed-paper list, and the DisAbility/Queer and joint-poster acceptance rosters were not recoverable, so cross-track coverage remains pending.
+**Coverage notes:** All 2,610 PMLR records and all 75 position papers were screened. Workshop and affinity are omitted from tracks\_checked because their paper-level review was incomplete; the official workshop roster does not enumerate accepted papers, the WiML event page (29945) exposes invited talks and panels but no contributed-paper roster, and the DisAbility and Queer event page (29952) links a Joint Poster Session without exposing its poster titles.
 
 3 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
 

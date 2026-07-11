@@ -6,9 +6,9 @@
 
 **Checked on:** 2026-07-11
 
-**Official audit sources:** [Source 1](<https://www.ijcai.org/proceedings/2024/>)
+**Official audit sources:** [Source 1](<https://www.ijcai.org/proceedings/2024/>) · [Source 2](<https://ijcai24.org/workshops/>) · [Source 3](<https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-agentscen/home>) · [Source 4](<https://sites.google.com/view/fin-recsys2024/>)
 
-**Coverage notes:** The complete official main proceedings index was title-screened and all included records were abstract-verified; the proceedings do not cover workshop or affinity papers and no consolidated official paper-level roster for those programs was recoverable, so cross-track coverage remains pending.
+**Coverage notes:** The complete official main proceedings index was title-screened and all included records were abstract-verified. The official workshop roster enumerates 35 external programs, including FinNLP and AgentScen and Fin-RecSys, but contains no accepted-paper titles; workshop is therefore omitted from tracks\_checked because paper-level review of every linked program could not be completed from the official conference source.
 
 5 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
 

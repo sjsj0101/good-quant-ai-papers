@@ -8,7 +8,7 @@
 
 **Official audit sources:** [Source 1](<https://aaai.org/aaai-24-conference/program-overview/>) · [Source 2](<https://ojs.aaai.org/index.php/AAAI/issue/archive>) · [Source 3](<https://aaai.org/aaai-24-conference/aaai-24-workshop-program/>) · [Source 4](<https://aaai.org/aaai-24-conference/aaai-24-workshop-list/>)
 
-**Coverage notes:** Official proceedings records for the verified finance candidates and the workshop roster were reviewed; AAAI exposes the technical program across separate issue pages and no consolidated paper-level index for its 35 workshops, Bridge, student, or demonstration programs, so an exhaustive cross-track fixed-term audit remains pending.
+**Coverage notes:** Official proceedings records for the fixed-term main-track candidates were reviewed. Workshop is omitted from tracks\_checked; the official 35-workshop page embeds calls, schedules, and submission details, but its finance workshop W5 section does not expose accepted-paper titles or link an accepted-paper roster; Bridge, student, and demonstration programs also remain outside the completed paper-level review.
 
 5 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
 

@@ -6,9 +6,9 @@
 
 **Checked on:** 2026-07-11
 
-**Official audit sources:** [Source 1](<https://proceedings.neurips.cc/paper/2024>) · [Source 2](<https://neurips.cc/Conferences/2024/DatasetsBenchmarks/AcceptedPapers>) · [Source 3](<https://neurips.cc/virtual/2024/events/workshop>) · [Source 4](<https://neurips.cc/virtual/2024/affinity_events>)
+**Official audit sources:** [Source 1](<https://proceedings.neurips.cc/paper/2024>) · [Source 2](<https://neurips.cc/Conferences/2024/DatasetsBenchmarks/AcceptedPapers>) · [Source 3](<https://neurips.cc/virtual/2024/events/workshop>) · [Source 4](<https://neurips.cc/virtual/2024/affinity_events>) · [Source 5](<https://neurips.cc/virtual/2024/affinity-event/105023>)
 
-**Coverage notes:** All 4,493 displayed proceedings titles were screened and official workshop and affinity rosters were reviewed; NeurIPS provides no consolidated paper-level list for 56 workshops or 12 affinity events, and several affinity events exposed no recoverable accepted-paper roster, so side-program coverage remains pending.
+**Coverage notes:** All 4,493 displayed proceedings titles, including Datasets and Benchmarks, were screened. Workshop and affinity are omitted from tracks\_checked because their paper-level review was incomplete; the official roster pages expose event entries rather than an aggregate accepted-paper list, and the Neurodiversity event page (105023) exposes four invited talks but no contributed-paper roster.
 
 12 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
 

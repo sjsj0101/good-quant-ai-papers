@@ -94,60 +94,78 @@ class VenueRenderingTests(unittest.TestCase):
         expected_paths = {venue_page_path(record) for record in CATALOG}
         self.assertEqual(set(pages), expected_paths)
 
-        icml_path = Path("papers/2026/icml.md")
-        rendered = pages[icml_path]
-        icml_records = [
-            record
-            for record in CATALOG
-            if record["year"] == 2026 and record["venue"] == "ICML"
-        ]
         track_labels = {
             "main": "Main Conference",
             "position": "Position Papers",
             "workshop": "Workshops",
             "affinity": "Affinity Tracks",
         }
-        track_records = {
-            track: sorted(
-                (
-                    record
-                    for record in icml_records
-                    if record["track"] == track
-                ),
-                key=lambda record: record["title"].casefold(),
-            )
-            for track in track_labels
-        }
-        populated_tracks = [track for track in track_labels if track_records[track]]
-        headings = {
-            track: f"## {track_labels[track]} ({len(track_records[track])})"
-            for track in populated_tracks
-        }
-        starts = {track: rendered.index(headings[track]) for track in populated_tracks}
-
-        self.assertEqual(
-            [starts[track] for track in populated_tracks],
-            sorted(starts.values()),
-        )
-        for index, track in enumerate(populated_tracks):
-            next_start = (
-                starts[populated_tracks[index + 1]]
-                if index + 1 < len(populated_tracks)
-                else len(rendered)
-            )
-            section = rendered[starts[track] : next_start]
-            positions = [
-                section.index(record["title"]) for record in track_records[track]
+        records_by_page = {
+            path: [
+                record for record in CATALOG if venue_page_path(record) == path
             ]
-            self.assertEqual(positions, sorted(positions), track)
+            for path in expected_paths
+        }
 
-        for record in CATALOG:
-            record_page = pages[venue_page_path(record)]
-            self.assertIn(
-                f"[{record['title']}](<{record['paper_url']}>)",
-                record_page,
-                record["id"],
-            )
+        for path, page_records in records_by_page.items():
+            with self.subTest(path=path):
+                rendered = pages[path]
+                track_records = {
+                    track: sorted(
+                        (
+                            record
+                            for record in page_records
+                            if record["track"] == track
+                        ),
+                        key=lambda record: (
+                            record["title"].casefold(),
+                            record["id"],
+                        ),
+                    )
+                    for track in track_labels
+                }
+                populated_tracks = [
+                    track for track in track_labels if track_records[track]
+                ]
+                headings = {
+                    track: (
+                        f"## {track_labels[track]} "
+                        f"({len(track_records[track])})"
+                    )
+                    for track in populated_tracks
+                }
+                starts = {
+                    track: rendered.index(headings[track])
+                    for track in populated_tracks
+                }
+
+                self.assertEqual(
+                    [starts[track] for track in populated_tracks],
+                    sorted(starts.values()),
+                )
+                for index, track in enumerate(populated_tracks):
+                    next_start = (
+                        starts[populated_tracks[index + 1]]
+                        if index + 1 < len(populated_tracks)
+                        else len(rendered)
+                    )
+                    section = rendered[starts[track] : next_start]
+                    positions = [
+                        section.index(record["title"])
+                        for record in track_records[track]
+                    ]
+                    self.assertEqual(
+                        positions,
+                        sorted(positions),
+                        f"{path}: {track}",
+                    )
+
+                for record in page_records:
+                    self.assertIn(
+                        f"[{record['title']}](<{record['paper_url']}>)",
+                        rendered,
+                        record["id"],
+                    )
 
     def test_venue_page_exposes_full_human_readable_metadata(self) -> None:
         rendered = render_venue_pages(CATALOG, COVERAGE)[

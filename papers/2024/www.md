@@ -6,15 +6,43 @@
 
 **Checked on:** 2026-07-11
 
-**Official audit sources:** [Source 1](<https://www2024.thewebconf.org/accepted/research-tracks/>) · [Source 2](<https://www2024.thewebconf.org/accepted/short-papers/>) · [Source 3](<https://www2024.thewebconf.org/program/overview>) · [Source 4](<https://www2024.thewebconf.org/program/workshops/>)
+**Official audit sources:** [Source 1](<https://www2024.thewebconf.org/accepted/research-tracks/>) · [Source 2](<https://www2024.thewebconf.org/accepted/industry/>) · [Source 3](<https://www2024.thewebconf.org/accepted/web4good/>) · [Source 4](<https://www2024.thewebconf.org/accepted/short-papers/>) · [Source 5](<https://www2024.thewebconf.org/accepted/demo/>) · [Source 6](<https://www2024.thewebconf.org/accepted/resource/>) · [Source 7](<https://www2024.thewebconf.org/accepted/health-day/>) · [Source 8](<https://www2024.thewebconf.org/accepted/history-web/>) · [Source 9](<https://www2024.thewebconf.org/accepted/phd-symposium/>) · [Source 10](<https://www2024.thewebconf.org/program/overview>) · [Source 11](<https://www2024.thewebconf.org/program/workshops/>)
 
-**Coverage notes:** The complete research and short-paper lists were screened and the 16-workshop roster was reviewed; several workshop sites exposed no complete paper-level acceptance list and the conference provides no consolidated workshop-paper roster, so cross-track coverage remains pending.
+**Coverage notes:** Every official accepted-track page linked by WWW 2024 was screened at paper level, covering Research, Industry, Web4Good, Short Papers, Demo, Resource, Health Day, History of the Web, and PhD Symposium. Workshop is omitted from tracks\_checked because the official workshop page exposes only a 16-event roster and delegates accepted-paper programs to external sites without a conference-level paper index.
 
-4 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+3 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
 
 [← Back to the main index](../../README.md)
 
-## Main Conference (4)
+## Main Conference (3)
+
+### [FinReport: Explainable Stock Earnings Forecasting via News Factor Analyzing Model](<https://arxiv.org/abs/2403.02647>)
+
+**Catalog ID:** 2024-www-li-finreport
+
+**Authors:** Xiangyu Li, Xinjie Shen, Yawen Zeng, Xiaofen Xing, Jin Xu
+
+**Venue / year:** WWW · 2024
+
+**Track / presentation:** Main · Not Specified
+
+**Subvenue:** Industry Track
+
+**Status / verified:** Published · 2026-07-11
+
+**Topics:** Financial Forecasting · Alternative Data
+
+**Assets / frequency:** Not specified
+
+**Identifiers:** arXiv 2403.02647 · DOI 10.1145/3589335.3648330
+
+**Focus:** Combines news-factor analysis with explainable stock forecasts and evaluates the resulting signals in a transaction-cost-aware trading backtest.
+
+**Why it matters:** Tests whether interpretable news-driven signals improve realized return, drawdown, and Sharpe outcomes rather than stopping at forecast accuracy.
+
+**Links:** [Official venue record](<https://doi.org/10.1145/3589335.3648330>) · [Paper](<https://arxiv.org/abs/2403.02647>)
+
+---
 
 ### [Learning to Generate Explainable Stock Predictions using Self-Reflective Large Language Models](<https://arxiv.org/abs/2402.03659>)
 
@@ -65,59 +93,5 @@
 **Why it matters:** Lets investors change the eligible stock pool without retraining a separate portfolio policy for every universe.
 
 **Links:** [Official venue record](<https://doi.org/10.1145/3589334.3645615>) · [Paper](<https://arxiv.org/abs/2311.10801>)
-
----
-
-### [Unveiling the Paradox of NFT Prosperity](<https://doi.org/10.1145/3589334.3645566>)
-
-**Catalog ID:** 2024-www-huang-nft-prosperity
-
-**Authors:** Jintao Huang, Pengcheng Xia, Jiefeng Li, Kai Ma, Gareth Tyson, Xiapu Luo, Lei Wu, Yajin Zhou, Wei Cai, Haoyu Wang
-
-**Venue / year:** WWW · 2024
-
-**Track / presentation:** Main · Not Specified
-
-**Status / verified:** Published · 2026-07-11
-
-**Topics:** Market Microstructure · Alternative Data
-
-**Assets / frequency:** Not specified
-
-**Identifiers:** DOI 10.1145/3589334.3645566
-
-**Focus:** Measures trading concentration, wash activity, and arbitrage across a large cross-market sample of NFT transactions.
-
-**Why it matters:** Quantifies manipulation and arbitrage conditions that materially affect price discovery and execution risk in digital-asset markets.
-
-**Links:** [Official venue record](<https://doi.org/10.1145/3589334.3645566>) · [Paper](<https://doi.org/10.1145/3589334.3645566>)
-
----
-
-### [Unveiling Wash Trading in Popular NFT Markets](<https://arxiv.org/abs/2403.10361>)
-
-**Catalog ID:** 2024-www-niu-nft-wash-trading
-
-**Authors:** Yuanzheng Niu, Xiaoqi Li, Hongli Peng, Wenkai Li
-
-**Venue / year:** WWW · 2024
-
-**Track / presentation:** Main · Poster
-
-**Status / verified:** Published · 2026-07-11
-
-**Topics:** Market Microstructure · Alternative Data
-
-**Assets / frequency:** Not specified
-
-**Identifiers:** arXiv 2403.10361 · DOI 10.1145/3589335.3651580
-
-**Focus:** Detects wash trading from transaction-network and behavioral patterns across four NFT marketplaces.
-
-**Why it matters:** Reveals how incentive design can distort observed liquidity and volume in investable digital-asset venues.
-
-**Notes:** WWW 2024 short-paper track in the companion proceedings.
-
-**Links:** [Official venue record](<https://doi.org/10.1145/3589335.3651580>) · [Paper](<https://arxiv.org/abs/2403.10361>)
 
 ---

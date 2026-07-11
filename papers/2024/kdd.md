@@ -8,7 +8,7 @@
 
 **Official audit sources:** [Source 1](<https://kdd.org/kdd2024/research-track-papers/>) · [Source 2](<https://kdd.org/kdd2024/applied-data-science-track-papers/>) · [Source 3](<https://kdd.org/kdd2024/workshops/>) · [Source 4](<https://sites.google.com/view/kdd-mlf-2024/schedule>) · [Source 5](<https://kdd.org/kdd2024/special-days/>)
 
-**Coverage notes:** The full Research and Applied Data Science schedules were title-screened and six workshops, including Machine Learning in Finance, were reviewed; the SDBD accepted-papers page was unavailable and KDD provides no consolidated paper-level list for the remaining workshops or Finance Day, so cross-track coverage remains pending.
+**Coverage notes:** The full Research and Applied Data Science schedules were title-screened. Workshop is omitted from tracks\_checked because only six programs were reviewed; the official workshop roster links per-event sites rather than paper records, and its SDBD accepted-papers target was unavailable during the audit; the special-days page likewise exposes a Finance Day schedule but no paper-level acceptance roster.
 
 6 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
 

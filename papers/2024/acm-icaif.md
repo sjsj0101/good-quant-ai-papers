@@ -8,13 +8,13 @@
 
 **Official audit sources:** [Source 1](<https://ai-finance.org/technical-program/>) · [Source 2](<https://ai-finance.org/workshops-and-tutorials/>)
 
-**Coverage notes:** All 100 official technical-program papers were screened and 47 strict direct-investment records were verified; the workshop page exposes only event links and several external programs lack recoverable paper-level acceptance lists, so cross-track coverage remains pending.
+**Coverage notes:** All 100 official technical-program papers were screened. Workshop is omitted from tracks\_checked because the official workshops-and-tutorials page exposes event names and external links rather than accepted-paper titles, and the linked programs did not all provide a recoverable paper-level roster.
 
-47 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+44 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
 
 [← Back to the main index](../../README.md)
 
-## Main Conference (47)
+## Main Conference (44)
 
 ### [A Financial Market Simulation Environment for Trading Agents Using Deep Reinforcement Learning](<https://doi.org/10.1145/3677052.3698639>)
 
@@ -128,7 +128,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -154,7 +154,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -180,7 +180,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -236,7 +236,7 @@
 
 **Status / verified:** Published · 2026-07-11
 
-**Topics:** Synthetic Data · Market Simulation
+**Topics:** Synthetic Data
 
 **Assets / frequency:** Not specified
 
@@ -310,7 +310,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -336,7 +336,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -362,7 +362,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -414,7 +414,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -440,11 +440,11 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
-**Topics:** Market Microstructure · Execution
+**Topics:** Market Microstructure
 
 **Assets / frequency:** Not specified
 
@@ -466,11 +466,11 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
-**Topics:** Execution · Portfolio Optimization
+**Topics:** Portfolio Optimization
 
 **Assets / frequency:** Not specified
 
@@ -559,32 +559,6 @@
 **Why it matters:** Converts management commentary into a volatility-aware signal that can inform event trading and risk sizing.
 
 **Links:** [Official venue record](<https://doi.org/10.1145/3677052.3698689>) · [Paper](<https://doi.org/10.1145/3677052.3698689>)
-
----
-
-### [Enhancing Investment Analysis: Optimizing AI-Agent Collaboration in Financial Research](<https://doi.org/10.1145/3677052.3698645>)
-
-**Catalog ID:** 2024-acm-icaif-han-agent-investment-analysis
-
-**Authors:** Xuewen Han, Neng Wang, Shangkun Che, Hongyang Yang, Kunpeng Zhang, Sean Xin Xu
-
-**Venue / year:** ACM ICAIF · 2024
-
-**Track / presentation:** Main · Not Specified
-
-**Status / verified:** Published · 2026-07-11
-
-**Topics:** Financial Agents · Evaluation
-
-**Assets / frequency:** Not specified
-
-**Identifiers:** DOI 10.1145/3677052.3698645
-
-**Focus:** Optimizes how specialized AI agents collaborate across the stages of an investment-research workflow.
-
-**Why it matters:** Evaluates agent coordination on producing decision-ready financial analysis rather than isolated question answering.
-
-**Links:** [Official venue record](<https://doi.org/10.1145/3677052.3698645>) · [Paper](<https://doi.org/10.1145/3677052.3698645>)
 
 ---
 
@@ -700,7 +674,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -715,32 +689,6 @@
 **Why it matters:** Tests a multimodal research team whose forecasts feed concrete trading decisions and improve through post-trade reflection.
 
 **Links:** [Official venue record](<https://doi.org/10.1145/3677052.3698688>) · [Paper](<https://arxiv.org/abs/2411.08899>)
-
----
-
-### [GARCH-Informed Neural Networks for Volatility Prediction in Financial Markets](<https://arxiv.org/abs/2410.00288>)
-
-**Catalog ID:** 2024-acm-icaif-xu-garch-informed-volatility
-
-**Authors:** Zeda Xu, John Liechty, Sebastian Benthall, Nicholas Skar-Gislinge, Christopher McComb
-
-**Venue / year:** ACM ICAIF · 2024
-
-**Track / presentation:** Main · Not Specified
-
-**Status / verified:** Published · 2026-07-11
-
-**Topics:** Financial Forecasting · Risk Management
-
-**Assets / frequency:** Not specified
-
-**Identifiers:** arXiv 2410.00288 · DOI 10.1145/3677052.3698600
-
-**Focus:** Embeds GARCH dynamics into a recurrent neural network for out-of-sample market-volatility forecasting.
-
-**Why it matters:** Improves a core risk and derivative-pricing input while retaining an established volatility structure.
-
-**Links:** [Official venue record](<https://doi.org/10.1145/3677052.3698600>) · [Paper](<https://arxiv.org/abs/2410.00288>)
 
 ---
 
@@ -778,11 +726,11 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
-**Topics:** Alpha Modeling · Alternative Data
+**Topics:** Alpha Modeling
 
 **Assets / frequency:** Not specified
 
@@ -830,7 +778,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -856,7 +804,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -882,7 +830,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -908,7 +856,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -960,7 +908,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -986,7 +934,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -1012,7 +960,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -1064,7 +1012,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -1082,32 +1030,6 @@
 
 ---
 
-### [Rolling Forward: Enhancing LightGCN with Causal Graph Convolution for Credit Bond Recommendation](<https://arxiv.org/abs/2503.14213>)
-
-**Catalog ID:** 2024-acm-icaif-ghiye-credit-bond-recommendation
-
-**Authors:** Ashraf Ghiye, Baptiste Barreau, Laurent Carlier, Michalis Vazirgiannis
-
-**Venue / year:** ACM ICAIF · 2024
-
-**Track / presentation:** Main · Not Specified
-
-**Status / verified:** Published · 2026-07-11
-
-**Topics:** Alpha Modeling · Alternative Data
-
-**Assets / frequency:** Not specified
-
-**Identifiers:** arXiv 2503.14213 · DOI 10.1145/3677052.3698683
-
-**Focus:** Adds causal temporal convolutions to graph collaborative filtering for time-sensitive credit-bond recommendations.
-
-**Why it matters:** Keeps fixed-income recommendations responsive to rapid shifts in investor demand and bond popularity.
-
-**Links:** [Official venue record](<https://doi.org/10.1145/3677052.3698683>) · [Paper](<https://arxiv.org/abs/2503.14213>)
-
----
-
 ### [Simulating Asset Prices using Conditional Time-Series GAN](<https://doi.org/10.1145/3677052.3698638>)
 
 **Catalog ID:** 2024-acm-icaif-istiaque-simulating-asset-prices
@@ -1116,11 +1038,11 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
-**Topics:** Synthetic Data · Market Simulation
+**Topics:** Synthetic Data
 
 **Assets / frequency:** Not specified
 
@@ -1168,7 +1090,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 
@@ -1220,7 +1142,7 @@
 
 **Venue / year:** ACM ICAIF · 2024
 
-**Track / presentation:** Main · Not Specified
+**Track / presentation:** Main · Poster
 
 **Status / verified:** Published · 2026-07-11
 

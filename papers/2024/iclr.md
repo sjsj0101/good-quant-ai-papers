@@ -6,11 +6,11 @@
 
 **Checked on:** 2026-07-11
 
-**Official audit sources:** [Source 1](<https://proceedings.iclr.cc/paper_files/paper/2024>) · [Source 2](<https://openreview.net/group?id=ICLR.cc%2F2024%2FConference>) · [Source 3](<https://iclr.cc/Downloads/2024>) · [Source 4](<https://iclr.cc/virtual/2024/calendar>) · [Source 5](<https://iclr.cc/virtual/2024/events/workshop>) · [Source 6](<https://iclr.cc/virtual/2024/affinity_events>) · [Source 7](<https://blog.iclr.cc/2024/01/08/announcing-the-accepted-workshops-at-iclr-2024/>)
+**Official audit sources:** [Source 1](<https://proceedings.iclr.cc/paper_files/paper/2024>) · [Source 2](<https://openreview.net/group?id=ICLR.cc%2F2024%2FConference>) · [Source 3](<https://iclr.cc/Downloads/2024>) · [Source 4](<https://iclr.cc/virtual/2024/calendar>) · [Source 5](<https://iclr.cc/virtual/2024/events/workshop>) · [Source 6](<https://iclr.cc/virtual/2024/affinity_events>) · [Source 7](<https://blog.iclr.cc/2024/01/08/announcing-the-accepted-workshops-at-iclr-2024/>) · [Source 8](<https://openreview.net/forum?id=SPDNi5Ys8R>)
 
-**Coverage notes:** The official 2,341-event download list received a complete fixed-vocabulary title screen, and accepted main, workshop, and affinity candidates were adjudicated from official ICLR and OpenReview records; the accepted OpenReview venue is client-paginated, its API was inaccessible, and ICLR exposes no consolidated paper-level list for all 20 workshops or Tiny Papers and Blog Track affinity sessions, so abstract-level side-program coverage remains pending.
+**Coverage notes:** The official 2,341-event download list received a complete fixed-vocabulary title screen, and recovered candidates were adjudicated from official ICLR and OpenReview records. Workshop and affinity are omitted from tracks\_checked because their paper-level review was incomplete; the Downloads list omits the accepted Tiny Papers record SPDNi5Ys8R, while the affinity calendar exposes Tiny Papers and Blog Track sessions without a consolidated accepted-item index.
 
-4 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+3 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
 
 [← Back to the main index](../../README.md)
 
@@ -42,17 +42,17 @@
 
 ---
 
-## Workshops (2)
+## Workshops (1)
 
 ### [FinMem: A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design](<https://arxiv.org/abs/2311.13743>)
 
 **Catalog ID:** 2024-iclr-yu-finmem
 
-**Authors:** Yangyang Yu, Haohang Li, Zhi Chen, Yuechen Jiang, Yang Li, Denghui Zhang, Rong Liu, Jordan W. Suchow, Khaldoun Khashanah
+**Authors:** Haohang Li, Yangyang Yu, Zhi Chen, Yuechen Jiang, Yang Li, Denghui Zhang, Rong Liu, Jordan W. Suchow, Khaldoun Khashanah
 
 **Venue / year:** ICLR · 2024
 
-**Track / presentation:** Workshop · Not Specified
+**Track / presentation:** Workshop · Poster
 
 **Subvenue:** Workshop on Large Language Models for Agents
 
@@ -69,34 +69,6 @@
 **Why it matters:** Shows how memory horizon and agent character affect cumulative returns on real-world equity data.
 
 **Links:** [Official venue record](<https://iclr.cc/virtual/2024/22156>) · [Paper](<https://arxiv.org/abs/2311.13743>)
-
----
-
-### [Large Language Models can Strategically Deceive their Users when Put Under Pressure](<https://openreview.net/forum?id=HduMpot9sJ>)
-
-**Catalog ID:** 2024-iclr-scheurer-strategic-deception-trading
-
-**Authors:** Jérémy Scheurer, Mikita Balesni, Marius Hobbhahn
-
-**Venue / year:** ICLR · 2024
-
-**Track / presentation:** Workshop · Oral
-
-**Subvenue:** Workshop on Large Language Models for Agents
-
-**Status / verified:** Accepted · 2026-07-11
-
-**Topics:** Financial Agents · Evaluation
-
-**Assets / frequency:** Not specified
-
-**Identifiers:** OpenReview HduMpot9sJ
-
-**Focus:** Tests whether an autonomous language-model stock trader acts on insider information and conceals its reasoning under pressure.
-
-**Why it matters:** Exposes governance and audit risks that arise when financial agents can execute profitable but prohibited trades.
-
-**Links:** [Official venue record](<https://iclr.cc/virtual/2024/22214>) · [Paper](<https://openreview.net/forum?id=HduMpot9sJ>)
 
 ---
 

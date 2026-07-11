@@ -579,31 +579,28 @@
   status: accepted
   verified_on: 2026-07-11
 
-- id: 2024-www-huang-nft-prosperity
-  title: Unveiling the Paradox of NFT Prosperity
+- id: 2024-www-li-finreport
+  title: "FinReport: Explainable Stock Earnings Forecasting via News Factor Analyzing Model"
   authors:
-    - Jintao Huang
-    - Pengcheng Xia
-    - Jiefeng Li
-    - Kai Ma
-    - Gareth Tyson
-    - Xiapu Luo
-    - Lei Wu
-    - Yajin Zhou
-    - Wei Cai
-    - Haoyu Wang
+    - Xiangyu Li
+    - Xinjie Shen
+    - Yawen Zeng
+    - Xiaofen Xing
+    - Jin Xu
   venue: WWW
   year: 2024
   track: main
+  subvenue: Industry Track
   presentation: not-specified
-  official_url: https://doi.org/10.1145/3589334.3645566
-  paper_url: https://doi.org/10.1145/3589334.3645566
-  doi: 10.1145/3589334.3645566
+  official_url: https://doi.org/10.1145/3589335.3648330
+  paper_url: https://arxiv.org/abs/2403.02647
+  arxiv_id: "2403.02647"
+  doi: 10.1145/3589335.3648330
   topics:
-    - market-microstructure
+    - financial-forecasting
     - alternative-data
-  summary: Measures trading concentration, wash activity, and arbitrage across a large cross-market sample of NFT transactions.
-  why_it_matters: Quantifies manipulation and arbitrage conditions that materially affect price discovery and execution risk in digital-asset markets.
+  summary: Combines news-factor analysis with explainable stock forecasts and evaluates the resulting signals in a transaction-cost-aware trading backtest.
+  why_it_matters: Tests whether interpretable news-driven signals improve realized return, drawdown, and Sharpe outcomes rather than stopping at forecast accuracy.
   status: published
   verified_on: 2026-07-11
 
@@ -657,30 +654,6 @@
   status: published
   verified_on: 2026-07-11
 
-- id: 2024-www-niu-nft-wash-trading
-  title: Unveiling Wash Trading in Popular NFT Markets
-  authors:
-    - Yuanzheng Niu
-    - Xiaoqi Li
-    - Hongli Peng
-    - Wenkai Li
-  venue: WWW
-  year: 2024
-  track: main
-  presentation: poster
-  official_url: https://doi.org/10.1145/3589335.3651580
-  paper_url: https://arxiv.org/abs/2403.10361
-  arxiv_id: "2403.10361"
-  doi: 10.1145/3589335.3651580
-  topics:
-    - market-microstructure
-    - alternative-data
-  summary: Detects wash trading from transaction-network and behavioral patterns across four NFT marketplaces.
-  why_it_matters: Reveals how incentive design can distort observed liquidity and volume in investable digital-asset venues.
-  notes: WWW 2024 short-paper track in the companion proceedings.
-  status: published
-  verified_on: 2026-07-11
-
 - id: 2024-acm-icaif-wang-learned-beta-policies
   title: Market Making with Learned Beta Policies
   authors:
@@ -693,7 +666,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698623
   paper_url: https://doi.org/10.1145/3677052.3698623
   doi: 10.1145/3677052.3698623
@@ -715,7 +688,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698687
   paper_url: https://doi.org/10.1145/3677052.3698687
   doi: 10.1145/3677052.3698687
@@ -737,13 +710,12 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698643
   paper_url: https://doi.org/10.1145/3677052.3698643
   doi: 10.1145/3677052.3698643
   topics:
     - market-microstructure
-    - execution
   summary: Detects coordinated patterns in how market participants consume available liquidity.
   why_it_matters: Helps distinguish collective order-flow behavior that can change execution costs and short-horizon liquidity risk.
   status: published
@@ -758,7 +730,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698664
   paper_url: https://doi.org/10.1145/3677052.3698664
   doi: 10.1145/3677052.3698664
@@ -846,7 +818,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698688
   paper_url: https://arxiv.org/abs/2411.08899
   arxiv_id: "2411.08899"
@@ -970,30 +942,6 @@
   status: published
   verified_on: 2026-07-11
 
-- id: 2024-acm-icaif-han-agent-investment-analysis
-  title: "Enhancing Investment Analysis: Optimizing AI-Agent Collaboration in Financial Research"
-  authors:
-    - Xuewen Han
-    - Neng Wang
-    - Shangkun Che
-    - Hongyang Yang
-    - Kunpeng Zhang
-    - Sean Xin Xu
-  venue: ACM ICAIF
-  year: 2024
-  track: main
-  presentation: not-specified
-  official_url: https://doi.org/10.1145/3677052.3698645
-  paper_url: https://doi.org/10.1145/3677052.3698645
-  doi: 10.1145/3677052.3698645
-  topics:
-    - financial-agents
-    - evaluation
-  summary: Optimizes how specialized AI agents collaborate across the stages of an investment-research workflow.
-  why_it_matters: Evaluates agent coordination on producing decision-ready financial analysis rather than isolated question answering.
-  status: published
-  verified_on: 2026-07-11
-
 - id: 2024-acm-icaif-hoshisashi-implied-volatility-surface
   title: "Whack-a-mole Online Learning: Physics-Informed Neural Network for Intraday Implied Volatility Surface"
   authors:
@@ -1003,7 +951,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698601
   paper_url: https://doi.org/10.1145/3677052.3698601
   doi: 10.1145/3677052.3698601
@@ -1026,7 +974,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698662
   paper_url: https://doi.org/10.1145/3677052.3698662
   doi: 10.1145/3677052.3698662
@@ -1048,7 +996,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698691
   paper_url: https://doi.org/10.1145/3677052.3698691
   doi: 10.1145/3677052.3698691
@@ -1088,7 +1036,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698672
   paper_url: https://doi.org/10.1145/3677052.3698672
   doi: 10.1145/3677052.3698672
@@ -1133,7 +1081,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698642
   paper_url: https://doi.org/10.1145/3677052.3698642
   doi: 10.1145/3677052.3698642
@@ -1177,7 +1125,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698656
   paper_url: https://doi.org/10.1145/3677052.3698656
   doi: 10.1145/3677052.3698656
@@ -1240,7 +1188,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698620
   paper_url: https://doi.org/10.1145/3677052.3698620
   doi: 10.1145/3677052.3698620
@@ -1284,7 +1232,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698694
   paper_url: https://doi.org/10.1145/3677052.3698694
   doi: 10.1145/3677052.3698694
@@ -1309,7 +1257,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698613
   paper_url: https://doi.org/10.1145/3677052.3698613
   doi: 10.1145/3677052.3698613
@@ -1356,13 +1304,12 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698650
   paper_url: https://doi.org/10.1145/3677052.3698650
   doi: 10.1145/3677052.3698650
   topics:
     - alpha-modeling
-    - alternative-data
   summary: Learns comparable-value estimates for sparsely traded municipal bonds from cross-sectional bond attributes.
   why_it_matters: Helps fixed-income investors identify relative mispricing where transaction-based price discovery is thin.
   status: published
@@ -1377,7 +1324,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698646
   paper_url: https://doi.org/10.1145/3677052.3698646
   doi: 10.1145/3677052.3698646
@@ -1443,7 +1390,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698665
   paper_url: https://doi.org/10.1145/3677052.3698665
   doi: 10.1145/3677052.3698665
@@ -1469,7 +1416,6 @@
   doi: 10.1145/3677052.3698661
   topics:
     - synthetic-data
-    - market-simulation
   summary: Tests whether generative adversarial networks reproduce the statistical regularities of financial time series.
   why_it_matters: Establishes whether synthetic paths preserve the market features needed for credible strategy and risk evaluation.
   status: published
@@ -1506,13 +1452,12 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698638
   paper_url: https://doi.org/10.1145/3677052.3698638
   doi: 10.1145/3677052.3698638
   topics:
     - synthetic-data
-    - market-simulation
   summary: Generates conditional asset-price paths with a time-series adversarial model.
   why_it_matters: Expands the set of return scenarios available for portfolio stress tests and strategy development.
   status: published
@@ -1548,7 +1493,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698624
   paper_url: https://doi.org/10.1145/3677052.3698624
   doi: 10.1145/3677052.3698624
@@ -1569,7 +1514,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698695
   paper_url: https://doi.org/10.1145/3677052.3698695
   doi: 10.1145/3677052.3698695
@@ -1590,39 +1535,14 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698611
   paper_url: https://doi.org/10.1145/3677052.3698611
   doi: 10.1145/3677052.3698611
   topics:
-    - execution
     - portfolio-optimization
   summary: Dynamically prices securities loans to optimize revenue across an agent lender's inventory portfolio.
   why_it_matters: Coordinates lending fees across positions rather than maximizing each loan without regard to portfolio utilization.
-  status: published
-  verified_on: 2026-07-11
-
-- id: 2024-acm-icaif-xu-garch-informed-volatility
-  title: GARCH-Informed Neural Networks for Volatility Prediction in Financial Markets
-  authors:
-    - Zeda Xu
-    - John Liechty
-    - Sebastian Benthall
-    - Nicholas Skar-Gislinge
-    - Christopher McComb
-  venue: ACM ICAIF
-  year: 2024
-  track: main
-  presentation: not-specified
-  official_url: https://doi.org/10.1145/3677052.3698600
-  paper_url: https://arxiv.org/abs/2410.00288
-  arxiv_id: "2410.00288"
-  doi: 10.1145/3677052.3698600
-  topics:
-    - financial-forecasting
-    - risk-management
-  summary: Embeds GARCH dynamics into a recurrent neural network for out-of-sample market-volatility forecasting.
-  why_it_matters: Improves a core risk and derivative-pricing input while retaining an established volatility structure.
   status: published
   verified_on: 2026-07-11
 
@@ -1645,29 +1565,6 @@
     - execution
   summary: Recovers market-making behavior through adversarial inverse reinforcement learning.
   why_it_matters: Learns quoting objectives from observed behavior when the reward tradeoff among spread, inventory, and risk is unknown.
-  status: published
-  verified_on: 2026-07-11
-
-- id: 2024-acm-icaif-ghiye-credit-bond-recommendation
-  title: "Rolling Forward: Enhancing LightGCN with Causal Graph Convolution for Credit Bond Recommendation"
-  authors:
-    - Ashraf Ghiye
-    - Baptiste Barreau
-    - Laurent Carlier
-    - Michalis Vazirgiannis
-  venue: ACM ICAIF
-  year: 2024
-  track: main
-  presentation: not-specified
-  official_url: https://doi.org/10.1145/3677052.3698683
-  paper_url: https://arxiv.org/abs/2503.14213
-  arxiv_id: "2503.14213"
-  doi: 10.1145/3677052.3698683
-  topics:
-    - alpha-modeling
-    - alternative-data
-  summary: Adds causal temporal convolutions to graph collaborative filtering for time-sensitive credit-bond recommendations.
-  why_it_matters: Keeps fixed-income recommendations responsive to rapid shifts in investor demand and bond popularity.
   status: published
   verified_on: 2026-07-11
 
@@ -1704,7 +1601,7 @@
   venue: ACM ICAIF
   year: 2024
   track: main
-  presentation: not-specified
+  presentation: poster
   official_url: https://doi.org/10.1145/3677052.3698679
   paper_url: https://doi.org/10.1145/3677052.3698679
   doi: 10.1145/3677052.3698679
@@ -2489,33 +2386,11 @@
   status: accepted
   verified_on: 2026-07-11
 
-- id: 2024-iclr-scheurer-strategic-deception-trading
-  title: Large Language Models can Strategically Deceive their Users when Put Under Pressure
-  authors:
-    - Jérémy Scheurer
-    - Mikita Balesni
-    - Marius Hobbhahn
-  venue: ICLR
-  year: 2024
-  track: workshop
-  subvenue: Workshop on Large Language Models for Agents
-  presentation: oral
-  official_url: https://iclr.cc/virtual/2024/22214
-  paper_url: https://openreview.net/forum?id=HduMpot9sJ
-  openreview_id: HduMpot9sJ
-  topics:
-    - financial-agents
-    - evaluation
-  summary: Tests whether an autonomous language-model stock trader acts on insider information and conceals its reasoning under pressure.
-  why_it_matters: Exposes governance and audit risks that arise when financial agents can execute profitable but prohibited trades.
-  status: accepted
-  verified_on: 2026-07-11
-
 - id: 2024-iclr-yu-finmem
   title: "FinMem: A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design"
   authors:
-    - Yangyang Yu
     - Haohang Li
+    - Yangyang Yu
     - Zhi Chen
     - Yuechen Jiang
     - Yang Li
@@ -2527,7 +2402,7 @@
   year: 2024
   track: workshop
   subvenue: Workshop on Large Language Models for Agents
-  presentation: not-specified
+  presentation: poster
   official_url: https://iclr.cc/virtual/2024/22156
   paper_url: https://arxiv.org/abs/2311.13743
   arxiv_id: "2311.13743"

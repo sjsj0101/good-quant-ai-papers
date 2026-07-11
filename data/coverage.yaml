@@ -224,16 +224,16 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
-    - workshop
     - position
-    - affinity
   official_sources:
     - https://proceedings.mlr.press/v235/
     - https://proceedings.mlr.press/v235/assets/bib/bibliography.bib
     - https://icml.cc/virtual/2024/papers.html
     - https://icml.cc/virtual/2024/events/workshop
     - https://icml.cc/virtual/2024/affinity_events
-  notes: All 2,610 PMLR records and all 75 position papers were screened, and the workshop and affinity rosters were reviewed; the conference exposes no consolidated paper-level list for those side programs, WiML exposed no contributed-paper list, and the DisAbility/Queer and joint-poster acceptance rosters were not recoverable, so cross-track coverage remains pending.
+    - https://icml.cc/virtual/2024/affinity-event/29945
+    - https://icml.cc/virtual/2024/affinity-event/29952
+  notes: All 2,610 PMLR records and all 75 position papers were screened. Workshop and affinity are omitted from tracks_checked because their paper-level review was incomplete; the official workshop roster does not enumerate accepted papers, the WiML event page (29945) exposes invited talks and panels but no contributed-paper roster, and the DisAbility and Queer event page (29952) links a Joint Poster Session without exposing its poster titles.
 
 - venue: NeurIPS
   year: 2024
@@ -241,14 +241,13 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
-    - workshop
-    - affinity
   official_sources:
     - https://proceedings.neurips.cc/paper/2024
     - https://neurips.cc/Conferences/2024/DatasetsBenchmarks/AcceptedPapers
     - https://neurips.cc/virtual/2024/events/workshop
     - https://neurips.cc/virtual/2024/affinity_events
-  notes: All 4,493 displayed proceedings titles were screened and official workshop and affinity rosters were reviewed; NeurIPS provides no consolidated paper-level list for 56 workshops or 12 affinity events, and several affinity events exposed no recoverable accepted-paper roster, so side-program coverage remains pending.
+    - https://neurips.cc/virtual/2024/affinity-event/105023
+  notes: All 4,493 displayed proceedings titles, including Datasets and Benchmarks, were screened. Workshop and affinity are omitted from tracks_checked because their paper-level review was incomplete; the official roster pages expose event entries rather than an aggregate accepted-paper list, and the Neurodiversity event page (105023) exposes four invited talks but no contributed-paper roster.
 
 - venue: ICLR
   year: 2024
@@ -256,8 +255,6 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
-    - workshop
-    - affinity
   official_sources:
     - https://proceedings.iclr.cc/paper_files/paper/2024
     - https://openreview.net/group?id=ICLR.cc%2F2024%2FConference
@@ -266,7 +263,8 @@
     - https://iclr.cc/virtual/2024/events/workshop
     - https://iclr.cc/virtual/2024/affinity_events
     - https://blog.iclr.cc/2024/01/08/announcing-the-accepted-workshops-at-iclr-2024/
-  notes: The official 2,341-event download list received a complete fixed-vocabulary title screen, and accepted main, workshop, and affinity candidates were adjudicated from official ICLR and OpenReview records; the accepted OpenReview venue is client-paginated, its API was inaccessible, and ICLR exposes no consolidated paper-level list for all 20 workshops or Tiny Papers and Blog Track affinity sessions, so abstract-level side-program coverage remains pending.
+    - https://openreview.net/forum?id=SPDNi5Ys8R
+  notes: The official 2,341-event download list received a complete fixed-vocabulary title screen, and recovered candidates were adjudicated from official ICLR and OpenReview records. Workshop and affinity are omitted from tracks_checked because their paper-level review was incomplete; the Downloads list omits the accepted Tiny Papers record SPDNi5Ys8R, while the affinity calendar exposes Tiny Papers and Blog Track sessions without a consolidated accepted-item index.
 
 - venue: KDD
   year: 2024
@@ -274,14 +272,13 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
-    - workshop
   official_sources:
     - https://kdd.org/kdd2024/research-track-papers/
     - https://kdd.org/kdd2024/applied-data-science-track-papers/
     - https://kdd.org/kdd2024/workshops/
     - https://sites.google.com/view/kdd-mlf-2024/schedule
     - https://kdd.org/kdd2024/special-days/
-  notes: The full Research and Applied Data Science schedules were title-screened and six workshops, including Machine Learning in Finance, were reviewed; the SDBD accepted-papers page was unavailable and KDD provides no consolidated paper-level list for the remaining workshops or Finance Day, so cross-track coverage remains pending.
+  notes: The full Research and Applied Data Science schedules were title-screened. Workshop is omitted from tracks_checked because only six programs were reviewed; the official workshop roster links per-event sites rather than paper records, and its SDBD accepted-papers target was unavailable during the audit; the special-days page likewise exposes a Finance Day schedule but no paper-level acceptance roster.
 
 - venue: AAAI
   year: 2024
@@ -289,13 +286,12 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
-    - workshop
   official_sources:
     - https://aaai.org/aaai-24-conference/program-overview/
     - https://ojs.aaai.org/index.php/AAAI/issue/archive
     - https://aaai.org/aaai-24-conference/aaai-24-workshop-program/
     - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/
-  notes: Official proceedings records for the verified finance candidates and the workshop roster were reviewed; AAAI exposes the technical program across separate issue pages and no consolidated paper-level index for its 35 workshops, Bridge, student, or demonstration programs, so an exhaustive cross-track fixed-term audit remains pending.
+  notes: Official proceedings records for the fixed-term main-track candidates were reviewed. Workshop is omitted from tracks_checked; the official 35-workshop page embeds calls, schedules, and submission details, but its finance workshop W5 section does not expose accepted-paper titles or link an accepted-paper roster; Bridge, student, and demonstration programs also remain outside the completed paper-level review.
 
 - venue: IJCAI
   year: 2024
@@ -305,7 +301,10 @@
     - main
   official_sources:
     - https://www.ijcai.org/proceedings/2024/
-  notes: The complete official main proceedings index was title-screened and all included records were abstract-verified; the proceedings do not cover workshop or affinity papers and no consolidated official paper-level roster for those programs was recoverable, so cross-track coverage remains pending.
+    - https://ijcai24.org/workshops/
+    - https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-agentscen/home
+    - https://sites.google.com/view/fin-recsys2024/
+  notes: The complete official main proceedings index was title-screened and all included records were abstract-verified. The official workshop roster enumerates 35 external programs, including FinNLP and AgentScen and Fin-RecSys, but contains no accepted-paper titles; workshop is therefore omitted from tracks_checked because paper-level review of every linked program could not be completed from the official conference source.
 
 - venue: WWW
   year: 2024
@@ -313,13 +312,19 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
-    - workshop
   official_sources:
     - https://www2024.thewebconf.org/accepted/research-tracks/
+    - https://www2024.thewebconf.org/accepted/industry/
+    - https://www2024.thewebconf.org/accepted/web4good/
     - https://www2024.thewebconf.org/accepted/short-papers/
+    - https://www2024.thewebconf.org/accepted/demo/
+    - https://www2024.thewebconf.org/accepted/resource/
+    - https://www2024.thewebconf.org/accepted/health-day/
+    - https://www2024.thewebconf.org/accepted/history-web/
+    - https://www2024.thewebconf.org/accepted/phd-symposium/
     - https://www2024.thewebconf.org/program/overview
     - https://www2024.thewebconf.org/program/workshops/
-  notes: The complete research and short-paper lists were screened and the 16-workshop roster was reviewed; several workshop sites exposed no complete paper-level acceptance list and the conference provides no consolidated workshop-paper roster, so cross-track coverage remains pending.
+  notes: Every official accepted-track page linked by WWW 2024 was screened at paper level, covering Research, Industry, Web4Good, Short Papers, Demo, Resource, Health Day, History of the Web, and PhD Symposium. Workshop is omitted from tracks_checked because the official workshop page exposes only a 16-event roster and delegates accepted-paper programs to external sites without a conference-level paper index.
 
 - venue: WSDM
   year: 2024
@@ -327,11 +332,10 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
-    - workshop
   official_sources:
     - https://www.wsdm-conference.org/2024/accepted-papers/
     - https://www.wsdm-conference.org/2024/workshops/
-  notes: The complete main accepted-paper list produced no strict direct-investment match and the workshop roster was reviewed; workshop papers live on external sites and WSDM exposes no consolidated official paper-level acceptance list, so side-program coverage remains pending.
+  notes: The complete main accepted-paper list produced no strict direct-investment match. Workshop is omitted from tracks_checked; the official workshop page gives descriptions and external event links, including the LLM-for-Individuals and ISIR-eCom sites, but contains no accepted-paper titles, so the paper-level workshop audit remains incomplete.
 
 - venue: SIGIR
   year: 2024
@@ -339,12 +343,12 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
-    - workshop
   official_sources:
     - https://sigir-2024.github.io/program_papers.html
     - https://sigir-2024.github.io/proceedings.html
     - https://sigir-2024.github.io/attend_workshops.html
-  notes: The official main-paper program was screened and produced no strict direct-investment match; the 13 workshop programs are hosted externally and SIGIR exposes no consolidated official paper-level acceptance list, so side-program coverage remains pending.
+    - https://sigir-2024.github.io/program.html
+  notes: The official main-paper program was screened and produced no strict direct-investment match. Workshop is omitted from tracks_checked; the official workshop page names and links 13 external programs without accepted-paper titles, while the at-a-glance program exposes only the workshop and workshop-poster time blocks, not the papers assigned to them.
 
 - venue: AISTATS
   year: 2024
@@ -366,8 +370,7 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
-    - workshop
   official_sources:
     - https://ai-finance.org/technical-program/
     - https://ai-finance.org/workshops-and-tutorials/
-  notes: All 100 official technical-program papers were screened and 47 strict direct-investment records were verified; the workshop page exposes only event links and several external programs lack recoverable paper-level acceptance lists, so cross-track coverage remains pending.
+  notes: All 100 official technical-program papers were screened. Workshop is omitted from tracks_checked because the official workshops-and-tutorials page exposes event names and external links rather than accepted-paper titles, and the linked programs did not all provide a recoverable paper-level roster.
