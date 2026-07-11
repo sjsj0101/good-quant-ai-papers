@@ -27,21 +27,20 @@ REQUIRED_FIELDS = (
     "verified_on",
 )
 
-VENUES = frozenset(
-    {
-        "ICML",
-        "NeurIPS",
-        "ICLR",
-        "KDD",
-        "AAAI",
-        "IJCAI",
-        "WWW",
-        "WSDM",
-        "SIGIR",
-        "AISTATS",
-        "ACM ICAIF",
-    }
+VENUE_ORDER = (
+    "ICML",
+    "NeurIPS",
+    "ICLR",
+    "KDD",
+    "AAAI",
+    "IJCAI",
+    "WWW",
+    "WSDM",
+    "SIGIR",
+    "AISTATS",
+    "ACM ICAIF",
 )
+VENUES = frozenset(VENUE_ORDER)
 TRACKS = frozenset({"main", "workshop", "position", "affinity"})
 PRESENTATIONS = frozenset({"oral", "spotlight", "poster", "not-specified"})
 STATUSES = frozenset({"accepted", "published"})
@@ -80,7 +79,7 @@ DATA_FREQUENCIES = frozenset(
 )
 
 OPTIONAL_STRING_FIELDS = frozenset(
-    {"arxiv_id", "openreview_id", "doi", "notes"}
+    {"arxiv_id", "openreview_id", "doi", "notes", "subvenue"}
 )
 URL_FIELDS = ("official_url", "paper_url", "code_url", "project_url")
 OPTIONAL_LIST_FIELDS = frozenset({"tasks", "methods", "datasets"})
@@ -144,6 +143,14 @@ _CatalogLoader.yaml_implicit_resolvers = {
 }
 
 
+def load_yaml_list(path: Path, root_name: str) -> list[dict]:
+    with path.open("r", encoding="utf-8") as stream:
+        records = yaml.load(stream, Loader=_CatalogLoader)
+    if not isinstance(records, list):
+        raise ValueError(f"{root_name} root must be a YAML list")
+    return records
+
+
 def load_catalog(path: Path) -> list[dict]:
     """Load records from a YAML catalog at *path*.
 
@@ -151,11 +158,7 @@ def load_catalog(path: Path) -> list[dict]:
     the public JSON Schema rather than PyYAML's implicit ``date`` conversion.
     """
 
-    with path.open("r", encoding="utf-8") as stream:
-        records = yaml.load(stream, Loader=_CatalogLoader)
-    if not isinstance(records, list):
-        raise ValueError("catalog root must be a YAML list")
-    return records
+    return load_yaml_list(path, "catalog")
 
 
 def _record_label(record: object, index: int) -> str:

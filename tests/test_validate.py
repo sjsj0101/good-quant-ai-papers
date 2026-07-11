@@ -39,6 +39,27 @@ class CatalogValidationTests(unittest.TestCase):
     def test_valid_record_has_no_errors(self) -> None:
         self.assertEqual(validate_catalog([copy.deepcopy(VALID)]), [])
 
+    def test_non_empty_subvenue_is_allowed(self) -> None:
+        record = copy.deepcopy(VALID)
+        record["track"] = "workshop"
+        record["subvenue"] = "Workshop on Financial AI"
+        self.assertEqual(validate_catalog([record]), [])
+
+    def test_empty_subvenue_is_rejected(self) -> None:
+        record = copy.deepcopy(VALID)
+        record["subvenue"] = "  "
+        errors = validate_catalog([record])
+        self.assertTrue(
+            any(error.startswith(f"{VALID['id']}: subvenue:") for error in errors),
+            errors,
+        )
+
+    def test_schema_declares_optional_subvenue(self) -> None:
+        schema_path = Path(__file__).resolve().parents[1] / "schema" / "paper.schema.json"
+        schema = json.loads(schema_path.read_text(encoding="utf-8"))
+        self.assertEqual(schema["properties"]["subvenue"]["type"], "string")
+        self.assertNotIn("subvenue", schema["required"])
+
     def test_missing_required_field_identifies_record_and_field(self) -> None:
         record = copy.deepcopy(VALID)
         del record["summary"]

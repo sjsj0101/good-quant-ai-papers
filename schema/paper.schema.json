@@ -69,6 +69,11 @@
     "track": {
       "enum": ["main", "workshop", "position", "affinity"]
     },
+    "subvenue": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
     "presentation": {
       "enum": ["oral", "spotlight", "poster", "not-specified"]
     },
