@@ -301,17 +301,56 @@
     - main
   official_sources:
     - https://www.ijcai.org/proceedings/2024/
-    - https://ijcai24.org/workshops/
-    - https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-agentscen/home
-    - https://sites.google.com/view/fin-recsys2024/
-  notes: The complete official main proceedings index was title-screened and all included records were abstract-verified. The official workshop roster enumerates 35 external programs, including FinNLP and AgentScen and Fin-RecSys, but contains no accepted-paper titles; workshop is therefore omitted from tracks_checked because paper-level review of every linked program could not be completed from the official conference source.
+    - https://ijcai24.org/workshops/index.html
+    - https://trustaiijcai.github.io/trustai-ijcai24/program/
+    - https://trustaiijcai.github.io/trustai-ijcai24/papers/
+    - https://federated-learning.org/fl@fm-ijcai-2024/
+    - https://keyplay.github.io/ijcai2024_workshop/#planed-schedule
+    - https://lkm2024.openkg.org/#accepted-papers
+    - https://ceur-ws.org/Vol-3818/
+    - https://sites.google.com/view/aiforci-ijcai24/home/accepted-papers
+    - https://iarml2024-ijcai.loria.fr/accepted-papers-2/
+    - https://cv-ac.github.io/MiGA2/#workshop-program
+    - https://sites.google.com/view/xai2024/proceedings
+    - https://sites.google.com/view/tai4h2024/accepted-papers
+    - https://ceur-ws.org/Vol-3856/
+    - https://sites.google.com/view/ijcai-2024-dso-workshop/program
+    - https://analogy-angle.github.io/2024/#accepted-papers
+    - https://hbai2024.github.io/#Program
+    - https://aigovernance.github.io/ijcai2024/#accepted-papers
+    - https://ai4dtcp.github.io/#program
+    - https://sites.google.com/view/democrai2024/program
+    - https://stai.jeju.ai/
+    - https://glow-ijcai.github.io/#accepted-papers
+    - https://adfmw.github.io/ijcai24/index.html#accepted-papers
+    - https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-agentscen/accepted-papers
+    - https://aclanthology.org/volumes/2024.finnlp-2/
+    - https://repss-w.github.io/Event%20schedule.html
+    - https://sites.google.com/view/automatesworkshop/home#agenda
+    - https://sites.google.com/view/fin-recsys2024/program
+    - https://www.lirmm.fr/strl2024/#Program
+    - https://ceur-ws.org/Vol-3827/
+    - https://sites.google.com/view/lnsai2024/program
+    - https://wasn.csie.ncu.edu.tw/workshop/IT4PSS2024.html
+    - https://sites.google.com/view/fairdivisionworkshop2024/schedule/accepted-papers
+    - https://ai4research.github.io/#schedule
+    - https://sites.google.com/view/arial2024/accepted-papersprogram
+    - https://sites.google.com/view/ijcai24-tfm/accepted-papers
+    - https://ai4ts.github.io/ijcai2024#program
+    - https://smart.sist.shanghaitech.edu.cn/MechanismNet/index.html#acceptList
+    - https://botzone.org.cn/static/gaamalworkshop2024.html#schedule
+    - https://ijcai-aiaa-2024.org/
+    - https://sites.google.com/view/qai2024ijcaiworkshop/program
+  notes: >-
+    The complete main proceedings and all 35 official workshop-roster events were resolved by a complete paper screen or an exact artifact blocker; nine strict workshop papers were added. Workshop remains omitted from tracks_checked because six paper rosters are unavailable: (1) Democracy and AI, https://sites.google.com/view/democrai2024/program, is reachable but its embedded schedule exposes no readable contributed-paper titles or authors; (2) STAI, https://stai.jeju.ai/, yielded a host timeout/TLS failure and no retrievable 2024 program or accepted-paper list; (3) RePSS, https://repss-w.github.io/Event%20schedule.html, could not be fetched in the final audit, leaving its paper titles unscreenable; (4) LNSAI, https://sites.google.com/view/lnsai2024/program, returned an internal fetch error instead of a readable complete roster; (5) IT4PSS, https://wasn.csie.ncu.edu.tw/workshop/IT4PSS2024.html, returns HTTP 404 and no longer exposes its accepted-paper/program artifact; and (6) AIAA, https://ijcai-aiaa-2024.org/, redirects to unrelated gambling content rather than its 2024 program.
 
 - venue: WWW
   year: 2024
-  status: pending
+  status: complete
   checked_on: 2026-07-11
   tracks_checked:
     - main
+    - workshop
   official_sources:
     - https://www2024.thewebconf.org/accepted/research-tracks/
     - https://www2024.thewebconf.org/accepted/industry/
@@ -324,7 +363,13 @@
     - https://www2024.thewebconf.org/accepted/phd-symposium/
     - https://www2024.thewebconf.org/program/overview
     - https://www2024.thewebconf.org/program/workshops/
-  notes: Every official accepted-track page linked by WWW 2024 was screened at paper level, covering Research, Industry, Web4Good, Short Papers, Demo, Resource, Health Day, History of the Web, and PhD Symposium. Workshop is omitted from tracks_checked because the official workshop page exposes only a 16-event roster and delegates accepted-paper programs to external sites without a conference-level paper index.
+    - https://federated-learning.org/fl@fm-www-2024/
+    - https://sites.google.com/view/socialnlp2024/
+    - https://advanced-recommender-systems.github.io/llm4graph/
+    - https://sites.google.com/view/mm4sg
+    - https://caaw.io/2024/
+  notes: >-
+    Every official accepted-track page was screened at paper level, covering Research, Industry, Web4Good, Short Papers, Demo, Resource, Health Day, History of the Web, and PhD Symposium. All 16 organizer-linked workshop programs were also audited, including the exact FL@FM, SocialNLP, LLM4Graph, MM4SG, and Cryptoasset Analytics pages above; Measuring Arbitrage Losses and Profitability of AMM Liquidity was added from CAAW, and no material program gap remains.
 
 - venue: WSDM
   year: 2024
@@ -335,7 +380,13 @@
   official_sources:
     - https://www.wsdm-conference.org/2024/accepted-papers/
     - https://www.wsdm-conference.org/2024/workshops/
-  notes: The complete main accepted-paper list produced no strict direct-investment match. Workshop is omitted from tracks_checked; the official workshop page gives descriptions and external event links, including the LLM-for-Individuals and ISIR-eCom sites, but contains no accepted-paper titles, so the paper-level workshop audit remains incomplete.
+    - https://sites.google.com/view/integrity-workshop-2024
+    - https://llm-for-individuals-groups-and-society.github.io/2024
+    - https://sites.google.com/view/psyias/program
+    - https://isir-ecom.github.io/2024/index.html
+    - https://mlog-workshop.github.io/
+    - https://sites.google.com/view/rlc24-wsdm-workshop/programschedule
+  notes: The complete main list and five of six workshop paper programs were screened with no strict direct-investment match. Workshop remains omitted from tracks_checked because Representation Learning and Clustering (RLC'24), https://sites.google.com/view/rlc24-wsdm-workshop/programschedule, exposes its final paper roster only as an embedded workbook named Final Tentative WSDM RLC'24 workshop Programvf.xlsx; the page yields no paper rows and the embedded object resolves only to a Drive icon.
 
 - venue: SIGIR
   year: 2024
@@ -348,7 +399,22 @@
     - https://sigir-2024.github.io/proceedings.html
     - https://sigir-2024.github.io/attend_workshops.html
     - https://sigir-2024.github.io/program.html
-  notes: The official main-paper program was screened and produced no strict direct-investment match. Workshop is omitted from tracks_checked; the official workshop page names and links 13 external programs without accepted-paper titles, while the at-a-glance program exposes only the workshop and workshop-poster time blocks, not the papers assigned to them.
+    - https://paris-workshop.github.io/www/sigir2024/schedule.html
+    - https://paris-workshop.github.io/www/sigir2024/submissions.html
+    - https://llm4eval.github.io/SIGIR2024/papers/
+    - https://coda.io/@sigir/gen-ir-24/accepted-papers-43
+    - https://coda.io/@rstless-group/ir-rag-sigir24#_luO9sMZD
+    - https://biasinrecsys.github.io/sigir2024#program
+    - https://reneuir.org/2024/program.html
+    - https://agentirworkshop.github.io/schedule
+    - https://sigir-ecom.github.io/ecom2024/accepted-papers.html
+    - http://ifs.tuwien.ac.at/patentsemtech/2024/programme.html
+    - https://sim4ia.org/sigir2024/#accepted-presentations
+    - https://llm-for-individuals-groups-and-society.github.io/2024_2#accepted-papers
+    - https://sites.google.com/view/ir-for-climate-impact/2024/manila24-workshop-page
+    - https://mrr-workshop.github.io/2024/#accepted_papers
+  notes: >-
+    The official main-paper program and all 13 official workshop events were audited, producing no strict direct-investment paper. Workshop remains omitted from tracks_checked because the PaRiS contributed-paper roster is unavailable at https://paris-workshop.github.io/www/sigir2024/schedule.html: its only contributed-paper row is the placeholder Paper Presentations / Authors, the official submissions page at https://paris-workshop.github.io/www/sigir2024/submissions.html contains an empty commented-out Accepted Submissions block, and the organizer exposes no separate accepted-paper page. The other 12 workshop programs were completely screened.
 
 - venue: AISTATS
   year: 2024
@@ -373,4 +439,19 @@
   official_sources:
     - https://ai-finance.org/technical-program/
     - https://ai-finance.org/workshops-and-tutorials/
-  notes: All 100 official technical-program papers were screened. Workshop is omitted from tracks_checked because the official workshops-and-tutorials page exposes event names and external links rather than accepted-paper titles, and the linked programs did not all provide a recoverable paper-level roster.
+    - https://ai-finance.org/wp-content/uploads/2024/11/workshop-4.pdf
+    - https://sites.google.com/view/aia2024/schedule
+    - https://sites.google.com/view/icaif-synthetic/program
+    - https://sites.google.com/nyu.edu/aisrf2024/accepted-papers
+    - https://ai4f.org/
+    - https://sites.google.com/view/sfmes/home/accepted-papers
+    - https://sites.google.com/view/2024-workshop-explainable-ai/accepted-papers
+    - https://sites.google.com/view/ml-for-investor-recsys/program
+    - https://sites.google.com/view/iwmffm2024/accepted-papers
+    - https://from-prototype-to-production.github.io/papers.html
+    - https://sites.google.com/view/fm4ts/accepted-papers
+    - https://sites.google.com/view/icaif-women-ai-finance-2024/home
+    - https://largeagentcollider.github.io/icaif_tutorial/
+    - https://sites.google.com/view/raasta2024icaif
+    - https://sites.google.com/view/translation-in-finance
+  notes: All 100 main papers and every accessible linked workshop, reception, and tutorial program were screened; five strict workshop papers were added, while non-paper tutorials and the Women in AI reception were closed from their schedules. Workshop remains omitted from tracks_checked because AI in Africa, https://sites.google.com/view/aia2024/schedule, names only an oral-presentations slot without paper titles; Synthetic Data and GenAI, https://sites.google.com/view/icaif-synthetic/program, labels Towards Neural Jump Diffusions paper to be posted and exposes no paper or abstract; LLMs and Generative AI for Finance, https://ai4f.org/, now serves only its 2025 edition and preserves no 2024 accepted program; and Machine Learning for Financial Wellness, https://sites.google.com/view/ml-for-investor-recsys/program, still displays its November 27, 2023 program rather than the 2024 accepted papers.

@@ -6,7 +6,7 @@
 
 Curated top-conference research for quantitative finance and asset management.
 
-[![Papers-104](https://img.shields.io/badge/Papers-104-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--11](https://img.shields.io/badge/Last_verified-2026--07--11-5F3DC4?style=flat-square)](data/papers.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
+[![Papers-119](https://img.shields.io/badge/Papers-119-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--11](https://img.shields.io/badge/Last_verified-2026--07--11-5F3DC4?style=flat-square)](data/papers.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
 
 </div>
 
@@ -29,12 +29,12 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | ICLR | 0 papers · Pending | 0 papers · Pending | [3 papers](papers/2024/iclr.md) · Pending |
 | KDD | 0 papers · Pending | 0 papers · Pending | [6 papers](papers/2024/kdd.md) · Pending |
 | AAAI | 0 papers · Pending | 0 papers · Pending | [5 papers](papers/2024/aaai.md) · Pending |
-| IJCAI | 0 papers · Pending | 0 papers · Pending | [5 papers](papers/2024/ijcai.md) · Pending |
-| WWW | 0 papers · Pending | 0 papers · Pending | [3 papers](papers/2024/www.md) · Pending |
+| IJCAI | 0 papers · Pending | 0 papers · Pending | [14 papers](papers/2024/ijcai.md) · Pending |
+| WWW | 0 papers · Pending | 0 papers · Pending | [4 papers](papers/2024/www.md) · Complete |
 | WSDM | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
 | SIGIR | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
 | AISTATS | 0 papers · Pending | 0 papers · Pending | 0 papers · No eligible papers |
-| ACM ICAIF | 0 papers · Pending | 0 papers · Pending | [44 papers](papers/2024/acm-icaif.md) · Pending |
+| ACM ICAIF | 0 papers · Pending | 0 papers · Pending | [49 papers](papers/2024/acm-icaif.md) · Pending |
 
 ## Browse by Topic
 
@@ -187,6 +187,20 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [RSAP-DFM: Regime-Shifting Adaptive Posterior Dynamic Factor Model for Stock Returns Prediction](<https://www.ijcai.org/proceedings/2024/676>)<br><sub>Quanzhou Xiang, Zhan Chen, Qi Sun, Rujun Jiang</sub> | Main<br><sub>Not Specified</sub> | Adapts a dynamic stock-return factor model when latent market regimes shift. | — | Lets factor forecasts respond to structural changes rather than averaging incompatible return environments. |
 | [Trade When Opportunity Comes: Price Movement Forecasting via Locality-Aware Attention and Iterative Refinement Labeling](<https://www.ijcai.org/proceedings/2024/678>)<br><sub>Liang Zeng, Lei Wang, Hui Niu, Ruchen Zhang, Ling Wang, Jian Li</sub> | Main<br><sub>Not Specified</sub> | Uses locality-aware attention and refined labels to identify tradable price moves across stocks, ETFs, and cryptoassets. | — | Focuses the forecast on opportunities that translate into quantitative-investment performance across asset classes. |
 
+### Workshops (9)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [Comparing the Impact of Financial Knowledge Graphs from Financial Reports and Wikidata in Asset Recommendation](<https://eprints.gla.ac.uk/328251/2/328251.pdf>)<br><sub>Lubingzhi Guo, Javier Sanz-Cruzado, Richard McCreadie</sub> | Workshop<br><sub>Not Specified</sub><br><sub>Recommender Systems in Finance</sub> | Compares report-derived and Wikidata knowledge graphs when ranking U.S. stocks for financial-asset recommendation and monthly portfolio returns. | Equities | Shows whether structured company knowledge can improve profitable security selection beyond price and news inputs alone. |
+| [Examining the Effect of News Context on Algorithmic Trading](<https://aclanthology.org/2024.finnlp-2.3.pdf>)<br><sub>Surupendu Gangopadhyay, Prasenjit Majumder</sub> | Workshop<br><sub>Not Specified</sub><br><sub>Joint Workshop of FinNLP and AgentScen</sub> | Trains a proximal-policy-optimization agent to combine news context with prices when choosing minute-level NIFTY 50 futures positions and quantities. | Derivatives · Intraday | Measures whether contextual news improves realized return, drawdown, volatility, Sharpe, and Sortino outcomes for an executable trading policy. |
+| [FAR-Trans: An Investment Dataset for Financial Asset Recommendation](<https://arxiv.org/abs/2407.08692>)<br><sub>Javier Sanz-Cruzado, Nikolaos Droukas, Richard McCreadie</sub> | Workshop<br><sub>Not Specified</sub><br><sub>Recommender Systems in Finance</sub> | Releases retail-investor transactions, security prices, and investor profiles with benchmarks that rank assets for future purchase and top-recommendation portfolio returns. | — | Provides a public decision-facing benchmark for comparing financial recommenders on both investor behavior and realized portfolio profitability. |
+| [GPT-Signal: Generative AI for Semi-automated Feature Engineering in the Alpha Research Process](<https://aclanthology.org/2024.finnlp-2.4.pdf>)<br><sub>Yining Wang, Jinman Zhao, Yuri Lawryshyn</sub> | Workshop<br><sub>Not Specified</sub><br><sub>Joint Workshop of FinNLP and AgentScen</sub> | Uses GPT-4 to generate formulaic alpha features and tests their ability to predict future returns and time buy and sell decisions for S&amp;P 500 stocks. | Equities | Automates part of factor discovery while judging the generated signals by benchmark-relative investment performance. |
+| [LLM-Driven Knowledge Enhancement for Securities Index Prediction](<https://ceur-ws.org/Vol-3818/paper6.pdf>)<br><sub>Zaiyuan Di, Jianting Chen, Yunxiao Yang, Ling Ding, Yang Xiang</sub> | Workshop<br><sub>Poster</sub><br><sub>The First International OpenKG Workshop on Large Knowledge-enhanced Models</sub> | Combines language-model-derived market relations with daily index data in a heterogeneous graph to predict Shanghai Stock Exchange index trends and backtest the signals. | Equities · Daily | Tests whether inexpensive knowledge extraction can improve investable index-direction forecasts in a real market backtest. |
+| [Risk Propensity-specific Portfolio Recommendation via Self-supervised Learning](<https://drive.google.com/uc?id=1vIqj9DIiyWYHQ_WmropQGOZYfbBmfd2P&export=download>)<br><sub>Namhyoung Kim, Seung Eun Ock, Jae Wook Song</sub> | Workshop<br><sub>Not Specified</sub><br><sub>Recommender Systems in Finance</sub> | Clusters Korean equities by volatility and tail-risk measures before constructing momentum portfolios matched to an investor's risk propensity. | Equities | Connects personalized recommendations to explicit return, volatility, Sharpe, drawdown, and cumulative-performance tradeoffs. |
+| [Sentiment trading with large language models](<https://arxiv.org/abs/2412.19245>)<br><sub>Kemal Kirtac, Guido Germano</sub> | Workshop<br><sub>Poster</sub><br><sub>AI4Research</sub> | Scores U.S. financial news with language models and forms value-weighted long, short, and self-financing long-short stock portfolios from the signals. | Equities · Daily | Demonstrates transaction-cost-aware portfolio gains and a 3.05 Sharpe ratio for the strongest language-model sentiment strategy. |
+| [Stock Recommendations for Individual Investors: A Temporal Graph Network Approach with Mean-variance Efficient Learning](<https://arxiv.org/abs/2404.07223>)<br><sub>Youngbin Lee, Yejin Kim, Javier Sanz-Cruzado, Richard McCreadie, Yongjae Lee</sub> | Workshop<br><sub>Not Specified</sub><br><sub>Recommender Systems in Finance</sub> | Models time-varying investor-stock interactions and mean-variance efficiency to recommend personalized equity portfolios with stronger return and Sharpe outcomes. | Equities | Aligns stock recommendations with portfolio diversification and profitability instead of optimizing recommendation relevance alone. |
+| [Wealth Guide at the FinLLM Challenge Task: A Sophisticated Language Model Solution for Financial Trading Decisions](<https://aclanthology.org/2024.finnlp-2.13.pdf>)<br><sub>Sarmistha Das, R E Zera Marveen Lyngkhoi, Sriparna Saha, Alka Maurya</sub> | Workshop<br><sub>Not Specified</sub><br><sub>Joint Workshop of FinNLP and AgentScen — FinLLM Shared Task</sub> | Maps stock and exchange-traded-fund prices plus financial news to explicit buy, sell, or hold actions in the FinLLM single-stock-trading task. | Equities | Demonstrates a language-model trading policy whose winning task result is evaluated with realized Sharpe ratio rather than text accuracy alone. |
+
 
 ## WWW 2024
 
@@ -197,6 +211,12 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [FinReport: Explainable Stock Earnings Forecasting via News Factor Analyzing Model](<https://arxiv.org/abs/2403.02647>)<br><sub>Xiangyu Li, Xinjie Shen, Yawen Zeng, Xiaofen Xing, Jin Xu</sub> | Main<br><sub>Not Specified</sub><br><sub>Industry Track</sub> | Combines news-factor analysis with explainable stock forecasts and evaluates the resulting signals in a transaction-cost-aware trading backtest. | — | Tests whether interpretable news-driven signals improve realized return, drawdown, and Sharpe outcomes rather than stopping at forecast accuracy. |
 | [Learning to Generate Explainable Stock Predictions using Self-Reflective Large Language Models](<https://arxiv.org/abs/2402.03659>)<br><sub>Kelvin J. L. Koa, Yunshan Ma, Ritchie Ng, Tat-Seng Chua</sub> | Main<br><sub>Not Specified</sub> | Trains a self-reflective language model to explain next-day stock forecasts and validates the signals in portfolio construction. | — | Links text-based model explanations to realized portfolio outcomes rather than treating prediction accuracy as the final objective. |
 | [Reinforcement Learning with Maskable Stock Representation for Portfolio Management in Customizable Stock Pools](<https://arxiv.org/abs/2311.10801>)<br><sub>Wentao Zhang, Yilei Zhao, Shuo Sun, Jie Ying, Yonggang Xie, Zitao Song, Xinrun Wang, Bo An</sub> | Main<br><sub>Not Specified</sub> | Learns a maskable stock representation so one reinforcement-learning allocator can operate across investor-selected equity universes. | — | Lets investors change the eligible stock pool without retraining a separate portfolio policy for every universe. |
+
+### Workshops (1)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [Measuring Arbitrage Losses and Profitability of AMM Liquidity](<https://arxiv.org/abs/2404.05803>)<br><sub>Robin Fritsch, Andrea Canidio</sub> | Workshop<br><sub>Not Specified</sub><br><sub>3rd International Cryptoasset Analytics Workshop</sub> | Measures trading-fee income against arbitrage and loss-versus-rebalancing costs for automated-market-maker liquidity positions across pools and trading pairs. | — | Quantifies when liquidity provision is profitable and how block-time design changes the market risk borne by liquidity providers. |
 
 
 ## ACM ICAIF 2024
@@ -250,6 +270,16 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [The Effect of Liquidity on the Spoofability of Financial Markets](<https://doi.org/10.1145/3677052.3698634>)<br><sub>Anri Gu, Yongzhao Wang, Chris Mascioli, Mithun Chakraborty, Rahul Savani, Theodore L. Turocy, Michael P. Wellman</sub> | Main<br><sub>Not Specified</sub> | Studies how market liquidity changes the profitability and detectability of spoofing in a simulated trading environment. | — | Shows when apparent depth is most vulnerable to manipulation, informing execution and surveillance under different liquidity regimes. |
 | [Whack-a-mole Online Learning: Physics-Informed Neural Network for Intraday Implied Volatility Surface](<https://doi.org/10.1145/3677052.3698601>)<br><sub>Kentaro Hoshisashi, Carolyn E. Phelan, Paolo Barucca</sub> | Main<br><sub>Poster</sub> | Fits intraday implied-volatility surfaces with a physics-informed network that incorporates derivative constraints during online updates. | — | Produces dynamically refreshed option surfaces while discouraging economically inconsistent shapes. |
 
+### Workshops (5)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [Hedging and Pricing Structured Products Featuring Multiple Underlying Assets](<https://arxiv.org/abs/2411.01121>)<br><sub>Anil Sharma, Freeman Chen, Jaesun Noh, Julio DeJesus, Mario Schlener</sub> | Workshop<br><sub>Poster</sub><br><sub>Simulation of Financial Markets and Economic Systems</sub> | Accelerates multi-asset autocallable pricing and learns a distributional-reinforcement-learning hedge for portfolios containing the notes. | — | Improves hedging profit-and-loss tails relative to delta-neutral and delta-gamma-neutral baselines while reducing pricing cost. |
+| [InvestorBench: A Benchmark for Financial Decision-Making Tasks with LLM-based Agent in Multimodal Market Environment](<https://arxiv.org/abs/2412.18174>)<br><sub>Haohang Li, Yupeng Cao, Yangyang Yu, Shashidhar Reddy Javaji, Zhiyang Deng, Yueru He, Yuechen Jiang, Qianqian Xie, Jordan W. Suchow, K. P. Subbalakshmi, Zining Zhu, Jimin Huang</sub> | Workshop<br><sub>Not Specified</sub><br><sub>Multimodal Financial Foundation Models</sub> | Benchmarks language-model agents on sequential buy, sell, and hold decisions across stocks, cryptocurrencies, and exchange-traded funds in multimodal market environments. | — | Compares decision quality with daily profit-and-loss and standard quantitative-finance metrics rather than language-only accuracy. |
+| [No Tick-Size Too Small: A General Method for Modelling Small Tick Limit Order Books](<https://arxiv.org/abs/2410.08744>)<br><sub>Konark Jain, Jean-François Muzy, Jonathan Kochems, Emmanuel Bacry</sub> | Workshop<br><sub>Oral</sub><br><sub>Simulation of Financial Markets and Economic Systems</sub> | Fits a Hawkes-process limit-order-book model that reproduces sparse and multi-level price dynamics across large-, medium-, and small-tick equities. | — | Provides a calibrated market simulator that preserves tick-size-specific liquidity and return behavior. |
+| [Supervised Autoencoder MLP for Financial Time Series Forecasting](<https://arxiv.org/abs/2404.01866>)<br><sub>Bartosz Bieganowski, Robert Ślepaczuk</sub> | Workshop<br><sub>Poster</sub><br><sub>Simulation of Financial Markets and Economic Systems</sub> | Trains supervised autoencoders with triple-barrier labels and noise augmentation to produce trading signals for equity-index, foreign-exchange, and cryptocurrency markets. | — | Evaluates the signals with realized strategy Sharpe and information ratios rather than forecast error alone. |
+| [TradingGPT: Elevating Financial Trading Performance in Multi-Modal Market Environments via LLM-Powered Multi-Agent Collaboration and Debate](<https://drive.google.com/file/d/1w3M8Yxa5FoUckglyy-M9ZwDJGTABiyIq/view?usp=sharing>)<br><sub>Yang Li, Yangyang Yu, Haohang Li, Zhiyang Deng, Yupeng Cao, Khaldoun Khashanah</sub> | Workshop<br><sub>Not Specified</sub><br><sub>Multimodal Financial Foundation Models</sub> | Coordinates language-model agents that debate multimodal market evidence before selecting trading actions. | — | Evaluates whether structured multi-agent collaboration improves realized trading performance in a multimodal market environment. |
+
 ## Browse by Year and Venue
 
 - **2026** · [ICML 2026](papers/2026/icml.md) — 23 papers
@@ -258,9 +288,9 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 - **2024** · [ICLR 2024](papers/2024/iclr.md) — 3 papers
 - **2024** · [KDD 2024](papers/2024/kdd.md) — 6 papers
 - **2024** · [AAAI 2024](papers/2024/aaai.md) — 5 papers
-- **2024** · [IJCAI 2024](papers/2024/ijcai.md) — 5 papers
-- **2024** · [WWW 2024](papers/2024/www.md) — 3 papers
-- **2024** · [ACM ICAIF 2024](papers/2024/acm-icaif.md) — 44 papers
+- **2024** · [IJCAI 2024](papers/2024/ijcai.md) — 14 papers
+- **2024** · [WWW 2024](papers/2024/www.md) — 4 papers
+- **2024** · [ACM ICAIF 2024](papers/2024/acm-icaif.md) — 49 papers
 
 ## Contributing
 

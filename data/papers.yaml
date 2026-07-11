@@ -2414,3 +2414,422 @@
   why_it_matters: Shows how memory horizon and agent character affect cumulative returns on real-world equity data.
   status: accepted
   verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-jain-small-tick-lob
+  title: "No Tick-Size Too Small: A General Method for Modelling Small Tick Limit Order Books"
+  authors:
+    - Konark Jain
+    - Jean-François Muzy
+    - Jonathan Kochems
+    - Emmanuel Bacry
+  venue: ACM ICAIF
+  year: 2024
+  track: workshop
+  subvenue: Simulation of Financial Markets and Economic Systems
+  presentation: oral
+  official_url: https://sites.google.com/view/sfmes/home/accepted-papers
+  paper_url: https://arxiv.org/abs/2410.08744
+  arxiv_id: "2410.08744"
+  topics:
+    - market-simulation
+    - market-microstructure
+  summary: Fits a Hawkes-process limit-order-book model that reproduces sparse and multi-level price dynamics across large-, medium-, and small-tick equities.
+  why_it_matters: Provides a calibrated market simulator that preserves tick-size-specific liquidity and return behavior.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-sharma-structured-products
+  title: Hedging and Pricing Structured Products Featuring Multiple Underlying Assets
+  authors:
+    - Anil Sharma
+    - Freeman Chen
+    - Jaesun Noh
+    - Julio DeJesus
+    - Mario Schlener
+  venue: ACM ICAIF
+  year: 2024
+  track: workshop
+  subvenue: Simulation of Financial Markets and Economic Systems
+  presentation: poster
+  official_url: https://sites.google.com/view/sfmes/home/accepted-papers#:~:text=Hedging%20and%20Pricing%20Structured%20Products
+  paper_url: https://arxiv.org/abs/2411.01121
+  arxiv_id: "2411.01121"
+  topics:
+    - derivatives
+    - risk-management
+  summary: Accelerates multi-asset autocallable pricing and learns a distributional-reinforcement-learning hedge for portfolios containing the notes.
+  why_it_matters: Improves hedging profit-and-loss tails relative to delta-neutral and delta-gamma-neutral baselines while reducing pricing cost.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-bieganowski-supervised-autoencoder-trading
+  title: Supervised Autoencoder MLP for Financial Time Series Forecasting
+  authors:
+    - Bartosz Bieganowski
+    - Robert Ślepaczuk
+  venue: ACM ICAIF
+  year: 2024
+  track: workshop
+  subvenue: Simulation of Financial Markets and Economic Systems
+  presentation: poster
+  official_url: https://sites.google.com/view/sfmes/home/accepted-papers#:~:text=Supervised%20Autoencoder%20MLP
+  paper_url: https://arxiv.org/abs/2404.01866
+  arxiv_id: "2404.01866"
+  topics:
+    - alpha-modeling
+    - financial-forecasting
+  summary: Trains supervised autoencoders with triple-barrier labels and noise augmentation to produce trading signals for equity-index, foreign-exchange, and cryptocurrency markets.
+  why_it_matters: Evaluates the signals with realized strategy Sharpe and information ratios rather than forecast error alone.
+  notes: The same paper also appears in the FM4TS and MFFM programs; it is cataloged once using the SFMES accepted title, author order, and poster designation.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-li-investorbench
+  title: "InvestorBench: A Benchmark for Financial Decision-Making Tasks with LLM-based Agent in Multimodal Market Environment"
+  authors:
+    - Haohang Li
+    - Yupeng Cao
+    - Yangyang Yu
+    - Shashidhar Reddy Javaji
+    - Zhiyang Deng
+    - Yueru He
+    - Yuechen Jiang
+    - Qianqian Xie
+    - Jordan W. Suchow
+    - K. P. Subbalakshmi
+    - Zining Zhu
+    - Jimin Huang
+  venue: ACM ICAIF
+  year: 2024
+  track: workshop
+  subvenue: Multimodal Financial Foundation Models
+  presentation: not-specified
+  official_url: https://sites.google.com/view/iwmffm2024/accepted-papers#:~:text=InvestorBench
+  paper_url: https://arxiv.org/abs/2412.18174
+  arxiv_id: "2412.18174"
+  topics:
+    - financial-agents
+    - evaluation
+  summary: Benchmarks language-model agents on sequential buy, sell, and hold decisions across stocks, cryptocurrencies, and exchange-traded funds in multimodal market environments.
+  why_it_matters: Compares decision quality with daily profit-and-loss and standard quantitative-finance metrics rather than language-only accuracy.
+  notes: The workshop acceptance page lists the 12 accepted-version authors captured here; the later arXiv version expanded the author list.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-li-tradinggpt
+  title: "TradingGPT: Elevating Financial Trading Performance in Multi-Modal Market Environments via LLM-Powered Multi-Agent Collaboration and Debate"
+  authors:
+    - Yang Li
+    - Yangyang Yu
+    - Haohang Li
+    - Zhiyang Deng
+    - Yupeng Cao
+    - Khaldoun Khashanah
+  venue: ACM ICAIF
+  year: 2024
+  track: workshop
+  subvenue: Multimodal Financial Foundation Models
+  presentation: not-specified
+  official_url: https://sites.google.com/view/iwmffm2024/accepted-papers#:~:text=TradingGPT
+  paper_url: https://drive.google.com/file/d/1w3M8Yxa5FoUckglyy-M9ZwDJGTABiyIq/view?usp=sharing
+  topics:
+    - financial-agents
+    - alpha-modeling
+  summary: Coordinates language-model agents that debate multimodal market evidence before selecting trading actions.
+  why_it_matters: Evaluates whether structured multi-agent collaboration improves realized trading performance in a multimodal market environment.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-www-fritsch-amm-arbitrage-losses
+  title: Measuring Arbitrage Losses and Profitability of AMM Liquidity
+  authors:
+    - Robin Fritsch
+    - Andrea Canidio
+  venue: WWW
+  year: 2024
+  track: workshop
+  subvenue: 3rd International Cryptoasset Analytics Workshop
+  presentation: not-specified
+  official_url: https://caaw.io/2024/
+  paper_url: https://arxiv.org/abs/2404.05803
+  arxiv_id: "2404.05803"
+  doi: 10.1145/3589335.3651961
+  topics:
+    - market-microstructure
+    - risk-management
+  summary: Measures trading-fee income against arbitrage and loss-versus-rebalancing costs for automated-market-maker liquidity positions across pools and trading pairs.
+  why_it_matters: Quantifies when liquidity provision is profitable and how block-time design changes the market risk borne by liquidity providers.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-di-llm-securities-index
+  title: LLM-Driven Knowledge Enhancement for Securities Index Prediction
+  authors:
+    - Zaiyuan Di
+    - Jianting Chen
+    - Yunxiao Yang
+    - Ling Ding
+    - Yang Xiang
+  venue: IJCAI
+  year: 2024
+  track: workshop
+  subvenue: The First International OpenKG Workshop on Large Knowledge-enhanced Models
+  presentation: poster
+  official_url: "https://lkm2024.openkg.org/#accepted-papers"
+  paper_url: https://ceur-ws.org/Vol-3818/paper6.pdf
+  openreview_id: YYOgsrZjFz
+  topics:
+    - alpha-modeling
+    - financial-forecasting
+  asset_classes:
+    - equities
+  data_frequency: daily
+  tasks:
+    - securities-index trend prediction
+    - market backtesting
+  methods:
+    - large language models
+    - heterogeneous graph neural networks
+  datasets:
+    - Shanghai Stock Exchange indices and related market indicators
+  summary: Combines language-model-derived market relations with daily index data in a heterogeneous graph to predict Shanghai Stock Exchange index trends and backtest the signals.
+  why_it_matters: Tests whether inexpensive knowledge extraction can improve investable index-direction forecasts in a real market backtest.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-gangopadhyay-news-algorithmic-trading
+  title: Examining the Effect of News Context on Algorithmic Trading
+  authors:
+    - Surupendu Gangopadhyay
+    - Prasenjit Majumder
+  venue: IJCAI
+  year: 2024
+  track: workshop
+  subvenue: Joint Workshop of FinNLP and AgentScen
+  presentation: not-specified
+  official_url: "https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-agentscen/accepted-papers#:~:text=Examining%20the%20Effect%20of%20News%20Context"
+  paper_url: https://aclanthology.org/2024.finnlp-2.3.pdf
+  topics:
+    - alpha-modeling
+  asset_classes:
+    - derivatives
+  data_frequency: intraday
+  tasks:
+    - algorithmic futures trading
+  methods:
+    - proximal policy optimization
+    - news-context embeddings
+  summary: Trains a proximal-policy-optimization agent to combine news context with prices when choosing minute-level NIFTY 50 futures positions and quantities.
+  why_it_matters: Measures whether contextual news improves realized return, drawdown, volatility, Sharpe, and Sortino outcomes for an executable trading policy.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-wang-gpt-signal
+  title: "GPT-Signal: Generative AI for Semi-automated Feature Engineering in the Alpha Research Process"
+  authors:
+    - Yining Wang
+    - Jinman Zhao
+    - Yuri Lawryshyn
+  venue: IJCAI
+  year: 2024
+  track: workshop
+  subvenue: Joint Workshop of FinNLP and AgentScen
+  presentation: not-specified
+  official_url: "https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-agentscen/accepted-papers#:~:text=GPT-Signal%3A%20Generative%20AI%20for%20Semi-automated%20Feature%20Engineering"
+  paper_url: https://aclanthology.org/2024.finnlp-2.4.pdf
+  topics:
+    - alpha-modeling
+  asset_classes:
+    - equities
+  tasks:
+    - alpha mining
+    - stock-return prediction
+  methods:
+    - large language models
+    - formulaic alpha signals
+  summary: Uses GPT-4 to generate formulaic alpha features and tests their ability to predict future returns and time buy and sell decisions for S&P 500 stocks.
+  why_it_matters: Automates part of factor discovery while judging the generated signals by benchmark-relative investment performance.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-das-wealth-guide
+  title: "Wealth Guide at the FinLLM Challenge Task: A Sophisticated Language Model Solution for Financial Trading Decisions"
+  authors:
+    - Sarmistha Das
+    - R E Zera Marveen Lyngkhoi
+    - Sriparna Saha
+    - Alka Maurya
+  venue: IJCAI
+  year: 2024
+  track: workshop
+  subvenue: Joint Workshop of FinNLP and AgentScen — FinLLM Shared Task
+  presentation: not-specified
+  official_url: "https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-agentscen/accepted-papers#:~:text=Wealth%20Guide%3A%20A%20Sophisticated%20Language%20Model"
+  paper_url: https://aclanthology.org/2024.finnlp-2.13.pdf
+  topics:
+    - financial-agents
+    - alpha-modeling
+  asset_classes:
+    - equities
+  tasks:
+    - single-stock trading
+    - buy-sell-hold decision making
+  methods:
+    - large language models
+  summary: Maps stock and exchange-traded-fund prices plus financial news to explicit buy, sell, or hold actions in the FinLLM single-stock-trading task.
+  why_it_matters: Demonstrates a language-model trading policy whose winning task result is evaluated with realized Sharpe ratio rather than text accuracy alone.
+  notes: "The organizer acceptance list shortens the title to Wealth Guide: A Sophisticated Language Model Solution for Financial Trading Decisions; this record uses the exact ACL proceedings title."
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-guo-financial-knowledge-graphs
+  title: Comparing the Impact of Financial Knowledge Graphs from Financial Reports and Wikidata in Asset Recommendation
+  authors:
+    - Lubingzhi Guo
+    - Javier Sanz-Cruzado
+    - Richard McCreadie
+  venue: IJCAI
+  year: 2024
+  track: workshop
+  subvenue: Recommender Systems in Finance
+  presentation: not-specified
+  official_url: "https://sites.google.com/view/fin-recsys2024/program#:~:text=Comparing%20the%20Impact%20of%20Financial%20Knowledge%20Graphs"
+  paper_url: https://eprints.gla.ac.uk/328251/2/328251.pdf
+  topics:
+    - alpha-modeling
+    - alternative-data
+  asset_classes:
+    - equities
+  tasks:
+    - financial-asset recommendation
+    - stock ranking
+  methods:
+    - financial knowledge graphs
+  summary: Compares report-derived and Wikidata knowledge graphs when ranking U.S. stocks for financial-asset recommendation and monthly portfolio returns.
+  why_it_matters: Shows whether structured company knowledge can improve profitable security selection beyond price and news inputs alone.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-sanzcruzado-far-trans
+  title: "FAR-Trans: An Investment Dataset for Financial Asset Recommendation"
+  authors:
+    - Javier Sanz-Cruzado
+    - Nikolaos Droukas
+    - Richard McCreadie
+  venue: IJCAI
+  year: 2024
+  track: workshop
+  subvenue: Recommender Systems in Finance
+  presentation: not-specified
+  official_url: "https://sites.google.com/view/fin-recsys2024/program#:~:text=FAR-Trans%3A%20An%20Investment%20Dataset"
+  paper_url: https://arxiv.org/abs/2407.08692
+  arxiv_id: "2407.08692"
+  topics:
+    - evaluation
+    - alpha-modeling
+  tasks:
+    - financial-asset recommendation
+    - recommender benchmarking
+  methods:
+    - recommender systems
+  datasets:
+    - FAR-Trans
+  summary: Releases retail-investor transactions, security prices, and investor profiles with benchmarks that rank assets for future purchase and top-recommendation portfolio returns.
+  why_it_matters: Provides a public decision-facing benchmark for comparing financial recommenders on both investor behavior and realized portfolio profitability.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-lee-stock-recommendations
+  title: "Stock Recommendations for Individual Investors: A Temporal Graph Network Approach with Mean-variance Efficient Learning"
+  authors:
+    - Youngbin Lee
+    - Yejin Kim
+    - Javier Sanz-Cruzado
+    - Richard McCreadie
+    - Yongjae Lee
+  venue: IJCAI
+  year: 2024
+  track: workshop
+  subvenue: Recommender Systems in Finance
+  presentation: not-specified
+  official_url: "https://sites.google.com/view/fin-recsys2024/program#:~:text=Stock%20Recommendations%20for%20Individual%20Investors"
+  paper_url: https://arxiv.org/abs/2404.07223
+  arxiv_id: "2404.07223"
+  topics:
+    - alpha-modeling
+    - portfolio-optimization
+  asset_classes:
+    - equities
+  tasks:
+    - personalized stock recommendation
+    - portfolio construction
+  methods:
+    - temporal graph networks
+    - mean-variance efficient sampling
+  summary: Models time-varying investor-stock interactions and mean-variance efficiency to recommend personalized equity portfolios with stronger return and Sharpe outcomes.
+  why_it_matters: Aligns stock recommendations with portfolio diversification and profitability instead of optimizing recommendation relevance alone.
+  notes: The workshop program uses Mean-variance Efficient Learning; the public manuscript and later ACM ICAIF paper use Mean-Variance Efficient Sampling, and the later ICAIF acceptance is cataloged separately.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-kim-risk-propensity-portfolio
+  title: Risk Propensity-specific Portfolio Recommendation via Self-supervised Learning
+  authors:
+    - Namhyoung Kim
+    - Seung Eun Ock
+    - Jae Wook Song
+  venue: IJCAI
+  year: 2024
+  track: workshop
+  subvenue: Recommender Systems in Finance
+  presentation: not-specified
+  official_url: "https://sites.google.com/view/fin-recsys2024/program#:~:text=Risk%20Propensity-specific%20Portfolio%20Recommendation"
+  paper_url: "https://drive.google.com/uc?id=1vIqj9DIiyWYHQ_WmropQGOZYfbBmfd2P&export=download"
+  topics:
+    - asset-allocation
+    - risk-management
+  asset_classes:
+    - equities
+  tasks:
+    - risk-profile portfolio recommendation
+    - momentum portfolio construction
+  methods:
+    - self-supervised learning
+    - risk-based asset clustering
+  summary: Clusters Korean equities by volatility and tail-risk measures before constructing momentum portfolios matched to an investor's risk propensity.
+  why_it_matters: Connects personalized recommendations to explicit return, volatility, Sharpe, drawdown, and cumulative-performance tradeoffs.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-kirtac-sentiment-trading
+  title: Sentiment trading with large language models
+  authors:
+    - Kemal Kirtac
+    - Guido Germano
+  venue: IJCAI
+  year: 2024
+  track: workshop
+  subvenue: AI4Research
+  presentation: poster
+  official_url: "https://ai4research.github.io/#:~:text=Sentiment%20trading%20with%20large%20language%20models"
+  paper_url: https://arxiv.org/abs/2412.19245
+  arxiv_id: "2412.19245"
+  openreview_id: 47pcnKq9Mn
+  doi: 10.1016/j.frl.2024.105227
+  topics:
+    - alpha-modeling
+    - alternative-data
+  asset_classes:
+    - equities
+  data_frequency: daily
+  tasks:
+    - stock-return prediction
+    - long-short portfolio construction
+  methods:
+    - large language models
+    - financial-news sentiment analysis
+  summary: Scores U.S. financial news with language models and forms value-weighted long, short, and self-financing long-short stock portfolios from the signals.
+  why_it_matters: Demonstrates transaction-cost-aware portfolio gains and a 3.05 Sharpe ratio for the strongest language-model sentiment strategy.
+  notes: The workshop accepted this paper as an AI4Research poster; the DOI identifies its 2024 Finance Research Letters publication.
+  status: accepted
+  verified_on: 2026-07-11

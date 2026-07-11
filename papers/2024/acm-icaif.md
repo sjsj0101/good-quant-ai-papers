@@ -6,11 +6,11 @@
 
 **Checked on:** 2026-07-11
 
-**Official audit sources:** [Source 1](<https://ai-finance.org/technical-program/>) · [Source 2](<https://ai-finance.org/workshops-and-tutorials/>)
+**Official audit sources:** [Source 1](<https://ai-finance.org/technical-program/>) · [Source 2](<https://ai-finance.org/workshops-and-tutorials/>) · [Source 3](<https://ai-finance.org/wp-content/uploads/2024/11/workshop-4.pdf>) · [Source 4](<https://sites.google.com/view/aia2024/schedule>) · [Source 5](<https://sites.google.com/view/icaif-synthetic/program>) · [Source 6](<https://sites.google.com/nyu.edu/aisrf2024/accepted-papers>) · [Source 7](<https://ai4f.org/>) · [Source 8](<https://sites.google.com/view/sfmes/home/accepted-papers>) · [Source 9](<https://sites.google.com/view/2024-workshop-explainable-ai/accepted-papers>) · [Source 10](<https://sites.google.com/view/ml-for-investor-recsys/program>) · [Source 11](<https://sites.google.com/view/iwmffm2024/accepted-papers>) · [Source 12](<https://from-prototype-to-production.github.io/papers.html>) · [Source 13](<https://sites.google.com/view/fm4ts/accepted-papers>) · [Source 14](<https://sites.google.com/view/icaif-women-ai-finance-2024/home>) · [Source 15](<https://largeagentcollider.github.io/icaif_tutorial/>) · [Source 16](<https://sites.google.com/view/raasta2024icaif>) · [Source 17](<https://sites.google.com/view/translation-in-finance>)
 
-**Coverage notes:** All 100 official technical-program papers were screened. Workshop is omitted from tracks\_checked because the official workshops-and-tutorials page exposes event names and external links rather than accepted-paper titles, and the linked programs did not all provide a recoverable paper-level roster.
+**Coverage notes:** All 100 main papers and every accessible linked workshop, reception, and tutorial program were screened; five strict workshop papers were added, while non-paper tutorials and the Women in AI reception were closed from their schedules. Workshop remains omitted from tracks\_checked because AI in Africa, https://sites.google.com/view/aia2024/schedule, names only an oral-presentations slot without paper titles; Synthetic Data and GenAI, https://sites.google.com/view/icaif-synthetic/program, labels Towards Neural Jump Diffusions paper to be posted and exposes no paper or abstract; LLMs and Generative AI for Finance, https://ai4f.org/, now serves only its 2025 edition and preserves no 2024 accepted program; and Machine Learning for Financial Wellness, https://sites.google.com/view/ml-for-investor-recsys/program, still displays its November 27, 2023 program rather than the 2024 accepted papers.
 
-44 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+49 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
 
 [← Back to the main index](../../README.md)
 
@@ -1157,5 +1157,149 @@
 **Why it matters:** Produces dynamically refreshed option surfaces while discouraging economically inconsistent shapes.
 
 **Links:** [Official venue record](<https://doi.org/10.1145/3677052.3698601>) · [Paper](<https://doi.org/10.1145/3677052.3698601>)
+
+---
+
+## Workshops (5)
+
+### [Hedging and Pricing Structured Products Featuring Multiple Underlying Assets](<https://arxiv.org/abs/2411.01121>)
+
+**Catalog ID:** 2024-acm-icaif-sharma-structured-products
+
+**Authors:** Anil Sharma, Freeman Chen, Jaesun Noh, Julio DeJesus, Mario Schlener
+
+**Venue / year:** ACM ICAIF · 2024
+
+**Track / presentation:** Workshop · Poster
+
+**Subvenue:** Simulation of Financial Markets and Economic Systems
+
+**Status / verified:** Accepted · 2026-07-11
+
+**Topics:** Derivatives · Risk Management
+
+**Assets / frequency:** Not specified
+
+**Identifiers:** arXiv 2411.01121
+
+**Focus:** Accelerates multi-asset autocallable pricing and learns a distributional-reinforcement-learning hedge for portfolios containing the notes.
+
+**Why it matters:** Improves hedging profit-and-loss tails relative to delta-neutral and delta-gamma-neutral baselines while reducing pricing cost.
+
+**Links:** [Official venue record](<https://sites.google.com/view/sfmes/home/accepted-papers#:~:text=Hedging%20and%20Pricing%20Structured%20Products>) · [Paper](<https://arxiv.org/abs/2411.01121>)
+
+---
+
+### [InvestorBench: A Benchmark for Financial Decision-Making Tasks with LLM-based Agent in Multimodal Market Environment](<https://arxiv.org/abs/2412.18174>)
+
+**Catalog ID:** 2024-acm-icaif-li-investorbench
+
+**Authors:** Haohang Li, Yupeng Cao, Yangyang Yu, Shashidhar Reddy Javaji, Zhiyang Deng, Yueru He, Yuechen Jiang, Qianqian Xie, Jordan W. Suchow, K. P. Subbalakshmi, Zining Zhu, Jimin Huang
+
+**Venue / year:** ACM ICAIF · 2024
+
+**Track / presentation:** Workshop · Not Specified
+
+**Subvenue:** Multimodal Financial Foundation Models
+
+**Status / verified:** Accepted · 2026-07-11
+
+**Topics:** Financial Agents · Evaluation
+
+**Assets / frequency:** Not specified
+
+**Identifiers:** arXiv 2412.18174
+
+**Focus:** Benchmarks language-model agents on sequential buy, sell, and hold decisions across stocks, cryptocurrencies, and exchange-traded funds in multimodal market environments.
+
+**Why it matters:** Compares decision quality with daily profit-and-loss and standard quantitative-finance metrics rather than language-only accuracy.
+
+**Notes:** The workshop acceptance page lists the 12 accepted-version authors captured here; the later arXiv version expanded the author list.
+
+**Links:** [Official venue record](<https://sites.google.com/view/iwmffm2024/accepted-papers#:~:text=InvestorBench>) · [Paper](<https://arxiv.org/abs/2412.18174>)
+
+---
+
+### [No Tick-Size Too Small: A General Method for Modelling Small Tick Limit Order Books](<https://arxiv.org/abs/2410.08744>)
+
+**Catalog ID:** 2024-acm-icaif-jain-small-tick-lob
+
+**Authors:** Konark Jain, Jean-François Muzy, Jonathan Kochems, Emmanuel Bacry
+
+**Venue / year:** ACM ICAIF · 2024
+
+**Track / presentation:** Workshop · Oral
+
+**Subvenue:** Simulation of Financial Markets and Economic Systems
+
+**Status / verified:** Accepted · 2026-07-11
+
+**Topics:** Market Simulation · Market Microstructure
+
+**Assets / frequency:** Not specified
+
+**Identifiers:** arXiv 2410.08744
+
+**Focus:** Fits a Hawkes-process limit-order-book model that reproduces sparse and multi-level price dynamics across large-, medium-, and small-tick equities.
+
+**Why it matters:** Provides a calibrated market simulator that preserves tick-size-specific liquidity and return behavior.
+
+**Links:** [Official venue record](<https://sites.google.com/view/sfmes/home/accepted-papers>) · [Paper](<https://arxiv.org/abs/2410.08744>)
+
+---
+
+### [Supervised Autoencoder MLP for Financial Time Series Forecasting](<https://arxiv.org/abs/2404.01866>)
+
+**Catalog ID:** 2024-acm-icaif-bieganowski-supervised-autoencoder-trading
+
+**Authors:** Bartosz Bieganowski, Robert Ślepaczuk
+
+**Venue / year:** ACM ICAIF · 2024
+
+**Track / presentation:** Workshop · Poster
+
+**Subvenue:** Simulation of Financial Markets and Economic Systems
+
+**Status / verified:** Accepted · 2026-07-11
+
+**Topics:** Alpha Modeling · Financial Forecasting
+
+**Assets / frequency:** Not specified
+
+**Identifiers:** arXiv 2404.01866
+
+**Focus:** Trains supervised autoencoders with triple-barrier labels and noise augmentation to produce trading signals for equity-index, foreign-exchange, and cryptocurrency markets.
+
+**Why it matters:** Evaluates the signals with realized strategy Sharpe and information ratios rather than forecast error alone.
+
+**Notes:** The same paper also appears in the FM4TS and MFFM programs; it is cataloged once using the SFMES accepted title, author order, and poster designation.
+
+**Links:** [Official venue record](<https://sites.google.com/view/sfmes/home/accepted-papers#:~:text=Supervised%20Autoencoder%20MLP>) · [Paper](<https://arxiv.org/abs/2404.01866>)
+
+---
+
+### [TradingGPT: Elevating Financial Trading Performance in Multi-Modal Market Environments via LLM-Powered Multi-Agent Collaboration and Debate](<https://drive.google.com/file/d/1w3M8Yxa5FoUckglyy-M9ZwDJGTABiyIq/view?usp=sharing>)
+
+**Catalog ID:** 2024-acm-icaif-li-tradinggpt
+
+**Authors:** Yang Li, Yangyang Yu, Haohang Li, Zhiyang Deng, Yupeng Cao, Khaldoun Khashanah
+
+**Venue / year:** ACM ICAIF · 2024
+
+**Track / presentation:** Workshop · Not Specified
+
+**Subvenue:** Multimodal Financial Foundation Models
+
+**Status / verified:** Accepted · 2026-07-11
+
+**Topics:** Financial Agents · Alpha Modeling
+
+**Assets / frequency:** Not specified
+
+**Focus:** Coordinates language-model agents that debate multimodal market evidence before selecting trading actions.
+
+**Why it matters:** Evaluates whether structured multi-agent collaboration improves realized trading performance in a multimodal market environment.
+
+**Links:** [Official venue record](<https://sites.google.com/view/iwmffm2024/accepted-papers#:~:text=TradingGPT>) · [Paper](<https://drive.google.com/file/d/1w3M8Yxa5FoUckglyy-M9ZwDJGTABiyIq/view?usp=sharing>)
 
 ---
