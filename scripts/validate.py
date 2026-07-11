@@ -7,21 +7,32 @@ from pathlib import Path
 
 if __package__:
     from .catalog import load_catalog, validate_file
+    from .coverage import load_coverage, validate_coverage_file
 else:
     from catalog import load_catalog, validate_file
+    from coverage import load_coverage, validate_coverage_file
 
 
-CATALOG_PATH = Path(__file__).resolve().parents[1] / "data" / "papers.yaml"
+ROOT = Path(__file__).resolve().parents[1]
+CATALOG_PATH = ROOT / "data" / "papers.yaml"
+COVERAGE_PATH = ROOT / "data" / "coverage.yaml"
 
 
 def main() -> int:
-    errors = validate_file(CATALOG_PATH)
-    if errors:
-        print("\n".join(errors))
+    paper_errors = validate_file(CATALOG_PATH)
+    if paper_errors:
+        print("\n".join(paper_errors))
         return 1
-
-    records = load_catalog(CATALOG_PATH)
-    print(f"Catalog valid: {len(records)} papers")
+    papers = load_catalog(CATALOG_PATH)
+    coverage_errors = validate_coverage_file(COVERAGE_PATH, papers)
+    if coverage_errors:
+        print("\n".join(coverage_errors))
+        return 1
+    coverage = load_coverage(COVERAGE_PATH)
+    print(
+        f"Catalog valid: {len(papers)} papers across "
+        f"{len(coverage)} venue-year coverage units"
+    )
     return 0
 
 

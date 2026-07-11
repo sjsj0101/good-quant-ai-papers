@@ -1,0 +1,329 @@
+- venue: ICML
+  year: 2026
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://icml.cc/virtual/2026/papers.html
+  notes: The official main-paper list is available; the broader cross-track finance-scope audit remains pending.
+
+- venue: NeurIPS
+  year: 2026
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://neurips.cc/virtual/2026/papers.html
+  notes: The official virtual papers page is live but was not populated with main-paper sessions during this availability pass.
+
+- venue: ICLR
+  year: 2026
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://iclr.cc/virtual/2026/papers.html
+  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+
+- venue: KDD
+  year: 2026
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://kdd2026.kdd.org/
+  notes: The official conference site links a full program, but the finance-scope eligibility review remains pending.
+
+- venue: AAAI
+  year: 2026
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://aaai.org/conference/aaai/aaai-26/
+  notes: The official conference page links the main technical-track program; the finance-scope eligibility review remains pending.
+
+- venue: IJCAI
+  year: 2026
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://2026.ijcai.org/accepted-papers/
+  notes: The official accepted-papers page includes the main track; the finance-scope eligibility review remains pending.
+
+- venue: WWW
+  year: 2026
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://www2026.thewebconf.org/
+  notes: The official conference page links the main proceedings; the finance-scope eligibility review remains pending.
+
+- venue: WSDM
+  year: 2026
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://wsdm-conference.org/2026/index.php/accepted-papers/
+  notes: The official accepted-papers page lists full and short main papers; the finance-scope eligibility review remains pending.
+
+- venue: SIGIR
+  year: 2026
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://sigir2026.org/en-AU/pages/program/accepted-papers
+  notes: The official accepted-papers page includes the main research tracks; the finance-scope eligibility review remains pending.
+
+- venue: AISTATS
+  year: 2026
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://aistats.org/aistats2026/
+  notes: The official conference page is live but did not expose a main accepted-paper list or proceedings during this availability pass.
+
+- venue: ACM ICAIF
+  year: 2026
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://icaif2026.org/
+  notes: The official conference site exposes the call and dates, but no main accepted-paper program is available yet.
+
+- venue: ICML
+  year: 2025
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://icml.cc/virtual/2025/papers.html
+  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+
+- venue: NeurIPS
+  year: 2025
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://neurips.cc/virtual/2025/papers.html
+  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+
+- venue: ICLR
+  year: 2025
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://iclr.cc/virtual/2025/papers.html
+  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+
+- venue: KDD
+  year: 2025
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://kdd2025.kdd.org/research-track-papers/
+  notes: The official research-track paper list is available; the finance-scope eligibility review remains pending.
+
+- venue: AAAI
+  year: 2025
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://aaai.org/conference/aaai/aaai-25/
+  notes: The official conference page links the main technical-track program; the finance-scope eligibility review remains pending.
+
+- venue: IJCAI
+  year: 2025
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://www.ijcai.org/proceedings/2025/
+  notes: The official proceedings include the main track; the finance-scope eligibility review remains pending.
+
+- venue: WWW
+  year: 2025
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://www2025.thewebconf.org/
+  notes: The official conference site exposes the main program and schedule; the finance-scope eligibility review remains pending.
+
+- venue: WSDM
+  year: 2025
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://www.wsdm-conference.org/2025/
+  notes: The official conference site links accepted papers and proceedings; the finance-scope eligibility review remains pending.
+
+- venue: SIGIR
+  year: 2025
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://sigir2025.dei.unipd.it/accepted-papers.html
+  notes: The official accepted-papers page includes the main research tracks; the finance-scope eligibility review remains pending.
+
+- venue: AISTATS
+  year: 2025
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://aistats.org/aistats2025/
+  notes: The official conference page links accepted submissions and proceedings; the finance-scope eligibility review remains pending.
+
+- venue: ACM ICAIF
+  year: 2025
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://icaif25.org/
+  notes: The official conference site links accepted papers and the main program; the finance-scope eligibility review remains pending.
+
+- venue: ICML
+  year: 2024
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://icml.cc/virtual/2024/papers.html
+  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+
+- venue: NeurIPS
+  year: 2024
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://neurips.cc/virtual/2024/papers.html
+  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+
+- venue: ICLR
+  year: 2024
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://iclr.cc/virtual/2024/papers.html
+  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+
+- venue: KDD
+  year: 2024
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://kdd2024.kdd.org/research-track-papers/
+  notes: The official research-track paper list is available; the finance-scope eligibility review remains pending.
+
+- venue: AAAI
+  year: 2024
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://aaai.org/conference/aaai/aaai-24/
+  notes: The official conference page links the main technical-track program; the finance-scope eligibility review remains pending.
+
+- venue: IJCAI
+  year: 2024
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://www.ijcai.org/proceedings/2024/
+  notes: The official proceedings include the main track; the finance-scope eligibility review remains pending.
+
+- venue: WWW
+  year: 2024
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://www2024.thewebconf.org/program/overview
+  notes: The official program overview exposes the main research sessions; the finance-scope eligibility review remains pending.
+
+- venue: WSDM
+  year: 2024
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://www.wsdm-conference.org/2024/
+  notes: The official conference site links accepted papers and proceedings; the finance-scope eligibility review remains pending.
+
+- venue: SIGIR
+  year: 2024
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://sigir-2024.github.io/program_papers.html
+  notes: The official accepted-papers page includes the main research tracks; the finance-scope eligibility review remains pending.
+
+- venue: AISTATS
+  year: 2024
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://aistats.org/aistats2024/
+  notes: The official conference page links the main proceedings and schedule; the finance-scope eligibility review remains pending.
+
+- venue: ACM ICAIF
+  year: 2024
+  status: pending
+  checked_on: 2026-07-11
+  tracks_checked:
+    - main
+  official_sources:
+    - https://ai-finance.org/technical-program/
+  notes: The official technical program lists accepted main-program papers; the finance-scope eligibility review remains pending.

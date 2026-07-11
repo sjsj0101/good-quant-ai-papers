@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/sjsj0101/good-quant-ai-papers/blob/main/schema/coverage.schema.json",
+  "title": "Conference coverage record",
+  "description": "Metadata contract for one venue-year audit in data/coverage.yaml.",
+  "$defs": {
+    "http_url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^(?!.*\\s)(?!.*[\\[\\]])(?!.*%(?![0-9A-Fa-f]{2}))[Hh][Tt][Tt][Pp][Ss]?://(?:[^/?#@\\s\\[\\]]+@)?(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\\.)*[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?(?::0*(?:[0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]))?(?:[/?#][^\\s]*)?$"
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "venue",
+    "year",
+    "status",
+    "checked_on",
+    "tracks_checked",
+    "official_sources",
+    "notes"
+  ],
+  "properties": {
+    "venue": {
+      "enum": ["ICML", "NeurIPS", "ICLR", "KDD", "AAAI", "IJCAI", "WWW", "WSDM", "SIGIR", "AISTATS", "ACM ICAIF"]
+    },
+    "year": {
+      "enum": [2024, 2025, 2026]
+    },
+    "status": {
+      "enum": ["complete", "no-eligible-papers", "pending"]
+    },
+    "checked_on": {
+      "type": "string",
+      "format": "date"
+    },
+    "tracks_checked": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": ["main", "workshop", "position", "affinity"]
+      }
+    },
+    "official_sources": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/http_url"
+      }
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    }
+  }
+}
