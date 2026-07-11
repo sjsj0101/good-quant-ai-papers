@@ -88,6 +88,8 @@ Every record has these required fields:
 
 Required fields are `id`, `title`, `authors`, `venue`, `year`, `track`, `presentation`, `official_url`, `paper_url`, `topics`, `summary`, `why_it_matters`, `status`, and `verified_on`.
 
+`authors` must be a non-empty ordered list matching the accepted-paper record. `official_url` must point to the conference, proceedings, OpenReview venue record, or official workshop program that proves venue status. `paper_url` points to the best public paper landing page or full text; it may equal `official_url` when no separate paper page is available. `topics` must contain at least one controlled value. Summaries and relevance notes are written by repository contributors, not copied from abstracts.
+
 Optional fields are:
 
 - `arxiv_id`, `openreview_id`, `doi`;
@@ -138,7 +140,41 @@ The first version performs no automated web scraping. Link availability checks m
 
 ## Initial Data Seed
 
-The first release will include the high-confidence ICML 2026 main-conference and workshop papers already verified from official ICML, OpenReview, and workshop-organizer pages. It will include portfolio optimization, forecasting, market-state learning, merger arbitrage, risk control, market simulation, order-flow generation, financial stress scenarios, and investment-agent papers. Records without an official ICML 2026 venue entry, including contemporaneous preprints such as OpenFinGym, will not be included.
+The first release contains the following 23 high-confidence ICML 2026 records already verified from official ICML, OpenReview, and workshop-organizer pages.
+
+Main-conference posters:
+
+1. Signature-Informed Transformer for Asset Allocation
+2. Decision-focused Sparse Tangent Portfolio Optimization
+3. A Linearly Convergent Proximal Subgradient Algorithm for Sparse Portfolio Optimization with Transaction Cost
+4. The Label Horizon Paradox: Rethinking Supervision Targets in Financial Forecasting
+5. Joint-Embedding Predictive Learning of Latent Market States in U.S. Equities
+6. Global Merger-Arbitrage Forecasting with Language Models
+7. Adversarially Robust Control of Conditional Value-at-Risk via Kelly Conformal Inference
+8. MarketSim: Simulating Stock Markets with Large-Scale Generative Agents
+9. Learning the ESG Geometry with Domain Aware Language Models
+10. Error Propagation in Dynamic Programming: From Stochastic Control to American Option Pricing
+11. Towards Professional-Grade Financial Agents: Benchmarking, Tooling, and Structured Reasoning
+12. BizFinBench.v2: Towards Reliable LLMs in Finance via Real-User Data and Offline/Online Bilingual Evaluation
+13. Tail Annealing for Heavy-Tailed Flow Matching
+
+Position track:
+
+14. Position: Evaluating LLMs in Finance Requires Explicit Bias Consideration
+
+Workshop papers:
+
+15. Forecast-to-Trade: Hierarchical Reinforcement Learning for Decision-Aware Financial Forecasting
+16. One Token per Trade: Multi-Resolution Limit Order Book Forecasting with a Foundation Model
+17. TradeFM: A Generative Foundation Model for Trade-flow and Market Microstructure
+18. DELPHYNE: A Pre-Trained Model for General and Financial Time Series
+19. Leakage-Aware Benchmarking of LLM Forecasting: Real-Time Nowcasts as the Decision-Time Input for Macro Factor Ranking
+20. Reflexivity as Prompt: Does Awareness of Self-Reinforcing Market Dynamics Improve LLMs as Financial Market Forecasters?
+21. Mechanism-Inspired Aggregation for Multi-Agent Alpha Discovery: Optimizing Agent Distributions in Heterogeneous LLM Markets
+22. Learning to Trade Like an Expert: Cognitive Fine-Tuning for Stable Financial Reasoning in Language Models
+23. Behavioral Proxy Conditioning for Financial Stress Scenario Generation with a Pretrained Diffusion Model
+
+Workshop names, presentation types, and archival status are stored per record. Records without an official ICML 2026 venue entry, including contemporaneous preprints such as OpenFinGym, are not included.
 
 Historical years and other venues will be added incrementally after the ICML 2026 seed passes validation.
 
