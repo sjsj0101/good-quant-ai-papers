@@ -6,7 +6,7 @@
 
 Curated top-conference research for quantitative finance and asset management.
 
-[![Papers-119](https://img.shields.io/badge/Papers-119-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--11](https://img.shields.io/badge/Last_verified-2026--07--11-5F3DC4?style=flat-square)](data/papers.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
+[![Papers-122](https://img.shields.io/badge/Papers-122-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--11](https://img.shields.io/badge/Last_verified-2026--07--11-5F3DC4?style=flat-square)](data/papers.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
 
 </div>
 
@@ -25,8 +25,8 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | Venue | 2026 | 2025 | 2024 |
 | --- | ---: | ---: | ---: |
 | ICML | [23 papers](papers/2026/icml.md) · Pending | 0 papers · Pending | [3 papers](papers/2024/icml.md) · Pending |
-| NeurIPS | 0 papers · Pending | 0 papers · Pending | [12 papers](papers/2024/neurips.md) · Pending |
-| ICLR | 0 papers · Pending | 0 papers · Pending | [3 papers](papers/2024/iclr.md) · Pending |
+| NeurIPS | 0 papers · Pending | 0 papers · Pending | [15 papers](papers/2024/neurips.md) · Complete |
+| ICLR | 0 papers · Pending | 0 papers · Pending | [3 papers](papers/2024/iclr.md) · Complete |
 | KDD | 0 papers · Pending | 0 papers · Pending | [6 papers](papers/2024/kdd.md) · Pending |
 | AAAI | 0 papers · Pending | 0 papers · Pending | [5 papers](papers/2024/aaai.md) · Pending |
 | IJCAI | 0 papers · Pending | 0 papers · Pending | [14 papers](papers/2024/ijcai.md) · Pending |
@@ -114,12 +114,20 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [GLinSAT: The General Linear Satisfiability Neural Network Layer By Accelerated Gradient Descent](<https://proceedings.neurips.cc/paper_files/paper/2024/file/dd73f39426a03131c38c8d943153d44b-Paper-Conference.pdf>)<br><sub>Hongtai Zeng, Chao Yang, Yanzhen Zhou, Cheng Yang, Qinglai Guo</sub> | Main<br><sub>Not Specified</sub> | Enforces linear constraints in a differentiable layer and tests it on predictive equity portfolio allocation. | — | Keeps learned weights feasible while optimizing Sharpe ratio over a concentrated technology-stock universe. |
 | [Overcoming Brittleness in Pareto-Optimal Learning-Augmented Algorithms](<https://proceedings.neurips.cc/paper_files/paper/2024/file/11c6625b0481a7d5625831369f6b7c82-Paper-Conference.pdf>)<br><sub>Alex Elenter, Spyros Angelopoulos, Christoph Dürr, Yanni Lefki</sub> | Main<br><sub>Not Specified</sub> | Robustifies learning-augmented online algorithms and applies them to one-way foreign-exchange trading decisions. | — | Balances the upside of exchange-rate predictions against worst-case protection when those predictions fail. |
 
-### Workshops (2)
+### Workshops (4)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
 | [A Fully Analog Pipeline for Portfolio Optimization](<https://openreview.net/forum?id=mtkbTUVaV1>)<br><sub>James S. Cummins, Natalia Berloff</sub> | Workshop<br><sub>Poster</sub><br><sub>ML with New Compute Paradigms</sub> | Implements covariance estimation and minimum-variance portfolio construction as a fully analog computing pipeline. | — | Explores whether alternative hardware can accelerate the matrix operations behind efficient-frontier portfolios. |
+| [Do LLM Personas Dream of Bull Markets? Comparing Human and AI Investment Strategies Through the Lens of the Five-Factor Model](<https://openreview.net/forum?id=b2lFzaGlan>)<br><sub>Harris Borman, Anna Leontjeva, Luiz Pizzato, Max Kun Jiang, Dan Jermyn</sub> | Workshop<br><sub>Poster</sub><br><sub>Workshop on Open-World Agents: Synnergizing Reasoning and Decision-Making in Open-World Environments (OWA-2024)</sub> | Compares human investors with personality-conditioned language-model personas in a simulated investment task. | — | Tests how risk appetite, impulsivity, and learning style change an AI agent's investment behavior before such personas are trusted with decisions. |
 | [InvestAlign: Align LLMs with Investor Decision-Making under Herd Behavior](<https://openreview.net/forum?id=vqTknTkmVm>)<br><sub>Huisheng Wang, Zhuoshi Pan, Hangjing Zhang, Mingxiao Liu, Yiqing Lin, H. Vicky Zhao</sub> | Workshop<br><sub>Poster</sub><br><sub>Adaptive Foundation Models: Evolving AI for Personalized and Efficient Learning</sub> | Aligns language models with investor choices while explicitly modeling social-information cascades and herd behavior. | — | Tests whether an investment assistant can resist crowd-driven errors and preserve decision quality under social pressure. |
+| [Unlocking the Potential of Green Virtual Bidding Strategies : A Pathway to a Low-Carbon Electricity Market](<https://neurips.cc/virtual/2024/100558>)<br><sub>Aya Laajil, Laurent Barcelo, Frédérique M. Gagnon, Ghait Boukachab, Loubna Benabbou</sub> | Workshop<br><sub>Poster</sub><br><sub>Tackling Climate Change with Machine Learning</sub> | Develops machine-learning strategies for virtual bids that trade financially settled gaps between day-ahead and real-time electricity prices. | — | Connects algorithmic bidding decisions to both market profitability and lower-carbon electricity-market operation. |
+
+### Affinity Tracks (1)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [A Hybrid COMTE-LEFTIST Time-Series Explanation Method For a Time-series Classification Bitcoin Recommendation System](<https://openreview.net/forum?id=IepDSQDWWv>)<br><sub>lucas rabelo, Teresa Ludermir</sub> | Affinity<br><sub>Poster</sub><br><sub>LatinX in AI</sub> | Combines COMTE and LEFTIST to explain a Bitcoin time-series classifier that turns one-minute closes into 30-minute sell-or-hold recommendations. | Crypto · Intraday | Makes a short-horizon crypto trading signal more interpretable by showing which time-series changes drive each recommendation. |
 
 
 ## ICLR 2024
@@ -284,7 +292,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 
 - **2026** · [ICML 2026](papers/2026/icml.md) — 23 papers
 - **2024** · [ICML 2024](papers/2024/icml.md) — 3 papers
-- **2024** · [NeurIPS 2024](papers/2024/neurips.md) — 12 papers
+- **2024** · [NeurIPS 2024](papers/2024/neurips.md) — 15 papers
 - **2024** · [ICLR 2024](papers/2024/iclr.md) — 3 papers
 - **2024** · [KDD 2024](papers/2024/kdd.md) — 6 papers
 - **2024** · [AAAI 2024](papers/2024/aaai.md) — 5 papers

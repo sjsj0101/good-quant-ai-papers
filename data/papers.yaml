@@ -2288,6 +2288,91 @@
   status: accepted
   verified_on: 2026-07-11
 
+- id: 2024-neurips-rabelo-comte-leftist-bitcoin
+  title: A Hybrid COMTE-LEFTIST Time-Series Explanation Method For a Time-series Classification Bitcoin Recommendation System
+  authors:
+    - lucas rabelo
+    - Teresa Ludermir
+  venue: NeurIPS
+  year: 2024
+  track: affinity
+  subvenue: LatinX in AI
+  presentation: poster
+  official_url: https://neurips.cc/virtual/2024/107799
+  paper_url: https://openreview.net/forum?id=IepDSQDWWv
+  openreview_id: IepDSQDWWv
+  topics:
+    - alpha-modeling
+  summary: Combines COMTE and LEFTIST to explain a Bitcoin time-series classifier that turns one-minute closes into 30-minute sell-or-hold recommendations.
+  why_it_matters: Makes a short-horizon crypto trading signal more interpretable by showing which time-series changes drive each recommendation.
+  asset_classes:
+    - crypto
+  data_frequency: intraday
+  tasks:
+    - Bitcoin sell-or-hold recommendation
+    - time-series explanation
+  methods:
+    - COMTE-LEFTIST
+    - time-series classification
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-laajil-green-virtual-bidding
+  title: "Unlocking the Potential of Green Virtual Bidding Strategies : A Pathway to a Low-Carbon Electricity Market"
+  authors:
+    - Aya Laajil
+    - Laurent Barcelo
+    - Frédérique M. Gagnon
+    - Ghait Boukachab
+    - Loubna Benabbou
+  venue: NeurIPS
+  year: 2024
+  track: workshop
+  subvenue: Tackling Climate Change with Machine Learning
+  presentation: poster
+  official_url: https://neurips.cc/virtual/2024/100558
+  paper_url: https://neurips.cc/virtual/2024/100558
+  topics:
+    - alpha-modeling
+  summary: Develops machine-learning strategies for virtual bids that trade financially settled gaps between day-ahead and real-time electricity prices.
+  why_it_matters: Connects algorithmic bidding decisions to both market profitability and lower-carbon electricity-market operation.
+  tasks:
+    - virtual bidding
+  methods:
+    - machine learning
+  notes: NeurIPS 2024 Tackling Climate Change with Machine Learning workshop poster; the official record exposes the abstract and presentation but no separate manuscript link.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-borman-llm-personas-bull-markets
+  title: Do LLM Personas Dream of Bull Markets? Comparing Human and AI Investment Strategies Through the Lens of the Five-Factor Model
+  authors:
+    - Harris Borman
+    - Anna Leontjeva
+    - Luiz Pizzato
+    - Max Kun Jiang
+    - Dan Jermyn
+  venue: NeurIPS
+  year: 2024
+  track: workshop
+  subvenue: "Workshop on Open-World Agents: Synnergizing Reasoning and Decision-Making in Open-World Environments (OWA-2024)"
+  presentation: poster
+  official_url: https://neurips.cc/virtual/2024/100931
+  paper_url: https://openreview.net/forum?id=b2lFzaGlan
+  openreview_id: b2lFzaGlan
+  topics:
+    - financial-agents
+    - evaluation
+  summary: Compares human investors with personality-conditioned language-model personas in a simulated investment task.
+  why_it_matters: Tests how risk appetite, impulsivity, and learning style change an AI agent's investment behavior before such personas are trusted with decisions.
+  tasks:
+    - simulated investment decision-making
+  methods:
+    - large language model personas
+    - Five-Factor Model
+  status: accepted
+  verified_on: 2026-07-11
+
 - id: 2024-kdd-cao-investment-target-sourcing
   title: Sourcing Investment Targets for Venture and Growth Capital Using Multivariate Time Series Transformer
   authors:

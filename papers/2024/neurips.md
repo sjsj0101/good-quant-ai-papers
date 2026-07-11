@@ -2,15 +2,15 @@
 
 # NeurIPS 2024
 
-**Coverage status:** Pending
+**Coverage status:** Complete
 
 **Checked on:** 2026-07-11
 
-**Official audit sources:** [Source 1](<https://proceedings.neurips.cc/paper/2024>) · [Source 2](<https://neurips.cc/Conferences/2024/DatasetsBenchmarks/AcceptedPapers>) · [Source 3](<https://neurips.cc/virtual/2024/events/workshop>) · [Source 4](<https://neurips.cc/virtual/2024/affinity_events>) · [Source 5](<https://neurips.cc/virtual/2024/affinity-event/105023>)
+**Official audit sources:** [Source 1](<https://proceedings.neurips.cc/paper/2024>) · [Source 2](<https://neurips.cc/Conferences/2024/DatasetsBenchmarks/AcceptedPapers>) · [Source 3](<https://neurips.cc/virtual/2024/events/workshop>) · [Source 4](<https://neurips.cc/virtual/2024/affinity_events>) · [Source 5](<https://neurips.cc/virtual/2024/affinity-poster-session/107901>) · [Source 6](<https://neurips.cc/virtual/2024/affinity-event/105017>) · [Source 7](<https://neurips.cc/virtual/2024/workshop/84715>) · [Source 8](<https://neurips.cc/virtual/2024/workshop/84729>)
 
-**Coverage notes:** All 4,493 displayed proceedings titles, including Datasets and Benchmarks, were screened. Workshop and affinity are omitted from tracks\_checked because their paper-level review was incomplete; the official roster pages expose event entries rather than an aggregate accepted-paper list, and the Neurodiversity event page (105023) exposes four invited talks but no contributed-paper roster.
+**Coverage notes:** All 4,493 displayed proceedings titles, including Datasets and Benchmarks, were screened. The complete official side-program universe was also screened: all 56 workshops and all 12 affinity entries were resolved from their official programs, with the joint poster session and overflow stream reconciled to their constituent affinity rosters. No side-program artifact blockers remain. Three newly verified side-program papers were added: two workshop posters and one affinity poster.
 
-12 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+15 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
 
 [← Back to the main index](../../README.md)
 
@@ -280,7 +280,7 @@
 
 ---
 
-## Workshops (2)
+## Workshops (4)
 
 ### [A Fully Analog Pipeline for Portfolio Optimization](<https://openreview.net/forum?id=mtkbTUVaV1>)
 
@@ -310,6 +310,38 @@
 
 ---
 
+### [Do LLM Personas Dream of Bull Markets? Comparing Human and AI Investment Strategies Through the Lens of the Five-Factor Model](<https://openreview.net/forum?id=b2lFzaGlan>)
+
+**Catalog ID:** 2024-neurips-borman-llm-personas-bull-markets
+
+**Authors:** Harris Borman, Anna Leontjeva, Luiz Pizzato, Max Kun Jiang, Dan Jermyn
+
+**Venue / year:** NeurIPS · 2024
+
+**Track / presentation:** Workshop · Poster
+
+**Subvenue:** Workshop on Open-World Agents: Synnergizing Reasoning and Decision-Making in Open-World Environments (OWA-2024)
+
+**Status / verified:** Accepted · 2026-07-11
+
+**Topics:** Financial Agents · Evaluation
+
+**Assets / frequency:** Not specified
+
+**Tasks:** simulated investment decision-making
+
+**Methods:** large language model personas · Five-Factor Model
+
+**Identifiers:** OpenReview b2lFzaGlan
+
+**Focus:** Compares human investors with personality-conditioned language-model personas in a simulated investment task.
+
+**Why it matters:** Tests how risk appetite, impulsivity, and learning style change an AI agent's investment behavior before such personas are trusted with decisions.
+
+**Links:** [Official venue record](<https://neurips.cc/virtual/2024/100931>) · [Paper](<https://openreview.net/forum?id=b2lFzaGlan>)
+
+---
+
 ### [InvestAlign: Align LLMs with Investor Decision-Making under Herd Behavior](<https://openreview.net/forum?id=vqTknTkmVm>)
 
 **Catalog ID:** 2024-neurips-wang-investalign
@@ -335,5 +367,71 @@
 **Why it matters:** Tests whether an investment assistant can resist crowd-driven errors and preserve decision quality under social pressure.
 
 **Links:** [Official venue record](<https://neurips.cc/virtual/2024/104894>) · [Paper](<https://openreview.net/forum?id=vqTknTkmVm>)
+
+---
+
+### [Unlocking the Potential of Green Virtual Bidding Strategies : A Pathway to a Low-Carbon Electricity Market](<https://neurips.cc/virtual/2024/100558>)
+
+**Catalog ID:** 2024-neurips-laajil-green-virtual-bidding
+
+**Authors:** Aya Laajil, Laurent Barcelo, Frédérique M. Gagnon, Ghait Boukachab, Loubna Benabbou
+
+**Venue / year:** NeurIPS · 2024
+
+**Track / presentation:** Workshop · Poster
+
+**Subvenue:** Tackling Climate Change with Machine Learning
+
+**Status / verified:** Accepted · 2026-07-11
+
+**Topics:** Alpha Modeling
+
+**Assets / frequency:** Not specified
+
+**Tasks:** virtual bidding
+
+**Methods:** machine learning
+
+**Focus:** Develops machine-learning strategies for virtual bids that trade financially settled gaps between day-ahead and real-time electricity prices.
+
+**Why it matters:** Connects algorithmic bidding decisions to both market profitability and lower-carbon electricity-market operation.
+
+**Notes:** NeurIPS 2024 Tackling Climate Change with Machine Learning workshop poster; the official record exposes the abstract and presentation but no separate manuscript link.
+
+**Links:** [Official venue record](<https://neurips.cc/virtual/2024/100558>) · [Paper](<https://neurips.cc/virtual/2024/100558>)
+
+---
+
+## Affinity Tracks (1)
+
+### [A Hybrid COMTE-LEFTIST Time-Series Explanation Method For a Time-series Classification Bitcoin Recommendation System](<https://openreview.net/forum?id=IepDSQDWWv>)
+
+**Catalog ID:** 2024-neurips-rabelo-comte-leftist-bitcoin
+
+**Authors:** lucas rabelo, Teresa Ludermir
+
+**Venue / year:** NeurIPS · 2024
+
+**Track / presentation:** Affinity · Poster
+
+**Subvenue:** LatinX in AI
+
+**Status / verified:** Accepted · 2026-07-11
+
+**Topics:** Alpha Modeling
+
+**Assets / frequency:** Crypto · Intraday
+
+**Tasks:** Bitcoin sell-or-hold recommendation · time-series explanation
+
+**Methods:** COMTE-LEFTIST · time-series classification
+
+**Identifiers:** OpenReview IepDSQDWWv
+
+**Focus:** Combines COMTE and LEFTIST to explain a Bitcoin time-series classifier that turns one-minute closes into 30-minute sell-or-hold recommendations.
+
+**Why it matters:** Makes a short-horizon crypto trading signal more interpretable by showing which time-series changes drive each recommendation.
+
+**Links:** [Official venue record](<https://neurips.cc/virtual/2024/107799>) · [Paper](<https://openreview.net/forum?id=IepDSQDWWv>)
 
 ---
