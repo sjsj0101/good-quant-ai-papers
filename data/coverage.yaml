@@ -224,9 +224,16 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
+    - workshop
+    - position
+    - affinity
   official_sources:
+    - https://proceedings.mlr.press/v235/
+    - https://proceedings.mlr.press/v235/assets/bib/bibliography.bib
     - https://icml.cc/virtual/2024/papers.html
-  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+    - https://icml.cc/virtual/2024/events/workshop
+    - https://icml.cc/virtual/2024/affinity_events
+  notes: All 2,610 PMLR records and all 75 position papers were screened, and the workshop and affinity rosters were reviewed; the conference exposes no consolidated paper-level list for those side programs, WiML exposed no contributed-paper list, and the DisAbility/Queer and joint-poster acceptance rosters were not recoverable, so cross-track coverage remains pending.
 
 - venue: NeurIPS
   year: 2024
@@ -234,9 +241,14 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
+    - workshop
+    - affinity
   official_sources:
-    - https://neurips.cc/virtual/2024/papers.html
-  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+    - https://proceedings.neurips.cc/paper/2024
+    - https://neurips.cc/Conferences/2024/DatasetsBenchmarks/AcceptedPapers
+    - https://neurips.cc/virtual/2024/events/workshop
+    - https://neurips.cc/virtual/2024/affinity_events
+  notes: All 4,493 displayed proceedings titles were screened and official workshop and affinity rosters were reviewed; NeurIPS provides no consolidated paper-level list for 56 workshops or 12 affinity events, and several affinity events exposed no recoverable accepted-paper roster, so side-program coverage remains pending.
 
 - venue: ICLR
   year: 2024
@@ -244,9 +256,17 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
+    - workshop
+    - affinity
   official_sources:
-    - https://iclr.cc/virtual/2024/papers.html
-  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+    - https://proceedings.iclr.cc/paper_files/paper/2024
+    - https://openreview.net/group?id=ICLR.cc%2F2024%2FConference
+    - https://iclr.cc/Downloads/2024
+    - https://iclr.cc/virtual/2024/calendar
+    - https://iclr.cc/virtual/2024/events/workshop
+    - https://iclr.cc/virtual/2024/affinity_events
+    - https://blog.iclr.cc/2024/01/08/announcing-the-accepted-workshops-at-iclr-2024/
+  notes: The official 2,341-event download list received a complete fixed-vocabulary title screen, and accepted main, workshop, and affinity candidates were adjudicated from official ICLR and OpenReview records; the accepted OpenReview venue is client-paginated, its API was inaccessible, and ICLR exposes no consolidated paper-level list for all 20 workshops or Tiny Papers and Blog Track affinity sessions, so abstract-level side-program coverage remains pending.
 
 - venue: KDD
   year: 2024
@@ -254,9 +274,14 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
+    - workshop
   official_sources:
-    - https://kdd2024.kdd.org/research-track-papers/
-  notes: The official research-track paper list is available; the finance-scope eligibility review remains pending.
+    - https://kdd.org/kdd2024/research-track-papers/
+    - https://kdd.org/kdd2024/applied-data-science-track-papers/
+    - https://kdd.org/kdd2024/workshops/
+    - https://sites.google.com/view/kdd-mlf-2024/schedule
+    - https://kdd.org/kdd2024/special-days/
+  notes: The full Research and Applied Data Science schedules were title-screened and six workshops, including Machine Learning in Finance, were reviewed; the SDBD accepted-papers page was unavailable and KDD provides no consolidated paper-level list for the remaining workshops or Finance Day, so cross-track coverage remains pending.
 
 - venue: AAAI
   year: 2024
@@ -264,9 +289,13 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
+    - workshop
   official_sources:
-    - https://aaai.org/conference/aaai/aaai-24/
-  notes: The official conference page links the main technical-track program; the finance-scope eligibility review remains pending.
+    - https://aaai.org/aaai-24-conference/program-overview/
+    - https://ojs.aaai.org/index.php/AAAI/issue/archive
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-program/
+    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/
+  notes: Official proceedings records for the verified finance candidates and the workshop roster were reviewed; AAAI exposes the technical program across separate issue pages and no consolidated paper-level index for its 35 workshops, Bridge, student, or demonstration programs, so an exhaustive cross-track fixed-term audit remains pending.
 
 - venue: IJCAI
   year: 2024
@@ -276,7 +305,7 @@
     - main
   official_sources:
     - https://www.ijcai.org/proceedings/2024/
-  notes: The official proceedings include the main track; the finance-scope eligibility review remains pending.
+  notes: The complete official main proceedings index was title-screened and all included records were abstract-verified; the proceedings do not cover workshop or affinity papers and no consolidated official paper-level roster for those programs was recoverable, so cross-track coverage remains pending.
 
 - venue: WWW
   year: 2024
@@ -284,9 +313,13 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
+    - workshop
   official_sources:
+    - https://www2024.thewebconf.org/accepted/research-tracks/
+    - https://www2024.thewebconf.org/accepted/short-papers/
     - https://www2024.thewebconf.org/program/overview
-  notes: The official program overview exposes the main research sessions; the finance-scope eligibility review remains pending.
+    - https://www2024.thewebconf.org/program/workshops/
+  notes: The complete research and short-paper lists were screened and the 16-workshop roster was reviewed; several workshop sites exposed no complete paper-level acceptance list and the conference provides no consolidated workshop-paper roster, so cross-track coverage remains pending.
 
 - venue: WSDM
   year: 2024
@@ -294,9 +327,11 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
+    - workshop
   official_sources:
-    - https://www.wsdm-conference.org/2024/
-  notes: The official conference site links accepted papers and proceedings; the finance-scope eligibility review remains pending.
+    - https://www.wsdm-conference.org/2024/accepted-papers/
+    - https://www.wsdm-conference.org/2024/workshops/
+  notes: The complete main accepted-paper list produced no strict direct-investment match and the workshop roster was reviewed; workshop papers live on external sites and WSDM exposes no consolidated official paper-level acceptance list, so side-program coverage remains pending.
 
 - venue: SIGIR
   year: 2024
@@ -304,19 +339,26 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
+    - workshop
   official_sources:
     - https://sigir-2024.github.io/program_papers.html
-  notes: The official accepted-papers page includes the main research tracks; the finance-scope eligibility review remains pending.
+    - https://sigir-2024.github.io/proceedings.html
+    - https://sigir-2024.github.io/attend_workshops.html
+  notes: The official main-paper program was screened and produced no strict direct-investment match; the 13 workshop programs are hosted externally and SIGIR exposes no consolidated official paper-level acceptance list, so side-program coverage remains pending.
 
 - venue: AISTATS
   year: 2024
-  status: pending
+  status: no-eligible-papers
   checked_on: 2026-07-11
   tracks_checked:
     - main
   official_sources:
+    - https://proceedings.mlr.press/v238/
     - https://aistats.org/aistats2024/
-  notes: The official conference page links the main proceedings and schedule; the finance-scope eligibility review remains pending.
+    - https://aistats.org/aistats2024/call-for-papers.html
+    - https://virtual.aistats.org/virtual/2024/papers.html
+    - https://virtual.aistats.org/virtual/2024/calendar
+  notes: The single archival Proceedings Track was fixed-vocabulary screened across the complete official PMLR index and official virtual metadata, with no strict direct-investment paper found; the official program contains social and mentoring events but no workshop-paper, affinity-paper, or position-paper family.
 
 - venue: ACM ICAIF
   year: 2024
@@ -324,6 +366,8 @@
   checked_on: 2026-07-11
   tracks_checked:
     - main
+    - workshop
   official_sources:
     - https://ai-finance.org/technical-program/
-  notes: The official technical program lists accepted main-program papers; the finance-scope eligibility review remains pending.
+    - https://ai-finance.org/workshops-and-tutorials/
+  notes: All 100 official technical-program papers were screened and 47 strict direct-investment records were verified; the workshop page exposes only event links and several external programs lack recoverable paper-level acceptance lists, so cross-track coverage remains pending.

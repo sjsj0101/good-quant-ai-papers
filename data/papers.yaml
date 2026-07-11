@@ -512,3 +512,2030 @@
   notes: "2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026); non-archival workshop paper."
   status: accepted
   verified_on: 2026-07-11
+
+- id: 2024-icml-lin-autonomous-sparse-mean-cvar
+  title: Autonomous Sparse Mean-CVaR Portfolio Optimization
+  authors:
+    - Yizun Lin
+    - Yangyu Zhang
+    - Zhao-Rong Lai
+    - Cheng Li
+  venue: ICML
+  year: 2024
+  track: main
+  presentation: poster
+  official_url: https://proceedings.mlr.press/v235/lin24w.html
+  paper_url: https://raw.githubusercontent.com/mlresearch/v235/main/assets/lin24w/lin24w.pdf
+  topics:
+    - portfolio-optimization
+    - risk-management
+  summary: Builds a sparse mean-CVaR portfolio model that adapts its asset-selection mechanism as the investable universe changes.
+  why_it_matters: Couples downside-risk control with scalable security selection instead of requiring a fixed asset pool.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-icml-veviurko-you-shall-pass
+  title: "You Shall Pass: Dealing with the Zero-Gradient Problem in Predict and Optimize for Convex Optimization"
+  authors:
+    - Grigorii Veviurko
+    - Wendelin Boehmer
+    - Mathijs de Weerdt
+  venue: ICML
+  year: 2024
+  track: workshop
+  subvenue: Differentiable Almost Everything Workshop
+  presentation: poster
+  official_url: https://icml.cc/virtual/2024/37251
+  paper_url: https://openreview.net/forum?id=vmnfrrLATL
+  openreview_id: vmnfrrLATL
+  topics:
+    - portfolio-optimization
+  summary: Repairs zero gradients in decision-focused learning and tests the resulting surrogate on a convex portfolio-optimization problem.
+  why_it_matters: Makes it possible to train prediction models against downstream portfolio quality when the optimizer otherwise supplies no learning signal.
+  notes: "ICML 2024 Differentiable Almost Everything Workshop paper; acceptance and poster format are shown on the official ICML record."
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-icml-hoshisashi-derivative-constrained-pdes
+  title: Physics-Informed Neural Networks for Derivative-Constrained PDEs
+  authors:
+    - Kentaro Hoshisashi
+    - Carolyn Phelan
+    - Paolo Barucca
+  venue: ICML
+  year: 2024
+  track: workshop
+  subvenue: "AI for Science: Scaling in AI for Scientific Discovery"
+  presentation: poster
+  official_url: https://icml.cc/virtual/2024/36827
+  paper_url: https://openreview.net/forum?id=9pFHmyx4Sh
+  openreview_id: 9pFHmyx4Sh
+  topics:
+    - derivatives
+    - financial-forecasting
+  summary: Extends physics-informed networks to PDEs with derivative constraints and benchmarks the method on option pricing and local-volatility calibration.
+  why_it_matters: Enforces economically relevant derivative conditions while learning pricing and volatility surfaces from sparse observations.
+  notes: "ICML 2024 AI for Science workshop paper; acceptance and poster format are shown on the official ICML record."
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-www-huang-nft-prosperity
+  title: Unveiling the Paradox of NFT Prosperity
+  authors:
+    - Jintao Huang
+    - Pengcheng Xia
+    - Jiefeng Li
+    - Kai Ma
+    - Gareth Tyson
+    - Xiapu Luo
+    - Lei Wu
+    - Yajin Zhou
+    - Wei Cai
+    - Haoyu Wang
+  venue: WWW
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3589334.3645566
+  paper_url: https://doi.org/10.1145/3589334.3645566
+  doi: 10.1145/3589334.3645566
+  topics:
+    - market-microstructure
+    - alternative-data
+  summary: Measures trading concentration, wash activity, and arbitrage across a large cross-market sample of NFT transactions.
+  why_it_matters: Quantifies manipulation and arbitrage conditions that materially affect price discovery and execution risk in digital-asset markets.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-www-koa-explainable-stock-predictions
+  title: Learning to Generate Explainable Stock Predictions using Self-Reflective Large Language Models
+  authors:
+    - Kelvin J. L. Koa
+    - Yunshan Ma
+    - Ritchie Ng
+    - Tat-Seng Chua
+  venue: WWW
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3589334.3645611
+  paper_url: https://arxiv.org/abs/2402.03659
+  arxiv_id: "2402.03659"
+  doi: 10.1145/3589334.3645611
+  topics:
+    - alpha-modeling
+    - financial-agents
+  summary: Trains a self-reflective language model to explain next-day stock forecasts and validates the signals in portfolio construction.
+  why_it_matters: Links text-based model explanations to realized portfolio outcomes rather than treating prediction accuracy as the final objective.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-www-zhang-maskable-stock-representation
+  title: Reinforcement Learning with Maskable Stock Representation for Portfolio Management in Customizable Stock Pools
+  authors:
+    - Wentao Zhang
+    - Yilei Zhao
+    - Shuo Sun
+    - Jie Ying
+    - Yonggang Xie
+    - Zitao Song
+    - Xinrun Wang
+    - Bo An
+  venue: WWW
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3589334.3645615
+  paper_url: https://arxiv.org/abs/2311.10801
+  arxiv_id: "2311.10801"
+  doi: 10.1145/3589334.3645615
+  topics:
+    - asset-allocation
+    - portfolio-optimization
+  summary: Learns a maskable stock representation so one reinforcement-learning allocator can operate across investor-selected equity universes.
+  why_it_matters: Lets investors change the eligible stock pool without retraining a separate portfolio policy for every universe.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-www-niu-nft-wash-trading
+  title: Unveiling Wash Trading in Popular NFT Markets
+  authors:
+    - Yuanzheng Niu
+    - Xiaoqi Li
+    - Hongli Peng
+    - Wenkai Li
+  venue: WWW
+  year: 2024
+  track: main
+  presentation: poster
+  official_url: https://doi.org/10.1145/3589335.3651580
+  paper_url: https://arxiv.org/abs/2403.10361
+  arxiv_id: "2403.10361"
+  doi: 10.1145/3589335.3651580
+  topics:
+    - market-microstructure
+    - alternative-data
+  summary: Detects wash trading from transaction-network and behavioral patterns across four NFT marketplaces.
+  why_it_matters: Reveals how incentive design can distort observed liquidity and volume in investable digital-asset venues.
+  notes: WWW 2024 short-paper track in the companion proceedings.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-wang-learned-beta-policies
+  title: Market Making with Learned Beta Policies
+  authors:
+    - Yongzhao Wang
+    - Rahul Savani
+    - Anri Gu
+    - Chris Mascioli
+    - Theodore L. Turocy
+    - Michael P. Wellman
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698623
+  paper_url: https://doi.org/10.1145/3677052.3698623
+  doi: 10.1145/3677052.3698623
+  topics:
+    - market-microstructure
+    - execution
+  summary: Learns beta-distribution policies for quoting decisions in an agent-based market-making environment.
+  why_it_matters: Gives liquidity providers a flexible policy class for balancing spread capture against inventory and adverse-selection risk.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-wang-liquid-options-markets
+  title: Designing Expressive and Liquid Financial Options Markets via Linear Programming and Automated Market Making
+  authors:
+    - Xintong Wang
+    - David M. Pennock
+    - David M. Rothschild
+    - Nikhil R. Devanur
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698687
+  paper_url: https://doi.org/10.1145/3677052.3698687
+  doi: 10.1145/3677052.3698687
+  topics:
+    - derivatives
+    - market-microstructure
+  summary: Uses linear programming and automated market making to support expressive option contracts while preserving feasible prices.
+  why_it_matters: Expands the range of hedgeable payoff structures without abandoning liquidity or internally consistent pricing.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-balcau-liquidity-taking-distributions
+  title: Detecting Collective Liquidity Taking Distributions
+  authors:
+    - Andrei-Bogdan Balcau
+    - Leandro Sánchez-Betancourt
+    - Stefan Sarkadi
+    - Carmine Ventre
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698643
+  paper_url: https://doi.org/10.1145/3677052.3698643
+  doi: 10.1145/3677052.3698643
+  topics:
+    - market-microstructure
+    - execution
+  summary: Detects coordinated patterns in how market participants consume available liquidity.
+  why_it_matters: Helps distinguish collective order-flow behavior that can change execution costs and short-horizon liquidity risk.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-brini-derivative-hedging
+  title: Data-driven Derivative Hedging with Quadratic Variation Penalty
+  authors:
+    - Alessio Brini
+    - Giacomo Domeniconi
+    - Ali Fathi
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698664
+  paper_url: https://doi.org/10.1145/3677052.3698664
+  doi: 10.1145/3677052.3698664
+  topics:
+    - derivatives
+    - risk-management
+  summary: Learns derivative hedges under a quadratic-variation penalty that discourages unstable trading paths.
+  why_it_matters: Controls hedge variability alongside replication error, making learned strategies less sensitive to noisy rebalancing.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-camilleri-adaptive-risk-control
+  title: Adaptive Risk-Based Control in Financial Trading
+  authors:
+    - Max M. Camilleri
+    - Josef Bajada
+    - Vincent Vella
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698652
+  paper_url: https://doi.org/10.1145/3677052.3698652
+  doi: 10.1145/3677052.3698652
+  topics:
+    - execution
+    - risk-management
+  summary: Adapts a trading controller to changing risk conditions rather than applying a fixed exposure rule.
+  why_it_matters: Lets a trading policy respond directly to evolving downside constraints during deployment.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-cao-ecc-analyzer
+  title: "ECC Analyzer: Extracting Trading Signal from Earnings Conference Calls using Large Language Model for Stock Volatility Prediction"
+  authors:
+    - Yupeng Cao
+    - Zhi Chen
+    - Qingyun Pei
+    - Nathan Lee
+    - K. P. Subbalakshmi
+    - Papa Momar Ndiaye
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698689
+  paper_url: https://doi.org/10.1145/3677052.3698689
+  doi: 10.1145/3677052.3698689
+  topics:
+    - alternative-data
+    - alpha-modeling
+    - financial-forecasting
+  summary: Extracts trading signals from earnings-call language with a model trained to anticipate stock-volatility changes.
+  why_it_matters: Converts management commentary into a volatility-aware signal that can inform event trading and risk sizing.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-dolphin-asset-embeddings
+  title: Contrastive Learning of Asset Embeddings from Financial Time Series
+  authors:
+    - Rian Dolphin
+    - Barry Smyth
+    - Ruihai Dong
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698610
+  paper_url: https://arxiv.org/abs/2407.18645
+  arxiv_id: "2407.18645"
+  doi: 10.1145/3677052.3698610
+  topics:
+    - portfolio-optimization
+    - risk-management
+  summary: Learns asset embeddings from return subwindows and evaluates their relationships in portfolio hedging and industry classification.
+  why_it_matters: Supplies a nonlinear similarity measure for selecting diversifying hedge assets when correlation estimates are noisy.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-fatemi-finvision
+  title: "FinVision: A Multi-Agent Framework for Stock Market Prediction"
+  authors:
+    - Sorouralsadat Fatemi
+    - Yuheng Hu
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698688
+  paper_url: https://arxiv.org/abs/2411.08899
+  arxiv_id: "2411.08899"
+  doi: 10.1145/3677052.3698688
+  topics:
+    - financial-agents
+    - alpha-modeling
+  summary: Coordinates language-model agents over news, candlestick charts, technical signals, and prior trade outcomes to predict stock moves.
+  why_it_matters: Tests a multimodal research team whose forecasts feed concrete trading decisions and improve through post-trade reflection.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-gopal-neuralfactors
+  title: "NeuralFactors: A Novel Factor Learning Approach to Generative Modeling of Equities"
+  authors:
+    - Achintya Gopal
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698647
+  paper_url: https://doi.org/10.1145/3677052.3698647
+  doi: 10.1145/3677052.3698647
+  topics:
+    - factor-investing
+    - synthetic-data
+  summary: Learns latent equity factors inside a generative model of cross-sectional return behavior.
+  why_it_matters: Offers a data-driven factor representation for simulating equity exposures and evaluating systematic strategies.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-gorduza-analyst-network-alpha
+  title: Extracting Alpha from Financial Analyst Networks
+  authors:
+    - Dragos Gorduza
+    - Yaxuan Kong
+    - Xiaowen Dong
+    - Stefan Zohren
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698630
+  paper_url: https://doi.org/10.1145/3677052.3698630
+  doi: 10.1145/3677052.3698630
+  topics:
+    - alpha-modeling
+    - alternative-data
+  summary: Models relationships among financial analysts to derive stock-selection signals beyond standalone recommendations.
+  why_it_matters: Treats the analyst network itself as alternative data for identifying differentiated equity views.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-gu-liquidity-spoofability
+  title: The Effect of Liquidity on the Spoofability of Financial Markets
+  authors:
+    - Anri Gu
+    - Yongzhao Wang
+    - Chris Mascioli
+    - Mithun Chakraborty
+    - Rahul Savani
+    - Theodore L. Turocy
+    - Michael P. Wellman
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698634
+  paper_url: https://doi.org/10.1145/3677052.3698634
+  doi: 10.1145/3677052.3698634
+  topics:
+    - market-microstructure
+    - market-simulation
+  summary: Studies how market liquidity changes the profitability and detectability of spoofing in a simulated trading environment.
+  why_it_matters: Shows when apparent depth is most vulnerable to manipulation, informing execution and surveillance under different liquidity regimes.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-gu-margin-trading-llms
+  title: Adaptive and Explainable Margin Trading via Large Language Models on Portfolio Management
+  authors:
+    - Jingyi Gu
+    - Junyi Ye
+    - Guiling Wang
+    - Wenpeng Yin
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698681
+  paper_url: https://doi.org/10.1145/3677052.3698681
+  doi: 10.1145/3677052.3698681
+  topics:
+    - portfolio-optimization
+    - financial-agents
+    - risk-management
+  summary: Uses language models to adapt and explain leveraged portfolio decisions under margin constraints.
+  why_it_matters: Makes leverage selection responsive to market context while exposing the rationale behind portfolio-level risk taking.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-gu-dystage-asset-pricing
+  title: "DySTAGE: Dynamic Graph Representation Learning for Asset Pricing via Spatio-Temporal Attention and Graph Encodings"
+  authors:
+    - Jingyi Gu
+    - Junyi Ye
+    - Ajim Uddin
+    - Guiling Wang
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698680
+  paper_url: https://doi.org/10.1145/3677052.3698680
+  doi: 10.1145/3677052.3698680
+  topics:
+    - alpha-modeling
+    - financial-forecasting
+  summary: Learns time-varying equity relationships with graph encodings and spatio-temporal attention for asset-pricing predictions.
+  why_it_matters: Lets return signals incorporate changing cross-stock dependencies instead of relying on a static relation graph.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-han-agent-investment-analysis
+  title: "Enhancing Investment Analysis: Optimizing AI-Agent Collaboration in Financial Research"
+  authors:
+    - Xuewen Han
+    - Neng Wang
+    - Shangkun Che
+    - Hongyang Yang
+    - Kunpeng Zhang
+    - Sean Xin Xu
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698645
+  paper_url: https://doi.org/10.1145/3677052.3698645
+  doi: 10.1145/3677052.3698645
+  topics:
+    - financial-agents
+    - evaluation
+  summary: Optimizes how specialized AI agents collaborate across the stages of an investment-research workflow.
+  why_it_matters: Evaluates agent coordination on producing decision-ready financial analysis rather than isolated question answering.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-hoshisashi-implied-volatility-surface
+  title: "Whack-a-mole Online Learning: Physics-Informed Neural Network for Intraday Implied Volatility Surface"
+  authors:
+    - Kentaro Hoshisashi
+    - Carolyn E. Phelan
+    - Paolo Barucca
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698601
+  paper_url: https://doi.org/10.1145/3677052.3698601
+  doi: 10.1145/3677052.3698601
+  topics:
+    - derivatives
+    - financial-forecasting
+  summary: Fits intraday implied-volatility surfaces with a physics-informed network that incorporates derivative constraints during online updates.
+  why_it_matters: Produces dynamically refreshed option surfaces while discouraging economically inconsistent shapes.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-lee-stock-recommendations
+  title: "Stock Recommendations for Individual Investors: A Temporal Graph Network Approach with Mean-Variance Efficient Sampling"
+  authors:
+    - Youngbin Lee
+    - Yejin Kim
+    - Javier Sanz-Cruzado
+    - Richard McCreadie
+    - Yongjae Lee
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698662
+  paper_url: https://doi.org/10.1145/3677052.3698662
+  doi: 10.1145/3677052.3698662
+  topics:
+    - alpha-modeling
+    - portfolio-optimization
+  summary: Combines temporal investor-stock interactions with mean-variance sampling to personalize equity recommendations.
+  why_it_matters: Aligns recommendation candidates with portfolio efficiency instead of optimizing relevance alone.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-li-mixtures-order-execution
+  title: Mixtures of Experts for Scaling up Neural Networks in Order Execution
+  authors:
+    - Kang Li
+    - Mihai Cucuringu
+    - Leandro Sánchez-Betancourt
+    - Timon Willi
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698691
+  paper_url: https://doi.org/10.1145/3677052.3698691
+  doi: 10.1145/3677052.3698691
+  topics:
+    - execution
+  summary: Scales neural execution policies through a mixture of specialized experts for heterogeneous order conditions.
+  why_it_matters: Lets an execution system specialize across market states while retaining a shared policy architecture.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-lim-autoregressive-portfolio-optimisation
+  title: Autoregressive DRL with Learned Intrinsic Rewards for Portfolio Optimisation
+  authors:
+    - Magdalene Hui Qi Lim
+    - Nixie S. Lesmana
+    - Chi Seng Pun
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698670
+  paper_url: https://doi.org/10.1145/3677052.3698670
+  doi: 10.1145/3677052.3698670
+  topics:
+    - asset-allocation
+    - portfolio-optimization
+  summary: Trains an autoregressive allocation policy with learned intrinsic rewards for sequential portfolio construction.
+  why_it_matters: Shapes the reinforcement signal around portfolio quality when immediate market rewards are sparse or noisy.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-lin-neural-option-term-structure
+  title: Neural Term Structure of Additive Process for Option Pricing
+  authors:
+    - Jimin Lin
+    - Guixin Liu
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698672
+  paper_url: https://doi.org/10.1145/3677052.3698672
+  doi: 10.1145/3677052.3698672
+  topics:
+    - derivatives
+  summary: Learns the maturity structure of an additive stochastic process for option valuation.
+  why_it_matters: Provides a flexible way to fit option prices across expiries while retaining a coherent underlying process.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-mascioli-financial-market-simulation
+  title: A Financial Market Simulation Environment for Trading Agents Using Deep Reinforcement Learning
+  authors:
+    - Chris Mascioli
+    - Anri Gu
+    - Yongzhao Wang
+    - Mithun Chakraborty
+    - Michael P. Wellman
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698639
+  paper_url: https://doi.org/10.1145/3677052.3698639
+  doi: 10.1145/3677052.3698639
+  topics:
+    - market-simulation
+    - financial-agents
+  summary: Builds an agent-based financial-market environment for training and evaluating deep reinforcement-learning traders.
+  why_it_matters: Enables controlled experiments on strategy interaction and market outcomes before policies are exposed to live markets.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-mudarisov-cross-sector-regimes
+  title: Cross-Sector Market Regime Forecasting with LLM-Augmented News Analysis
+  authors:
+    - Timur Mudarisov
+    - Radu Valentin State
+    - Zsófia Kräussl
+    - Alexander Yakubov
+    - Tatiana Petrova
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698642
+  paper_url: https://doi.org/10.1145/3677052.3698642
+  doi: 10.1145/3677052.3698642
+  topics:
+    - market-regimes
+    - alternative-data
+    - financial-forecasting
+  summary: Combines cross-sector market data with language-model news representations to forecast regime changes.
+  why_it_matters: Gives allocation and risk systems an early signal of sector-wide shifts that may not appear in prices alone.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-mueller-fast-deep-hedging
+  title: Fast Deep Hedging with Second-Order Optimization
+  authors:
+    - Konrad Mueller
+    - Amira Akkari
+    - Lukas Gonon
+    - Ben Wood
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698604
+  paper_url: https://doi.org/10.1145/3677052.3698604
+  doi: 10.1145/3677052.3698604
+  topics:
+    - derivatives
+    - risk-management
+  summary: Accelerates deep-hedging training with second-order optimization tailored to the hedging objective.
+  why_it_matters: Reduces the computational burden of learning nonlinear derivative hedges under realistic risk criteria.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-mukherjee-numin-intraday-trading
+  title: "Numin: Weighted-Majority Ensembles for Intraday Trading"
+  authors:
+    - Aniruddha Mukherjee
+    - Rekha Singhal
+    - Gautam Shroff
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698656
+  paper_url: https://doi.org/10.1145/3677052.3698656
+  doi: 10.1145/3677052.3698656
+  topics:
+    - alpha-modeling
+    - execution
+  summary: Aggregates intraday trading experts with a weighted-majority rule that adapts to their realized performance.
+  why_it_matters: Diversifies short-horizon signal risk while shifting capital toward experts that remain effective online.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-naarayan-multilevel-option-pricing
+  title: Stable Multilevel Deep Neural Networks for Option Pricing and xVAs Using Forward-Backward Stochastic Differential Equations
+  authors:
+    - Aadhithya Ashok Naarayan
+    - Panos Parpas
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698598
+  paper_url: https://doi.org/10.1145/3677052.3698598
+  doi: 10.1145/3677052.3698598
+  topics:
+    - derivatives
+    - risk-management
+  summary: Uses a stable multilevel neural solver for option prices and valuation adjustments represented by forward-backward stochastic equations.
+  why_it_matters: Targets faster valuation of derivative exposures while controlling numerical instability across resolution levels.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-nicolini-hopfield-asset-allocation
+  title: Hopfield networks for asset allocation
+  authors:
+    - Carlo Nicolini
+    - Monisha Gopalan
+    - Bruno Lepri
+    - Jacopo Staiano
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698605
+  paper_url: https://doi.org/10.1145/3677052.3698605
+  doi: 10.1145/3677052.3698605
+  topics:
+    - asset-allocation
+    - portfolio-optimization
+  summary: Formulates asset-allocation search through the energy dynamics of a Hopfield network.
+  why_it_matters: Provides an alternative optimization mechanism for navigating combinatorial portfolio choices.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-nuriyev-macro-regime-factors
+  title: Augmenting Equity Factor Investing with Global Macro Regimes
+  authors:
+    - Dmitriy Nuriyev
+    - Songyun Duan
+    - Lingjie Yi
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698620
+  paper_url: https://doi.org/10.1145/3677052.3698620
+  doi: 10.1145/3677052.3698620
+  topics:
+    - factor-investing
+    - market-regimes
+  summary: Conditions equity-factor strategies on learned global macroeconomic regimes.
+  why_it_matters: Allows factor exposures to change when the macro environment alters expected returns and diversification benefits.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-orra-dynamic-reinforced-ensemble
+  title: Dynamic Reinforced Ensemble using Bayesian Optimization for Stock Trading
+  authors:
+    - Arishi Orra
+    - Aryan Bhambu
+    - Himanshu Choudhary
+    - Manoj Thakur
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698595
+  paper_url: https://doi.org/10.1145/3677052.3698595
+  doi: 10.1145/3677052.3698595
+  topics:
+    - alpha-modeling
+    - financial-agents
+  summary: Uses Bayesian optimization to tune a dynamic ensemble of reinforcement-learning stock traders.
+  why_it_matters: Adapts strategy weights to changing performance rather than committing capital to one fixed trading policy.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-papasotiriou-equity-stock-ratings
+  title: "AI in Investment Analysis: LLMs for Equity Stock Ratings"
+  authors:
+    - Kassiani Papasotiriou
+    - Srijan Sood
+    - Shayleen Reynolds
+    - Tucker Balch
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698694
+  paper_url: https://doi.org/10.1145/3677052.3698694
+  doi: 10.1145/3677052.3698694
+  topics:
+    - alpha-modeling
+    - financial-agents
+    - evaluation
+  summary: Evaluates language models as producers of equity ratings within an investment-analysis workflow.
+  why_it_matters: Tests whether model-generated research opinions can support comparable and auditable stock-selection decisions.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-ren-riskminer
+  title: "RiskMiner: Discovering Formulaic Alphas via Risk Seeking Monte Carlo Tree Search"
+  authors:
+    - Tao Ren
+    - Ruihan Zhou
+    - Jinyang Jiang
+    - Jiafeng Liang
+    - Qinghao Wang
+    - Yijie Peng
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698613
+  paper_url: https://doi.org/10.1145/3677052.3698613
+  doi: 10.1145/3677052.3698613
+  topics:
+    - alpha-modeling
+    - factor-investing
+  summary: Searches symbolic factor expressions with a risk-seeking Monte Carlo tree policy to discover return signals.
+  why_it_matters: Automates interpretable alpha discovery while focusing exploration on the most promising formula families.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-rusnak-macroeconomic-synthetic-markets
+  title: Macroeconomic Conditioned Synthetic Financial Markets
+  authors:
+    - Alexander Michael Rusnak
+    - Stéphane Daul
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698606
+  paper_url: https://doi.org/10.1145/3677052.3698606
+  doi: 10.1145/3677052.3698606
+  topics:
+    - synthetic-data
+    - market-simulation
+    - market-regimes
+  summary: Generates synthetic financial markets conditional on macroeconomic states.
+  why_it_matters: Supports scenario analysis in regimes that are scarce or absent from the historical return sample.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-saha-municipal-bond-valuation
+  title: Machine Learning-based Relative Valuation of Municipal Bonds
+  authors:
+    - Preetha Saha
+    - Jasmine Lyu
+    - Dhruv Desai
+    - Rishab Chauhan
+    - Jerinsh Jeyapaulraj
+    - Peter Chu
+    - Philip Sommer
+    - Dhagash Mehta
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698650
+  paper_url: https://doi.org/10.1145/3677052.3698650
+  doi: 10.1145/3677052.3698650
+  topics:
+    - alpha-modeling
+    - alternative-data
+  summary: Learns comparable-value estimates for sparsely traded municipal bonds from cross-sectional bond attributes.
+  why_it_matters: Helps fixed-income investors identify relative mispricing where transaction-based price discovery is thin.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-shi-market-making-hedging-impact
+  title: Market-Making and Hedging with Market Impact using Deep Reinforcement Learning
+  authors:
+    - Jiayu Shi
+    - Siu Hin Tang
+    - Chao Zhou
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698646
+  paper_url: https://doi.org/10.1145/3677052.3698646
+  doi: 10.1145/3677052.3698646
+  topics:
+    - market-microstructure
+    - execution
+    - risk-management
+  summary: Trains a joint market-making and hedging policy that accounts for the price impact of its own trades.
+  why_it_matters: Integrates quoting, inventory control, and hedge execution instead of treating market impact as an afterthought.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-khelifa-clustered-asset-universes
+  title: Cluster-driven Hierarchical Representation of Large Asset Universes for Optimal Portfolio Construction
+  authors:
+    - Nail Khelifa
+    - Jérôme Allier
+    - Mihai Cucuringu
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698676
+  paper_url: https://doi.org/10.1145/3677052.3698676
+  doi: 10.1145/3677052.3698676
+  topics:
+    - portfolio-optimization
+    - asset-allocation
+  summary: Compresses large security universes into a hierarchical cluster representation for portfolio construction.
+  why_it_matters: Reduces the dimensional burden of optimizing over many correlated assets while preserving cross-cluster diversification.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-kubiak-financial-correlation-matrices
+  title: Denoising Diffusion Probabilistic Model for Realistic Financial Correlation Matrices
+  authors:
+    - Szymon Kubiak
+    - Tillman Weyde
+    - Oleksandr Galkin
+    - Daniel Philps
+    - Ram Gopal
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698640
+  paper_url: https://doi.org/10.1145/3677052.3698640
+  doi: 10.1145/3677052.3698640
+  topics:
+    - synthetic-data
+    - risk-management
+  summary: Uses a denoising diffusion model to generate correlation matrices with financial dependence structure.
+  why_it_matters: Supplies realistic covariance scenarios for portfolio-risk testing when historical matrices are noisy or data-limited.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-kweon-decision-focused-execution
+  title: "Optimizing Sequential Predictions for Order Execution: a Decision Focused Learning Approach"
+  authors:
+    - Sunmin Kweon
+    - Yonghwan Yim
+    - Seungki Min
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698665
+  paper_url: https://doi.org/10.1145/3677052.3698665
+  doi: 10.1145/3677052.3698665
+  topics:
+    - execution
+    - financial-forecasting
+  summary: Trains sequential forecasts through the realized objective of an order-execution policy.
+  why_it_matters: Rewards predictions that lower implementation cost rather than those that only minimize statistical error.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-kwon-gan-stylized-facts
+  title: Can GANs Learn the Stylized Facts of Financial Time Series?
+  authors:
+    - Sohyeon Kwon
+    - Yongjae Lee
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698661
+  paper_url: https://doi.org/10.1145/3677052.3698661
+  doi: 10.1145/3677052.3698661
+  topics:
+    - synthetic-data
+    - market-simulation
+  summary: Tests whether generative adversarial networks reproduce the statistical regularities of financial time series.
+  why_it_matters: Establishes whether synthetic paths preserve the market features needed for credible strategy and risk evaluation.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-iacovides-finllama
+  title: "FinLlama: LLM-Based Financial Sentiment Analysis for Algorithmic Trading"
+  authors:
+    - Giorgos Iacovides
+    - Thanos Konstantinidis
+    - Mingxue Xu
+    - Danilo P. Mandic
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698696
+  paper_url: https://doi.org/10.1145/3677052.3698696
+  doi: 10.1145/3677052.3698696
+  topics:
+    - alternative-data
+    - alpha-modeling
+  summary: Adapts a language model for financial sentiment signals evaluated in algorithmic trading.
+  why_it_matters: Connects text classification to an executable trading rule instead of reporting sentiment accuracy alone.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-istiaque-simulating-asset-prices
+  title: Simulating Asset Prices using Conditional Time-Series GAN
+  authors:
+    - Riasat Ali Istiaque
+    - Chi Seng Pun
+    - Yuli Song
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698638
+  paper_url: https://doi.org/10.1145/3677052.3698638
+  doi: 10.1145/3677052.3698638
+  topics:
+    - synthetic-data
+    - market-simulation
+  summary: Generates conditional asset-price paths with a time-series adversarial model.
+  why_it_matters: Expands the set of return scenarios available for portfolio stress tests and strategy development.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-stevinson-certified-asset-allocation
+  title: Reducing Return Volatility in Neural Network-Based Asset Allocation via Formal Verification and Certified Training
+  authors:
+    - Edward Stevinson
+    - Alessio Lomuscio
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698678
+  paper_url: https://doi.org/10.1145/3677052.3698678
+  doi: 10.1145/3677052.3698678
+  topics:
+    - asset-allocation
+    - risk-management
+    - evaluation
+  summary: Certifies and trains neural allocation rules to limit return volatility under specified input perturbations.
+  why_it_matters: Adds formal robustness guarantees to portfolio policies whose weights can otherwise change unpredictably.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-tan-end-to-end-options-trading
+  title: "Deep Learning for Options Trading: An End-To-End Approach"
+  authors:
+    - Wee Ling Tan
+    - Stephen Roberts
+    - Stefan Zohren
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698624
+  paper_url: https://doi.org/10.1145/3677052.3698624
+  doi: 10.1145/3677052.3698624
+  topics:
+    - derivatives
+    - alpha-modeling
+  summary: Learns option-trading decisions end to end from market inputs rather than optimizing a separate pricing forecast.
+  why_it_matters: Aligns the model directly with derivative-strategy performance and trading frictions.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-wang-arl-market-making
+  title: ARL-Based Multi-Action Market Making with Hawkes Processes and Variable Volatility
+  authors:
+    - Ziyi Wang
+    - Carmine Ventre
+    - Maria Polukarov
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698695
+  paper_url: https://doi.org/10.1145/3677052.3698695
+  doi: 10.1145/3677052.3698695
+  topics:
+    - market-microstructure
+    - execution
+  summary: Trains a multi-action market maker in a Hawkes-process environment with changing volatility.
+  why_it_matters: Tests quoting policies against clustered order flow and volatility shifts that drive real inventory risk.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-xu-securities-lending-pricing
+  title: "Dynamic Pricing in Securities Lending Market: Application in Revenue Optimization for an Agent Lender Portfolio"
+  authors:
+    - Jing Xu
+    - Yung-Cheng Hsu
+    - William Biscarri
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698611
+  paper_url: https://doi.org/10.1145/3677052.3698611
+  doi: 10.1145/3677052.3698611
+  topics:
+    - execution
+    - portfolio-optimization
+  summary: Dynamically prices securities loans to optimize revenue across an agent lender's inventory portfolio.
+  why_it_matters: Coordinates lending fees across positions rather than maximizing each loan without regard to portfolio utilization.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-xu-garch-informed-volatility
+  title: GARCH-Informed Neural Networks for Volatility Prediction in Financial Markets
+  authors:
+    - Zeda Xu
+    - John Liechty
+    - Sebastian Benthall
+    - Nicholas Skar-Gislinge
+    - Christopher McComb
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698600
+  paper_url: https://arxiv.org/abs/2410.00288
+  arxiv_id: "2410.00288"
+  doi: 10.1145/3677052.3698600
+  topics:
+    - financial-forecasting
+    - risk-management
+  summary: Embeds GARCH dynamics into a recurrent neural network for out-of-sample market-volatility forecasting.
+  why_it_matters: Improves a core risk and derivative-pricing input while retaining an established volatility structure.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-zelman-adversarial-market-making
+  title: Adversarial Inverse Reinforcement Learning for Market Making
+  authors:
+    - Juraj Zelman
+    - Martin Stefanik
+    - Moritz Weiss
+    - Josef Teichmann
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698641
+  paper_url: https://doi.org/10.1145/3677052.3698641
+  doi: 10.1145/3677052.3698641
+  topics:
+    - market-microstructure
+    - execution
+  summary: Recovers market-making behavior through adversarial inverse reinforcement learning.
+  why_it_matters: Learns quoting objectives from observed behavior when the reward tradeoff among spread, inventory, and risk is unknown.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-ghiye-credit-bond-recommendation
+  title: "Rolling Forward: Enhancing LightGCN with Causal Graph Convolution for Credit Bond Recommendation"
+  authors:
+    - Ashraf Ghiye
+    - Baptiste Barreau
+    - Laurent Carlier
+    - Michalis Vazirgiannis
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698683
+  paper_url: https://arxiv.org/abs/2503.14213
+  arxiv_id: "2503.14213"
+  doi: 10.1145/3677052.3698683
+  topics:
+    - alpha-modeling
+    - alternative-data
+  summary: Adds causal temporal convolutions to graph collaborative filtering for time-sensitive credit-bond recommendations.
+  why_it_matters: Keeps fixed-income recommendations responsive to rapid shifts in investor demand and bond popularity.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-malekzadeh-extreme-drl-hedging
+  title: "EX-DRL: Hedging Against Heavy Losses with EXtreme Distributional Reinforcement Learning"
+  authors:
+    - Parvin Malekzadeh
+    - Zissis Poulos
+    - Jacky Chen
+    - Zeyu Wang
+    - Konstantinos N. Plataniotis
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698668
+  paper_url: https://arxiv.org/abs/2408.12446
+  arxiv_id: "2408.12446"
+  doi: 10.1145/3677052.3698668
+  topics:
+    - derivatives
+    - risk-management
+  summary: Models extreme loss tails inside distributional reinforcement learning for gamma-hedging options.
+  why_it_matters: Improves the tail quantiles that determine VaR and CVaR for risk-sensitive derivative hedges.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-acm-icaif-markov-quantum-mid-price
+  title: Quantum Generative Models of Mid-Price Movement in Limit Order Books
+  authors:
+    - Vanio Slavov Markov
+    - Vladimir Rastunkov
+    - Juan I Adame
+  venue: ACM ICAIF
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3677052.3698679
+  paper_url: https://doi.org/10.1145/3677052.3698679
+  doi: 10.1145/3677052.3698679
+  topics:
+    - market-microstructure
+    - synthetic-data
+  summary: Represents directional limit-order-book mid-price sequences with a parameterized quantum generative process.
+  why_it_matters: Offers a new way to simulate short-horizon price dynamics for microstructure models and execution tests.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-chen-debiased-stock-recommendation
+  title: Automatic De-Biased Temporal-Relational Modeling for Stock Investment Recommendation
+  authors:
+    - Weijun Chen
+    - Shun Li
+    - Xipu Yu
+    - Heyuan Wang
+    - Wei Chen
+    - Tengjiao Wang
+  venue: IJCAI
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://www.ijcai.org/proceedings/2024/221
+  paper_url: https://www.ijcai.org/proceedings/2024/221
+  doi: 10.24963/ijcai.2024/221
+  topics:
+    - alpha-modeling
+    - portfolio-optimization
+  summary: Debiases temporal stock relationships before producing investment recommendations aimed at excess returns.
+  why_it_matters: Reduces relation-driven selection bias that can make graph-based equity recommendations unstable out of sample.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-niu-imitative-market-making
+  title: "IMM: An Imitative Reinforcement Learning Approach with Predictive Representation Learning for Automatic Market Making"
+  authors:
+    - Hui Niu
+    - Siyuan Li
+    - Jiahao Zheng
+    - Zhouchi Lin
+    - Bo An
+    - Jian Li
+    - Jian Guo
+  venue: IJCAI
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://www.ijcai.org/proceedings/2024/663
+  paper_url: https://www.ijcai.org/proceedings/2024/663
+  doi: 10.24963/ijcai.2024/663
+  topics:
+    - market-microstructure
+    - execution
+  summary: Combines imitation and predictive representation learning for automatic quoting at multiple price levels.
+  why_it_matters: Learns market-making behavior from demonstrations while adapting quotes to evolving market states.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-niu-macmic-iceberg-execution
+  title: "MacMic: Executing Iceberg Orders via Hierarchical Reinforcement Learning"
+  authors:
+    - Hui Niu
+    - Siyuan Li
+    - Jian Li
+  venue: IJCAI
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://www.ijcai.org/proceedings/2024/664
+  paper_url: https://www.ijcai.org/proceedings/2024/664
+  doi: 10.24963/ijcai.2024/664
+  topics:
+    - execution
+    - market-microstructure
+  summary: Splits iceberg-order execution into hierarchical timing and sizing decisions conditioned on limit-order-book states.
+  why_it_matters: Controls information leakage and execution cost for large hidden orders across diverse equities.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-xiang-rsap-dfm
+  title: "RSAP-DFM: Regime-Shifting Adaptive Posterior Dynamic Factor Model for Stock Returns Prediction"
+  authors:
+    - Quanzhou Xiang
+    - Zhan Chen
+    - Qi Sun
+    - Rujun Jiang
+  venue: IJCAI
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://www.ijcai.org/proceedings/2024/676
+  paper_url: https://www.ijcai.org/proceedings/2024/676
+  doi: 10.24963/ijcai.2024/676
+  topics:
+    - factor-investing
+    - alpha-modeling
+    - market-regimes
+  summary: Adapts a dynamic stock-return factor model when latent market regimes shift.
+  why_it_matters: Lets factor forecasts respond to structural changes rather than averaging incompatible return environments.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-ijcai-zeng-locality-aware-trading
+  title: "Trade When Opportunity Comes: Price Movement Forecasting via Locality-Aware Attention and Iterative Refinement Labeling"
+  authors:
+    - Liang Zeng
+    - Lei Wang
+    - Hui Niu
+    - Ruchen Zhang
+    - Ling Wang
+    - Jian Li
+  venue: IJCAI
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://www.ijcai.org/proceedings/2024/678
+  paper_url: https://www.ijcai.org/proceedings/2024/678
+  doi: 10.24963/ijcai.2024/678
+  topics:
+    - alpha-modeling
+    - financial-forecasting
+  summary: Uses locality-aware attention and refined labels to identify tradable price moves across stocks, ETFs, and cryptoassets.
+  why_it_matters: Focuses the forecast on opportunities that translate into quantitative-investment performance across asset classes.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-aaai-xia-ci-sthpan-stock-selection
+  title: "CI-STHPAN: Pre-trained Attention Network for Stock Selection with Channel-Independent Spatio-Temporal Hypergraph"
+  authors:
+    - Hongjie Xia
+    - Huijie Ao
+    - Long Li
+    - Yu Liu
+    - Sen Liu
+    - Guangnan Ye
+    - Hongfeng Chai
+  venue: AAAI
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://ojs.aaai.org/index.php/AAAI/article/view/28770
+  paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/28770
+  doi: 10.1609/aaai.v38i8.28770
+  topics:
+    - alpha-modeling
+    - alternative-data
+  summary: Pre-trains temporal and hypergraph representations before ranking stocks across dynamic market relationships.
+  why_it_matters: Converts multivariate market structure into stock selections that improve investment returns and Sharpe ratios.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-aaai-xia-market-gan
+  title: "Market-GAN: Adding Control to Financial Market Data Generation with Semantic Context"
+  authors:
+    - Haochong Xia
+    - Shuo Sun
+    - Xinrun Wang
+    - Bo An
+  venue: AAAI
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://ojs.aaai.org/index.php/AAAI/article/view/29531
+  paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/29531
+  doi: 10.1609/aaai.v38i14.29531
+  topics:
+    - market-simulation
+    - synthetic-data
+    - evaluation
+  summary: Generates controllable financial-market time series conditioned on ticker, history state, and inferred market dynamics.
+  why_it_matters: Provides context-aligned synthetic market scenarios for testing forecasts, risk models, and investment strategies.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-aaai-liu-echo-gl
+  title: "ECHO-GL: Earnings Calls-Driven Heterogeneous Graph Learning for Stock Movement Prediction"
+  authors:
+    - Mengpu Liu
+    - Mengying Zhu
+    - Xiuyuan Wang
+    - Guofang Ma
+    - Jianwei Yin
+    - Xiaolin Zheng
+  venue: AAAI
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://ojs.aaai.org/index.php/AAAI/article/view/29305
+  paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/29305
+  doi: 10.1609/aaai.v38i12.29305
+  topics:
+    - alpha-modeling
+    - alternative-data
+    - financial-forecasting
+  summary: Builds dynamic heterogeneous stock relations from earnings calls to forecast price movements over multiple horizons.
+  why_it_matters: Turns earnings-call information into signals that improve both prediction accuracy and trading profitability.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-aaai-qian-mdgnn-stock-investment
+  title: "MDGNN: Multi-Relational Dynamic Graph Neural Network for Comprehensive and Dynamic Stock Investment Prediction"
+  authors:
+    - Hao Qian
+    - Hongting Zhou
+    - Qian Zhao
+    - Hao Chen
+    - Hongxiang Yao
+    - Jingwei Wang
+    - Ziqi Liu
+    - Fei Yu
+    - Zhiqiang Zhang
+    - Jun Zhou
+  venue: AAAI
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://ojs.aaai.org/index.php/AAAI/article/view/29381
+  paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/29381
+  doi: 10.1609/aaai.v38i13.29381
+  topics:
+    - alpha-modeling
+    - alternative-data
+    - financial-forecasting
+  summary: Encodes evolving multi-relational stock graphs with a Transformer to predict investment outcomes.
+  why_it_matters: Captures changing links among stocks and related entities that static investment models miss.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-aaai-qin-earnhft
+  title: "EarnHFT: Efficient Hierarchical Reinforcement Learning for High Frequency Trading"
+  authors:
+    - Molei Qin
+    - Shuo Sun
+    - Wentao Zhang
+    - Haochong Xia
+    - Xinrun Wang
+    - Bo An
+  venue: AAAI
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://ojs.aaai.org/index.php/AAAI/article/view/29384
+  paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/29384
+  doi: 10.1609/aaai.v38i13.29384
+  topics:
+    - execution
+    - market-regimes
+  summary: Routes among specialized second-level reinforcement-learning traders to execute cryptocurrency strategies across market regimes.
+  why_it_matters: Makes high-frequency policies trainable over long trajectories while improving simulated profitability and regime robustness.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-kdd-jeon-frequant
+  title: "FreQuant: A Reinforcement-Learning based Adaptive Portfolio Optimization with Multi-frequency Decomposition"
+  authors:
+    - Jihyeong Jeon
+    - Jiwon Park
+    - Chanhee Park
+    - U Kang
+  venue: KDD
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3637528.3671668
+  paper_url: https://doi.org/10.1145/3637528.3671668
+  doi: 10.1145/3637528.3671668
+  topics:
+    - portfolio-optimization
+    - asset-allocation
+  summary: Decomposes stock signals across frequencies before reinforcement learning adapts portfolio allocations to market shifts.
+  why_it_matters: Uses persistent and transient return components to improve portfolio value and annualized performance.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-kdd-zong-macrohft
+  title: "MacroHFT: Memory Augmented Context-aware Reinforcement Learning On High Frequency Trading"
+  authors:
+    - Chuqiao Zong
+    - Chaojie Wang
+    - Molei Qin
+    - Lei Feng
+    - Xinrun Wang
+    - Bo An
+  venue: KDD
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3637528.3672064
+  paper_url: https://arxiv.org/abs/2406.14537
+  arxiv_id: "2406.14537"
+  doi: 10.1145/3637528.3672064
+  topics:
+    - execution
+    - market-regimes
+  summary: Mixes context-specialized reinforcement-learning agents with memory to trade cryptocurrency at minute frequency.
+  why_it_matters: Adapts high-frequency policies to changing trend and volatility regimes while preserving profitability.
+  notes: The KDD schedule renders Qin Molei; ACM and DBLP metadata use Molei Qin.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-kdd-zhang-finagent-trading
+  title: "A Multimodal Foundation Agent for Financial Trading: Tool-Augmented, Diversified, and Generalist"
+  authors:
+    - Wentao Zhang
+    - Lingxuan Zhao
+    - Haochong Xia
+    - Shuo Sun
+    - Jiaze Sun
+    - Molei Qin
+    - Xinyi Li
+    - Yuqing Zhao
+    - Yilei Zhao
+    - Xinyu Cai
+    - Longtao Zheng
+    - Xinrun Wang
+    - Bo An
+  venue: KDD
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3637528.3671801
+  paper_url: https://arxiv.org/abs/2402.18485
+  arxiv_id: "2402.18485"
+  doi: 10.1145/3637528.3671801
+  topics:
+    - financial-agents
+    - alternative-data
+    - alpha-modeling
+  summary: Combines prices, news, charts, tools, memory, and reflection in an agent that trades stocks and cryptocurrencies.
+  why_it_matters: Tests whether a generalist multimodal agent can turn diverse market evidence into profitable trading actions.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-kdd-ni-defi-liquidity-mining
+  title: "Money Never Sleeps: Maximizing Liquidity Mining Yields in Decentralized Finance"
+  authors:
+    - Wangze Ni
+    - Yiwei Zhao
+    - Weijie Sun
+    - Lei Chen
+    - Peng Cheng
+    - Chen Jason Zhang
+    - Xuemin Lin
+  venue: KDD
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3637528.3671942
+  paper_url: https://doi.org/10.1145/3637528.3671942
+  doi: 10.1145/3637528.3671942
+  topics:
+    - asset-allocation
+    - portfolio-optimization
+  summary: Allocates cryptocurrency capital among decentralized-finance liquidity pools to maximize mining yield.
+  why_it_matters: Formalizes yield farming as a dynamic allocation problem with executable pool-selection decisions.
+  notes: The KDD schedule renders Zhao Yiwei and Chen Zhang; ACM and DBLP metadata use Yiwei Zhao and Chen Jason Zhang.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-lin-sparse-sharpe-portfolio
+  title: A Globally Optimal Portfolio for m-Sparse Sharpe Ratio Maximization
+  authors:
+    - Yizun Lin
+    - Zhao-Rong Lai
+    - Cheng Li
+  venue: NeurIPS
+  year: 2024
+  track: main
+  presentation: poster
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/1eaa5146756be028ad6fff1efcc8e6bd-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2024/file/1eaa5146756be028ad6fff1efcc8e6bd-Paper-Conference.pdf
+  doi: 10.52202/079017-0545
+  topics:
+    - portfolio-optimization
+    - asset-allocation
+  summary: Derives a globally optimal method for selecting an m-sparse portfolio that maximizes the Sharpe ratio.
+  why_it_matters: Provides an exact risk-adjusted benchmark for portfolios constrained to hold only a small number of assets.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-yu-fincon
+  title: "FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement for Enhanced Financial Decision Making"
+  authors:
+    - Yangyang Yu
+    - Zhiyuan Yao
+    - Haohang Li
+    - Zhiyang Deng
+    - Yuechen Jiang
+    - Yupeng Cao
+    - Zhi Chen
+    - Jordan W. Suchow
+    - Zhenyu Cui
+    - Rong Liu
+    - Zhaozhuo Xu
+    - Denghui Zhang
+    - Koduvayur Subbalakshmi
+    - Guojun Xiong
+    - Yueru He
+    - Jimin Huang
+    - Dong Li
+    - Qianqian Xie
+  venue: NeurIPS
+  year: 2024
+  track: main
+  presentation: poster
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/f7ae4fe91d96f50abc2211f09b6a7e49-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2024/file/f7ae4fe91d96f50abc2211f09b6a7e49-Paper-Conference.pdf
+  doi: 10.52202/079017-4354
+  topics:
+    - financial-agents
+    - alpha-modeling
+    - risk-management
+  summary: Coordinates specialized language-model agents with verbal reinforcement to make sequential stock-investment decisions.
+  why_it_matters: Tests whether explicit role specialization and reflection improve portfolio returns while controlling trading risk.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-xie-finben
+  title: "FinBen: A Holistic Financial Benchmark for Large Language Models"
+  authors:
+    - Qianqian Xie
+    - Weiguang Han
+    - Zhengyu Chen
+    - Ruoyu Xiang
+    - Xiao Zhang
+    - Yueru He
+    - Mengxi Xiao
+    - Dong Li
+    - Yongfu Dai
+    - Duanyu Feng
+    - Yijing Xu
+    - Haoqiang Kang
+    - Ziyan Kuang
+    - Chenhan Yuan
+    - Kailai Yang
+    - Zheheng Luo
+    - Tianlin Zhang
+    - Zhiwei Liu
+    - Guojun Xiong
+    - Zhiyang Deng
+    - Yuechen Jiang
+    - Zhiyuan Yao
+    - Haohang Li
+    - Yangyang Yu
+    - Gang Hu
+    - Jiajia Huang
+    - Xiao-Yang Liu
+    - Alejandro Lopez-Lira
+    - Benyou Wang
+    - Yanzhao Lai
+    - Hao Wang
+    - Min Peng
+    - Sophia Ananiadou
+    - Jimin Huang
+  venue: NeurIPS
+  year: 2024
+  track: main
+  subvenue: Datasets and Benchmarks Track
+  presentation: poster
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/adb1d9fa8be4576d28703b396b82ba1b-Abstract-Datasets_and_Benchmarks_Track.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2024/file/adb1d9fa8be4576d28703b396b82ba1b-Paper-Datasets_and_Benchmarks_Track.pdf
+  doi: 10.52202/079017-3033
+  topics:
+    - evaluation
+    - financial-agents
+    - risk-management
+  summary: Benchmarks language models across financial tasks that include stock trading, risk assessment, and investment decisions.
+  why_it_matters: Makes model comparisons more credible by testing decision-facing finance capabilities in one reproducible suite.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-winkel-autoregressive-allocation
+  title: Autoregressive Policy Optimization for Constrained Allocation Tasks
+  authors:
+    - David Winkel
+    - Niklas Strauß
+    - Maximilian Bernhard
+    - Zongyue Li
+    - Thomas Seidl
+    - Matthias Schubert
+  venue: NeurIPS
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/d79c1390baa2e4835586b094d82e5ffb-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2024/file/d79c1390baa2e4835586b094d82e5ffb-Paper-Conference.pdf
+  doi: 10.52202/079017-3785
+  topics:
+    - asset-allocation
+    - portfolio-optimization
+  summary: Generates feasible allocation decisions autoregressively and evaluates the policy on constrained NASDAQ-100 portfolios.
+  why_it_matters: Handles realistic portfolio constraints inside the learned decision process instead of repairing invalid weights afterward.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-wiltzer-continuous-time-options
+  title: Action Gaps and Advantages in Continuous-Time Distributional Reinforcement Learning
+  authors:
+    - Harley Wiltzer
+    - Marc G. Bellemare
+    - David Meger
+    - Patrick Shafto
+    - Yash Jhaveri
+  venue: NeurIPS
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/55769e1208c7f45e9acc98f06279c10c-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2024/file/55769e1208c7f45e9acc98f06279c10c-Paper-Conference.pdf
+  doi: 10.52202/079017-1515
+  topics:
+    - derivatives
+    - execution
+    - risk-management
+  summary: Develops continuous-time distributional reinforcement learning and applies it to high-frequency American-option trading.
+  why_it_matters: Models the distribution of trading outcomes when derivative decisions arrive faster than discrete-time methods naturally support.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-zeng-glinsat-portfolio
+  title: "GLinSAT: The General Linear Satisfiability Neural Network Layer By Accelerated Gradient Descent"
+  authors:
+    - Hongtai Zeng
+    - Chao Yang
+    - Yanzhen Zhou
+    - Cheng Yang
+    - Qinglai Guo
+  venue: NeurIPS
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/dd73f39426a03131c38c8d943153d44b-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2024/file/dd73f39426a03131c38c8d943153d44b-Paper-Conference.pdf
+  doi: 10.52202/079017-3896
+  topics:
+    - portfolio-optimization
+    - asset-allocation
+  summary: Enforces linear constraints in a differentiable layer and tests it on predictive equity portfolio allocation.
+  why_it_matters: Keeps learned weights feasible while optimizing Sharpe ratio over a concentrated technology-stock universe.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-agrawal-efficient-estimation-portfolio
+  title: Automated Efficient Estimation using Monte Carlo Efficient Influence Functions
+  authors:
+    - Raj Agrawal
+    - Sam Witty
+    - Andy Zane
+    - Eli Bingham
+  venue: NeurIPS
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/1d10fe211f5139de49f94c6f0c7cecbe-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2024/file/1d10fe211f5139de49f94c6f0c7cecbe-Paper-Conference.pdf
+  doi: 10.52202/079017-0513
+  topics:
+    - portfolio-optimization
+    - evaluation
+  summary: Automates statistically efficient estimation with Monte Carlo influence functions and demonstrates it on optimal portfolio selection.
+  why_it_matters: Quantifies portfolio objectives with principled uncertainty while reducing the need to derive custom estimators by hand.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-pan-bpqp-portfolio
+  title: "BPQP: A Differentiable Convex Optimization Framework for Efficient End-to-End Learning"
+  authors:
+    - Jianming Pan
+    - Zeqi Ye
+    - Xiao Yang
+    - Xu Yang
+    - Weiqing Liu
+    - Lewen Wang
+    - Jiang Bian
+  venue: NeurIPS
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/8db12f7214d3a1a0c450ba751163e0fd-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2024/file/8db12f7214d3a1a0c450ba751163e0fd-Paper-Conference.pdf
+  doi: 10.52202/079017-2463
+  topics:
+    - portfolio-optimization
+    - alpha-modeling
+  summary: Differentiates through convex programs efficiently and evaluates the framework on CSI-500 return-and-risk portfolio optimization.
+  why_it_matters: Connects learned return signals directly to constrained portfolio decisions without an expensive generic solver backward pass.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-geng-predictive-optimization-benchmark
+  title: Benchmarking PtO and PnO Methods in the Predictive Combinatorial Optimization Regime
+  authors:
+    - Haoyu Geng
+    - Hang Ruan
+    - Runzhong Wang
+    - Yang Li
+    - Yang Wang
+    - Lei Chen
+    - Junchi Yan
+  venue: NeurIPS
+  year: 2024
+  track: main
+  subvenue: Datasets and Benchmarks Track
+  presentation: not-specified
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/796076672b00f54fb01d05a2e5fde363-Abstract-Datasets_and_Benchmarks_Track.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2024/file/796076672b00f54fb01d05a2e5fde363-Paper-Datasets_and_Benchmarks_Track.pdf
+  doi: 10.52202/079017-2108
+  topics:
+    - evaluation
+    - portfolio-optimization
+  summary: Benchmarks predict-then-optimize and predict-and-optimize methods on tasks including daily-return Markowitz portfolios.
+  why_it_matters: Exposes when improved forecasts actually translate into better portfolio objectives under a common evaluation design.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-elenter-learning-augmented-trading
+  title: Overcoming Brittleness in Pareto-Optimal Learning-Augmented Algorithms
+  authors:
+    - Alex Elenter
+    - Spyros Angelopoulos
+    - Christoph Dürr
+    - Yanni Lefki
+  venue: NeurIPS
+  year: 2024
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/11c6625b0481a7d5625831369f6b7c82-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2024/file/11c6625b0481a7d5625831369f6b7c82-Paper-Conference.pdf
+  doi: 10.52202/079017-0296
+  topics:
+    - execution
+    - risk-management
+  summary: Robustifies learning-augmented online algorithms and applies them to one-way foreign-exchange trading decisions.
+  why_it_matters: Balances the upside of exchange-rate predictions against worst-case protection when those predictions fail.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-wang-investalign
+  title: "InvestAlign: Align LLMs with Investor Decision-Making under Herd Behavior"
+  authors:
+    - Huisheng Wang
+    - Zhuoshi Pan
+    - Hangjing Zhang
+    - Mingxiao Liu
+    - Yiqing Lin
+    - H. Vicky Zhao
+  venue: NeurIPS
+  year: 2024
+  track: workshop
+  subvenue: "Adaptive Foundation Models: Evolving AI for Personalized and Efficient Learning"
+  presentation: poster
+  official_url: https://neurips.cc/virtual/2024/104894
+  paper_url: https://openreview.net/forum?id=vqTknTkmVm
+  openreview_id: vqTknTkmVm
+  topics:
+    - financial-agents
+    - evaluation
+    - asset-allocation
+  summary: Aligns language models with investor choices while explicitly modeling social-information cascades and herd behavior.
+  why_it_matters: Tests whether an investment assistant can resist crowd-driven errors and preserve decision quality under social pressure.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-neurips-cummins-analog-portfolio
+  title: A Fully Analog Pipeline for Portfolio Optimization
+  authors:
+    - James S. Cummins
+    - Natalia Berloff
+  venue: NeurIPS
+  year: 2024
+  track: workshop
+  subvenue: ML with New Compute Paradigms
+  presentation: poster
+  official_url: https://neurips.cc/virtual/2024/101252
+  paper_url: https://openreview.net/forum?id=mtkbTUVaV1
+  openreview_id: mtkbTUVaV1
+  topics:
+    - portfolio-optimization
+    - risk-management
+  summary: Implements covariance estimation and minimum-variance portfolio construction as a fully analog computing pipeline.
+  why_it_matters: Explores whether alternative hardware can accelerate the matrix operations behind efficient-frontier portfolios.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-kdd-cao-investment-target-sourcing
+  title: Sourcing Investment Targets for Venture and Growth Capital Using Multivariate Time Series Transformer
+  authors:
+    - Lele Cao
+    - Gustaf Halvardsson
+    - Andrew McCornack
+    - Vilhelm von Ehrenheim
+    - Pawel Herman
+  venue: KDD
+  year: 2024
+  track: workshop
+  subvenue: Machine Learning in Finance
+  presentation: oral
+  official_url: https://sites.google.com/view/kdd-mlf-2024/schedule#:~:text=Sourcing%20Investment%20Targets%20for%20Venture%20and%20Growth%20Capital
+  paper_url: https://arxiv.org/abs/2309.16888
+  arxiv_id: "2309.16888"
+  topics:
+    - alternative-data
+    - alpha-modeling
+    - asset-allocation
+  summary: Ranks prospective venture and growth-capital investments from multivariate company time series with a Transformer.
+  why_it_matters: Turns proprietary operating histories into target-sourcing decisions and validates them with real investment portfolio simulations.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-kdd-choudhary-funvol
+  title: "FuNVol: A Multi-Asset Market Simulator using Functional Principal Components and Neural SDEs"
+  authors:
+    - Vedant Choudhary
+    - Sebastian Jaimungal
+    - Maxime Bergeron
+  venue: KDD
+  year: 2024
+  track: workshop
+  subvenue: Machine Learning in Finance
+  presentation: oral
+  official_url: https://sites.google.com/view/kdd-mlf-2024/schedule#:~:text=FuNVol%3A%20A%20Multi-Asset%20Market%20Simulator
+  paper_url: https://arxiv.org/abs/2303.00859
+  arxiv_id: "2303.00859"
+  topics:
+    - market-simulation
+    - derivatives
+    - risk-management
+  summary: Simulates arbitrage-consistent multi-asset implied-volatility surfaces with functional components and neural stochastic differential equations.
+  why_it_matters: Produces realistic cross-asset option scenarios whose quality is tested through delta-hedging profit-and-loss distributions.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-iclr-yuan-zero-order-portfolio
+  title: "New Insight of Variance reduce in Zero-Order Hard-Thresholding: Mitigating Gradient Error and Expansivity Contradictions"
+  authors:
+    - Xinzhe Yuan
+    - William de Vazelhes
+    - Bin Gu
+    - Huan Xiong
+  venue: ICLR
+  year: 2024
+  track: main
+  presentation: poster
+  official_url: https://openreview.net/forum?id=fjf3YenThE
+  paper_url: https://proceedings.iclr.cc/paper_files/paper/2024/file/c6b71f8d79d0b2d7bdac66ff3a3ba243-Paper-Conference.pdf
+  openreview_id: fjf3YenThE
+  topics:
+    - portfolio-optimization
+    - asset-allocation
+  summary: Reduces zeroth-order gradient variance in sparse hard-thresholding and demonstrates the method on portfolio optimization.
+  why_it_matters: Makes black-box sparse allocation more practical when portfolio objectives can be evaluated but not differentiated.
+  status: published
+  verified_on: 2026-07-11
+
+- id: 2024-iclr-li-logic-guided-stock-trading
+  title: Logic-guided Deep Reinforcement Learning for Stock Trading
+  authors:
+    - Zhiming Li
+    - Junzhe Jiang
+    - Yushi Cao
+    - Aixin CUI
+    - Bozhi Wu
+    - Bo Li
+    - Yang Liu
+  venue: ICLR
+  year: 2024
+  track: affinity
+  subvenue: Tiny Papers @ ICLR 2024
+  presentation: not-specified
+  official_url: https://openreview.net/forum?id=SPDNi5Ys8R
+  paper_url: https://openreview.net/attachment?id=SPDNi5Ys8R&name=pdf
+  openreview_id: SPDNi5Ys8R
+  topics:
+    - alpha-modeling
+    - execution
+    - risk-management
+  summary: Synthesizes a logic-guided hierarchy over reinforcement-learning subpolicies for robust stock trading.
+  why_it_matters: Encodes market-trend knowledge directly in the strategy while improving return and limiting drawdown.
+  notes: Selected as Notable in the Tiny Papers affinity program; the exact oral or poster session was not recoverable.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-iclr-scheurer-strategic-deception-trading
+  title: Large Language Models can Strategically Deceive their Users when Put Under Pressure
+  authors:
+    - Jérémy Scheurer
+    - Mikita Balesni
+    - Marius Hobbhahn
+  venue: ICLR
+  year: 2024
+  track: workshop
+  subvenue: Workshop on Large Language Models for Agents
+  presentation: oral
+  official_url: https://iclr.cc/virtual/2024/22214
+  paper_url: https://openreview.net/forum?id=HduMpot9sJ
+  openreview_id: HduMpot9sJ
+  topics:
+    - financial-agents
+    - evaluation
+  summary: Tests whether an autonomous language-model stock trader acts on insider information and conceals its reasoning under pressure.
+  why_it_matters: Exposes governance and audit risks that arise when financial agents can execute profitable but prohibited trades.
+  status: accepted
+  verified_on: 2026-07-11
+
+- id: 2024-iclr-yu-finmem
+  title: "FinMem: A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design"
+  authors:
+    - Yangyang Yu
+    - Haohang Li
+    - Zhi Chen
+    - Yuechen Jiang
+    - Yang Li
+    - Denghui Zhang
+    - Rong Liu
+    - Jordan W. Suchow
+    - Khaldoun Khashanah
+  venue: ICLR
+  year: 2024
+  track: workshop
+  subvenue: Workshop on Large Language Models for Agents
+  presentation: not-specified
+  official_url: https://iclr.cc/virtual/2024/22156
+  paper_url: https://arxiv.org/abs/2311.13743
+  arxiv_id: "2311.13743"
+  openreview_id: sstfVOwbiG
+  topics:
+    - financial-agents
+    - alpha-modeling
+  summary: Organizes an autonomous trading agent's financial observations into layered memory before producing stock-investment decisions.
+  why_it_matters: Shows how memory horizon and agent character affect cumulative returns on real-world equity data.
+  status: accepted
+  verified_on: 2026-07-11
