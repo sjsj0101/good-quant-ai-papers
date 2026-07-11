@@ -10,6 +10,7 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
+import scripts.catalog as catalog_module
 import scripts.validate as validate_cli
 from scripts.catalog import URL_FIELDS, load_catalog, validate_catalog, validate_file
 
@@ -286,11 +287,20 @@ class CatalogValidationTests(unittest.TestCase):
         pattern = re.compile(url_contract["pattern"])
         valid_urls = (
             "https://example.com/paper",
-            "http://sub.example.org:8080/a%20b?download=1#results",
-            "https://[2001:db8::1]/paper",
+            "http://192.0.2.1:8080/a%20b?download=1#results",
+            "https://user:pass@example.com/x",
+            "https://sub.example.org:65535/path",
         )
         invalid_urls = (
             "http://user@:80/x",
+            "https:///x",
+            "https://@example.com/x",
+            "https://[:::]/x",
+            "https://[example.com]/x",
+            "https://[2001:db8::1]/x",
+            "https://[fe80::1%25eth0]/x",
+            "https://[example.com/x",
+            "https://example.com]/x",
             "https://example.com/a b",
             "https://example.com:not-a-port/x",
             "https://example.com:65536/x",
@@ -317,6 +327,7 @@ class CatalogValidationTests(unittest.TestCase):
                         ),
                         errors,
                     )
+
             for value in invalid_urls:
                 with self.subTest(field=field, value=value, expected="invalid"):
                     self.assertIsNone(pattern.search(value))
@@ -330,6 +341,11 @@ class CatalogValidationTests(unittest.TestCase):
                         ),
                         errors,
                     )
+
+        self.assertEqual(
+            url_contract["pattern"],
+            getattr(catalog_module, "HTTP_URL_PATTERN", None),
+        )
 
 
 if __name__ == "__main__":

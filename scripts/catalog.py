@@ -6,7 +6,6 @@ import re
 import unicodedata
 from datetime import date
 from pathlib import Path
-from urllib.parse import urlsplit
 
 import yaml
 
@@ -94,7 +93,17 @@ ALLOWED_FIELDS = (
 
 _ID_PATTERN = re.compile(r"^[0-9]{4}-[a-z0-9]+(?:-[a-z0-9]+){2,}$")
 _DATE_PATTERN = re.compile(r"^[0-9]{4}-[0-9]{2}-[0-9]{2}$")
-_INVALID_PERCENT_ESCAPE = re.compile(r"%(?![0-9A-Fa-f]{2})")
+HTTP_URL_PATTERN = (
+    r"^(?!.*\s)(?!.*[\[\]])(?!.*%(?![0-9A-Fa-f]{2}))"
+    r"[Hh][Tt][Tt][Pp][Ss]?://"
+    r"(?:[^/?#@\s\[\]]+@)?"
+    r"(?:[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?\.)*"
+    r"[A-Za-z0-9](?:[A-Za-z0-9-]{0,61}[A-Za-z0-9])?"
+    r"(?::0*(?:[0-9]{1,4}|[1-5][0-9]{4}|6[0-4][0-9]{3}|"
+    r"65[0-4][0-9]{2}|655[0-2][0-9]|6553[0-5]))?"
+    r"(?:[/?#][^\s]*)?$"
+)
+_HTTP_URL_RE = re.compile(HTTP_URL_PATTERN)
 
 
 class _CatalogLoader(yaml.SafeLoader):
@@ -203,18 +212,7 @@ def _validate_enum(
 
 
 def _is_http_url(value: object) -> bool:
-    if not isinstance(value, str) or not value or any(char.isspace() for char in value):
-        return False
-    if _INVALID_PERCENT_ESCAPE.search(value):
-        return False
-    try:
-        parsed = urlsplit(value)
-        if parsed.netloc.endswith(":"):
-            return False
-        _ = parsed.port  # Access validates an explicitly supplied port.
-        return parsed.scheme.lower() in {"http", "https"} and bool(parsed.hostname)
-    except ValueError:
-        return False
+    return isinstance(value, str) and _HTTP_URL_RE.fullmatch(value) is not None
 
 
 def _normalized_title(value: str) -> str:
