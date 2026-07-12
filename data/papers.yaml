@@ -9,6 +9,7 @@
   presentation: poster
   official_url: https://icml.cc/virtual/2026/poster/62694
   paper_url: https://openreview.net/forum?id=eBM5ALLJNx
+  openreview_id: eBM5ALLJNx
   topics:
     - asset-allocation
     - portfolio-optimization
@@ -16,7 +17,7 @@
   summary: Learns multi-asset allocations end to end using path-signature features and a downside-risk objective.
   why_it_matters: Connects market-path geometry directly to portfolio decisions instead of optimizing an intermediate forecast loss.
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-jeon-decision-focused-sparse-tangent
   title: Decision-focused Sparse Tangent Portfolio Optimization
@@ -32,13 +33,16 @@
   presentation: poster
   official_url: https://icml.cc/virtual/2026/poster/64722
   paper_url: https://openreview.net/forum?id=KV7XHF0IbK
+  openreview_id: KV7XHF0IbK
   topics:
     - asset-allocation
     - portfolio-optimization
+  asset_classes:
+    - equities
   summary: Trains a return model through differentiable asset selection and sparse tangency-portfolio reoptimization.
   why_it_matters: Targets risk-adjusted portfolio quality under a fixed holding budget rather than forecast accuracy in isolation.
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-yao-linearly-convergent-proximal
   title: A Linearly Convergent Proximal Subgradient Algorithm for Sparse Portfolio Optimization with Transaction Cost
@@ -51,54 +55,15 @@
   presentation: poster
   official_url: https://icml.cc/virtual/2026/poster/60601
   paper_url: https://openreview.net/forum?id=yZAo4TPqhE
+  openreview_id: yZAo4TPqhE
   topics:
     - portfolio-optimization
-    - execution
+    - asset-allocation
+    - risk-management
   summary: Solves transaction-cost-aware sparse online portfolios through a difference-of-convex reformulation and proximal updates.
   why_it_matters: Adds a convergence-backed route to controlling both turnover costs and the number of active positions.
   status: accepted
-  verified_on: 2026-07-11
-
-- id: 2026-icml-song-label-horizon-paradox
-  title: "The Label Horizon Paradox: Rethinking Supervision Targets in Financial Forecasting"
-  authors:
-    - Chen-Hui Song
-    - Shuoling Liu
-    - Liyuan Chen
-  venue: ICML
-  year: 2026
-  track: main
-  presentation: poster
-  official_url: https://icml.cc/virtual/2026/poster/65178
-  paper_url: https://arxiv.org/abs/2602.03395
-  arxiv_id: "2602.03395"
-  topics:
-    - financial-forecasting
-    - alpha-modeling
-  summary: Selects a training-label horizon separately from the ultimate return horizon through bilevel optimization.
-  why_it_matters: Shows that the most useful supervision target for an investment forecast need not match its deployment horizon.
-  status: accepted
-  verified_on: 2026-07-11
-
-- id: 2026-icml-mahns-joint-embedding-market-states
-  title: Joint-Embedding Predictive Learning of Latent Market States in U.S. Equities
-  authors:
-    - Simon Mahns
-    - Randall Balestriero
-    - Mahmoud Assran
-  venue: ICML
-  year: 2026
-  track: main
-  presentation: poster
-  official_url: https://icml.cc/virtual/2026/poster/65643
-  paper_url: https://openreview.net/forum?id=BZfkxSasd3
-  topics:
-    - market-regimes
-    - risk-management
-  summary: Uses self-supervised joint-embedding prediction to compress daily equity cross-sections into latent market-state representations.
-  why_it_matters: Provides a learned view of persistent volatility and correlation regimes without requiring return labels.
-  status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-jajal-global-merger-arbitrage
   title: Global Merger-Arbitrage Forecasting with Language Models
@@ -117,12 +82,11 @@
   paper_url: https://icml.cc/virtual/2026/poster/60833
   topics:
     - alpha-modeling
-    - financial-agents
     - evaluation
-  summary: Builds language-model forecasts of announced merger outcomes from structured analysis of deal-specific risks.
-  why_it_matters: Grounds investment-research agents in a probability forecast tied to a concrete merger-arbitrage decision.
+  summary: Predicts announced merger outcomes for global merger-arbitrage selection and scores deal-closing probabilities with P&L-weighted Brier loss.
+  why_it_matters: Aligns language-model probability forecasts with the economic impact of concrete merger-arbitrage decisions across more than 400 deals.
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-chen-adversarially-robust-cvar
   title: Adversarially Robust Control of Conditional Value-at-Risk via Kelly Conformal Inference
@@ -137,13 +101,14 @@
   presentation: poster
   official_url: https://icml.cc/virtual/2026/poster/63594
   paper_url: https://openreview.net/forum?id=Vhesstbfg6
+  openreview_id: Vhesstbfg6
   topics:
     - risk-management
-    - portfolio-optimization
+    - evaluation
   summary: Controls empirical conditional value-at-risk online with distribution-free guarantees under shifting or adversarial data.
   why_it_matters: Offers tail-risk safeguards for adaptive portfolio decisions without assuming a stationary return process.
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-piao-marketsim-generative-agents
   title: "MarketSim: Simulating Stock Markets with Large-Scale Generative Agents"
@@ -151,9 +116,9 @@
     - Jinghua Piao
     - zhentao liu
     - Cheng Huang
-    - Jiarui Huang
+    - Huang Jiarui
     - Songwei Li
-    - Ranran Wang
+    - Wang Ranran
     - Yong Li
   venue: ICML
   year: 2026
@@ -166,10 +131,16 @@
     - market-simulation
     - synthetic-data
     - financial-agents
+  asset_classes:
+    - equities
+  data_frequency: tick
+  tasks:
+    - continuous-double-auction market simulation
+    - synthetic high-frequency market dynamics
   summary: Simulates stock-market dynamics through a large population of generative agents with heterogeneous behaviors.
   why_it_matters: Creates an experimental environment for studying emergent market outcomes and stress scenarios before live deployment.
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-pimparkhede-learning-esg-geometry
   title: Learning the ESG Geometry with Domain Aware Language Models
@@ -186,11 +157,15 @@
   paper_url: https://icml.cc/virtual/2026/poster/65502
   topics:
     - alternative-data
-    - factor-investing
-  summary: Learns domain-aware language representations that organize ESG information for investment analysis.
-  why_it_matters: Turns unstructured sustainability disclosures into geometry that can support asset comparison and selection.
+    - asset-allocation
+    - alpha-modeling
+  tasks:
+    - asset selection
+    - portfolio rebalancing
+  summary: Learns domain-aware ESG representations and uses latent-space search for asset selection and downstream portfolio rebalancing.
+  why_it_matters: Connects unstructured sustainability information to explicit security-selection and portfolio-rebalancing decisions.
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-della-vecchia-error-propagation
   title: "Error Propagation in Dynamic Programming: From Stochastic Control to American Option Pricing"
@@ -205,56 +180,13 @@
   paper_url: https://icml.cc/virtual/2026/poster/65273
   topics:
     - derivatives
-    - risk-management
+  data_frequency: not-applicable
+  tasks:
+    - American option pricing
   summary: Analyzes how approximation errors accumulate through dynamic programs, including learned American-option valuation schemes.
   why_it_matters: Clarifies when local model errors remain controlled in sequential pricing and exercise decisions.
   status: accepted
-  verified_on: 2026-07-11
-
-- id: 2026-icml-huang-professional-grade-financial-agents
-  title: "Towards Professional-Grade Financial Agents: Benchmarking, Tooling, and Structured Reasoning"
-  authors:
-    - Cheng Huang
-    - Jinghua Piao
-    - Ranran Wang
-    - Yong Li
-  venue: ICML
-  year: 2026
-  track: main
-  presentation: poster
-  official_url: https://icml.cc/virtual/2026/poster/60732
-  paper_url: https://icml.cc/virtual/2026/poster/60732
-  topics:
-    - financial-agents
-    - evaluation
-  summary: Evaluates financial agents through tool-enabled tasks and structured reasoning workflows aimed at professional practice.
-  why_it_matters: Moves agent assessment toward auditable investment workflows rather than isolated finance questions.
-  status: accepted
-  verified_on: 2026-07-11
-
-- id: 2026-icml-guo-bizfinbench-v2
-  title: "BizFinBench.v2: Towards Reliable LLMs in Finance via Real-User Data and Offline/Online Bilingual Evaluation"
-  authors:
-    - Xin Guo
-    - Rongjunchen Zhang
-    - Guilong Lu
-    - Xuntao Guo
-    - Jia Shuai
-    - Zhi Yang
-    - Liwen Zhang
-  venue: ICML
-  year: 2026
-  track: main
-  presentation: poster
-  official_url: https://icml.cc/virtual/2026/poster/65946
-  paper_url: https://icml.cc/virtual/2026/poster/65946
-  topics:
-    - financial-agents
-    - evaluation
-  summary: Benchmarks bilingual language models on authentic Chinese and U.S. equity-market tasks, including quantitative computation and stock-price prediction.
-  why_it_matters: Tests whether models can handle real investment queries across markets and online or offline settings, not only scripted finance questions.
-  status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-pachebat-tail-annealing
   title: Tail Annealing for Heavy-Tailed Flow Matching
@@ -265,10 +197,12 @@
   track: main
   presentation: poster
   official_url: https://icml.cc/virtual/2026/poster/60665
-  paper_url: https://icml.cc/virtual/2026/poster/60665
+  paper_url: https://arxiv.org/abs/2605.20068
+  arxiv_id: "2605.20068"
   topics:
     - synthetic-data
     - risk-management
+    - evaluation
   asset_classes:
     - equities
   tasks:
@@ -281,7 +215,84 @@
   summary: Evaluates extreme-tail and CVaR99 fidelity on controlled heavy-tailed benchmarks, then validates generation on real Fama–French equity-factor returns.
   why_it_matters: Combining CVaR99 fidelity with Fama–French validation makes the generator directly relevant to tail-sensitive market-risk scenario analysis.
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
+
+- id: 2026-icml-linghu-penalty-black-box-qp
+  title: A Penalty Approach For Differentiation Through Black-box Quadratic Programming Solvers
+  authors:
+    - Yuxuan Linghu
+    - Zhiyuan Liu
+    - Qi Deng
+  venue: ICML
+  year: 2026
+  track: main
+  presentation: poster
+  official_url: https://icml.cc/virtual/2026/poster/66543
+  paper_url: https://arxiv.org/abs/2602.14154
+  arxiv_id: "2602.14154"
+  topics:
+    - portfolio-optimization
+    - asset-allocation
+    - evaluation
+  tasks:
+    - multi-period portfolio optimization
+  summary: Differentiates through black-box quadratic-program solvers using a smooth penalty surrogate and evaluates the method on multi-period portfolio optimization.
+  why_it_matters: Connects solver-agnostic differentiation to a real portfolio decision while avoiding solver-specific KKT differentiation.
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-icml-yan-linear-constrained-neural-layers
+  title: Design Linear Constrained Neural Layers with Implicit Convex Optimization
+  authors:
+    - Junchi Yan
+    - Liangliang Shi
+    - Jiaxi Liu
+    - Fangyuan Zhou
+    - Wenzheng Pan
+    - Zhongteng Gui
+    - Yihui Tu
+  venue: ICML
+  year: 2026
+  track: main
+  presentation: poster
+  official_url: https://icml.cc/virtual/2026/poster/64648
+  paper_url: https://openreview.net/forum?id=85vAL51Gmu
+  openreview_id: 85vAL51Gmu
+  topics:
+    - asset-allocation
+    - portfolio-optimization
+    - evaluation
+  tasks:
+    - portfolio allocation with discrete constraints
+  summary: Enforces general linear constraints through implicit convex neural layers and evaluates the resulting constrained predictor on real portfolio allocation.
+  why_it_matters: Lets neural systems honor hard portfolio-allocation constraints through a differentiable optimization layer.
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-icml-ohnemus-loss-aware-dro
+  title: Loss-aware distributionally robust optimization via trainable optimal transport ambiguity sets
+  authors:
+    - Jonas Ohnemus
+    - Marta Fochesato
+    - Riccardo Zuliani
+    - John Lygeros
+  venue: ICML
+  year: 2026
+  track: main
+  presentation: poster
+  official_url: https://icml.cc/virtual/2026/poster/64772
+  paper_url: https://arxiv.org/abs/2509.12689
+  arxiv_id: "2509.12689"
+  topics:
+    - portfolio-optimization
+    - risk-management
+    - evaluation
+  tasks:
+    - robust portfolio optimization
+  summary: Learns loss-aware optimal-transport ambiguity sets end to end and tests whether they reduce conservatism in robust portfolio optimization.
+  why_it_matters: Targets less conservative distributionally robust portfolio decisions by learning ambiguity sets for the downstream loss.
+  status: accepted
+  verified_on: 2026-07-12
 
 - id: 2026-icml-kong-evaluating-finance-bias
   title: "Position: Evaluating LLMs in Finance Requires Explicit Bias Consideration"
@@ -305,10 +316,11 @@
   topics:
     - evaluation
     - financial-agents
+  data_frequency: not-applicable
   summary: Argues that finance LLM evaluation must explicitly control look-ahead, survivorship, and trading-cost biases.
   why_it_matters: Point-in-time universes and realistic trading frictions determine whether reported forecasting and investment performance is valid.
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-zhao-forecast-to-trade
   title: "Forecast-to-Trade: Hierarchical Reinforcement Learning for Decision-Aware Financial Forecasting"
@@ -318,6 +330,7 @@
   venue: ICML
   year: 2026
   track: workshop
+  subvenue: Forecasting as a New Frontier of Intelligence
   presentation: spotlight
   official_url: https://openreview.net/forum?id=pTiRAPtDzK
   paper_url: https://openreview.net/forum?id=pTiRAPtDzK
@@ -325,36 +338,19 @@
   topics:
     - financial-forecasting
     - asset-allocation
-    - execution
+    - portfolio-optimization
     - financial-agents
-  summary: Separates directional asset selection from constrained portfolio-weight execution in a hierarchical reinforcement-learning trader.
+  asset_classes:
+    - equities
+  data_frequency: daily
+  tasks:
+    - directional asset selection
+    - constrained portfolio rebalancing
+  summary: Separates directional asset selection from constrained portfolio weighting in a hierarchical reinforcement-learning trader.
   why_it_matters: Evaluates forecasts through implementable rebalancing decisions that account for turnover, downside risk, and trading costs.
   notes: "Forecast@ICML26, the ICML 2026 Workshop on Forecasting as a New Frontier of Intelligence; non-archival workshop paper."
   status: accepted
-  verified_on: 2026-07-11
-
-- id: 2026-icml-sood-one-token-per-trade
-  title: "One Token per Trade: Multi-Resolution Limit Order Book Forecasting with a Foundation Model"
-  authors:
-    - Srijan Sood
-    - Maxime Kawawa-Beaudan
-    - Z. Guo
-    - Daniel Borrajo
-  venue: ICML
-  year: 2026
-  track: workshop
-  presentation: poster
-  official_url: https://openreview.net/forum?id=ZMEIc25o0a
-  paper_url: https://openreview.net/forum?id=ZMEIc25o0a
-  openreview_id: ZMEIc25o0a
-  topics:
-    - market-microstructure
-    - financial-forecasting
-  summary: Represents individual trades as tokens and forecasts limit-order-book behavior across several temporal resolutions.
-  why_it_matters: Offers a shared sequence model for short-horizon order-flow signals that otherwise require separately calibrated models.
-  notes: "ICML 2026 Workshop on Forecasting as a New Frontier of Intelligence; non-archival workshop paper."
-  status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-sood-tradefm
   title: "TradeFM: A Generative Foundation Model for Trade-flow and Market Microstructure"
@@ -366,6 +362,7 @@
   venue: ICML
   year: 2026
   track: workshop
+  subvenue: Foundation Models for Structured Data
   presentation: poster
   official_url: https://openreview.net/forum?id=anK6dppdfa
   paper_url: https://openreview.net/forum?id=anK6dppdfa
@@ -375,34 +372,17 @@
     - market-microstructure
     - market-simulation
     - synthetic-data
+  asset_classes:
+    - equities
+  data_frequency: tick
+  tasks:
+    - generative trade-flow modeling
+    - synthetic market-data generation
   summary: Trains a generative trade-event model with scale-invariant features designed to transfer across equity markets.
-  why_it_matters: Supports cross-asset order-flow simulation and synthetic microstructure data without asset-specific tokenization.
+  why_it_matters: Supports cross-market equity order-flow simulation and synthetic microstructure data without asset-specific tokenization.
   notes: "2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026); non-archival workshop paper. Authors follow the accepted FMSD record; the later arXiv version has a revised author list."
   status: accepted
-  verified_on: 2026-07-11
-
-- id: 2026-icml-ding-delphyne
-  title: "DELPHYNE: A Pre-Trained Model for General and Financial Time Series"
-  authors:
-    - Xueying Ding
-    - Aakriti Mittal
-    - Achintya Gopal
-  venue: ICML
-  year: 2026
-  track: workshop
-  presentation: poster
-  official_url: https://openreview.net/forum?id=DPrS5jDoR3
-  paper_url: https://arxiv.org/abs/2506.06288
-  arxiv_id: "2506.06288"
-  openreview_id: DPrS5jDoR3
-  topics:
-    - financial-forecasting
-    - risk-management
-  summary: Pretrains a general time-series model on a mixture that deliberately includes financial series and multiple sampling frequencies.
-  why_it_matters: Addresses negative transfer that can make broad time-series foundation models weak on volatility and risk forecasts.
-  notes: "Forecast@ICML26, the ICML 2026 Workshop on Forecasting as a New Frontier of Intelligence; non-archival workshop paper."
-  status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-guan-leakage-aware-benchmarking
   title: "Leakage-Aware Benchmarking of LLM Forecasting: Real-Time Nowcasts as the Decision-Time Input for Macro Factor Ranking"
@@ -412,6 +392,7 @@
   venue: ICML
   year: 2026
   track: workshop
+  subvenue: Forecasting as a New Frontier of Intelligence
   presentation: poster
   official_url: https://openreview.net/forum?id=mi8QiWomm3
   paper_url: https://arxiv.org/abs/2606.22719
@@ -421,19 +402,25 @@
     - factor-investing
     - financial-forecasting
     - evaluation
+  asset_classes:
+    - equities
+  tasks:
+    - equity factor ranking
+    - leakage-aware backtesting
   summary: Benchmarks macro-conditioned equity-factor ranking using only data and nowcasts available at each historical decision time.
   why_it_matters: Separates genuine forecasting value from publication-lag leakage in investment backtests.
   notes: "ICML 2026 Workshop on Forecasting as a New Frontier of Intelligence; non-archival workshop paper."
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-park-reflexivity-as-prompt
   title: "Reflexivity as Prompt: Does Awareness of Self-Reinforcing Market Dynamics Improve LLMs as Financial Market Forecasters?"
   authors:
-    - Eugene Park
+    - Eugene W Park
   venue: ICML
   year: 2026
   track: workshop
+  subvenue: Forecasting as a New Frontier of Intelligence
   presentation: poster
   official_url: https://openreview.net/forum?id=cqnuY2xFQl
   paper_url: https://arxiv.org/abs/2606.00061
@@ -443,11 +430,15 @@
     - financial-forecasting
     - market-regimes
     - evaluation
-  summary: Tests whether prompts describing reflexive boom-bust dynamics change language-model forecasts across historical market cycles.
-  why_it_matters: Examines whether economic mechanism awareness improves directional and risk-adjusted forecasts rather than only narrative quality.
-  notes: "ICML 2026 Workshop on Forecasting as a New Frontier of Intelligence; non-archival workshop paper."
+  asset_classes:
+    - multi-asset
+  tasks:
+    - long/cash strategy evaluation
+  summary: Tests whether reflexivity-aware prompts improve market forecasts and evaluates an implied long/cash strategy across historical boom-bust episodes.
+  why_it_matters: Connects mechanism-aware forecasts to an economic strategy test through the implied strategy's Sharpe ratio.
+  notes: "ICML 2026 Workshop on Forecasting as a New Frontier of Intelligence; non-archival workshop paper. The accepted display uses Eugene W Park, while the later public arXiv record uses Eugene Park."
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-kumar-mechanism-inspired-aggregation
   title: "Mechanism-Inspired Aggregation for Multi-Agent Alpha Discovery: Optimizing Agent Distributions in Heterogeneous LLM Markets"
@@ -456,6 +447,7 @@
   venue: ICML
   year: 2026
   track: workshop
+  subvenue: New Frontiers in Game-Theoretic Learning
   presentation: poster
   official_url: https://openreview.net/forum?id=mbstEcHW0R
   paper_url: https://openreview.net/forum?id=mbstEcHW0R
@@ -463,11 +455,17 @@
   topics:
     - alpha-modeling
     - financial-agents
+  asset_classes:
+    - equities
+  data_frequency: daily
+  tasks:
+    - stock selection
+    - alpha ranking
   summary: Aggregates heterogeneous language-model agents by optimizing their population mix for multi-agent alpha discovery.
   why_it_matters: Treats agent diversity and weighting as part of the investment signal design rather than relying on simple voting.
-  notes: "ICML 2026 NExT-Game Workshop; non-archival workshop paper."
+  notes: "ICML 2026 NExT-Game Workshop; non-archival workshop paper. The organizer roster used an earlier Mechanism Design title; this record preserves the revised OpenReview title."
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-pan-learning-to-trade-expert
   title: "Learning to Trade Like an Expert: Cognitive Fine-Tuning for Stable Financial Reasoning in Language Models"
@@ -477,6 +475,7 @@
   venue: ICML
   year: 2026
   track: workshop
+  subvenue: "Foundations of Deep Generative Models: Understanding Memorization, Generalization, and Reasoning"
   presentation: poster
   official_url: https://openreview.net/forum?id=01bO7bdq4e
   paper_url: https://arxiv.org/abs/2604.16862
@@ -485,11 +484,14 @@
   topics:
     - financial-agents
     - evaluation
+  tasks:
+    - chronological trading simulation
+    - risk-aware trading-agent evaluation
   summary: Fine-tunes open language models on structured financial reasoning examples and evaluates transfer to chronological trading simulations.
   why_it_matters: Tests whether explicit decision reasoning produces more stable trading behavior across market regimes.
   notes: "FoGen 2026, the ICML Workshop on Foundations of Deep Generative Models: Understanding Memorization, Generalization, and Reasoning; non-archival workshop paper."
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
 
 - id: 2026-icml-kuular-behavioral-proxy-conditioning
   title: Behavioral Proxy Conditioning for Financial Stress Scenario Generation with a Pretrained Diffusion Model
@@ -499,6 +501,7 @@
   venue: ICML
   year: 2026
   track: workshop
+  subvenue: Foundation Models for Structured Data
   presentation: poster
   official_url: https://openreview.net/forum?id=xrwkOUb8kp
   paper_url: https://openreview.net/forum?id=xrwkOUb8kp
@@ -507,11 +510,375 @@
     - synthetic-data
     - risk-management
     - market-simulation
+  tasks:
+    - financial stress-scenario generation
   summary: Conditions a pretrained diffusion model on behavioral proxies to generate financially meaningful stress scenarios.
   why_it_matters: Expands scenario design beyond historical replay while retaining interpretable links to stressed market behavior.
   notes: "2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026); non-archival workshop paper."
   status: accepted
-  verified_on: 2026-07-11
+  verified_on: 2026-07-12
+
+- id: 2026-ijcai-yang-transalpha
+  title: "TransAlpha: Lightweight Design Empowers Stock Return Forecasting"
+  authors:
+    - Xiao Yang
+  venue: IJCAI
+  year: 2026
+  track: main
+  subvenue: Main Track
+  presentation: oral
+  official_url: https://2026.ijcai.org/accepted-papers/#:~:text=%23943
+  paper_url: https://2026.ijcai.org/accepted-papers/#:~:text=%23943
+  topics:
+    - financial-forecasting
+    - alpha-modeling
+    - evaluation
+  asset_classes:
+    - equities
+  data_frequency: intraday
+  tasks:
+    - intraday stock-return forecasting
+    - portfolio profitability evaluation
+  summary: Builds a lightweight cross-sectional Transformer for 15-minute A-share return signals and evaluates predictive power and portfolio profitability across broad equity-index segments.
+  why_it_matters: Links intraday return forecasts to portfolio profitability rather than stopping at statistical prediction accuracy.
+  notes: "The visible official paper ID is #943. The URL points to the shared accepted-paper roster via a text fragment rather than a standalone paper page. IJCAI also schedules a poster."
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-ijcai-kim-prism-vq
+  title: "Vector-Quantized Discrete Latent Factors Meet Financial Priors: Dynamic Cross-Sectional Stock Ranking Prediction for Portfolio Construction"
+  authors:
+    - Namhyoung Kim
+    - Jae Wook Song
+  venue: IJCAI
+  year: 2026
+  track: main
+  subvenue: Main Track
+  presentation: oral
+  official_url: https://2026.ijcai.org/accepted-papers/#:~:text=%232878
+  paper_url: https://2026.ijcai.org/accepted-papers/#:~:text=%232878
+  code_url: https://github.com/finxlab/PRISM-VQ
+  topics:
+    - factor-investing
+    - alpha-modeling
+    - evaluation
+  asset_classes:
+    - equities
+  tasks:
+    - cross-sectional stock ranking
+    - portfolio construction
+  summary: Combines prior factors, vector-quantized latent factors, and regime-conditioned experts to rank CSI 300 and S&P 500 stocks and evaluate constructed portfolios.
+  why_it_matters: Connects interpretable financial priors and latent market structure to security ranking and portfolio outcomes.
+  notes: "The visible official paper ID is #2878. The URL points to the shared accepted-paper roster via a text fragment rather than a standalone paper page. IJCAI also schedules a poster."
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-ijcai-fang-dual-adversarial-asset-pricing
+  title: Dual-Adversarial Dynamic Variational Asset Pricing with Adaptive Spatio-Temporal Feature Clustering for Portfolio Recommendation
+  authors:
+    - Yupeng Fang
+    - Ruirui Liu
+    - Xinyu Xia
+    - Huichou Huang
+    - Johannes Ruf
+    - Qingyao Wu
+  venue: IJCAI
+  year: 2026
+  track: main
+  subvenue: Main Track
+  presentation: oral
+  official_url: https://2026.ijcai.org/accepted-papers/#:~:text=%235993
+  paper_url: https://2026.ijcai.org/accepted-papers/#:~:text=%235993
+  topics:
+    - factor-investing
+    - alpha-modeling
+    - evaluation
+  asset_classes:
+    - equities
+  tasks:
+    - dynamic asset pricing
+    - portfolio recommendation
+  summary: Learns dynamic risk factors and exposures with variational, adversarial, and spatio-temporal components in a joint asset-pricing and portfolio-recommendation model.
+  why_it_matters: Turns nonlinear risk-factor estimation into a directly evaluated stock recommendation decision under noisy returns and changing conditions.
+  notes: "The visible official paper ID is #5993. The URL points to the shared accepted-paper roster via a text fragment rather than a standalone paper page. IJCAI also schedules a poster."
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-ijcai-liu-beyond-isolated-investor
+  title: "Beyond Isolated Investor: Predicting Startup Success via Roleplay-Based Collective Agents"
+  authors:
+    - Zhongyang Liu
+    - Haoyu Pei
+    - Xiangyi Xiao
+    - Xiaocong Du
+    - Yihui Li
+    - Suting Hong
+    - Kunpeng Zhang
+    - Haipeng Zhang
+  venue: IJCAI
+  year: 2026
+  track: main
+  subvenue: "Special Track on AI4Tech: AI Enabling Critical Technologies"
+  presentation: oral
+  official_url: https://2026.ijcai.org/accepted-papers/#:~:text=%23AI4T79
+  paper_url: https://2026.ijcai.org/accepted-papers/#:~:text=%23AI4T79
+  code_url: https://github.com/ZhangDataLab/SimVC-CAS
+  topics:
+    - financial-agents
+    - evaluation
+  data_frequency: not-applicable
+  tasks:
+    - startup financing prediction
+    - venture-capital group-decision simulation
+  summary: Models venture-capital financing decisions as interactions among heterogeneous investor agents and compares their decisions with observed investor choices.
+  why_it_matters: Evaluates collective agents on a real private-market investment-screening decision rather than generic company prediction alone.
+  notes: "The visible official paper ID is #AI4T79 and the official subject tag is AI4Finance. The URL points to the shared accepted-paper roster via a text fragment rather than a standalone paper page. IJCAI also schedules a poster."
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-ijcai-wang-difflob
+  title: "DiffLOB: Diffusion Models for Counterfactual Generation in Limit Order Books"
+  authors:
+    - Zhuohan Wang
+    - Carmine Ventre
+  venue: IJCAI
+  year: 2026
+  track: main
+  subvenue: "Special Track on AI4Tech: AI Enabling Critical Technologies"
+  presentation: oral
+  official_url: https://2026.ijcai.org/accepted-papers/#:~:text=%23AI4T199
+  paper_url: https://2026.ijcai.org/accepted-papers/#:~:text=%23AI4T199
+  topics:
+    - market-microstructure
+    - market-simulation
+    - synthetic-data
+    - evaluation
+  tasks:
+    - counterfactual limit-order-book generation
+    - market scenario analysis
+    - future market-regime prediction evaluation
+  summary: Generates regime-conditioned counterfactual limit-order-book trajectories and tests realism, intervention validity, and downstream predictive usefulness.
+  why_it_matters: Supports market stress and scenario analysis with controllable synthetic microstructure paths.
+  notes: "The visible official paper ID is #AI4T199 and the official subject tag is AI4Finance. The URL points to the shared accepted-paper roster via a text fragment rather than a standalone paper page. IJCAI also schedules a poster."
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-www-ladoczki-cex-dex-arbitrage
+  title: Analysis of CEX-DEX Arbitrage Opportunities with Hidden Markov Models
+  authors:
+    - Bence Ladóczki
+  venue: WWW
+  year: 2026
+  track: main
+  subvenue: Economics, Online Markets and Human Computation
+  presentation: not-specified
+  official_url: https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/Accepted%20papers%20-%20Main%20proceedings%20-%20Main%20Research%20track%20-%20rfp.csv#L10
+  paper_url: https://doi.org/10.1145/3774904.3792185
+  doi: 10.1145/3774904.3792185
+  topics:
+    - market-microstructure
+    - evaluation
+  asset_classes:
+    - crypto
+  tasks:
+    - CEX-DEX arbitrage opportunity analysis
+    - arbitrage trade and profit estimation
+  summary: Uses hidden Markov models to characterize CEX-DEX price gaps and estimate arbitrage-trade counts and profits in Ethereum markets.
+  why_it_matters: Measures cross-venue crypto arbitrage opportunities and their economic value.
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-www-chen-liquiditypool
+  title: "LiquidityPool: Game-Theoretic Analysis of Stakeholder Revenue in Ranking-Dependent DeFi"
+  authors:
+    - Qinde Chen
+    - Huawei Huang
+    - Jian Zheng
+  venue: WWW
+  year: 2026
+  track: main
+  subvenue: Economics, Online Markets and Human Computation
+  presentation: not-specified
+  official_url: https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/Accepted%20papers%20-%20Main%20proceedings%20-%20Main%20Research%20track%20-%20rfp.csv#L16
+  paper_url: https://doi.org/10.1145/3774904.3792260
+  doi: 10.1145/3774904.3792260
+  topics:
+    - market-microstructure
+  asset_classes:
+    - crypto
+  tasks:
+    - DeFi participation mechanism analysis
+    - stakeholder revenue analysis
+  summary: Analyzes how a ranking-dependent DeFi pooling mechanism changes participant revenue, concentration, welfare, and access on Ethereum.
+  why_it_matters: Provides a market-structure analysis of fund participation and revenue distribution in a crypto protocol.
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-www-luo-meme-coin-copy-trading
+  title: "Resisting Manipulative Bots in Meme Coin Copy Trading: A Multi-Agent Approach with Chain-of-Thought Reasoning"
+  authors:
+    - Yichen Luo
+    - Yebo Feng
+    - Jiahua Xu
+    - Yang Liu
+  venue: WWW
+  year: 2026
+  track: main
+  subvenue: Security and Privacy
+  presentation: not-specified
+  official_url: https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/Accepted%20papers%20-%20Main%20proceedings%20-%20Main%20Research%20track%20-%20rfp.csv#L523
+  paper_url: https://arxiv.org/abs/2601.08641
+  arxiv_id: "2601.08641"
+  doi: 10.1145/3774904.3792635
+  topics:
+    - financial-agents
+    - risk-management
+    - evaluation
+  asset_classes:
+    - crypto
+  tasks:
+    - copy-trading decision defense
+    - manipulative-bot robustness
+    - realized-return evaluation
+  summary: Develops a multi-agent defense for meme-coin copy trading and evaluates trading returns under manipulative bots and market frictions.
+  why_it_matters: Tests whether an automated trading decision can remain economically robust to adversarial manipulation.
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-www-qian-when-agents-trade
+  title: "When Agents Trade: Live Multi-Market Trading Arena for LLM Agents"
+  authors:
+    - Lingfei Qian
+    - Xueqing Peng
+    - Hanley Smith
+    - Yi Han
+    - Yueru He
+    - Haohang Li
+    - Yupeng Cao
+    - Yangyang Yu
+    - Guojun Xiong
+    - Peng Lu
+    - Yan Wang
+    - Vincent Jim Zhang
+    - Huan He
+    - Alejandro Lopez-Lira
+    - Jimin Huang
+    - Jian-Yun Nie
+    - Sophia Ananiadou
+  venue: WWW
+  year: 2026
+  track: main
+  subvenue: Industry
+  presentation: not-specified
+  official_url: https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/Accepted%20papers%20-%20Main%20proceedings%20-%20Industry.csv#L15
+  paper_url: https://arxiv.org/abs/2510.11695
+  arxiv_id: "2510.11695"
+  topics:
+    - financial-agents
+    - risk-management
+    - evaluation
+  asset_classes:
+    - equities
+    - crypto
+  tasks:
+    - live multi-market trading
+    - LLM trading-agent evaluation
+  summary: Builds a live arena that continuously evaluates LLM agents making stock and cryptocurrency trades under distinct risk styles.
+  why_it_matters: Moves financial-agent evaluation from static answers to realized multi-market trading decisions and outcomes.
+  notes: The official accepted title and author order differ from the later arXiv title and order; this record preserves the conference CSV metadata.
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-www-cao-financial-wind-tunnel
+  title: "Financial Wind Tunnel: A Retrieval-Augmented Market Simulator"
+  authors:
+    - Bokai Cao
+    - Xueyuan Lin
+    - Yiyan Qi
+    - Chengjin Xu
+    - Cehao Yang
+    - Jian Guo
+  venue: WWW
+  year: 2026
+  track: main
+  subvenue: Industry
+  presentation: not-specified
+  official_url: https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/Accepted%20papers%20-%20Main%20proceedings%20-%20Industry.csv#L38
+  paper_url: https://arxiv.org/abs/2503.17909
+  arxiv_id: "2503.17909"
+  topics:
+    - market-simulation
+    - synthetic-data
+    - risk-management
+    - evaluation
+  data_frequency: mixed
+  tasks:
+    - market scenario generation
+    - quantitative-model stress testing
+    - risk-aware downstream optimization
+  summary: Generates controllable cross-frequency market scenarios and uses them to stress-test and optimize downstream quantitative models under return and risk objectives.
+  why_it_matters: Provides decision-relevant synthetic scenarios for robustness testing and risk-aware model selection.
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-www-liu-liquidity-fragility-amms
+  title: "Structure Over Scale: Diagnosing Liquidity Fragility in Concentrated-Liquidity AMMs"
+  authors:
+    - Qiangqiang Liu
+    - Runfa Jiang
+    - Qian Huang
+    - Frank Fan
+    - Kunpeng Ren
+    - Wei Cai
+  venue: WWW
+  year: 2026
+  track: main
+  subvenue: Short Papers
+  presentation: not-specified
+  official_url: https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/Accepted%20papers%20-%20Main%20proceedings%20-%20Short%20Papers.csv#L24
+  paper_url: https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/Accepted%20papers%20-%20Main%20proceedings%20-%20Short%20Papers.csv#L24
+  topics:
+    - market-microstructure
+    - risk-management
+  asset_classes:
+    - crypto
+  tasks:
+    - concentrated-liquidity AMM fragility diagnosis
+  summary: Diagnoses structural sources of liquidity fragility in concentrated-liquidity automated market makers.
+  why_it_matters: Identifies crypto market-design conditions that affect liquidity resilience and market risk.
+  notes: The official accepted-paper ID is srp228; no standalone public manuscript or identifier was verified.
+  status: accepted
+  verified_on: 2026-07-12
+
+- id: 2026-www-faiz-atomic-arbitrage
+  title: Learning-Based Optimization of Atomic Arbitrage in Decentralized Financial Systems
+  authors:
+    - Syahirul Faiz
+    - Huned Materwala
+    - Davor Svetinovic
+  venue: WWW
+  year: 2026
+  track: workshop
+  subvenue: "ZABAPAD 2026: 1st Workshop on Zero-knowledge Proof and Blockchain for WEB 4.0: Advancing the Post-quantum and Decentralized Era"
+  presentation: not-specified
+  official_url: https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/Accepted%20papers%20-%20Main%20proceedings%20-%20Workshops-papers.csv#L217
+  paper_url: https://doi.org/10.1145/3774905.3794707
+  doi: 10.1145/3774905.3794707
+  topics:
+    - execution
+    - market-microstructure
+    - alpha-modeling
+    - evaluation
+  asset_classes:
+    - crypto
+  tasks:
+    - atomic arbitrage optimization
+    - decentralized trade execution
+  summary: Applies learning-based optimization to atomic arbitrage decisions in decentralized financial systems.
+  why_it_matters: Directly optimizes an executable DeFi trading strategy rather than merely describing protocol activity.
+  notes: The official workshop-paper ID is wk2397s; the DOI is an identifier, while acceptance is proved by the immutable official CSV row.
+  status: accepted
+  verified_on: 2026-07-12
 
 - id: 2025-icml-yang-hyperiv
   title: "HyperIV: Real-time Implied Volatility Smoothing"

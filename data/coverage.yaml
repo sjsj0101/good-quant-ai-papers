@@ -1,112 +1,172 @@
 - venue: ICML
   year: 2026
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
+    - position
   official_sources:
+    - https://icml.cc/Downloads/2026
     - https://icml.cc/virtual/2026/papers.html
-  notes: The official main-paper list is available; the broader cross-track finance-scope audit remains pending.
+    - https://icml.cc/virtual/2026/events/workshop
+    - https://icml.cc/virtual/2026/affinity_events
+    - https://icml.cc/virtual/2026/events/2026-Expo
+  notes: >-
+    All 6,415 main and 213 Position poster records were completely screened. Twenty records are cataloged as a verified lower bound: 12 main, one Position, and seven workshop. All 44 official workshop containers were mapped, but complete contributed-paper rosters for 40 containers and the affinity child-event and paper-roster mappings remain unresolved, so workshop and affinity are omitted from tracks_checked.
 
 - venue: NeurIPS
   year: 2026
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://neurips.cc/virtual/2026/papers.html
-  notes: The official virtual papers page is live but was not populated with main-paper sessions during this availability pass.
+    - https://proceedings.neurips.cc/paper/2026
+    - https://neurips.cc/Conferences/2026/DatasetsBenchmarks/AcceptedPapers
+    - https://neurips.cc/virtual/2026/events/workshop
+    - https://neurips.cc/virtual/2026/affinity_events
+  notes: >-
+    Zero official accepted rows were screened. The populated main roster and proceedings mirror mapping, the Datasets and Benchmarks accepted roster, every workshop contributed-paper roster, and the affinity event, poster, and joint-session mappings remain exact missing artifacts. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
 
 - venue: ICLR
   year: 2026
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://iclr.cc/virtual/2026/papers.html
-  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+    - https://proceedings.iclr.cc/paper_files/paper/2026
+    - https://openreview.net/group?id=ICLR.cc%2F2026%2FConference
+    - https://iclr.cc/Downloads/2026
+    - https://iclr.cc/virtual/2026/calendar
+    - https://iclr.cc/virtual/2026/events/workshop
+    - https://iclr.cc/virtual/2026/affinity_events
+    - https://openreview.net/group?id=ICLR.cc%2F2026%2FTinyPapers
+    - https://openreview.net/group?id=ICLR.cc%2F2026%2FBlogPosts
+  notes: >-
+    Zero official accepted rows were screened. A complete deduplicated main roster and proceedings mapping, workshop programs, affinity child-event and poster mappings, Tiny Papers roster, and Blog Posts roster all remain exact missing artifacts. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
 
 - venue: KDD
   year: 2026
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://kdd2026.kdd.org/
-  notes: The official conference site links a full program, but the finance-scope eligibility review remains pending.
+    - https://kdd2026.kdd.org/schedule-at-a-glance/
+    - https://kdd2026.kdd.org/research-track-papers/
+    - https://kdd2026.kdd.org/research-track-call-for-papers/
+    - https://kdd2026.kdd.org/applied-data-science-ads-track-call-for-papers/
+    - https://kdd2026.kdd.org/datasets-and-benchmarks-track-call-for-papers/
+    - https://kdd2026.kdd.org/ai4sciences-track-call-for-papers/
+    - https://kdd2026.kdd.org/kdd-2026-blue-sky-ideas-track-call-for-papers/
+    - https://kdd2026.kdd.org/undergraduate-consortium-call-for-submission/
+    - https://kdd2026.kdd.org/call-for-workshop-proposals/
+  notes: >-
+    Zero official main paper rows were screened; the verification interstitial is an access boundary, not a zero result. Final accepted rosters remain missing for Research, Applied Data Science, Datasets and Benchmarks, AI for Sciences, Blue Sky, undergraduate and Ph.D. consortia, workshops, every Special Day—especially the Finance Special Day—and Korea Day, together with the Full Program and proceedings reconciliation. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
 
 - venue: AAAI
   year: 2026
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://aaai.org/conference/aaai/aaai-26/
-  notes: The official conference page links the main technical-track program; the finance-scope eligibility review remains pending.
+    - https://aaai.org/conference/aaai/aaai-26/main-technical-track/
+    - https://ojs.aaai.org/index.php/AAAI/issue/archive
+  notes: >-
+    Zero official rows were screened because the inherited AAAI and OJS security denial was honored. The OJS volume, issue, section, and article map; main and special or co-program rosters; workshop programs; demonstrations; student, undergraduate, and doctoral consortium programs; IAAI and EAAI sections; and presentation and duplicate mappings remain exact missing artifacts. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
 
 - venue: IJCAI
   year: 2026
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://2026.ijcai.org/accepted-papers/
-  notes: The official accepted-papers page includes the main track; the finance-scope eligibility review remains pending.
+    - https://2026.ijcai.org/wp-json/wp/v2/pages/2862
+    - https://2026.ijcai.org/program/
+    - https://2026.ijcai.org/accepted-workshops/
+    - https://2026.ijcai.org/wp-json/wp/v2/pages/2567
+  notes: >-
+    All 990 of 990 central accepted rows across eleven categories were screened and five eligible papers were cataloged. Every centrally accepted paper has a six-minute oral plus a poster. All 40 workshop index rows were mapped, but zero organizer accepted or contributed-paper rows were screened; WS23 FinLLM is the priority unresolved roster. Workshop is therefore omitted from tracks_checked.
 
 - venue: WWW
   year: 2026
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
-    - https://www2026.thewebconf.org/
-  notes: The official conference page links the main proceedings; the finance-scope eligibility review remains pending.
+    - https://github.com/thewebconf2026/www2026/tree/beba571d4f3056bb2e137d245802b3c3ebf235eb
+    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted.html
+    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/full-schedule.html
+    - https://github.com/thewebconf2026/www2026/tree/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted
+    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/workshops.html
+    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/tutorials.html
+    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/e-posters.html
+    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/resource.html
+    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/special-days.html
+    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/calls/health-day.html
+    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/history-of-web.html
+    - https://prompteng-ws.github.io/2026/
+    - https://webst2026.netlify.app/
+  notes: >-
+    All 1,198 official paper rows were screened and seven eligible papers were cataloged. The accepted Resource roster, special and Health paper mappings, and the PromptEng and WebST workshop programs remain unresolved. Workshop is omitted from tracks_checked despite one cataloged workshop record because the workshop universe remains incomplete.
 
 - venue: WSDM
   year: 2026
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://wsdm-conference.org/2026/index.php/accepted-papers/
-  notes: The official accepted-papers page lists full and short main papers; the finance-scope eligibility review remains pending.
+    - https://wsdm-conference.org/2026/
+    - https://dl.acm.org/
+  notes: >-
+    Zero official main paper rows were screened. The full and short accepted-paper roster, affiliated paper-bearing event map, and proceedings reconciliation remain unavailable under the recorded conference-host and ACM publisher denials. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
 
 - venue: SIGIR
   year: 2026
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://sigir2026.org/en-AU/pages/program/accepted-papers
-  notes: The official accepted-papers page includes the main research tracks; the finance-scope eligibility review remains pending.
+    - https://sigir2026.org/en-AU/
+    - https://dl.acm.org/
+  notes: >-
+    Zero official main paper rows were screened. The published accepted title, author, track, presentation, and paper roster and the affiliated paper-bearing event map remain unscreened, with future proceedings reconciliation still missing. Future conference timing is not a zero-result basis. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
 
 - venue: AISTATS
   year: 2026
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://aistats.org/aistats2026/
-  notes: The official conference page is live but did not expose a main accepted-paper list or proceedings during this availability pass.
+  notes: >-
+    Zero official accepted rows were screened. The accepted main roster, proceedings-volume mapping, oral and poster presentation map, and the taxonomy and accepted rosters of every paper-bearing side program remain exact missing artifacts. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
 
 - venue: ACM ICAIF
   year: 2026
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://icaif2026.org/
-  notes: The official conference site exposes the call and dates, but no main accepted-paper program is available yet.
+    - https://dl.acm.org/
+  notes: >-
+    Zero official main paper rows were screened because the accepted program is future and unpublished. Submissions and under-review repositories are not acceptance evidence. The future main program, workshop and side-event map, organizer paper rosters, and proceedings volume remain missing. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
 
 - venue: ICML
   year: 2025

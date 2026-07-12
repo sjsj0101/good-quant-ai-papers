@@ -48,16 +48,16 @@ class ReadmeRenderingTests(unittest.TestCase):
         self.assertIn("| ICML |", rendered)
         self.assertIn("| NeurIPS |", rendered)
         self.assertIn("| ACM ICAIF |", rendered)
-        self.assertIn("[23 papers](papers/2026/icml.md) · Pending", rendered)
+        self.assertIn("[20 papers](papers/2026/icml.md) · Pending", rendered)
         self.assertIn("## Browse by Topic", rendered)
         self.assertIn("Asset Allocation", rendered)
         self.assertIn("Market Microstructure", rendered)
         self.assertIn("## ICML 2026", rendered)
-        self.assertIn("### Main Conference (13)", rendered)
+        self.assertIn("### Main Conference (12)", rendered)
         self.assertIn("### Position Papers (1)", rendered)
-        self.assertIn("### Workshops (9)", rendered)
+        self.assertIn("### Workshops (7)", rendered)
         self.assertIn("## Browse by Year and Venue", rendered)
-        self.assertIn("[ICML 2026](papers/2026/icml.md) — 23 papers", rendered)
+        self.assertIn("[ICML 2026](papers/2026/icml.md) — 20 papers", rendered)
         self.assertIn("## Contributing", rendered)
         self.assertIn("## License", rendered)
         self.assertEqual(
@@ -75,7 +75,11 @@ class ReadmeRenderingTests(unittest.TestCase):
         )
         self.assertIn("<sub>Yoontae Hwang, Stefan Zohren</sub>", rendered)
         self.assertIn("| Main<br><sub>Poster</sub> |", rendered)
-        self.assertIn("| Workshop<br><sub>Spotlight</sub> |", rendered)
+        self.assertIn(
+            "| Workshop<br><sub>Spotlight</sub><br><sub>"
+            "Forecasting as a New Frontier of Intelligence</sub> |",
+            rendered,
+        )
         self.assertIn("| Position<br><sub>Poster</sub> |", rendered)
         self.assertIn(
             "| Paper | Track | Focus | Assets / Frequency | Why it matters |",
@@ -180,7 +184,7 @@ class VenueRenderingTests(unittest.TestCase):
         self.assertIn("**Authors:** Yoontae Hwang, Stefan Zohren", rendered)
         self.assertIn("**Venue / year:** ICML · 2026", rendered)
         self.assertIn("**Track / presentation:** Main · Poster", rendered)
-        self.assertIn("**Status / verified:** Accepted · 2026-07-11", rendered)
+        self.assertIn("**Status / verified:** Accepted · 2026-07-12", rendered)
         self.assertIn("**Topics:** Asset Allocation · Portfolio Optimization", rendered)
         self.assertIn("**Assets / frequency:** Not specified", rendered)
         self.assertIn("**Focus:** Learns multi-asset allocations", rendered)
