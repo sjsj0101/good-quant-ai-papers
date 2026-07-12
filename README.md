@@ -22,6 +22,22 @@ Coverage rows are deliberately conservative. A `Pending` venue-year means some o
 
 The catalog stores original one-sentence editorial summaries and links—not paper PDFs or copied abstracts.
 
+## At a Glance
+
+| Metric | Value |
+| --- | ---: |
+| Curated papers | 136 |
+| Coverage units | 33 |
+| Covered years | 2024-2026 |
+| Conferences | 11 |
+
+## How to Use
+
+- Start with [Browse by Year and Venue](#browse-by-year-and-venue) when you want a conference-specific list.
+- Use [Browse by Topic](#browse-by-topic) for GitHub search links over the controlled topic tags.
+- Use [`data/papers.yaml`](data/papers.yaml) for machine-readable paper metadata and [`data/coverage.yaml`](data/coverage.yaml) for the venue-year audit ledger.
+- Read [`docs/metadata.md`](docs/metadata.md) before changing fields or [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request.
+
 ## Coverage: 2024–2026
 
 | Venue | 2026 | 2025 | 2024 |
@@ -38,13 +54,49 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | AISTATS | 0 papers · Pending | [1 paper](papers/2025/aistats.md) · Pending | 0 papers · No eligible papers |
 | ACM ICAIF | 0 papers · Pending | 0 papers · Pending | [49 papers](papers/2024/acm-icaif.md) · Pending |
 
+## Browse by Year and Venue
+
+- **2026** · [ICML 2026](papers/2026/icml.md) — 20 papers
+- **2026** · [IJCAI 2026](papers/2026/ijcai.md) — 5 papers
+- **2026** · [WWW 2026](papers/2026/www.md) — 7 papers
+- **2025** · [ICML 2025](papers/2025/icml.md) — 5 papers
+- **2025** · [AISTATS 2025](papers/2025/aistats.md) — 1 paper
+- **2024** · [ICML 2024](papers/2024/icml.md) — 3 papers
+- **2024** · [NeurIPS 2024](papers/2024/neurips.md) — 14 papers
+- **2024** · [ICLR 2024](papers/2024/iclr.md) — 3 papers
+- **2024** · [KDD 2024](papers/2024/kdd.md) — 6 papers
+- **2024** · [AAAI 2024](papers/2024/aaai.md) — 5 papers
+- **2024** · [IJCAI 2024](papers/2024/ijcai.md) — 14 papers
+- **2024** · [WWW 2024](papers/2024/www.md) — 4 papers
+- **2024** · [ACM ICAIF 2024](papers/2024/acm-icaif.md) — 49 papers
+
 ## Browse by Topic
 
 [Alpha Modeling](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22alpha-modeling%22&type=code) · [Alternative Data](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22alternative-data%22&type=code) · [Asset Allocation](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22asset-allocation%22&type=code) · [Derivatives](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22derivatives%22&type=code) · [Evaluation](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22evaluation%22&type=code) · [Execution](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22execution%22&type=code) · [Factor Investing](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22factor-investing%22&type=code) · [Financial Agents](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22financial-agents%22&type=code) · [Financial Forecasting](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22financial-forecasting%22&type=code) · [Market Microstructure](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22market-microstructure%22&type=code) · [Market Regimes](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22market-regimes%22&type=code) · [Market Simulation](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22market-simulation%22&type=code) · [Portfolio Optimization](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22portfolio-optimization%22&type=code) · [Risk Management](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22risk-management%22&type=code) · [Synthetic Data](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22synthetic-data%22&type=code)
 
-## ICML 2026
+## Data Files
 
-### Main Conference (12)
+- [`data/papers.yaml`](data/papers.yaml): canonical paper records with authors, field/topic tags, venue, year, track, URLs, identifiers, and original editorial summaries.
+- [`data/coverage.yaml`](data/coverage.yaml): venue-year audit status, official sources, checked tracks, pending tracks, and coverage notes.
+- Generated Markdown lives in [`papers/`](papers/) and should not be edited by hand.
+
+## Contributing
+
+Contributions to [`sjsj0101/good-quant-ai-papers`](https://github.com/sjsj0101/good-quant-ai-papers) are welcome. Add or correct paper metadata in [`data/papers.yaml`](data/papers.yaml), update systematic coverage evidence in [`data/coverage.yaml`](data/coverage.yaml) when the venue-year audit state changes, provide an official venue source, and write original summary prose. Do not edit generated indexes by hand.
+
+```bash
+python3 scripts/validate.py
+python3 scripts/render.py
+python3 scripts/render.py --check
+```
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the complete submission checklist.
+
+## Paper Index
+
+### ICML 2026
+
+#### Main Conference (12)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -61,13 +113,13 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [Signature-Informed Transformer for Asset Allocation](<https://openreview.net/forum?id=eBM5ALLJNx>)<br><sub>Yoontae Hwang, Stefan Zohren</sub> | Main<br><sub>Poster</sub> | Learns multi-asset allocations end to end using path-signature features and a downside-risk objective. | — | Connects market-path geometry directly to portfolio decisions instead of optimizing an intermediate forecast loss. |
 | [Tail Annealing for Heavy-Tailed Flow Matching](<https://arxiv.org/abs/2605.20068>)<br><sub>Jean Pachebat</sub> | Main<br><sub>Poster</sub> | Evaluates extreme-tail and CVaR99 fidelity on controlled heavy-tailed benchmarks, then validates generation on real Fama–French equity-factor returns. | Equities | Combining CVaR99 fidelity with Fama–French validation makes the generator directly relevant to tail-sensitive market-risk scenario analysis. |
 
-### Position Papers (1)
+#### Position Papers (1)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
 | [Position: Evaluating LLMs in Finance Requires Explicit Bias Consideration](<https://icml.cc/virtual/2026/poster/67204>)<br><sub>Yaxuan Kong, Hoyoung Lee, Yoontae Hwang, Alejandro Lopez-Lira, Bradford Levy, Dhagash Mehta, Qingsong Wen, CHANYEOL CHOI, Yongjae Lee, Stefan Zohren</sub> | Position<br><sub>Poster</sub> | Argues that finance LLM evaluation must explicitly control look-ahead, survivorship, and trading-cost biases. | Not Applicable | Point-in-time universes and realistic trading frictions determine whether reported forecasting and investment performance is valid. |
 
-### Workshops (7)
+#### Workshops (7)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -80,9 +132,9 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [TradeFM: A Generative Foundation Model for Trade-flow and Market Microstructure](<https://openreview.net/forum?id=anK6dppdfa>)<br><sub>Srijan Sood, Maxime Kawawa-Beaudan, Daniel Borrajo, Manuela Veloso</sub> | Workshop<br><sub>Poster</sub><br><sub>Foundation Models for Structured Data</sub> | Trains a generative trade-event model with scale-invariant features designed to transfer across equity markets. | Equities · Tick | Supports cross-market equity order-flow simulation and synthetic microstructure data without asset-specific tokenization. |
 
 
-## IJCAI 2026
+### IJCAI 2026
 
-### Main Conference (5)
+#### Main Conference (5)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -93,9 +145,9 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [Vector-Quantized Discrete Latent Factors Meet Financial Priors: Dynamic Cross-Sectional Stock Ranking Prediction for Portfolio Construction](<https://2026.ijcai.org/accepted-papers/#:~:text=%232878>)<br><sub>Namhyoung Kim, Jae Wook Song</sub> | Main<br><sub>Oral</sub><br><sub>Main Track</sub> | Combines prior factors, vector-quantized latent factors, and regime-conditioned experts to rank CSI 300 and S&amp;P 500 stocks and evaluate constructed portfolios. | Equities | Connects interpretable financial priors and latent market structure to security ranking and portfolio outcomes. |
 
 
-## WWW 2026
+### WWW 2026
 
-### Main Conference (6)
+#### Main Conference (6)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -106,16 +158,16 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [Structure Over Scale: Diagnosing Liquidity Fragility in Concentrated-Liquidity AMMs](<https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/Accepted%20papers%20-%20Main%20proceedings%20-%20Short%20Papers.csv#L24>)<br><sub>Qiangqiang Liu, Runfa Jiang, Qian Huang, Frank Fan, Kunpeng Ren, Wei Cai</sub> | Main<br><sub>Not Specified</sub><br><sub>Short Papers</sub> | Diagnoses structural sources of liquidity fragility in concentrated-liquidity automated market makers. | Crypto | Identifies crypto market-design conditions that affect liquidity resilience and market risk. |
 | [When Agents Trade: Live Multi-Market Trading Arena for LLM Agents](<https://arxiv.org/abs/2510.11695>)<br><sub>Lingfei Qian, Xueqing Peng, Hanley Smith, Yi Han, Yueru He, Haohang Li, Yupeng Cao, Yangyang Yu, Guojun Xiong, Peng Lu, Yan Wang, Vincent Jim Zhang, Huan He, Alejandro Lopez-Lira, Jimin Huang, Jian-Yun Nie, Sophia Ananiadou</sub> | Main<br><sub>Not Specified</sub><br><sub>Industry</sub> | Builds a live arena that continuously evaluates LLM agents making stock and cryptocurrency trades under distinct risk styles. | Equities, Crypto | Moves financial-agent evaluation from static answers to realized multi-market trading decisions and outcomes. |
 
-### Workshops (1)
+#### Workshops (1)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
 | [Learning-Based Optimization of Atomic Arbitrage in Decentralized Financial Systems](<https://doi.org/10.1145/3774905.3794707>)<br><sub>Syahirul Faiz, Huned Materwala, Davor Svetinovic</sub> | Workshop<br><sub>Not Specified</sub><br><sub>ZABAPAD 2026: 1st Workshop on Zero-knowledge Proof and Blockchain for WEB 4.0: Advancing the Post-quantum and Decentralized Era</sub> | Applies learning-based optimization to atomic arbitrage decisions in decentralized financial systems. | Crypto | Directly optimizes an executable DeFi trading strategy rather than merely describing protocol activity. |
 
 
-## ICML 2025
+### ICML 2025
 
-### Main Conference (5)
+#### Main Conference (5)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -126,24 +178,24 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [LOB-Bench: Benchmarking Generative AI for Finance - an Application to Limit Order Book Data](<https://openreview.net/forum?id=CXPpYJpYXQ>)<br><sub>Peer Nagy, Sascha Yves Frey, Kang Li, Bidipta Sarkar, Svitlana Vyetrenko, Stefan Zohren, Ani Calinescu, Jakob Nicolaus Foerster</sub> | Main<br><sub>Not Specified</sub> | Benchmarks generative limit-order-book streams with distributional, order-flow, price-response, and market-impact diagnostics. | Tick | Provides a decision-facing test suite for deciding whether synthetic microstructure data are credible enough for trading-model development. |
 
 
-## AISTATS 2025
+### AISTATS 2025
 
-### Main Conference (1)
+#### Main Conference (1)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
 | [Approximate Equivariance in Reinforcement Learning](<https://openreview.net/forum?id=SOrZWcuz3j>)<br><sub>Jung Yeon Park, Sujay Bhatt, Sihan Zeng, Lawson L.S. Wong, Alec Koppel, Sumitra Ganesh, Robin Walters</sub> | Main<br><sub>Not Specified</sub> | Relaxes exact symmetry in reinforcement-learning policies and evaluates the resulting architecture on stock trading with real financial data. | Equities | Tests whether approximate market symmetries improve trading-policy performance and noise robustness without imposing unrealistic invariances. |
 
 
-## ICML 2024
+### ICML 2024
 
-### Main Conference (1)
+#### Main Conference (1)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
 | [Autonomous Sparse Mean-CVaR Portfolio Optimization](<https://raw.githubusercontent.com/mlresearch/v235/main/assets/lin24w/lin24w.pdf>)<br><sub>Yizun Lin, Yangyu Zhang, Zhao-Rong Lai, Cheng Li</sub> | Main<br><sub>Poster</sub> | Builds a sparse mean-CVaR portfolio model that adapts its asset-selection mechanism as the investable universe changes. | — | Couples downside-risk control with scalable security selection instead of requiring a fixed asset pool. |
 
-### Workshops (2)
+#### Workshops (2)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -151,9 +203,9 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [You Shall Pass: Dealing with the Zero-Gradient Problem in Predict and Optimize for Convex Optimization](<https://openreview.net/forum?id=vmnfrrLATL>)<br><sub>Grigorii Veviurko, Wendelin Boehmer, Mathijs de Weerdt</sub> | Workshop<br><sub>Poster</sub><br><sub>Differentiable Almost Everything Workshop</sub> | Repairs zero gradients in decision-focused learning and tests the resulting surrogate on a convex portfolio-optimization problem. | — | Makes it possible to train prediction models against downstream portfolio quality when the optimizer otherwise supplies no learning signal. |
 
 
-## NeurIPS 2024
+### NeurIPS 2024
 
-### Main Conference (9)
+#### Main Conference (9)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -167,7 +219,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [GLinSAT: The General Linear Satisfiability Neural Network Layer By Accelerated Gradient Descent](<https://proceedings.neurips.cc/paper_files/paper/2024/file/dd73f39426a03131c38c8d943153d44b-Paper-Conference.pdf>)<br><sub>Hongtai Zeng, Chao Yang, Yanzhen Zhou, Cheng Yang, Qinglai Guo</sub> | Main<br><sub>Not Specified</sub> | Enforces linear constraints in a differentiable layer and tests it on predictive equity portfolio allocation. | — | Keeps learned weights feasible while optimizing Sharpe ratio over a concentrated technology-stock universe. |
 | [Overcoming Brittleness in Pareto-Optimal Learning-Augmented Algorithms](<https://proceedings.neurips.cc/paper_files/paper/2024/file/11c6625b0481a7d5625831369f6b7c82-Paper-Conference.pdf>)<br><sub>Alex Elenter, Spyros Angelopoulos, Christoph Dürr, Yanni Lefki</sub> | Main<br><sub>Not Specified</sub> | Robustifies learning-augmented online algorithms and applies them to one-way foreign-exchange trading decisions. | — | Balances the upside of exchange-rate predictions against worst-case protection when those predictions fail. |
 
-### Workshops (4)
+#### Workshops (4)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -176,37 +228,37 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [InvestAlign: Align LLMs with Investor Decision-Making under Herd Behavior](<https://openreview.net/forum?id=vqTknTkmVm>)<br><sub>Huisheng Wang, Zhuoshi Pan, Hangjing Zhang, Mingxiao Liu, Yiqing Lin, H. Vicky Zhao</sub> | Workshop<br><sub>Poster</sub><br><sub>Adaptive Foundation Models: Evolving AI for Personalized and Efficient Learning</sub> | Aligns language models with investor choices while explicitly modeling social-information cascades and herd behavior. | — | Tests whether an investment assistant can resist crowd-driven errors and preserve decision quality under social pressure. |
 | [Unlocking the Potential of Green Virtual Bidding Strategies : A Pathway to a Low-Carbon Electricity Market](<https://neurips.cc/virtual/2024/100558>)<br><sub>Aya Laajil, Laurent Barcelo, Frédérique M. Gagnon, Ghait Boukachab, Loubna Benabbou</sub> | Workshop<br><sub>Poster</sub><br><sub>Tackling Climate Change with Machine Learning</sub> | Proposes using machine learning to explore green virtual-bidding strategies in financially settled day-ahead and real-time electricity markets. | — | Connects algorithmic bidding decisions to both market profitability and lower-carbon electricity-market operation. |
 
-### Affinity Tracks (1)
+#### Affinity Tracks (1)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
 | [A Hybrid COMTE-LEFTIST Time-Series Explanation Method For a Time-series Classification Bitcoin Recommendation System](<https://openreview.net/forum?id=IepDSQDWWv>)<br><sub>lucas rabelo, Teresa Ludermir</sub> | Affinity<br><sub>Oral</sub><br><sub>LatinX in AI</sub> | Combines COMTE and LEFTIST to explain a Bitcoin time-series classifier that turns one-minute closes into 30-minute sell-or-hold recommendations. | Crypto · Intraday | Makes a short-horizon crypto trading signal more interpretable by showing which time-series changes drive each recommendation. |
 
 
-## ICLR 2024
+### ICLR 2024
 
-### Main Conference (1)
+#### Main Conference (1)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
 | [New Insight of Variance reduce in Zero-Order Hard-Thresholding: Mitigating Gradient Error and Expansivity Contradictions](<https://proceedings.iclr.cc/paper_files/paper/2024/file/c6b71f8d79d0b2d7bdac66ff3a3ba243-Paper-Conference.pdf>)<br><sub>Xinzhe Yuan, William de Vazelhes, Bin Gu, Huan Xiong</sub> | Main<br><sub>Poster</sub> | Reduces zeroth-order gradient variance in sparse hard-thresholding and demonstrates the method on portfolio optimization. | — | Makes black-box sparse allocation more practical when portfolio objectives can be evaluated but not differentiated. |
 
-### Workshops (1)
+#### Workshops (1)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
 | [FinMem: A Performance-Enhanced LLM Trading Agent with Layered Memory and Character Design](<https://arxiv.org/abs/2311.13743>)<br><sub>Haohang Li, Yangyang Yu, Zhi Chen, Yuechen Jiang, Yang Li, Denghui Zhang, Rong Liu, Jordan W. Suchow, Khaldoun Khashanah</sub> | Workshop<br><sub>Poster</sub><br><sub>Workshop on Large Language Models for Agents</sub> | Organizes an autonomous trading agent's financial observations into layered memory before producing stock-investment decisions. | — | Shows how memory horizon and agent character affect cumulative returns on real-world equity data. |
 
-### Affinity Tracks (1)
+#### Affinity Tracks (1)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
 | [Logic-guided Deep Reinforcement Learning for Stock Trading](<https://openreview.net/attachment?id=SPDNi5Ys8R&name=pdf>)<br><sub>Zhiming Li, Junzhe Jiang, Yushi Cao, Aixin CUI, Bozhi Wu, Bo Li, Yang Liu</sub> | Affinity<br><sub>Not Specified</sub><br><sub>Tiny Papers @ ICLR 2024</sub> | Synthesizes a logic-guided hierarchy over reinforcement-learning subpolicies for robust stock trading. | — | Encodes market-trend knowledge directly in the strategy while improving return and limiting drawdown. |
 
 
-## KDD 2024
+### KDD 2024
 
-### Main Conference (4)
+#### Main Conference (4)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -215,7 +267,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [MacroHFT: Memory Augmented Context-aware Reinforcement Learning On High Frequency Trading](<https://arxiv.org/abs/2406.14537>)<br><sub>Chuqiao Zong, Chaojie Wang, Molei Qin, Lei Feng, Xinrun Wang, Bo An</sub> | Main<br><sub>Not Specified</sub> | Mixes context-specialized reinforcement-learning agents with memory to trade cryptocurrency at minute frequency. | — | Adapts high-frequency policies to changing trend and volatility regimes while preserving profitability. |
 | [Money Never Sleeps: Maximizing Liquidity Mining Yields in Decentralized Finance](<https://doi.org/10.1145/3637528.3671942>)<br><sub>Wangze Ni, Yiwei Zhao, Weijie Sun, Lei Chen, Peng Cheng, Chen Jason Zhang, Xuemin Lin</sub> | Main<br><sub>Not Specified</sub> | Allocates cryptocurrency capital among decentralized-finance liquidity pools to maximize mining yield. | — | Formalizes yield farming as a dynamic allocation problem with executable pool-selection decisions. |
 
-### Workshops (2)
+#### Workshops (2)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -223,9 +275,9 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [Sourcing Investment Targets for Venture and Growth Capital Using Multivariate Time Series Transformer](<https://arxiv.org/abs/2309.16888>)<br><sub>Lele Cao, Gustaf Halvardsson, Andrew McCornack, Vilhelm von Ehrenheim, Pawel Herman</sub> | Workshop<br><sub>Oral</sub><br><sub>Machine Learning in Finance</sub> | Ranks prospective venture and growth-capital investments from multivariate company time series with a Transformer. | — | Turns proprietary operating histories into target-sourcing decisions and validates them with real investment portfolio simulations. |
 
 
-## AAAI 2024
+### AAAI 2024
 
-### Main Conference (5)
+#### Main Conference (5)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -236,9 +288,9 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [MDGNN: Multi-Relational Dynamic Graph Neural Network for Comprehensive and Dynamic Stock Investment Prediction](<https://ojs.aaai.org/index.php/AAAI/article/view/29381>)<br><sub>Hao Qian, Hongting Zhou, Qian Zhao, Hao Chen, Hongxiang Yao, Jingwei Wang, Ziqi Liu, Fei Yu, Zhiqiang Zhang, Jun Zhou</sub> | Main<br><sub>Not Specified</sub> | Encodes evolving multi-relational stock graphs with a Transformer to predict investment outcomes. | — | Captures changing links among stocks and related entities that static investment models miss. |
 
 
-## IJCAI 2024
+### IJCAI 2024
 
-### Main Conference (5)
+#### Main Conference (5)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -248,7 +300,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [RSAP-DFM: Regime-Shifting Adaptive Posterior Dynamic Factor Model for Stock Returns Prediction](<https://www.ijcai.org/proceedings/2024/676>)<br><sub>Quanzhou Xiang, Zhan Chen, Qi Sun, Rujun Jiang</sub> | Main<br><sub>Not Specified</sub> | Adapts a dynamic stock-return factor model when latent market regimes shift. | — | Lets factor forecasts respond to structural changes rather than averaging incompatible return environments. |
 | [Trade When Opportunity Comes: Price Movement Forecasting via Locality-Aware Attention and Iterative Refinement Labeling](<https://www.ijcai.org/proceedings/2024/678>)<br><sub>Liang Zeng, Lei Wang, Hui Niu, Ruchen Zhang, Ling Wang, Jian Li</sub> | Main<br><sub>Not Specified</sub> | Uses locality-aware attention and refined labels to identify tradable price moves across stocks, ETFs, and cryptoassets. | — | Focuses the forecast on opportunities that translate into quantitative-investment performance across asset classes. |
 
-### Workshops (9)
+#### Workshops (9)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -263,9 +315,9 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [Wealth Guide at the FinLLM Challenge Task: A Sophisticated Language Model Solution for Financial Trading Decisions](<https://aclanthology.org/2024.finnlp-2.13.pdf>)<br><sub>Sarmistha Das, R E Zera Marveen Lyngkhoi, Sriparna Saha, Alka Maurya</sub> | Workshop<br><sub>Not Specified</sub><br><sub>Joint Workshop of FinNLP and AgentScen — FinLLM Shared Task</sub> | Maps stock and exchange-traded-fund prices plus financial news to explicit buy, sell, or hold actions in the FinLLM single-stock-trading task. | Equities | Demonstrates a language-model trading policy whose winning task result is evaluated with realized Sharpe ratio rather than text accuracy alone. |
 
 
-## WWW 2024
+### WWW 2024
 
-### Main Conference (3)
+#### Main Conference (3)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -273,16 +325,16 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [Learning to Generate Explainable Stock Predictions using Self-Reflective Large Language Models](<https://arxiv.org/abs/2402.03659>)<br><sub>Kelvin J. L. Koa, Yunshan Ma, Ritchie Ng, Tat-Seng Chua</sub> | Main<br><sub>Not Specified</sub> | Trains a self-reflective language model to explain next-day stock forecasts and validates the signals in portfolio construction. | — | Links text-based model explanations to realized portfolio outcomes rather than treating prediction accuracy as the final objective. |
 | [Reinforcement Learning with Maskable Stock Representation for Portfolio Management in Customizable Stock Pools](<https://arxiv.org/abs/2311.10801>)<br><sub>Wentao Zhang, Yilei Zhao, Shuo Sun, Jie Ying, Yonggang Xie, Zitao Song, Xinrun Wang, Bo An</sub> | Main<br><sub>Not Specified</sub> | Learns a maskable stock representation so one reinforcement-learning allocator can operate across investor-selected equity universes. | — | Lets investors change the eligible stock pool without retraining a separate portfolio policy for every universe. |
 
-### Workshops (1)
+#### Workshops (1)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
 | [Measuring Arbitrage Losses and Profitability of AMM Liquidity](<https://arxiv.org/abs/2404.05803>)<br><sub>Robin Fritsch, Andrea Canidio</sub> | Workshop<br><sub>Not Specified</sub><br><sub>3rd International Cryptoasset Analytics Workshop</sub> | Measures trading-fee income against arbitrage and loss-versus-rebalancing costs for automated-market-maker liquidity positions across pools and trading pairs. | — | Quantifies when liquidity provision is profitable and how block-time design changes the market risk borne by liquidity providers. |
 
 
-## ACM ICAIF 2024
+### ACM ICAIF 2024
 
-### Main Conference (44)
+#### Main Conference (44)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -331,7 +383,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [The Effect of Liquidity on the Spoofability of Financial Markets](<https://doi.org/10.1145/3677052.3698634>)<br><sub>Anri Gu, Yongzhao Wang, Chris Mascioli, Mithun Chakraborty, Rahul Savani, Theodore L. Turocy, Michael P. Wellman</sub> | Main<br><sub>Not Specified</sub> | Studies how market liquidity changes the profitability and detectability of spoofing in a simulated trading environment. | — | Shows when apparent depth is most vulnerable to manipulation, informing execution and surveillance under different liquidity regimes. |
 | [Whack-a-mole Online Learning: Physics-Informed Neural Network for Intraday Implied Volatility Surface](<https://doi.org/10.1145/3677052.3698601>)<br><sub>Kentaro Hoshisashi, Carolyn E. Phelan, Paolo Barucca</sub> | Main<br><sub>Poster</sub> | Fits intraday implied-volatility surfaces with a physics-informed network that incorporates derivative constraints during online updates. | — | Produces dynamically refreshed option surfaces while discouraging economically inconsistent shapes. |
 
-### Workshops (5)
+#### Workshops (5)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -340,34 +392,6 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [No Tick-Size Too Small: A General Method for Modelling Small Tick Limit Order Books](<https://arxiv.org/abs/2410.08744>)<br><sub>Konark Jain, Jean-François Muzy, Jonathan Kochems, Emmanuel Bacry</sub> | Workshop<br><sub>Oral</sub><br><sub>Simulation of Financial Markets and Economic Systems</sub> | Fits a Hawkes-process limit-order-book model that reproduces sparse and multi-level price dynamics across large-, medium-, and small-tick equities. | — | Provides a calibrated market simulator that preserves tick-size-specific liquidity and return behavior. |
 | [Supervised Autoencoder MLP for Financial Time Series Forecasting](<https://arxiv.org/abs/2404.01866>)<br><sub>Bartosz Bieganowski, Robert Ślepaczuk</sub> | Workshop<br><sub>Poster</sub><br><sub>Simulation of Financial Markets and Economic Systems</sub> | Trains supervised autoencoders with triple-barrier labels and noise augmentation to produce trading signals for equity-index, foreign-exchange, and cryptocurrency markets. | — | Evaluates the signals with realized strategy Sharpe and information ratios rather than forecast error alone. |
 | [TradingGPT: Elevating Financial Trading Performance in Multi-Modal Market Environments via LLM-Powered Multi-Agent Collaboration and Debate](<https://drive.google.com/file/d/1w3M8Yxa5FoUckglyy-M9ZwDJGTABiyIq/view?usp=sharing>)<br><sub>Yang Li, Yangyang Yu, Haohang Li, Zhiyang Deng, Yupeng Cao, Khaldoun Khashanah</sub> | Workshop<br><sub>Not Specified</sub><br><sub>Multimodal Financial Foundation Models</sub> | Coordinates language-model agents that debate multimodal market evidence before selecting trading actions. | — | Evaluates whether structured multi-agent collaboration improves realized trading performance in a multimodal market environment. |
-
-## Browse by Year and Venue
-
-- **2026** · [ICML 2026](papers/2026/icml.md) — 20 papers
-- **2026** · [IJCAI 2026](papers/2026/ijcai.md) — 5 papers
-- **2026** · [WWW 2026](papers/2026/www.md) — 7 papers
-- **2025** · [ICML 2025](papers/2025/icml.md) — 5 papers
-- **2025** · [AISTATS 2025](papers/2025/aistats.md) — 1 paper
-- **2024** · [ICML 2024](papers/2024/icml.md) — 3 papers
-- **2024** · [NeurIPS 2024](papers/2024/neurips.md) — 14 papers
-- **2024** · [ICLR 2024](papers/2024/iclr.md) — 3 papers
-- **2024** · [KDD 2024](papers/2024/kdd.md) — 6 papers
-- **2024** · [AAAI 2024](papers/2024/aaai.md) — 5 papers
-- **2024** · [IJCAI 2024](papers/2024/ijcai.md) — 14 papers
-- **2024** · [WWW 2024](papers/2024/www.md) — 4 papers
-- **2024** · [ACM ICAIF 2024](papers/2024/acm-icaif.md) — 49 papers
-
-## Contributing
-
-Contributions to [`sjsj0101/good-quant-ai-papers`](https://github.com/sjsj0101/good-quant-ai-papers) are welcome. Add or correct paper metadata in [`data/papers.yaml`](data/papers.yaml), update systematic coverage evidence in [`data/coverage.yaml`](data/coverage.yaml) when the venue-year audit state changes, provide an official venue source, and write original summary prose. Do not edit generated indexes by hand.
-
-```bash
-python3 scripts/validate.py
-python3 scripts/render.py
-python3 scripts/render.py --check
-```
-
-See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the complete submission checklist.
 
 ## License
 

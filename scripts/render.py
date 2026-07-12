@@ -241,6 +241,9 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
     grouped = _records_by_venue(ordered)
     paper_count = len(ordered)
     venue_count = len(VENUE_ORDER)
+    coverage_unit_count = len(coverage)
+    years = sorted(COVERAGE_YEARS)
+    covered_years = f"{years[0]}-{years[-1]}"
     paper_last_verified = max(
         (record["verified_on"] for record in ordered), default="Not available"
     )
@@ -330,30 +333,38 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
             "The catalog stores original one-sentence editorial summaries and "
             "links—not paper PDFs or copied abstracts."
         ),
+        "",
+        "## At a Glance",
+        "",
+        "| Metric | Value |",
+        "| --- | ---: |",
+        f"| Curated papers | {paper_count} |",
+        f"| Coverage units | {coverage_unit_count} |",
+        f"| Covered years | {covered_years} |",
+        f"| Conferences | {venue_count} |",
+        "",
+        "## How to Use",
+        "",
+        (
+            "- Start with [Browse by Year and Venue](#browse-by-year-and-venue) "
+            "when you want a conference-specific list."
+        ),
+        (
+            "- Use [Browse by Topic](#browse-by-topic) for GitHub search links "
+            "over the controlled topic tags."
+        ),
+        (
+            "- Use [`data/papers.yaml`](data/papers.yaml) for machine-readable "
+            "paper metadata and [`data/coverage.yaml`](data/coverage.yaml) for "
+            "the venue-year audit ledger."
+        ),
+        (
+            "- Read [`docs/metadata.md`](docs/metadata.md) before changing fields "
+            "or [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request."
+        ),
     ]
 
     lines.extend(["", *_render_coverage_matrix(ordered, coverage), ""])
-    lines.extend(["## Browse by Topic", ""])
-    topics = sorted({topic for record in ordered for topic in record["topics"]})
-    lines.append(" · ".join(_topic_link(topic) for topic in topics) or "No topics yet.")
-
-    for (year, venue), venue_records in grouped.items():
-        lines.extend(["", f"## {_escape_markdown(venue)} {year}", ""])
-        tracks = {record["track"] for record in venue_records}
-        for track in sorted(tracks, key=_track_sort_key):
-            track_records = [
-                record for record in venue_records if record["track"] == track
-            ]
-            heading = TRACK_HEADINGS.get(track, _display_label(track))
-            lines.extend(
-                [
-                    f"### {heading} ({len(track_records)})",
-                    "",
-                    *_paper_table(track_records),
-                    "",
-                ]
-            )
-
     lines.extend(["## Browse by Year and Venue", ""])
     for (year, venue), venue_records in grouped.items():
         relative_path = f"papers/{year}/{_venue_slug(venue)}.md"
@@ -365,8 +376,29 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
     if not grouped:
         lines.append("No venue pages yet.")
 
+    lines.extend(["", "## Browse by Topic", ""])
+    topics = sorted({topic for record in ordered for topic in record["topics"]})
+    lines.append(" · ".join(_topic_link(topic) for topic in topics) or "No topics yet.")
+
     lines.extend(
         [
+            "",
+            "## Data Files",
+            "",
+            (
+                "- [`data/papers.yaml`](data/papers.yaml): canonical paper "
+                "records with authors, field/topic tags, venue, year, track, "
+                "URLs, identifiers, and original editorial summaries."
+            ),
+            (
+                "- [`data/coverage.yaml`](data/coverage.yaml): venue-year audit "
+                "status, official sources, checked tracks, pending tracks, and "
+                "coverage notes."
+            ),
+            (
+                "- Generated Markdown lives in [`papers/`](papers/) and should "
+                "not be edited by hand."
+            ),
             "",
             "## Contributing",
             "",
@@ -388,6 +420,29 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
             "",
             "See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the complete submission checklist.",
             "",
+            "## Paper Index",
+        ]
+    )
+
+    for (year, venue), venue_records in grouped.items():
+        lines.extend(["", f"### {_escape_markdown(venue)} {year}", ""])
+        tracks = {record["track"] for record in venue_records}
+        for track in sorted(tracks, key=_track_sort_key):
+            track_records = [
+                record for record in venue_records if record["track"] == track
+            ]
+            heading = TRACK_HEADINGS.get(track, _display_label(track))
+            lines.extend(
+                [
+                    f"#### {heading} ({len(track_records)})",
+                    "",
+                    *_paper_table(track_records),
+                    "",
+                ]
+            )
+
+    lines.extend(
+        [
             "## License",
             "",
             (
