@@ -41,7 +41,9 @@ class ReadmeRenderingTests(unittest.TestCase):
         self.assertIn("License-CC BY 4.0", rendered)
         self.assertIn("sjsj0101/good-quant-ai-papers", rendered)
         self.assertIn("## Scope", rendered)
-        self.assertIn("officially accepted computer-science conference work", rendered)
+        self.assertIn("evidence-bounded lower-bound catalog", rendered)
+        self.assertIn("Coverage rows are deliberately conservative", rendered)
+        self.assertIn("workshop, position, and affinity papers", rendered)
         self.assertIn("General banking, credit scoring, fraud detection", rendered)
         self.assertIn("## Coverage: 2024–2026", rendered)
         self.assertIn("| Venue | 2026 | 2025 | 2024 |", rendered)
@@ -58,7 +60,10 @@ class ReadmeRenderingTests(unittest.TestCase):
         self.assertIn("### Workshops (7)", rendered)
         self.assertIn("## Browse by Year and Venue", rendered)
         self.assertIn("[ICML 2026](papers/2026/icml.md) — 20 papers", rendered)
+        self.assertIn("[AISTATS 2025](papers/2025/aistats.md) — 1 paper", rendered)
         self.assertIn("## Contributing", rendered)
+        self.assertIn("[`data/papers.yaml`](data/papers.yaml)", rendered)
+        self.assertIn("[`data/coverage.yaml`](data/coverage.yaml)", rendered)
         self.assertIn("## License", rendered)
         self.assertEqual(
             sum(line.startswith("| [") for line in rendered.splitlines()),
@@ -177,6 +182,10 @@ class VenueRenderingTests(unittest.TestCase):
         ]
 
         self.assertIn("# ICML 2026", rendered)
+        self.assertIn("**Cataloged eligible papers:** 20", rendered)
+        self.assertIn("**Tracks checked:** Main · Workshop · Position", rendered)
+        self.assertIn("**Tracks pending:** Workshop", rendered)
+        self.assertIn("Affinity-event or poster roster", rendered)
         self.assertIn(
             "**Catalog ID:** 2026-icml-hwang-signature-informed-transformer",
             rendered,

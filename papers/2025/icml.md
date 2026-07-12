@@ -6,11 +6,17 @@
 
 **Checked on:** 2026-07-12
 
+**Cataloged eligible papers:** 5
+
+**Tracks checked:** Main · Position
+
+**Tracks pending:** Workshop (source mapped: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.) · Position (partially screened: Position-paper roster was partially screened but still has unresolved paper-level artifacts.) · Affinity (source mapped: Affinity-event or poster roster was source-mapped but not fully screened at paper level.)
+
 **Official audit sources:** [Source 1](<https://proceedings.mlr.press/v267/>) · [Source 2](<https://github.com/mlresearch/v267/tree/3a328812b192086cd80b20eb56a5bb99c69a3afd/_posts>) · [Source 3](<https://icml.cc/virtual/2025/papers.html>) · [Source 4](<https://icml.cc/virtual/2025/events/workshop>) · [Source 5](<https://icml.cc/virtual/2025/affinity_events>)
 
-**Coverage notes:** All 3,330 archival PMLR records were screened: 3,257 main and 73 Position. Five eligible main papers were cataloged, and no Position paper passed the strict scope screen. Workshop and affinity remain omitted from tracks\_checked because their exact official event and contributed-paper rosters could not be read.
+**Coverage notes:** All 3,330 archival PMLR records were screened: 3,257 main and 73 Position. Five eligible main papers were cataloged, and no Position paper passed the strict scope screen. Workshop and affinity remain pending in tracks\_pending because their exact official event and contributed-paper rosters could not be read.
 
-5 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+5 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 

@@ -17,7 +17,9 @@
     "year",
     "status",
     "checked_on",
+    "eligible_paper_count",
     "tracks_checked",
+    "tracks_pending",
     "official_sources",
     "notes"
   ],
@@ -29,18 +31,42 @@
       "enum": [2024, 2025, 2026]
     },
     "status": {
-      "enum": ["complete", "no-eligible-papers", "pending"]
+      "enum": ["complete", "no-eligible-papers", "pending", "unavailable"]
     },
     "checked_on": {
       "type": "string",
       "format": "date"
     },
+    "eligible_paper_count": {
+      "type": "integer",
+      "minimum": 0
+    },
     "tracks_checked": {
       "type": "array",
-      "minItems": 1,
       "uniqueItems": true,
       "items": {
         "enum": ["main", "workshop", "position", "affinity"]
+      }
+    },
+    "tracks_pending": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["track", "state", "note"],
+        "properties": {
+          "track": {
+            "enum": ["main", "workshop", "position", "affinity"]
+          },
+          "state": {
+            "enum": ["source_mapped", "partial", "blocked", "unpublished"]
+          },
+          "note": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        }
       }
     },
     "official_sources": {

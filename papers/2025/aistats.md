@@ -6,11 +6,17 @@
 
 **Checked on:** 2026-07-12
 
+**Cataloged eligible papers:** 1
+
+**Tracks checked:** Main
+
+**Tracks pending:** None
+
 **Official audit sources:** [Source 1](<https://proceedings.mlr.press/v258/>) · [Source 2](<https://github.com/mlresearch/v258/tree/f9b46f555d3501fe4cc7e31329af9ab55a7b66c6/_posts>) · [Source 3](<https://aistats.org/aistats2025/>)
 
 **Coverage notes:** The immutable tree enumerates 583 main records. Nineteen official blobs were screened through the allowed connector, one verified paper was cataloged, and 564 title and abstract records remain unscreened. The existence and rosters of any side programs are also unresolved; main is not complete.
 
-1 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+1 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 

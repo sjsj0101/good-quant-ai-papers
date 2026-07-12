@@ -6,11 +6,17 @@
 
 **Checked on:** 2026-07-12
 
+**Cataloged eligible papers:** 7
+
+**Tracks checked:** Main · Workshop
+
+**Tracks pending:** Workshop (partially screened: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.)
+
 **Official audit sources:** [Source 1](<https://github.com/thewebconf2026/www2026/tree/beba571d4f3056bb2e137d245802b3c3ebf235eb>) · [Source 2](<https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted.html>) · [Source 3](<https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/full-schedule.html>) · [Source 4](<https://github.com/thewebconf2026/www2026/tree/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted>) · [Source 5](<https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/workshops.html>) · [Source 6](<https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/tutorials.html>) · [Source 7](<https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/e-posters.html>) · [Source 8](<https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/resource.html>) · [Source 9](<https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/special-days.html>) · [Source 10](<https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/calls/health-day.html>) · [Source 11](<https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/history-of-web.html>) · [Source 12](<https://prompteng-ws.github.io/2026/>) · [Source 13](<https://webst2026.netlify.app/>)
 
 **Coverage notes:** All 1,198 official paper rows were screened and seven eligible papers were cataloged. The accepted Resource roster, special and Health paper mappings, and the PromptEng and WebST workshop programs remain unresolved. Workshop is omitted from tracks\_checked despite one cataloged workshop record because the workshop universe remains incomplete.
 
-7 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+7 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 

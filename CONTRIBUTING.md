@@ -99,11 +99,19 @@ Commit metadata, original editorial summaries, and links only.
 
 ## Source-of-truth workflow
 
-For paper additions and metadata corrections, edit
-`data/papers.yaml`—the only paper-data source of truth. Do not hand-edit the
-generated `README.md` or files under `papers/`. `scripts/render.py` regenerates
-those files deterministically; include its generated changes in the same pull
-request.
+The repository has two canonical YAML sources:
+
+- `data/papers.yaml` stores one record per included paper.
+- `data/coverage.yaml` stores the venue-year audit ledger behind the coverage
+  matrix.
+
+For routine paper additions and metadata corrections, edit `data/papers.yaml`.
+Edit `data/coverage.yaml` only when you have completed a systematic
+venue-year audit, corrected an official-source availability fact, changed the
+set of screened tracks, or changed the cataloged paper count for that
+venue-year. Do not hand-edit the generated `README.md` or files under
+`papers/`. `scripts/render.py` regenerates those files deterministically;
+include its generated changes in the same pull request.
 
 From the repository root, install the pinned development dependency:
 
@@ -137,9 +145,14 @@ before a pull request is ready for review.
    official record.
 4. Write an original `summary` of what the paper does and an original
    `why_it_matters` tied to a concrete quantitative-investment decision.
-5. Label the track and presentation precisely. Include the workshop name and
-   known archival status in `notes` for workshop records.
-6. Run the install and verification commands above, inspect the rendered diff,
+5. Label the track and presentation precisely. Use `subvenue` for the workshop,
+   affinity event, position track, or other official side-program container
+   when applicable. Use `notes` for short caveats such as archival status or
+   source limitations.
+6. If the addition changes a venue-year count or track state, update the
+   matching row in `data/coverage.yaml`; otherwise leave the coverage ledger
+   unchanged.
+7. Run the install and verification commands above, inspect the rendered diff,
    and commit both `data/papers.yaml` and the regenerated Markdown.
 
 Do not introduce a new topic just to fit one paper. Propose taxonomy changes in
@@ -173,7 +186,9 @@ rather than inventing a new uncontrolled status.
 - [ ] The record is not an unverified preprint or a duplicate by ID, normalized
       title, official URL, or paper URL.
 - [ ] Main, workshop, position, and affinity labels match the official source;
-      workshop notes name the workshop and known archival status.
+      `subvenue` names the workshop or side-program container when applicable.
+- [ ] `data/coverage.yaml` was updated when the venue-year count, checked
+      tracks, pending tracks, official sources, or audit date changed.
 - [ ] `summary` and `why_it_matters` are original, concise, and directly tied to
       quantitative finance or asset management.
 - [ ] No PDF, copied abstract, third-party text, credential, or private data is

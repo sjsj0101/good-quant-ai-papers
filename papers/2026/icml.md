@@ -6,11 +6,17 @@
 
 **Checked on:** 2026-07-12
 
+**Cataloged eligible papers:** 20
+
+**Tracks checked:** Main · Workshop · Position
+
+**Tracks pending:** Workshop (partially screened: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.) · Position (partially screened: Position-paper roster was partially screened but still has unresolved paper-level artifacts.) · Affinity (source mapped: Affinity-event or poster roster was source-mapped but not fully screened at paper level.)
+
 **Official audit sources:** [Source 1](<https://icml.cc/Downloads/2026>) · [Source 2](<https://icml.cc/virtual/2026/papers.html>) · [Source 3](<https://icml.cc/virtual/2026/events/workshop>) · [Source 4](<https://icml.cc/virtual/2026/affinity_events>) · [Source 5](<https://icml.cc/virtual/2026/events/2026-Expo>)
 
-**Coverage notes:** All 6,415 main and 213 Position poster records were completely screened. Twenty records are cataloged as a verified lower bound: 12 main, one Position, and seven workshop. All 44 official workshop containers were mapped, but complete contributed-paper rosters for 40 containers and the affinity child-event and paper-roster mappings remain unresolved, so workshop and affinity are omitted from tracks\_checked.
+**Coverage notes:** All 6,415 main and 213 Position poster records were completely screened. Twenty records are cataloged as a verified lower bound: 12 main, one Position, and seven workshop. All 44 official workshop containers were mapped, but complete contributed-paper rosters for 40 containers and the affinity child-event and paper-roster mappings remain unresolved, so workshop remains partial and affinity remains pending in tracks\_pending.
 
-20 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+20 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 

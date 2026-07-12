@@ -6,11 +6,17 @@
 
 **Checked on:** 2026-07-11
 
+**Cataloged eligible papers:** 3
+
+**Tracks checked:** Main · Workshop · Affinity
+
+**Tracks pending:** None
+
 **Official audit sources:** [Source 1](<https://proceedings.iclr.cc/paper_files/paper/2024>) · [Source 2](<https://openreview.net/group?id=ICLR.cc%2F2024%2FConference>) · [Source 3](<https://iclr.cc/Downloads/2024>) · [Source 4](<https://iclr.cc/virtual/2024/calendar>) · [Source 5](<https://iclr.cc/virtual/2024/events/workshop>) · [Source 6](<https://iclr.cc/virtual/2024/affinity_events>) · [Source 7](<https://blog.iclr.cc/2024/01/08/announcing-the-accepted-workshops-at-iclr-2024/>) · [Source 8](<https://openreview.net/group?id=ICLR.cc%2F2024%2FTinyPapers>) · [Source 9](<https://openreview.net/group?id=ICLR.cc%2F2024%2FBlogPosts>) · [Source 10](<https://openreview.net/forum?id=SPDNi5Ys8R>)
 
 **Coverage notes:** The official 2,341-event download list received a complete fixed-vocabulary title screen, and recovered candidates were adjudicated from official ICLR and OpenReview records. All 22 side-program units were then resolved at paper level: 20 workshops, Tiny Papers, and the Blog Track. The two strict side-program papers were already cataloged, and no paper-list blocker remains. One non-blocking presentation caveat remains: OpenReview marks Tiny Paper SPDNi5Ys8R Notable, but the 12 official Tiny Papers session pages do not map it to a particular oral or poster session.
 
-3 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+3 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 

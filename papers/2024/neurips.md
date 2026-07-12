@@ -6,15 +6,21 @@
 
 **Checked on:** 2026-07-11
 
+**Cataloged eligible papers:** 14
+
+**Tracks checked:** Main · Workshop · Affinity
+
+**Tracks pending:** None
+
 **Official audit sources:** [Source 1](<https://proceedings.neurips.cc/paper/2024>) · [Source 2](<https://neurips.cc/Conferences/2024/DatasetsBenchmarks/AcceptedPapers>) · [Source 3](<https://neurips.cc/virtual/2024/events/workshop>) · [Source 4](<https://neurips.cc/virtual/2024/affinity_events>) · [Source 5](<https://neurips.cc/virtual/2024/affinity-poster-session/107901>) · [Source 6](<https://neurips.cc/virtual/2024/affinity-event/105017>) · [Source 7](<https://neurips.cc/virtual/2024/workshop/84715>) · [Source 8](<https://neurips.cc/virtual/2024/workshop/84729>)
 
 **Coverage notes:** All 4,493 displayed proceedings titles, including Datasets and Benchmarks, were screened. The complete official side-program universe was also screened: all 56 workshops and all 12 affinity entries were resolved from their official programs, with the joint poster session and overflow stream reconciled to their constituent affinity rosters. No side-program artifact blockers remain. Three newly verified side-program papers were added: two workshop posters and one affinity poster.
 
-15 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+14 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 
-## Main Conference (10)
+## Main Conference (9)
 
 ### [A Globally Optimal Portfolio for m-Sparse Sharpe Ratio Maximization](<https://proceedings.neurips.cc/paper_files/paper/2024/file/1eaa5146756be028ad6fff1efcc8e6bd-Paper-Conference.pdf>)
 
@@ -117,34 +123,6 @@
 **Why it matters:** Handles realistic portfolio constraints inside the learned decision process instead of repairing invalid weights afterward.
 
 **Links:** [Official venue record](<https://proceedings.neurips.cc/paper_files/paper/2024/hash/d79c1390baa2e4835586b094d82e5ffb-Abstract-Conference.html>) · [Paper](<https://proceedings.neurips.cc/paper_files/paper/2024/file/d79c1390baa2e4835586b094d82e5ffb-Paper-Conference.pdf>)
-
----
-
-### [Benchmarking PtO and PnO Methods in the Predictive Combinatorial Optimization Regime](<https://proceedings.neurips.cc/paper_files/paper/2024/file/796076672b00f54fb01d05a2e5fde363-Paper-Datasets_and_Benchmarks_Track.pdf>)
-
-**Catalog ID:** 2024-neurips-geng-predictive-optimization-benchmark
-
-**Authors:** Haoyu Geng, Hang Ruan, Runzhong Wang, Yang Li, Yang Wang, Lei Chen, Junchi Yan
-
-**Venue / year:** NeurIPS · 2024
-
-**Track / presentation:** Main · Not Specified
-
-**Subvenue:** Datasets and Benchmarks Track
-
-**Status / verified:** Published · 2026-07-11
-
-**Topics:** Evaluation · Portfolio Optimization
-
-**Assets / frequency:** Not specified
-
-**Identifiers:** DOI 10.52202/079017-2108
-
-**Focus:** Benchmarks predict-then-optimize and predict-and-optimize methods on tasks including daily-return Markowitz portfolios.
-
-**Why it matters:** Exposes when improved forecasts actually translate into better portfolio objectives under a common evaluation design.
-
-**Links:** [Official venue record](<https://proceedings.neurips.cc/paper_files/paper/2024/hash/796076672b00f54fb01d05a2e5fde363-Abstract-Datasets_and_Benchmarks_Track.html>) · [Paper](<https://proceedings.neurips.cc/paper_files/paper/2024/file/796076672b00f54fb01d05a2e5fde363-Paper-Datasets_and_Benchmarks_Track.pdf>)
 
 ---
 

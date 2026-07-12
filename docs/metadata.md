@@ -1,10 +1,12 @@
 # Metadata reference
 
-`data/papers.yaml` is the single source of truth for paper records. The
-validator in `scripts/catalog.py` and the public contract in
-`schema/paper.schema.json` define which fields and controlled values are
-accepted. This page explains those rules for contributors; it does not create a
-second metadata contract.
+The repository has two canonical metadata files. `data/papers.yaml` is the
+source of truth for included paper records. `data/coverage.yaml` is the source
+of truth for the venue-year audit ledger rendered in the coverage matrix. The
+validators in `scripts/catalog.py` and `scripts/coverage.py`, together with the
+public contracts in `schema/paper.schema.json` and
+`schema/coverage.schema.json`, define which fields and controlled values are
+accepted.
 
 The file contains a YAML list of mappings, one mapping per paper. Field names
 are case-sensitive, unlisted fields are rejected, and every list must be
@@ -47,6 +49,7 @@ empty lists as placeholders.
 | `doi` | string | DOI identifier, normally without a resolver URL. |
 | `code_url` | HTTP(S) URL | Public source-code repository supplied by the authors or venue. |
 | `project_url` | HTTP(S) URL | Author or institutional project page for the paper. |
+| `subvenue` | string | Official workshop, affinity event, position-paper program, or other side-program container. Use this for the container name; keep `notes` for caveats. |
 | `asset_classes` | list of controlled strings | One or more materially studied asset classes from [Asset classes](#asset-classes). |
 | `data_frequency` | controlled string | Primary empirical sampling frequency from [Data frequencies](#data-frequencies). Use `mixed` for multiple material frequencies and `not-applicable` when the paper has no meaningful sampling frequency. |
 | `tasks` | list of strings | Concise task names used in the paper, such as `portfolio construction` or `return forecasting`. Use source terminology where practical. |
@@ -210,6 +213,48 @@ paper PDF does not by itself prove acceptance. Use such a page only for the
 appropriate paper, code, or project link after venue status has been proven by
 an official source. Update `verified_on` whenever that proof is rechecked.
 
+## Coverage ledger
+
+`data/coverage.yaml` contains one row for every controlled venue-year in the
+2024–2026 scope. It is a conservative audit ledger, not a claim that every
+pending venue-year has been exhausted.
+
+| Field | Type | Meaning and rules |
+| --- | --- | --- |
+| `venue` | controlled string | Same venue values as paper records. |
+| `year` | integer | One of the controlled coverage years. |
+| `status` | controlled string | `complete`, `no-eligible-papers`, `pending`, or `unavailable`. |
+| `checked_on` | string | ISO date when the coverage evidence was last checked. |
+| `eligible_paper_count` | integer | Count of cataloged papers for this venue-year; it must equal matching records in `data/papers.yaml`. |
+| `tracks_checked` | list of controlled strings | Tracks with paper rows actually screened. It may be empty only for `pending` or `unavailable` rows. |
+| `tracks_pending` | list of mappings | Unresolved track-level surfaces. Each item has `track`, `state`, and `note`. |
+| `official_sources` | list of HTTP(S) URLs | Official or organizer sources used for the audit. |
+| `notes` | string | Human-readable audit notes, including exact blockers for pending rows. |
+
+Coverage statuses mean:
+
+- `complete`: the recorded official paper-bearing sources were screened for the
+  venue-year and no material paper-list blocker remains.
+- `no-eligible-papers`: the screened official sources produced zero papers that
+  pass the strict quant-finance scope test.
+- `pending`: some official sources, side programs, accepted-paper rows, or paper
+  rosters remain unresolved. This is not a zero-eligible finding.
+- `unavailable`: the relevant source is not currently published or cannot be
+  reached as an accepted-paper source; it must have zero cataloged papers.
+
+`tracks_pending[*].state` uses:
+
+- `source_mapped`: the source family was identified but not fully screened.
+- `partial`: some rows for the same track were screened, but a paper-level
+  blocker remains.
+- `blocked`: an access or source-availability boundary prevented screening.
+- `unpublished`: the accepted-paper source is not yet published.
+
+Only update `data/coverage.yaml` after a systematic venue-year audit, a source
+availability correction, or a paper change that alters the venue-year count or
+track state. A casual single-paper candidate does not by itself make a pending
+venue-year complete.
+
 ## Complete YAML example
 
 This example is a currently valid catalog record. It shows useful optional
@@ -232,13 +277,14 @@ are simply omitted.
   paper_url: https://openreview.net/forum?id=anK6dppdfa
   arxiv_id: "2602.23784"
   openreview_id: anK6dppdfa
+  subvenue: 2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026)
   topics:
     - market-microstructure
     - market-simulation
     - synthetic-data
   summary: Trains a generative trade-event model with scale-invariant features designed to transfer across equity markets.
   why_it_matters: Supports cross-asset order-flow simulation and synthetic microstructure data without asset-specific tokenization.
-  notes: "2nd ICML Workshop on Foundation Models for Structured Data (FMSD 2026); non-archival workshop paper. Authors follow the accepted FMSD record; the later arXiv version has a revised author list."
+  notes: "Non-archival workshop paper. Authors follow the accepted FMSD record; the later arXiv version has a revised author list."
   status: accepted
   verified_on: "2026-07-11"
 ```

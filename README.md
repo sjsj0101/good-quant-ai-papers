@@ -6,13 +6,15 @@
 
 Curated top-conference research for quantitative finance and asset management.
 
-[![Papers-137](https://img.shields.io/badge/Papers-137-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--12](https://img.shields.io/badge/Last_verified-2026--07--12-5F3DC4?style=flat-square)](data/papers.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
+[![Papers-136](https://img.shields.io/badge/Papers-136-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--12](https://img.shields.io/badge/Last_verified-2026--07--12-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
 
 </div>
 
 ## Scope
 
-This catalog admits only officially accepted computer-science conference work with a direct contribution to quantitative investing, trading, portfolio construction, derivatives, or market-risk decisions. Every entry must have a verified venue record; an unverified preprint is not eligible. Main-conference, workshop, and position papers are labeled explicitly.
+This is an evidence-bounded lower-bound catalog for 2024–2026 top-conference work with a direct contribution to quantitative investing, trading, portfolio construction, derivatives, or market-risk decisions. Every included entry has a verified venue record; an unverified preprint is not eligible. Main-conference, workshop, position, and affinity papers are labeled explicitly.
+
+Coverage rows are deliberately conservative. A `Pending` venue-year means some official sources, side programs, or paper rosters remain unresolved; it is not a zero-eligible finding and should not be read as an exhaustive audit.
 
 **Included:** asset allocation, alpha and factor modeling, market regimes, microstructure and execution, derivatives, market simulation, financial decision agents, and investment-linked alternative data.
 
@@ -25,7 +27,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | Venue | 2026 | 2025 | 2024 |
 | --- | ---: | ---: | ---: |
 | ICML | [20 papers](papers/2026/icml.md) · Pending | [5 papers](papers/2025/icml.md) · Pending | [3 papers](papers/2024/icml.md) · Pending |
-| NeurIPS | 0 papers · Pending | 0 papers · Pending | [15 papers](papers/2024/neurips.md) · Complete |
+| NeurIPS | 0 papers · Pending | 0 papers · Pending | [14 papers](papers/2024/neurips.md) · Complete |
 | ICLR | 0 papers · Pending | 0 papers · Pending | [3 papers](papers/2024/iclr.md) · Complete |
 | KDD | 0 papers · Pending | 0 papers · Pending | [6 papers](papers/2024/kdd.md) · Pending |
 | AAAI | 0 papers · Pending | 0 papers · Pending | [5 papers](papers/2024/aaai.md) · Pending |
@@ -151,7 +153,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 
 ## NeurIPS 2024
 
-### Main Conference (10)
+### Main Conference (9)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -159,7 +161,6 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [Action Gaps and Advantages in Continuous-Time Distributional Reinforcement Learning](<https://proceedings.neurips.cc/paper_files/paper/2024/file/55769e1208c7f45e9acc98f06279c10c-Paper-Conference.pdf>)<br><sub>Harley Wiltzer, Marc G. Bellemare, David Meger, Patrick Shafto, Yash Jhaveri</sub> | Main<br><sub>Not Specified</sub> | Develops continuous-time distributional reinforcement learning and applies it to high-frequency American-option trading. | — | Models the distribution of trading outcomes when derivative decisions arrive faster than discrete-time methods naturally support. |
 | [Automated Efficient Estimation using Monte Carlo Efficient Influence Functions](<https://proceedings.neurips.cc/paper_files/paper/2024/file/1d10fe211f5139de49f94c6f0c7cecbe-Paper-Conference.pdf>)<br><sub>Raj Agrawal, Sam Witty, Andy Zane, Eli Bingham</sub> | Main<br><sub>Not Specified</sub> | Automates statistically efficient estimation with Monte Carlo influence functions and demonstrates it on optimal portfolio selection. | — | Quantifies portfolio objectives with principled uncertainty while reducing the need to derive custom estimators by hand. |
 | [Autoregressive Policy Optimization for Constrained Allocation Tasks](<https://proceedings.neurips.cc/paper_files/paper/2024/file/d79c1390baa2e4835586b094d82e5ffb-Paper-Conference.pdf>)<br><sub>David Winkel, Niklas Strauß, Maximilian Bernhard, Zongyue Li, Thomas Seidl, Matthias Schubert</sub> | Main<br><sub>Not Specified</sub> | Generates feasible allocation decisions autoregressively and evaluates the policy on constrained NASDAQ-100 portfolios. | — | Handles realistic portfolio constraints inside the learned decision process instead of repairing invalid weights afterward. |
-| [Benchmarking PtO and PnO Methods in the Predictive Combinatorial Optimization Regime](<https://proceedings.neurips.cc/paper_files/paper/2024/file/796076672b00f54fb01d05a2e5fde363-Paper-Datasets_and_Benchmarks_Track.pdf>)<br><sub>Haoyu Geng, Hang Ruan, Runzhong Wang, Yang Li, Yang Wang, Lei Chen, Junchi Yan</sub> | Main<br><sub>Not Specified</sub><br><sub>Datasets and Benchmarks Track</sub> | Benchmarks predict-then-optimize and predict-and-optimize methods on tasks including daily-return Markowitz portfolios. | — | Exposes when improved forecasts actually translate into better portfolio objectives under a common evaluation design. |
 | [BPQP: A Differentiable Convex Optimization Framework for Efficient End-to-End Learning](<https://proceedings.neurips.cc/paper_files/paper/2024/file/8db12f7214d3a1a0c450ba751163e0fd-Paper-Conference.pdf>)<br><sub>Jianming Pan, Zeqi Ye, Xiao Yang, Xu Yang, Weiqing Liu, Lewen Wang, Jiang Bian</sub> | Main<br><sub>Not Specified</sub> | Differentiates through convex programs efficiently and evaluates the framework on CSI-500 return-and-risk portfolio optimization. | — | Connects learned return signals directly to constrained portfolio decisions without an expensive generic solver backward pass. |
 | [FinBen: A Holistic Financial Benchmark for Large Language Models](<https://proceedings.neurips.cc/paper_files/paper/2024/file/adb1d9fa8be4576d28703b396b82ba1b-Paper-Datasets_and_Benchmarks_Track.pdf>)<br><sub>Qianqian Xie, Weiguang Han, Zhengyu Chen, Ruoyu Xiang, Xiao Zhang, Yueru He, Mengxi Xiao, Dong Li, Yongfu Dai, Duanyu Feng, Yijing Xu, Haoqiang Kang, Ziyan Kuang, Chenhan Yuan, Kailai Yang, Zheheng Luo, Tianlin Zhang, Zhiwei Liu, Guojun Xiong, Zhiyang Deng, Yuechen Jiang, Zhiyuan Yao, Haohang Li, Yangyang Yu, Gang Hu, Jiajia Huang, Xiao-Yang Liu, Alejandro Lopez-Lira, Benyou Wang, Yanzhao Lai, Hao Wang, Min Peng, Sophia Ananiadou, Jimin Huang</sub> | Main<br><sub>Poster</sub><br><sub>Datasets and Benchmarks Track</sub> | Benchmarks language models across financial tasks that include stock trading, risk assessment, and investment decisions. | — | Makes model comparisons more credible by testing decision-facing finance capabilities in one reproducible suite. |
 | [FinCon: A Synthesized LLM Multi-Agent System with Conceptual Verbal Reinforcement for Enhanced Financial Decision Making](<https://proceedings.neurips.cc/paper_files/paper/2024/file/f7ae4fe91d96f50abc2211f09b6a7e49-Paper-Conference.pdf>)<br><sub>Yangyang Yu, Zhiyuan Yao, Haohang Li, Zhiyang Deng, Yuechen Jiang, Yupeng Cao, Zhi Chen, Jordan W. Suchow, Zhenyu Cui, Rong Liu, Zhaozhuo Xu, Denghui Zhang, Koduvayur Subbalakshmi, Guojun Xiong, Yueru He, Jimin Huang, Dong Li, Qianqian Xie</sub> | Main<br><sub>Poster</sub> | Coordinates specialized language-model agents with verbal reinforcement to make sequential stock-investment decisions. | — | Tests whether explicit role specialization and reflection improve portfolio returns while controlling trading risk. |
@@ -346,9 +347,9 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 - **2026** · [IJCAI 2026](papers/2026/ijcai.md) — 5 papers
 - **2026** · [WWW 2026](papers/2026/www.md) — 7 papers
 - **2025** · [ICML 2025](papers/2025/icml.md) — 5 papers
-- **2025** · [AISTATS 2025](papers/2025/aistats.md) — 1 papers
+- **2025** · [AISTATS 2025](papers/2025/aistats.md) — 1 paper
 - **2024** · [ICML 2024](papers/2024/icml.md) — 3 papers
-- **2024** · [NeurIPS 2024](papers/2024/neurips.md) — 15 papers
+- **2024** · [NeurIPS 2024](papers/2024/neurips.md) — 14 papers
 - **2024** · [ICLR 2024](papers/2024/iclr.md) — 3 papers
 - **2024** · [KDD 2024](papers/2024/kdd.md) — 6 papers
 - **2024** · [AAAI 2024](papers/2024/aaai.md) — 5 papers
@@ -358,7 +359,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 
 ## Contributing
 
-Contributions to [`sjsj0101/good-quant-ai-papers`](https://github.com/sjsj0101/good-quant-ai-papers) are welcome. Add or correct metadata in [`data/papers.yaml`](data/papers.yaml), provide an official venue source, and write original summary prose. Do not edit generated indexes by hand.
+Contributions to [`sjsj0101/good-quant-ai-papers`](https://github.com/sjsj0101/good-quant-ai-papers) are welcome. Add or correct paper metadata in [`data/papers.yaml`](data/papers.yaml), update systematic coverage evidence in [`data/coverage.yaml`](data/coverage.yaml) when the venue-year audit state changes, provide an official venue source, and write original summary prose. Do not edit generated indexes by hand.
 
 ```bash
 python3 scripts/validate.py

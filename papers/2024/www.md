@@ -6,11 +6,17 @@
 
 **Checked on:** 2026-07-11
 
+**Cataloged eligible papers:** 4
+
+**Tracks checked:** Main · Workshop
+
+**Tracks pending:** None
+
 **Official audit sources:** [Source 1](<https://www2024.thewebconf.org/accepted/research-tracks/>) · [Source 2](<https://www2024.thewebconf.org/accepted/industry/>) · [Source 3](<https://www2024.thewebconf.org/accepted/web4good/>) · [Source 4](<https://www2024.thewebconf.org/accepted/short-papers/>) · [Source 5](<https://www2024.thewebconf.org/accepted/demo/>) · [Source 6](<https://www2024.thewebconf.org/accepted/resource/>) · [Source 7](<https://www2024.thewebconf.org/accepted/health-day/>) · [Source 8](<https://www2024.thewebconf.org/accepted/history-web/>) · [Source 9](<https://www2024.thewebconf.org/accepted/phd-symposium/>) · [Source 10](<https://www2024.thewebconf.org/program/overview>) · [Source 11](<https://www2024.thewebconf.org/program/workshops/>) · [Source 12](<https://federated-learning.org/fl@fm-www-2024/>) · [Source 13](<https://sites.google.com/view/socialnlp2024/>) · [Source 14](<https://advanced-recommender-systems.github.io/llm4graph/>) · [Source 15](<https://sites.google.com/view/mm4sg>) · [Source 16](<https://caaw.io/2024/>)
 
 **Coverage notes:** Every official accepted-track page was screened at paper level, covering Research, Industry, Web4Good, Short Papers, Demo, Resource, Health Day, History of the Web, and PhD Symposium. All 16 organizer-linked workshop programs were also audited, including the exact FL@FM, SocialNLP, LLM4Graph, MM4SG, and Cryptoasset Analytics pages above; Measuring Arbitrage Losses and Profitability of AMM Liquidity was added from CAAW, and no material program gap remains.
 
-4 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+4 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 

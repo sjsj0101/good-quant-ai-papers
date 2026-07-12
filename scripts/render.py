@@ -46,6 +46,13 @@ COVERAGE_LABELS = {
     "complete": "Complete",
     "no-eligible-papers": "No eligible papers",
     "pending": "Pending",
+    "unavailable": "Unavailable",
+}
+PENDING_TRACK_LABELS = {
+    "source_mapped": "source mapped",
+    "partial": "partially screened",
+    "blocked": "blocked",
+    "unpublished": "unpublished",
 }
 
 
@@ -234,10 +241,17 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
     grouped = _records_by_venue(ordered)
     paper_count = len(ordered)
     venue_count = len(VENUE_ORDER)
-    last_verified = max(
-        [record["verified_on"] for record in ordered]
-        + [row["checked_on"] for row in coverage],
-        default="Not available",
+    paper_last_verified = max(
+        (record["verified_on"] for record in ordered), default="Not available"
+    )
+    coverage_last_checked = max(
+        (row["checked_on"] for row in coverage), default="Not available"
+    )
+    last_verified = max(paper_last_verified, coverage_last_checked)
+    last_verified_target = (
+        "data/coverage.yaml"
+        if coverage_last_checked >= paper_last_verified
+        else "data/papers.yaml"
     )
     badge_date = last_verified.replace("-", "--").replace(" ", "_")
     latest_page = (
@@ -270,7 +284,7 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
                 _badge(
                     f"Last verified-{badge_date}",
                     f"Last_verified-{badge_date}-5F3DC4",
-                    "data/papers.yaml",
+                    last_verified_target,
                 ),
                 _badge(
                     "License-CC BY 4.0",
@@ -285,12 +299,19 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
         "## Scope",
         "",
         (
-            "This catalog admits only officially accepted computer-science "
-            "conference work with a direct contribution to quantitative investing, "
-            "trading, portfolio construction, derivatives, or market-risk decisions. "
-            "Every entry must have a verified venue record; an unverified preprint is "
-            "not eligible. Main-conference, workshop, and position papers are labeled "
-            "explicitly."
+            "This is an evidence-bounded lower-bound catalog for 2024–2026 "
+            "top-conference work with a direct contribution to quantitative "
+            "investing, trading, portfolio construction, derivatives, or "
+            "market-risk decisions. Every included entry has a verified venue "
+            "record; an unverified preprint is not eligible. Main-conference, "
+            "workshop, position, and affinity papers are labeled explicitly."
+        ),
+        "",
+        (
+            "Coverage rows are deliberately conservative. A `Pending` venue-year "
+            "means some official sources, side programs, or paper rosters remain "
+            "unresolved; it is not a zero-eligible finding and should not be read as "
+            "an exhaustive audit."
         ),
         "",
         (
@@ -336,9 +357,10 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
     lines.extend(["## Browse by Year and Venue", ""])
     for (year, venue), venue_records in grouped.items():
         relative_path = f"papers/{year}/{_venue_slug(venue)}.md"
+        noun = "paper" if len(venue_records) == 1 else "papers"
         lines.append(
             f"- **{year}** · [{_escape_markdown(venue)} {year}]"
-            f"({relative_path}) — {len(venue_records)} papers"
+            f"({relative_path}) — {len(venue_records)} {noun}"
         )
     if not grouped:
         lines.append("No venue pages yet.")
@@ -350,9 +372,12 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
             "",
             (
                 f"Contributions to [`{REPOSITORY}`]({REPOSITORY_URL}) are welcome. "
-                "Add or correct metadata in [`data/papers.yaml`](data/papers.yaml), "
-                "provide an official venue source, and write original summary prose. "
-                "Do not edit generated indexes by hand."
+                "Add or correct paper metadata in "
+                "[`data/papers.yaml`](data/papers.yaml), update systematic coverage "
+                "evidence in [`data/coverage.yaml`](data/coverage.yaml) when the "
+                "venue-year audit state changes, provide an official venue source, "
+                "and write original summary prose. Do not edit generated indexes by "
+                "hand."
             ),
             "",
             "```bash",
@@ -377,6 +402,23 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
 
 def _metadata_line(label: str, value: object) -> str:
     return f"**{label}:** {_escape_markdown(value)}"
+
+
+def _track_list(tracks: Sequence[str]) -> str:
+    if not tracks:
+        return "None"
+    return " · ".join(TRACK_LABELS.get(track, _display_label(track)) for track in tracks)
+
+
+def _pending_track_list(pending_tracks: Sequence[dict]) -> str:
+    if not pending_tracks:
+        return "None"
+    parts = []
+    for item in pending_tracks:
+        track = TRACK_LABELS.get(item["track"], _display_label(item["track"]))
+        state = PENDING_TRACK_LABELS.get(item["state"], _display_label(item["state"]))
+        parts.append(f"{track} ({state}: {_clean_inline(item['note'])})")
+    return " · ".join(parts)
 
 
 def _optional_list_line(record: dict, field: str, label: str) -> Optional[str]:
@@ -478,6 +520,16 @@ def _render_venue_page(
         "",
         _metadata_line("Checked on", coverage_record["checked_on"]),
         "",
+        _metadata_line(
+            "Cataloged eligible papers", coverage_record["eligible_paper_count"]
+        ),
+        "",
+        _metadata_line("Tracks checked", _track_list(coverage_record["tracks_checked"])),
+        "",
+        _metadata_line(
+            "Tracks pending", _pending_track_list(coverage_record["tracks_pending"])
+        ),
+        "",
         f"**Official audit sources:** {source_links}",
         "",
         _metadata_line("Coverage notes", coverage_record["notes"]),
@@ -492,7 +544,8 @@ def _render_venue_page(
         (
             f"{len(records)} verified papers curated for direct relevance to "
             "quantitative finance and asset management. Tracks are separated so "
-            "main-conference, position, and workshop status remains visible."
+            "main-conference, workshop, position, and affinity status remains "
+            "visible."
         ),
         "",
         "[← Back to the main index](../../README.md)",

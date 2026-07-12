@@ -2706,32 +2706,6 @@
   status: published
   verified_on: 2026-07-11
 
-- id: 2024-neurips-geng-predictive-optimization-benchmark
-  title: Benchmarking PtO and PnO Methods in the Predictive Combinatorial Optimization Regime
-  authors:
-    - Haoyu Geng
-    - Hang Ruan
-    - Runzhong Wang
-    - Yang Li
-    - Yang Wang
-    - Lei Chen
-    - Junchi Yan
-  venue: NeurIPS
-  year: 2024
-  track: main
-  subvenue: Datasets and Benchmarks Track
-  presentation: not-specified
-  official_url: https://proceedings.neurips.cc/paper_files/paper/2024/hash/796076672b00f54fb01d05a2e5fde363-Abstract-Datasets_and_Benchmarks_Track.html
-  paper_url: https://proceedings.neurips.cc/paper_files/paper/2024/file/796076672b00f54fb01d05a2e5fde363-Paper-Datasets_and_Benchmarks_Track.pdf
-  doi: 10.52202/079017-2108
-  topics:
-    - evaluation
-    - portfolio-optimization
-  summary: Benchmarks predict-then-optimize and predict-and-optimize methods on tasks including daily-return Markowitz portfolios.
-  why_it_matters: Exposes when improved forecasts actually translate into better portfolio objectives under a common evaluation design.
-  status: published
-  verified_on: 2026-07-11
-
 - id: 2024-neurips-elenter-learning-augmented-trading
   title: Overcoming Brittleness in Pareto-Optimal Learning-Augmented Algorithms
   authors:

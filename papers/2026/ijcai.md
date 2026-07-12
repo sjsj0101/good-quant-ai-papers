@@ -6,11 +6,17 @@
 
 **Checked on:** 2026-07-12
 
+**Cataloged eligible papers:** 5
+
+**Tracks checked:** Main
+
+**Tracks pending:** Workshop (source mapped: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.)
+
 **Official audit sources:** [Source 1](<https://2026.ijcai.org/accepted-papers/>) · [Source 2](<https://2026.ijcai.org/wp-json/wp/v2/pages/2862>) · [Source 3](<https://2026.ijcai.org/program/>) · [Source 4](<https://2026.ijcai.org/accepted-workshops/>) · [Source 5](<https://2026.ijcai.org/wp-json/wp/v2/pages/2567>)
 
-**Coverage notes:** All 990 of 990 central accepted rows across eleven categories were screened and five eligible papers were cataloged. Every centrally accepted paper has a six-minute oral plus a poster. All 40 workshop index rows were mapped, but zero organizer accepted or contributed-paper rows were screened; WS23 FinLLM is the priority unresolved roster. Workshop is therefore omitted from tracks\_checked.
+**Coverage notes:** All 990 of 990 central accepted rows across eleven categories were screened and five eligible papers were cataloged. Every centrally accepted paper has a six-minute oral plus a poster. All 40 workshop index rows were mapped, but zero organizer accepted or contributed-paper rows were screened; WS23 FinLLM is the priority unresolved roster. Workshop is therefore recorded as pending in tracks\_pending.
 
-5 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+5 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 

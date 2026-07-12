@@ -5,8 +5,14 @@ import json
 import unittest
 from pathlib import Path
 
-from scripts.catalog import HTTP_URL_PATTERN, VENUE_ORDER
-from scripts.coverage import COVERAGE_YEARS, validate_coverage
+from scripts.catalog import HTTP_URL_PATTERN, TRACKS, VENUE_ORDER
+from scripts.coverage import (
+    COVERAGE_FIELDS,
+    COVERAGE_STATUSES,
+    COVERAGE_YEARS,
+    PENDING_TRACK_STATES,
+    validate_coverage,
+)
 from tests.test_validate import VALID
 
 
@@ -17,7 +23,9 @@ def make_coverage() -> list[dict]:
             "year": year,
             "status": "pending",
             "checked_on": "2026-07-11",
+            "eligible_paper_count": 0,
             "tracks_checked": ["main"],
+            "tracks_pending": [],
             "official_sources": [
                 f"https://example.org/{year}/{venue.lower().replace(' ', '-')}"
             ],
@@ -31,6 +39,99 @@ def make_coverage() -> list[dict]:
 class CoverageValidationTests(unittest.TestCase):
     def test_exact_33_pending_units_are_valid(self) -> None:
         self.assertEqual(validate_coverage(make_coverage(), []), [])
+
+    def test_pending_unit_may_have_empty_tracks_checked_with_pending_state(self) -> None:
+        coverage = make_coverage()
+        coverage[0]["tracks_checked"] = []
+        coverage[0]["tracks_pending"] = [
+            {
+                "track": "main",
+                "state": "source_mapped",
+                "note": "Main roster was source-mapped but no rows were screened.",
+            }
+        ]
+
+        self.assertEqual(validate_coverage(coverage, []), [])
+
+    def test_complete_unit_rejects_empty_tracks_checked(self) -> None:
+        coverage = make_coverage()
+        unit = next(
+            row
+            for row in coverage
+            if row["venue"] == "ICML" and row["year"] == 2026
+        )
+        unit["status"] = "complete"
+        unit["eligible_paper_count"] = 1
+        unit["tracks_checked"] = []
+
+        paper = copy.deepcopy(VALID)
+        errors = validate_coverage(coverage, [paper])
+
+        self.assertTrue(
+            any(
+                "may be empty only for pending or unavailable coverage" in error
+                for error in errors
+            ),
+            errors,
+        )
+
+    def test_pending_track_can_duplicate_checked_only_when_partial(self) -> None:
+        coverage = make_coverage()
+        coverage[0]["tracks_pending"] = [
+            {
+                "track": "main",
+                "state": "source_mapped",
+                "note": "Main roster remains unresolved.",
+            }
+        ]
+
+        errors = validate_coverage(coverage, [])
+
+        self.assertTrue(
+            any(
+                "may duplicate tracks_checked only with state 'partial'" in error
+                for error in errors
+            ),
+            errors,
+        )
+
+    def test_partial_pending_track_must_also_be_checked(self) -> None:
+        coverage = make_coverage()
+        coverage[0]["tracks_pending"] = [
+            {
+                "track": "workshop",
+                "state": "partial",
+                "note": "Workshop roster is partly screened.",
+            }
+        ]
+
+        errors = validate_coverage(coverage, [])
+
+        self.assertTrue(
+            any(
+                "state 'partial' requires the track to also appear in tracks_checked"
+                in error
+                for error in errors
+            ),
+            errors,
+        )
+
+    def test_cataloged_paper_track_must_be_in_tracks_checked(self) -> None:
+        coverage = make_coverage()
+        unit = next(
+            row
+            for row in coverage
+            if row["venue"] == "ICML" and row["year"] == 2026
+        )
+        unit["eligible_paper_count"] = 1
+        unit["tracks_checked"] = []
+
+        errors = validate_coverage(coverage, [copy.deepcopy(VALID)])
+
+        self.assertTrue(
+            any("missing cataloged paper track(s): main" in error for error in errors),
+            errors,
+        )
 
     def test_missing_unit_is_rejected(self) -> None:
         coverage = make_coverage()[:-1]
@@ -67,6 +168,7 @@ class CoverageValidationTests(unittest.TestCase):
             if row["venue"] == "ICML" and row["year"] == 2026
         )
         unit["status"] = "no-eligible-papers"
+        unit["eligible_paper_count"] = 1
         errors = validate_coverage(coverage, [copy.deepcopy(VALID)])
         self.assertTrue(
             any(
@@ -113,6 +215,17 @@ class CoverageValidationTests(unittest.TestCase):
         )
         schema = json.loads(schema_path.read_text(encoding="utf-8"))
         properties = schema["properties"]
+        self.assertEqual(schema["required"], list(COVERAGE_FIELDS))
         self.assertEqual(properties["venue"]["enum"], list(VENUE_ORDER))
         self.assertEqual(properties["year"]["enum"], list(COVERAGE_YEARS))
+        self.assertEqual(properties["status"]["enum"], sorted(COVERAGE_STATUSES))
+        self.assertEqual(set(properties["tracks_checked"]["items"]["enum"]), TRACKS)
+        self.assertEqual(
+            set(properties["tracks_pending"]["items"]["properties"]["track"]["enum"]),
+            TRACKS,
+        )
+        self.assertEqual(
+            set(properties["tracks_pending"]["items"]["properties"]["state"]["enum"]),
+            PENDING_TRACK_STATES,
+        )
         self.assertEqual(schema["$defs"]["http_url"]["pattern"], HTTP_URL_PATTERN)

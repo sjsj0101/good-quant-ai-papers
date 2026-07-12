@@ -2,678 +2,995 @@
   year: 2026
   status: pending
   checked_on: 2026-07-12
+  eligible_paper_count: 20
   tracks_checked:
-    - main
-    - position
+  - main
+  - workshop
+  - position
+  tracks_pending:
+  - track: workshop
+    state: partial
+    note: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.
+  - track: position
+    state: partial
+    note: Position-paper roster was partially screened but still has unresolved paper-level artifacts.
+  - track: affinity
+    state: source_mapped
+    note: Affinity-event or poster roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://icml.cc/Downloads/2026
-    - https://icml.cc/virtual/2026/papers.html
-    - https://icml.cc/virtual/2026/events/workshop
-    - https://icml.cc/virtual/2026/affinity_events
-    - https://icml.cc/virtual/2026/events/2026-Expo
-  notes: >-
-    All 6,415 main and 213 Position poster records were completely screened. Twenty records are cataloged as a verified lower bound: 12 main, one Position, and seven workshop. All 44 official workshop containers were mapped, but complete contributed-paper rosters for 40 containers and the affinity child-event and paper-roster mappings remain unresolved, so workshop and affinity are omitted from tracks_checked.
-
+  - https://icml.cc/Downloads/2026
+  - https://icml.cc/virtual/2026/papers.html
+  - https://icml.cc/virtual/2026/events/workshop
+  - https://icml.cc/virtual/2026/affinity_events
+  - https://icml.cc/virtual/2026/events/2026-Expo
+  notes: 'All 6,415 main and 213 Position poster records were completely screened. Twenty records are cataloged as a verified
+    lower bound: 12 main, one Position, and seven workshop. All 44 official workshop containers were mapped, but complete
+    contributed-paper rosters for 40 containers and the affinity child-event and paper-roster mappings remain unresolved,
+    so workshop remains partial and affinity remains pending in tracks_pending.'
 - venue: NeurIPS
   year: 2026
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: source_mapped
+    note: Main accepted-paper roster was source-mapped but not fully screened at paper level.
+  - track: workshop
+    state: source_mapped
+    note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
+  - track: affinity
+    state: source_mapped
+    note: Affinity-event or poster roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://neurips.cc/virtual/2026/papers.html
-    - https://proceedings.neurips.cc/paper/2026
-    - https://neurips.cc/Conferences/2026/DatasetsBenchmarks/AcceptedPapers
-    - https://neurips.cc/virtual/2026/events/workshop
-    - https://neurips.cc/virtual/2026/affinity_events
-  notes: >-
-    Zero official accepted rows were screened. The populated main roster and proceedings mirror mapping, the Datasets and Benchmarks accepted roster, every workshop contributed-paper roster, and the affinity event, poster, and joint-session mappings remain exact missing artifacts. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
-
+  - https://neurips.cc/virtual/2026/papers.html
+  - https://proceedings.neurips.cc/paper/2026
+  - https://neurips.cc/Conferences/2026/DatasetsBenchmarks/AcceptedPapers
+  - https://neurips.cc/virtual/2026/events/workshop
+  - https://neurips.cc/virtual/2026/affinity_events
+  notes: Zero official accepted rows were screened. The populated main roster and proceedings mirror mapping, the Datasets
+    and Benchmarks accepted roster, every workshop contributed-paper roster, and the affinity event, poster, and joint-session
+    mappings remain exact missing artifacts. Main is not complete; main is represented in tracks_pending rather than tracks_checked.
 - venue: ICLR
   year: 2026
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: source_mapped
+    note: Main accepted-paper roster was source-mapped but not fully screened at paper level.
+  - track: workshop
+    state: source_mapped
+    note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
+  - track: affinity
+    state: source_mapped
+    note: Affinity-event or poster roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://iclr.cc/virtual/2026/papers.html
-    - https://proceedings.iclr.cc/paper_files/paper/2026
-    - https://openreview.net/group?id=ICLR.cc%2F2026%2FConference
-    - https://iclr.cc/Downloads/2026
-    - https://iclr.cc/virtual/2026/calendar
-    - https://iclr.cc/virtual/2026/events/workshop
-    - https://iclr.cc/virtual/2026/affinity_events
-    - https://openreview.net/group?id=ICLR.cc%2F2026%2FTinyPapers
-    - https://openreview.net/group?id=ICLR.cc%2F2026%2FBlogPosts
-  notes: >-
-    Zero official accepted rows were screened. A complete deduplicated main roster and proceedings mapping, workshop programs, affinity child-event and poster mappings, Tiny Papers roster, and Blog Posts roster all remain exact missing artifacts. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
-
+  - https://iclr.cc/virtual/2026/papers.html
+  - https://proceedings.iclr.cc/paper_files/paper/2026
+  - https://openreview.net/group?id=ICLR.cc%2F2026%2FConference
+  - https://iclr.cc/Downloads/2026
+  - https://iclr.cc/virtual/2026/calendar
+  - https://iclr.cc/virtual/2026/events/workshop
+  - https://iclr.cc/virtual/2026/affinity_events
+  - https://openreview.net/group?id=ICLR.cc%2F2026%2FTinyPapers
+  - https://openreview.net/group?id=ICLR.cc%2F2026%2FBlogPosts
+  notes: Zero official accepted rows were screened. A complete deduplicated main roster and proceedings mapping, workshop
+    programs, affinity child-event and poster mappings, Tiny Papers roster, and Blog Posts roster all remain exact missing
+    artifacts. Main is not complete; main is represented in tracks_pending rather than tracks_checked.
 - venue: KDD
   year: 2026
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: blocked
+    note: Main accepted-paper roster remains blocked by an access or source-availability boundary.
+  - track: workshop
+    state: blocked
+    note: Workshop or organizer paper roster remains blocked by an access or source-availability boundary.
   official_sources:
-    - https://kdd2026.kdd.org/
-    - https://kdd2026.kdd.org/schedule-at-a-glance/
-    - https://kdd2026.kdd.org/research-track-papers/
-    - https://kdd2026.kdd.org/research-track-call-for-papers/
-    - https://kdd2026.kdd.org/applied-data-science-ads-track-call-for-papers/
-    - https://kdd2026.kdd.org/datasets-and-benchmarks-track-call-for-papers/
-    - https://kdd2026.kdd.org/ai4sciences-track-call-for-papers/
-    - https://kdd2026.kdd.org/kdd-2026-blue-sky-ideas-track-call-for-papers/
-    - https://kdd2026.kdd.org/undergraduate-consortium-call-for-submission/
-    - https://kdd2026.kdd.org/call-for-workshop-proposals/
-  notes: >-
-    Zero official main paper rows were screened; the verification interstitial is an access boundary, not a zero result. Final accepted rosters remain missing for Research, Applied Data Science, Datasets and Benchmarks, AI for Sciences, Blue Sky, undergraduate and Ph.D. consortia, workshops, every Special Day—especially the Finance Special Day—and Korea Day, together with the Full Program and proceedings reconciliation. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
-
+  - https://kdd2026.kdd.org/
+  - https://kdd2026.kdd.org/schedule-at-a-glance/
+  - https://kdd2026.kdd.org/research-track-papers/
+  - https://kdd2026.kdd.org/research-track-call-for-papers/
+  - https://kdd2026.kdd.org/applied-data-science-ads-track-call-for-papers/
+  - https://kdd2026.kdd.org/datasets-and-benchmarks-track-call-for-papers/
+  - https://kdd2026.kdd.org/ai4sciences-track-call-for-papers/
+  - https://kdd2026.kdd.org/kdd-2026-blue-sky-ideas-track-call-for-papers/
+  - https://kdd2026.kdd.org/undergraduate-consortium-call-for-submission/
+  - https://kdd2026.kdd.org/call-for-workshop-proposals/
+  notes: Zero official main paper rows were screened; the verification interstitial is an access boundary, not a zero result.
+    Final accepted rosters remain missing for Research, Applied Data Science, Datasets and Benchmarks, AI for Sciences, Blue
+    Sky, undergraduate and Ph.D. consortia, workshops, every Special Day—especially the Finance Special Day—and Korea Day,
+    together with the Full Program and proceedings reconciliation. Main is not complete; main is represented in tracks_pending
+    rather than tracks_checked.
 - venue: AAAI
   year: 2026
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: blocked
+    note: Main accepted-paper roster remains blocked by an access or source-availability boundary.
+  - track: workshop
+    state: blocked
+    note: Workshop or organizer paper roster remains blocked by an access or source-availability boundary.
   official_sources:
-    - https://aaai.org/conference/aaai/aaai-26/
-    - https://aaai.org/conference/aaai/aaai-26/main-technical-track/
-    - https://ojs.aaai.org/index.php/AAAI/issue/archive
-  notes: >-
-    Zero official rows were screened because the inherited AAAI and OJS security denial was honored. The OJS volume, issue, section, and article map; main and special or co-program rosters; workshop programs; demonstrations; student, undergraduate, and doctoral consortium programs; IAAI and EAAI sections; and presentation and duplicate mappings remain exact missing artifacts. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
-
+  - https://aaai.org/conference/aaai/aaai-26/
+  - https://aaai.org/conference/aaai/aaai-26/main-technical-track/
+  - https://ojs.aaai.org/index.php/AAAI/issue/archive
+  notes: Zero official rows were screened because the inherited AAAI and OJS security denial was honored. The OJS volume,
+    issue, section, and article map; main and special or co-program rosters; workshop programs; demonstrations; student, undergraduate,
+    and doctoral consortium programs; IAAI and EAAI sections; and presentation and duplicate mappings remain exact missing
+    artifacts. Main is not complete; main is represented in tracks_pending rather than tracks_checked.
 - venue: IJCAI
   year: 2026
   status: pending
   checked_on: 2026-07-12
+  eligible_paper_count: 5
   tracks_checked:
-    - main
+  - main
+  tracks_pending:
+  - track: workshop
+    state: source_mapped
+    note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://2026.ijcai.org/accepted-papers/
-    - https://2026.ijcai.org/wp-json/wp/v2/pages/2862
-    - https://2026.ijcai.org/program/
-    - https://2026.ijcai.org/accepted-workshops/
-    - https://2026.ijcai.org/wp-json/wp/v2/pages/2567
-  notes: >-
-    All 990 of 990 central accepted rows across eleven categories were screened and five eligible papers were cataloged. Every centrally accepted paper has a six-minute oral plus a poster. All 40 workshop index rows were mapped, but zero organizer accepted or contributed-paper rows were screened; WS23 FinLLM is the priority unresolved roster. Workshop is therefore omitted from tracks_checked.
-
+  - https://2026.ijcai.org/accepted-papers/
+  - https://2026.ijcai.org/wp-json/wp/v2/pages/2862
+  - https://2026.ijcai.org/program/
+  - https://2026.ijcai.org/accepted-workshops/
+  - https://2026.ijcai.org/wp-json/wp/v2/pages/2567
+  notes: All 990 of 990 central accepted rows across eleven categories were screened and five eligible papers were cataloged.
+    Every centrally accepted paper has a six-minute oral plus a poster. All 40 workshop index rows were mapped, but zero organizer
+    accepted or contributed-paper rows were screened; WS23 FinLLM is the priority unresolved roster. Workshop is therefore
+    recorded as pending in tracks_pending.
 - venue: WWW
   year: 2026
   status: pending
   checked_on: 2026-07-12
+  eligible_paper_count: 7
   tracks_checked:
-    - main
+  - main
+  - workshop
+  tracks_pending:
+  - track: workshop
+    state: partial
+    note: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.
   official_sources:
-    - https://github.com/thewebconf2026/www2026/tree/beba571d4f3056bb2e137d245802b3c3ebf235eb
-    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted.html
-    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/full-schedule.html
-    - https://github.com/thewebconf2026/www2026/tree/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted
-    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/workshops.html
-    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/tutorials.html
-    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/e-posters.html
-    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/resource.html
-    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/special-days.html
-    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/calls/health-day.html
-    - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/history-of-web.html
-    - https://prompteng-ws.github.io/2026/
-    - https://webst2026.netlify.app/
-  notes: >-
-    All 1,198 official paper rows were screened and seven eligible papers were cataloged. The accepted Resource roster, special and Health paper mappings, and the PromptEng and WebST workshop programs remain unresolved. Workshop is omitted from tracks_checked despite one cataloged workshop record because the workshop universe remains incomplete.
-
+  - https://github.com/thewebconf2026/www2026/tree/beba571d4f3056bb2e137d245802b3c3ebf235eb
+  - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted.html
+  - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/full-schedule.html
+  - https://github.com/thewebconf2026/www2026/tree/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted
+  - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/workshops.html
+  - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/tutorials.html
+  - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/e-posters.html
+  - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/accepted/resource.html
+  - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/special-days.html
+  - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/calls/health-day.html
+  - https://github.com/thewebconf2026/www2026/blob/beba571d4f3056bb2e137d245802b3c3ebf235eb/program/history-of-web.html
+  - https://prompteng-ws.github.io/2026/
+  - https://webst2026.netlify.app/
+  notes: All 1,198 official paper rows were screened and seven eligible papers were cataloged. The accepted Resource roster,
+    special and Health paper mappings, and the PromptEng and WebST workshop programs remain unresolved. Workshop is omitted
+    from tracks_checked despite one cataloged workshop record because the workshop universe remains incomplete.
 - venue: WSDM
   year: 2026
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: blocked
+    note: Main accepted-paper roster remains blocked by an access or source-availability boundary.
   official_sources:
-    - https://wsdm-conference.org/2026/index.php/accepted-papers/
-    - https://wsdm-conference.org/2026/
-    - https://dl.acm.org/
-  notes: >-
-    Zero official main paper rows were screened. The full and short accepted-paper roster, affiliated paper-bearing event map, and proceedings reconciliation remain unavailable under the recorded conference-host and ACM publisher denials. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
-
+  - https://wsdm-conference.org/2026/index.php/accepted-papers/
+  - https://wsdm-conference.org/2026/
+  - https://dl.acm.org/
+  notes: Zero official main paper rows were screened. The full and short accepted-paper roster, affiliated paper-bearing event
+    map, and proceedings reconciliation remain unavailable under the recorded conference-host and ACM publisher denials. Main
+    is not complete; main is represented in tracks_pending rather than tracks_checked.
 - venue: SIGIR
   year: 2026
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: unpublished
+    note: Main accepted-paper roster is not yet published as an accepted-paper source.
   official_sources:
-    - https://sigir2026.org/en-AU/pages/program/accepted-papers
-    - https://sigir2026.org/en-AU/
-    - https://dl.acm.org/
-  notes: >-
-    Zero official main paper rows were screened. The published accepted title, author, track, presentation, and paper roster and the affiliated paper-bearing event map remain unscreened, with future proceedings reconciliation still missing. Future conference timing is not a zero-result basis. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
-
+  - https://sigir2026.org/en-AU/pages/program/accepted-papers
+  - https://sigir2026.org/en-AU/
+  - https://dl.acm.org/
+  notes: Zero official main paper rows were screened. The published accepted title, author, track, presentation, and paper
+    roster and the affiliated paper-bearing event map remain unscreened, with future proceedings reconciliation still missing.
+    Future conference timing is not a zero-result basis. Main is not complete; main is represented in tracks_pending rather
+    than tracks_checked.
 - venue: AISTATS
   year: 2026
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: source_mapped
+    note: Main accepted-paper roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://aistats.org/aistats2026/
-  notes: >-
-    Zero official accepted rows were screened. The accepted main roster, proceedings-volume mapping, oral and poster presentation map, and the taxonomy and accepted rosters of every paper-bearing side program remain exact missing artifacts. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
-
+  - https://aistats.org/aistats2026/
+  notes: Zero official accepted rows were screened. The accepted main roster, proceedings-volume mapping, oral and poster
+    presentation map, and the taxonomy and accepted rosters of every paper-bearing side program remain exact missing artifacts.
+    Main is not complete; main is represented in tracks_pending rather than tracks_checked.
 - venue: ACM ICAIF
   year: 2026
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: unpublished
+    note: Main accepted-paper roster is not yet published as an accepted-paper source.
+  - track: workshop
+    state: unpublished
+    note: Workshop or organizer paper roster is not yet published as an accepted-paper source.
   official_sources:
-    - https://icaif2026.org/
-    - https://dl.acm.org/
-  notes: >-
-    Zero official main paper rows were screened because the accepted program is future and unpublished. Submissions and under-review repositories are not acceptance evidence. The future main program, workshop and side-event map, organizer paper rosters, and proceedings volume remain missing. Main is not complete; tracks_checked main is only an attempted and source-mapped marker.
-
+  - https://icaif2026.org/
+  - https://dl.acm.org/
+  notes: Zero official main paper rows were screened because the accepted program is future and unpublished. Submissions and
+    under-review repositories are not acceptance evidence. The future main program, workshop and side-event map, organizer
+    paper rosters, and proceedings volume remain missing. Main is not complete; main is represented in tracks_pending rather
+    than tracks_checked.
 - venue: ICML
   year: 2025
   status: pending
   checked_on: 2026-07-12
+  eligible_paper_count: 5
   tracks_checked:
-    - main
-    - position
+  - main
+  - position
+  tracks_pending:
+  - track: workshop
+    state: source_mapped
+    note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
+  - track: position
+    state: partial
+    note: Position-paper roster was partially screened but still has unresolved paper-level artifacts.
+  - track: affinity
+    state: source_mapped
+    note: Affinity-event or poster roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://proceedings.mlr.press/v267/
-    - https://github.com/mlresearch/v267/tree/3a328812b192086cd80b20eb56a5bb99c69a3afd/_posts
-    - https://icml.cc/virtual/2025/papers.html
-    - https://icml.cc/virtual/2025/events/workshop
-    - https://icml.cc/virtual/2025/affinity_events
-  notes: >-
-    All 3,330 archival PMLR records were screened: 3,257 main and 73 Position. Five eligible main papers were cataloged, and no Position paper passed the strict scope screen. Workshop and affinity remain omitted from tracks_checked because their exact official event and contributed-paper rosters could not be read.
-
+  - https://proceedings.mlr.press/v267/
+  - https://github.com/mlresearch/v267/tree/3a328812b192086cd80b20eb56a5bb99c69a3afd/_posts
+  - https://icml.cc/virtual/2025/papers.html
+  - https://icml.cc/virtual/2025/events/workshop
+  - https://icml.cc/virtual/2025/affinity_events
+  notes: 'All 3,330 archival PMLR records were screened: 3,257 main and 73 Position. Five eligible main papers were cataloged,
+    and no Position paper passed the strict scope screen. Workshop and affinity remain pending in tracks_pending because their
+    exact official event and contributed-paper rosters could not be read.'
 - venue: NeurIPS
   year: 2025
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: source_mapped
+    note: Main accepted-paper roster was source-mapped but not fully screened at paper level.
+  - track: workshop
+    state: source_mapped
+    note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
+  - track: affinity
+    state: source_mapped
+    note: Affinity-event or poster roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://neurips.cc/virtual/2025/papers.html
-    - https://proceedings.neurips.cc/paper/2025
-    - https://neurips.cc/Conferences/2025/DatasetsBenchmarks/AcceptedPapers
-    - https://neurips.cc/virtual/2025/events/workshop
-    - https://neurips.cc/virtual/2025/affinity_events
-  notes: >-
-    Zero official accepted rows were screened. Main and Datasets and Benchmarks accepted rosters, workshop and affinity rosters, and mirror mappings remain exact missing artifacts; main is not complete. tracks_checked main is only an attempted and source-mapped family marker.
-
+  - https://neurips.cc/virtual/2025/papers.html
+  - https://proceedings.neurips.cc/paper/2025
+  - https://neurips.cc/Conferences/2025/DatasetsBenchmarks/AcceptedPapers
+  - https://neurips.cc/virtual/2025/events/workshop
+  - https://neurips.cc/virtual/2025/affinity_events
+  notes: Zero official accepted rows were screened. Main and Datasets and Benchmarks accepted rosters, workshop and affinity
+    rosters, and mirror mappings remain exact missing artifacts; main is not complete. main is represented in tracks_pending
+    rather than tracks_checked.
 - venue: ICLR
   year: 2025
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: source_mapped
+    note: Main accepted-paper roster was source-mapped but not fully screened at paper level.
+  - track: workshop
+    state: source_mapped
+    note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
+  - track: affinity
+    state: source_mapped
+    note: Affinity-event or poster roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://iclr.cc/virtual/2025/papers.html
-    - https://proceedings.iclr.cc/paper_files/paper/2025
-    - https://openreview.net/group?id=ICLR.cc%2F2025%2FConference
-    - https://iclr.cc/virtual/2025/events/workshop
-    - https://iclr.cc/virtual/2025/affinity_events
-    - https://openreview.net/group?id=ICLR.cc%2F2025%2FTinyPapers
-    - https://openreview.net/group?id=ICLR.cc%2F2025%2FBlogPosts
-  notes: >-
-    Zero official accepted rows were screened. Main, workshop, affinity, Tiny Papers, and Blog Posts accepted rosters remain missing; main is not complete. tracks_checked main is only an attempted and source-mapped family marker.
-
+  - https://iclr.cc/virtual/2025/papers.html
+  - https://proceedings.iclr.cc/paper_files/paper/2025
+  - https://openreview.net/group?id=ICLR.cc%2F2025%2FConference
+  - https://iclr.cc/virtual/2025/events/workshop
+  - https://iclr.cc/virtual/2025/affinity_events
+  - https://openreview.net/group?id=ICLR.cc%2F2025%2FTinyPapers
+  - https://openreview.net/group?id=ICLR.cc%2F2025%2FBlogPosts
+  notes: Zero official accepted rows were screened. Main, workshop, affinity, Tiny Papers, and Blog Posts accepted rosters
+    remain missing; main is not complete. main is represented in tracks_pending rather than tracks_checked.
 - venue: KDD
   year: 2025
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: source_mapped
+    note: Main accepted-paper roster was source-mapped but not fully screened at paper level.
+  - track: workshop
+    state: source_mapped
+    note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://kdd2025.kdd.org/
-    - https://kdd2025.kdd.org/research-track-papers/
-    - https://kdd2025.kdd.org/research-track-papers-2/
-    - https://kdd2025.kdd.org/datasets-and-benchmarks-track-papers-2/
-    - https://dl.acm.org/doi/proceedings/10.1145/3690624
-    - https://dl.acm.org/doi/proceedings/10.1145/3711896
-  notes: >-
-    Zero official rows were screened; an 844-title secondary mirror was candidate discovery only and cannot prove acceptance. The official main, ADS, Datasets and Benchmarks, demo, student, and special-program lists, workshop rosters, and ACM volume reconciliation remain missing; main is not complete. tracks_checked main is only an attempted and source-mapped family marker.
-
+  - https://kdd2025.kdd.org/
+  - https://kdd2025.kdd.org/research-track-papers/
+  - https://kdd2025.kdd.org/research-track-papers-2/
+  - https://kdd2025.kdd.org/datasets-and-benchmarks-track-papers-2/
+  - https://dl.acm.org/doi/proceedings/10.1145/3690624
+  - https://dl.acm.org/doi/proceedings/10.1145/3711896
+  notes: Zero official rows were screened; an 844-title secondary mirror was candidate discovery only and cannot prove acceptance.
+    The official main, ADS, Datasets and Benchmarks, demo, student, and special-program lists, workshop rosters, and ACM volume
+    reconciliation remain missing; main is not complete. main is represented in tracks_pending rather than tracks_checked.
 - venue: AAAI
   year: 2025
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: blocked
+    note: Main accepted-paper roster remains blocked by an access or source-availability boundary.
+  - track: workshop
+    state: blocked
+    note: Workshop or organizer paper roster remains blocked by an access or source-availability boundary.
   official_sources:
-    - https://aaai.org/conference/aaai/aaai-25/
-    - https://aaai.org/conference/aaai/aaai-25/main-technical-track/
-    - https://ojs.aaai.org/index.php/AAAI/issue/archive
-  notes: >-
-    Zero official rows were screened under the explicit AAAI/OJS access boundary. Exact proceedings issues and sections, named co-programs, demos, student, consortium, and Bridge programs, and all workshop rosters remain missing; main is not complete. tracks_checked main is only an attempted and source-mapped family marker.
-
+  - https://aaai.org/conference/aaai/aaai-25/
+  - https://aaai.org/conference/aaai/aaai-25/main-technical-track/
+  - https://ojs.aaai.org/index.php/AAAI/issue/archive
+  notes: Zero official rows were screened under the explicit AAAI/OJS access boundary. Exact proceedings issues and sections,
+    named co-programs, demos, student, consortium, and Bridge programs, and all workshop rosters remain missing; main is not
+    complete. main is represented in tracks_pending rather than tracks_checked.
 - venue: IJCAI
   year: 2025
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: source_mapped
+    note: Main accepted-paper roster was source-mapped but not fully screened at paper level.
+  - track: workshop
+    state: source_mapped
+    note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://2025.ijcai.org/
-    - https://www.ijcai.org/proceedings/2025/
-  notes: >-
-    Zero official rows were screened; a 1,280-title secondary mirror was discovery only and cannot prove acceptance. The official central track records, presentation metadata, workshop and special-program inventory, and accepted rosters remain missing; main is not complete. tracks_checked main is only an attempted and source-mapped family marker.
-
+  - https://2025.ijcai.org/
+  - https://www.ijcai.org/proceedings/2025/
+  notes: Zero official rows were screened; a 1,280-title secondary mirror was discovery only and cannot prove acceptance.
+    The official central track records, presentation metadata, workshop and special-program inventory, and accepted rosters
+    remain missing; main is not complete. main is represented in tracks_pending rather than tracks_checked.
 - venue: WWW
   year: 2025
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: blocked
+    note: Main accepted-paper roster remains blocked by an access or source-availability boundary.
+  - track: workshop
+    state: blocked
+    note: Workshop or organizer paper roster remains blocked by an access or source-availability boundary.
   official_sources:
-    - https://www2025.thewebconf.org/
-    - https://dl.acm.org/
-  notes: >-
-    Zero official paper rows and zero affiliated units were screened because the named WWW conference host and ACM publisher surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster; affiliated workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing. Main is not complete, and this is not a zero-eligible finding. tracks_checked main is only an attempted and source-mapped family marker.
-
+  - https://www2025.thewebconf.org/
+  - https://dl.acm.org/
+  notes: Zero official paper rows and zero affiliated units were screened because the named WWW conference host and ACM publisher
+    surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster; affiliated
+    workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing. Main is not
+    complete, and this is not a zero-eligible finding. main is represented in tracks_pending rather than tracks_checked.
 - venue: WSDM
   year: 2025
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: blocked
+    note: Main accepted-paper roster remains blocked by an access or source-availability boundary.
+  - track: workshop
+    state: blocked
+    note: Workshop or organizer paper roster remains blocked by an access or source-availability boundary.
   official_sources:
-    - https://www.wsdm-conference.org/2025/
-    - https://dl.acm.org/
-  notes: >-
-    Zero official paper rows and zero affiliated units were screened because the named WSDM conference host and ACM publisher surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster; affiliated workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing. Main is not complete, and this is not a zero-eligible finding. tracks_checked main is only an attempted and source-mapped family marker.
-
+  - https://www.wsdm-conference.org/2025/
+  - https://dl.acm.org/
+  notes: Zero official paper rows and zero affiliated units were screened because the named WSDM conference host and ACM publisher
+    surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster; affiliated
+    workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing. Main is not
+    complete, and this is not a zero-eligible finding. main is represented in tracks_pending rather than tracks_checked.
 - venue: SIGIR
   year: 2025
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: blocked
+    note: Main accepted-paper roster remains blocked by an access or source-availability boundary.
+  - track: workshop
+    state: blocked
+    note: Workshop or organizer paper roster remains blocked by an access or source-availability boundary.
   official_sources:
-    - https://sigir2025.dei.unipd.it/accepted-papers.html
-    - https://sigir2025.dei.unipd.it/
-    - https://dl.acm.org/
-  notes: >-
-    Zero official paper rows and zero affiliated units were screened because the named SIGIR conference host and ACM publisher surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster; affiliated workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing. Main is not complete, and this is not a zero-eligible finding. tracks_checked main is only an attempted and source-mapped family marker.
-
+  - https://sigir2025.dei.unipd.it/accepted-papers.html
+  - https://sigir2025.dei.unipd.it/
+  - https://dl.acm.org/
+  notes: Zero official paper rows and zero affiliated units were screened because the named SIGIR conference host and ACM
+    publisher surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster;
+    affiliated workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing.
+    Main is not complete, and this is not a zero-eligible finding. main is represented in tracks_pending rather than tracks_checked.
 - venue: AISTATS
   year: 2025
   status: pending
   checked_on: 2026-07-12
+  eligible_paper_count: 1
   tracks_checked:
-    - main
+  - main
+  tracks_pending: []
   official_sources:
-    - https://proceedings.mlr.press/v258/
-    - https://github.com/mlresearch/v258/tree/f9b46f555d3501fe4cc7e31329af9ab55a7b66c6/_posts
-    - https://aistats.org/aistats2025/
-  notes: >-
-    The immutable tree enumerates 583 main records. Nineteen official blobs were screened through the allowed connector, one verified paper was cataloged, and 564 title and abstract records remain unscreened. The existence and rosters of any side programs are also unresolved; main is not complete.
-
+  - https://proceedings.mlr.press/v258/
+  - https://github.com/mlresearch/v258/tree/f9b46f555d3501fe4cc7e31329af9ab55a7b66c6/_posts
+  - https://aistats.org/aistats2025/
+  notes: The immutable tree enumerates 583 main records. Nineteen official blobs were screened through the allowed connector,
+    one verified paper was cataloged, and 564 title and abstract records remain unscreened. The existence and rosters of any
+    side programs are also unresolved; main is not complete.
 - venue: ACM ICAIF
   year: 2025
   status: pending
   checked_on: 2026-07-12
-  tracks_checked:
-    - main
+  eligible_paper_count: 0
+  tracks_checked: []
+  tracks_pending:
+  - track: main
+    state: blocked
+    note: Main accepted-paper roster remains blocked by an access or source-availability boundary.
+  - track: workshop
+    state: blocked
+    note: Workshop or organizer paper roster remains blocked by an access or source-availability boundary.
   official_sources:
-    - https://icaif25.org/
-    - https://dl.acm.org/
-  notes: >-
-    Zero official paper rows and zero affiliated units were screened because the named ACM ICAIF conference host and ACM publisher surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster; affiliated workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing. Main is not complete, and this is not a zero-eligible finding. tracks_checked main is only an attempted and source-mapped family marker.
-
+  - https://icaif25.org/
+  - https://dl.acm.org/
+  notes: Zero official paper rows and zero affiliated units were screened because the named ACM ICAIF conference host and
+    ACM publisher surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster;
+    affiliated workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing.
+    Main is not complete, and this is not a zero-eligible finding. main is represented in tracks_pending rather than tracks_checked.
 - venue: ICML
   year: 2024
   status: pending
   checked_on: 2026-07-11
+  eligible_paper_count: 3
   tracks_checked:
-    - main
-    - position
+  - main
+  - workshop
+  - position
+  tracks_pending:
+  - track: workshop
+    state: partial
+    note: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.
+  - track: position
+    state: partial
+    note: Position-paper roster was partially screened but still has unresolved paper-level artifacts.
+  - track: affinity
+    state: source_mapped
+    note: Affinity-event or poster roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://proceedings.mlr.press/v235/
-    - https://proceedings.mlr.press/v235/assets/bib/bibliography.bib
-    - https://icml.cc/virtual/2024/papers.html
-    - https://icml.cc/virtual/2024/events/workshop
-    - https://icml.cc/virtual/2024/affinity_events
-    - https://icml.cc/virtual/2024/workshop/29970
-    - https://icml.cc/virtual/2024/workshop/29955
-    - https://openreview.net/group?id=ICML.cc/2024/Workshop/ML4LMS
-    - https://icml.cc/virtual/2024/workshop/29963
-    - https://openreview.net/group?id=ICML.cc%2F2024%2FWorkshop%2FLLMs_and_Cognition
-    - https://icml.cc/virtual/2024/session/35291
-  notes: >-
-    All 2,610 PMLR records and all 75 position papers were screened. The side-program audit accounted for all 34 official units: 30 workshops, three affinity-roster events, and the Affinity Joint Poster Session. Twenty-seven workshops have complete paper-level screens, and two eligible workshop papers were already cataloged. Workshop and affinity remain omitted from tracks_checked because four exact roster blockers remain: Long-Context Foundation Models (29970) lacks its physical and virtual poster titles; ML for Life and Material Science (29955) lacks both poster rosters and its linked OpenReview venue is challenged; Large Language Models and Cognition (29963) lacks complete contributed-talk and poster rosters and its OpenReview venue is challenged; and the Affinity Joint Poster Session (35291) is an empty official shell with no poster titles, authors, event mapping, or paper links.
-
+  - https://proceedings.mlr.press/v235/
+  - https://proceedings.mlr.press/v235/assets/bib/bibliography.bib
+  - https://icml.cc/virtual/2024/papers.html
+  - https://icml.cc/virtual/2024/events/workshop
+  - https://icml.cc/virtual/2024/affinity_events
+  - https://icml.cc/virtual/2024/workshop/29970
+  - https://icml.cc/virtual/2024/workshop/29955
+  - https://openreview.net/group?id=ICML.cc/2024/Workshop/ML4LMS
+  - https://icml.cc/virtual/2024/workshop/29963
+  - https://openreview.net/group?id=ICML.cc%2F2024%2FWorkshop%2FLLMs_and_Cognition
+  - https://icml.cc/virtual/2024/session/35291
+  notes: 'All 2,610 PMLR records and all 75 position papers were screened. The side-program audit accounted for all 34 official
+    units: 30 workshops, three affinity-roster events, and the Affinity Joint Poster Session. Twenty-seven workshops have
+    complete paper-level screens, and two eligible workshop papers were already cataloged. Workshop and affinity remain omitted
+    from tracks_checked because four exact roster blockers remain: Long-Context Foundation Models (29970) lacks its physical
+    and virtual poster titles; ML for Life and Material Science (29955) lacks both poster rosters and its linked OpenReview
+    venue is challenged; Large Language Models and Cognition (29963) lacks complete contributed-talk and poster rosters and
+    its OpenReview venue is challenged; and the Affinity Joint Poster Session (35291) is an empty official shell with no poster
+    titles, authors, event mapping, or paper links.'
 - venue: NeurIPS
   year: 2024
   status: complete
   checked_on: 2026-07-11
+  eligible_paper_count: 14
   tracks_checked:
-    - main
-    - workshop
-    - affinity
+  - main
+  - workshop
+  - affinity
+  tracks_pending: []
   official_sources:
-    - https://proceedings.neurips.cc/paper/2024
-    - https://neurips.cc/Conferences/2024/DatasetsBenchmarks/AcceptedPapers
-    - https://neurips.cc/virtual/2024/events/workshop
-    - https://neurips.cc/virtual/2024/affinity_events
-    - https://neurips.cc/virtual/2024/affinity-poster-session/107901
-    - https://neurips.cc/virtual/2024/affinity-event/105017
-    - https://neurips.cc/virtual/2024/workshop/84715
-    - https://neurips.cc/virtual/2024/workshop/84729
-  notes: >-
-    All 4,493 displayed proceedings titles, including Datasets and Benchmarks, were screened. The complete official side-program universe was also screened: all 56 workshops and all 12 affinity entries were resolved from their official programs, with the joint poster session and overflow stream reconciled to their constituent affinity rosters. No side-program artifact blockers remain. Three newly verified side-program papers were added: two workshop posters and one affinity poster.
-
+  - https://proceedings.neurips.cc/paper/2024
+  - https://neurips.cc/Conferences/2024/DatasetsBenchmarks/AcceptedPapers
+  - https://neurips.cc/virtual/2024/events/workshop
+  - https://neurips.cc/virtual/2024/affinity_events
+  - https://neurips.cc/virtual/2024/affinity-poster-session/107901
+  - https://neurips.cc/virtual/2024/affinity-event/105017
+  - https://neurips.cc/virtual/2024/workshop/84715
+  - https://neurips.cc/virtual/2024/workshop/84729
+  notes: 'All 4,493 displayed proceedings titles, including Datasets and Benchmarks, were screened. The complete official
+    side-program universe was also screened: all 56 workshops and all 12 affinity entries were resolved from their official
+    programs, with the joint poster session and overflow stream reconciled to their constituent affinity rosters. No side-program
+    artifact blockers remain. Three newly verified side-program papers were added: two workshop posters and one affinity poster.'
 - venue: ICLR
   year: 2024
   status: complete
   checked_on: 2026-07-11
+  eligible_paper_count: 3
   tracks_checked:
-    - main
-    - workshop
-    - affinity
+  - main
+  - workshop
+  - affinity
+  tracks_pending: []
   official_sources:
-    - https://proceedings.iclr.cc/paper_files/paper/2024
-    - https://openreview.net/group?id=ICLR.cc%2F2024%2FConference
-    - https://iclr.cc/Downloads/2024
-    - https://iclr.cc/virtual/2024/calendar
-    - https://iclr.cc/virtual/2024/events/workshop
-    - https://iclr.cc/virtual/2024/affinity_events
-    - https://blog.iclr.cc/2024/01/08/announcing-the-accepted-workshops-at-iclr-2024/
-    - https://openreview.net/group?id=ICLR.cc%2F2024%2FTinyPapers
-    - https://openreview.net/group?id=ICLR.cc%2F2024%2FBlogPosts
-    - https://openreview.net/forum?id=SPDNi5Ys8R
-  notes: >-
-    The official 2,341-event download list received a complete fixed-vocabulary title screen, and recovered candidates were adjudicated from official ICLR and OpenReview records. All 22 side-program units were then resolved at paper level: 20 workshops, Tiny Papers, and the Blog Track. The two strict side-program papers were already cataloged, and no paper-list blocker remains. One non-blocking presentation caveat remains: OpenReview marks Tiny Paper SPDNi5Ys8R Notable, but the 12 official Tiny Papers session pages do not map it to a particular oral or poster session.
-
+  - https://proceedings.iclr.cc/paper_files/paper/2024
+  - https://openreview.net/group?id=ICLR.cc%2F2024%2FConference
+  - https://iclr.cc/Downloads/2024
+  - https://iclr.cc/virtual/2024/calendar
+  - https://iclr.cc/virtual/2024/events/workshop
+  - https://iclr.cc/virtual/2024/affinity_events
+  - https://blog.iclr.cc/2024/01/08/announcing-the-accepted-workshops-at-iclr-2024/
+  - https://openreview.net/group?id=ICLR.cc%2F2024%2FTinyPapers
+  - https://openreview.net/group?id=ICLR.cc%2F2024%2FBlogPosts
+  - https://openreview.net/forum?id=SPDNi5Ys8R
+  notes: 'The official 2,341-event download list received a complete fixed-vocabulary title screen, and recovered candidates
+    were adjudicated from official ICLR and OpenReview records. All 22 side-program units were then resolved at paper level:
+    20 workshops, Tiny Papers, and the Blog Track. The two strict side-program papers were already cataloged, and no paper-list
+    blocker remains. One non-blocking presentation caveat remains: OpenReview marks Tiny Paper SPDNi5Ys8R Notable, but the
+    12 official Tiny Papers session pages do not map it to a particular oral or poster session.'
 - venue: KDD
   year: 2024
   status: pending
   checked_on: 2026-07-11
+  eligible_paper_count: 6
   tracks_checked:
-    - main
+  - main
+  - workshop
+  tracks_pending:
+  - track: workshop
+    state: partial
+    note: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.
   official_sources:
-    - https://kdd.org/kdd2024/research-track-papers/
-    - https://kdd.org/kdd2024/applied-data-science-track-papers/
-    - https://kdd.org/kdd2024/workshops/
-    - https://sites.google.com/view/kdd-mlf-2024/schedule
-    - https://kdd.org/kdd2024/special-days/
-    - https://ai-behavioral-science.github.io/2024
-    - https://biokdd.org/biokdd24/
-    - https://openreview.net/group?id=KDD.org/2024/Workshop/KiL#tab-accept-oral
-    - https://aimel.ai/kdd2024aidsh
-    - https://sites.google.com/g.ucla.edu/kdd-healthday/home
-    - https://ailab.ijs.si/dunja/EU-Day-KDD2024
-    - https://bigmodel.ai/aigc-kdd24/
-  notes: >-
-    The full Research and Applied Data Science schedules were title-screened. The official side-program audit covered 39 unique entries: 31 unique workshop organizer URLs and eight special days. Thirty-two entries were resolved at paper or complete-program level; workshop remains omitted from tracks_checked because seven exact blockers remain: the Drive-only Behavioral Bias of Vision-Language Models paper at AI Behavioral Science; the unavailable BIOKDD host; KiL's missing titles and inaccessible accepted tab; the unavailable AI and Data Science for Healthcare host; the access-controlled Health Day program; the unavailable European Data Science Day host; and Generative AI Day's empty schedule. The accepted Machine Learning in Finance candidates HLOB - Information Persistence and Structure in Limit Order Books and Higher Order Transformers: Enhancing Stock Movement Prediction On Multimodal Time-Series Data were excluded because public paper/identifier and direct-decision evidence were insufficient, not added as catalog records.
-
+  - https://kdd.org/kdd2024/research-track-papers/
+  - https://kdd.org/kdd2024/applied-data-science-track-papers/
+  - https://kdd.org/kdd2024/workshops/
+  - https://sites.google.com/view/kdd-mlf-2024/schedule
+  - https://kdd.org/kdd2024/special-days/
+  - https://ai-behavioral-science.github.io/2024
+  - https://biokdd.org/biokdd24/
+  - https://openreview.net/group?id=KDD.org/2024/Workshop/KiL#tab-accept-oral
+  - https://aimel.ai/kdd2024aidsh
+  - https://sites.google.com/g.ucla.edu/kdd-healthday/home
+  - https://ailab.ijs.si/dunja/EU-Day-KDD2024
+  - https://bigmodel.ai/aigc-kdd24/
+  notes: 'The full Research and Applied Data Science schedules were title-screened. The official side-program audit covered
+    39 unique entries: 31 unique workshop organizer URLs and eight special days. Thirty-two entries were resolved at paper
+    or complete-program level; workshop remains partial in tracks_pending because seven exact blockers remain: the Drive-only
+    Behavioral Bias of Vision-Language Models paper at AI Behavioral Science; the unavailable BIOKDD host; KiL''s missing
+    titles and inaccessible accepted tab; the unavailable AI and Data Science for Healthcare host; the access-controlled Health
+    Day program; the unavailable European Data Science Day host; and Generative AI Day''s empty schedule. The accepted Machine
+    Learning in Finance candidates HLOB - Information Persistence and Structure in Limit Order Books and Higher Order Transformers:
+    Enhancing Stock Movement Prediction On Multimodal Time-Series Data were excluded because public paper/identifier and direct-decision
+    evidence were insufficient, not added as catalog records.'
 - venue: AAAI
   year: 2024
   status: pending
   checked_on: 2026-07-11
+  eligible_paper_count: 5
   tracks_checked:
-    - main
+  - main
+  tracks_pending:
+  - track: workshop
+    state: source_mapped
+    note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
+  - track: position
+    state: source_mapped
+    note: Position-paper roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://aaai.org/aaai-24-conference/program-overview/
-    - https://ojs.aaai.org/index.php/AAAI/issue/archive
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/576
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/577
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/578
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/579
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/580
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/581
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/582
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/583
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/584
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/585
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/586
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/587
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/588
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/589
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/590
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/591
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/592
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/593
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/594
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/595
-    - https://ojs.aaai.org/index.php/AAAI/issue/view/596
-    - https://aaai.org/aaai-conference/aaai-24-technical-program/
-    - https://aaai.org/aaai-conference/aaai-24-bridge-program/
-    - https://aaai.org/aaai-conference/demos-24-program/
-    - https://aaai.org/aaai-conference/aaai-24-student-abstracts/
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-program/
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws01
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws02
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws03
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws04
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws05
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws06
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws07
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws08
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws09
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws10
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws11
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws12
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws13
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws14
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws15
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws16
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws17
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws18
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws19
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws20
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws21
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws22
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws23
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws24
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws25
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws26
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws27
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws28
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws29
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws30
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws31
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws32
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws33
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws34
-    - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws35
-    - https://llmcp.cause-lab.net/llmcp
-    - https://digitalhumanworkshop.github.io/
-    - https://ai4ed.cc/workshops/aaai2024
-    - https://sites.google.com/view/aifin-aaai2024/home
-    - https://openreview.net/group?id=AAAI.org/2024/Workshop/AIBED
-    - https://sites.google.com/view/aibed2024/
-    - http://aics.site/AICS2024/
-    - https://ai-or.github.io/2024/
-    - https://ai4ts.github.io/aaai2024
-    - https://aibsdworkshop.github.io/2024/index.html
-    - https://www.is3rlab.org/aaai24-cmasdl-workshop.github.io/
-    - https://sites.google.com/view/dai-2024/home
-    - https://eiw2024.github.io/
-    - https://sites.google.com/view/gclr2024/
-    - http://w3phiai2024.w3phi.com/
-    - https://hcrl-workshop.github.io/2024/
-    - https://openreview.net/group?id=AAAI.org/2024/Workshop/Imageomics
-    - https://llms4science-community.github.io/aaai2024.html
-    - https://winterlightlabs.github.io/ml4cmh2024/
-    - https://winterlightlabs.github.io/ml4cmh2024/program/index.html
-    - https://openreview.net/group?id=AAAI.org/2024/Workshop/NuCLeaR
-    - https://nuclear-workshop.github.io/
-    - https://ppai-workshop.github.io/
-    - https://openreview.net/group?id=AAAI.org/2024/Workshop/PubLLM
-    - https://sites.google.com/vectorinstitute.ai/relm2024/home
-    - https://sites.google.com/view/sdu-aaai24
-    - https://ceur-ws.org/
-    - https://personal.ntu.edu.sg/xlli/sai.htm
-    - https://sites.google.com/view/rl-llm-aaai2024
-    - https://openreview.net/group?id=AAAI.org/2024/Workshop/XAI4DRL
-    - https://xai4drl.github.io/
-  notes: >-
-    AAAI 2024 remains pending, and tracks_checked must be read as a partial main-paper screen rather than a full-universe main audit. The main/non-workshop audit maps all 21 OJS issue containers 576-596 but retains seven exact blocker groups: Technical Tracks issues 576-593 need a complete article-and-abstract screen; issue 594 needs its complete Safe, Robust and Responsible AI article-and-abstract screen; issue 595 needs its complete AI for Social Impact, Senior Member, New Faculty, and Journal Track article/section screen; issue 596 needs its complete IAAI, EAAI, Student Abstracts, Undergraduate Consortium, and Demonstrations article/section screen; and the Bridge, Demonstrations, and Student Abstracts/Posters programs each need complete title-and-author rosters and issue mappings. The five existing AAAI papers are a verified lower bound, not an exhaustive result.
-    The cached official workshop list and schedule establish this exact W1-W35 ledger. W1 “Are Large Language Models Simply Causal Parrots?” (LLM-CP) — unresolved; missing complete accepted/contributed-paper roster with titles, ordered authors, acceptance status, and presentation type. W2 AI for Credible Elections: A Call To Action with Trusted AI — unresolved; missing organizer/program URL plus every accepted/contributed title and ordered author. W3 AI for Digital Human — unresolved; missing complete 2024 accepted oral/poster program with titles, ordered authors, and public artifacts. W4 AI for Education: Bridging Innovation and Responsibility — unresolved; missing complete AI4ED accepted/contributed-paper list or program with titles, ordered authors, and paper links. W5 AI in Finance for Social Impact — unresolved high-priority finance blocker; missing complete AIFinSI accepted-paper/program roster with every title, ordered author, acceptance status, presentation type, and public paper/forum URL. W6 AI to Accelerate Science and Engineering — unresolved; missing organizer/program URL plus complete accepted/contributed-paper roster with titles and ordered authors. W7 AI-based Planning for Cyber-Physical Systems (CAIPI) — unresolved; missing organizer/program URL plus complete accepted/contributed-paper roster with titles and ordered authors. W8 AIBED: Artificial Intelligence for Brain Encoding and Decoding — resolved as officially cancelled; no missing paper artifact. W9 Artificial Intelligence for Cyber Security (AICS) — unresolved; missing complete accepted/contributed-paper program with titles, ordered authors, presentation types, and public artifacts. W10 Artificial Intelligence for Operations Research — unresolved; missing complete AI-OR accepted-paper roster with titles, ordered authors, workshop acceptance/presentation status, and public paper links. W11 Artificial Intelligence for Time Series Analysis (AI4TS): Theory, Algorithms, and Applications — unresolved; missing complete AAAI-24 program or accepted-paper list with every title, ordered author, presentation type, and paper link. W12 Artificial Intelligence with Biased or Scarce Data — unresolved; missing complete accepted/contributed-paper program with titles, ordered authors, presentation types, and public artifacts.
-    W13 Cooperative Multi-Agent Systems Decision-Making and Learning: From Individual Needs to Swarm Intelligence — unresolved; missing final organizer program/accepted-paper roster, ordered authors, presentation mapping, and hosted paper links. W14 Deployable AI (DAI) — unresolved; missing final accepted-paper roster, contributed-talk titles, poster titles, ordered authors, and public paper links. W15 Bootstrapping Developmental AIs: From Simple Competences to Intelligent Human-Compatible AIs — resolved as officially cancelled; no missing paper artifact. W16 EIW-III: The 3rd Edge Intelligence Workshop on Large Language and Vision Models — unresolved; missing final accepted-paper roster across both poster sessions, oral selections, ordered authors, and public paper links. W17 FACTIFY 3.0 – Workshop Series on Multimodal Fact-Checking and Hate Speech Detection — unresolved; missing official organizer/program URL plus complete accepted-paper roster, ordered authors, presentation mapping, and paper links. W18 Graphs and more Complex Structures For Learning and Reasoning (GCLR) — unresolved; missing final accepted-paper roster, poster titles, oral selections, ordered authors, and paper links. W19 Health Intelligence (W3PHIAI-24) — unresolved; missing final accepted full/short-paper, poster, demonstration, and special-track roster with ordered authors and paper links. W20 Human-Centric Representation Learning (HCRL) — unresolved; missing complete accepted-paper list, ordered authors, oral/poster mapping, and hosted paper links. W21 Imageomics: Discovering Biological Knowledge from Images using AI — unresolved; missing complete accepted-note list with decisions, titles, ordered authors, forum IDs, presentation types, and paper links. W22 Large Language Models for Biological Discoveries (LLMs4Bio) — unresolved; missing final program/accepted-paper roster with titles, ordered authors, presentation types, and linked manuscripts. W23 Learnable Optimization (LEANOPT) — unresolved; missing official organizer/program URL plus complete accepted-paper roster, ordered authors, presentation mapping, and paper links. W24 Machine Learning for Cognitive and Mental Health — unresolved; missing final accepted paper/poster titles, ordered authors, presentation mapping, and manuscript links.
-    W25 Neuro-Symbolic Learning and Reasoning in the era of Large Language Models (NuCLeaR) — unresolved; missing complete accepted/contributed-paper roster with titles, ordered authors, forum/paper URLs, and presentation mapping. W26 Privacy-Preserving Artificial Intelligence — unresolved; missing accepted technical/short/position-paper roster with titles, ordered authors, presentation status, and public artifact URLs. W27 Public Sector Large Language Models: Algorithmic and Sociotechnical Design — unresolved; missing public accepted-submission list with titles, ordered authors, forum IDs, acceptance decisions/venues, presentation types, and paper links. W28 Recommendation Ecosystems: Modeling, Optimization and Incentive Design — unresolved; missing organizer/program URL plus complete accepted-paper roster with titles, ordered authors, and public artifacts. W29 Responsible Language Models (ReLM) — unresolved; missing complete accepted-paper/program list with titles, ordered authors, presentation types, and public paper URLs. W30 Scientific Document Understanding — unresolved; missing exact CEUR proceedings volume/index or organizer-hosted accepted-paper list with titles, ordered authors, presentation types, and paper URLs. W31 Sustainable AI — unresolved; missing accepted oral/poster roster with titles, ordered authors, presentation types, and public paper URLs. W32 Synergy of Reinforcement Learning and Large Language Models — unresolved; missing complete paper-presentation/poster roster with titles, ordered authors, acceptance status, and public artifacts. W33 Workshop on Ad Hoc Teamwork (WAHT) — unresolved; missing organizer/program URL plus complete accepted-paper roster with titles, ordered authors, presentation mapping, and public artifacts. W34 XAI4DRL: eXplainable Artificial Intelligence for Deep Reinforcement Learning — unresolved; missing accepted long/short-paper list with titles, ordered authors, OpenReview forum IDs, acceptance decisions/venues, presentation mapping, and public artifacts. W35 XAI4Sci: Explainable machine learning for sciences — unresolved; missing organizer/program URL plus complete accepted-paper roster with titles, ordered authors, presentation types, and public artifacts.
-    Final workshop disposition is 2/35 resolved by official cancellation and 33/35 access-constrained unresolved because complete paper rosters are absent from the recovered evidence. This is not a demonstrated zero-eligible result or proof that current official/organizer sources are genuinely unavailable. No complete workshop roster was recovered, no AAAI workshop paper was verified for addition or exhaustive exclusion, and W5 remains the highest-priority blocker. Workshop therefore remains omitted from tracks_checked; neither main nor workshop coverage is complete.
-
+  - https://aaai.org/aaai-24-conference/program-overview/
+  - https://ojs.aaai.org/index.php/AAAI/issue/archive
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/576
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/577
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/578
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/579
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/580
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/581
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/582
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/583
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/584
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/585
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/586
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/587
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/588
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/589
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/590
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/591
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/592
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/593
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/594
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/595
+  - https://ojs.aaai.org/index.php/AAAI/issue/view/596
+  - https://aaai.org/aaai-conference/aaai-24-technical-program/
+  - https://aaai.org/aaai-conference/aaai-24-bridge-program/
+  - https://aaai.org/aaai-conference/demos-24-program/
+  - https://aaai.org/aaai-conference/aaai-24-student-abstracts/
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-program/
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws01
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws02
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws03
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws04
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws05
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws06
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws07
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws08
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws09
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws10
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws11
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws12
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws13
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws14
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws15
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws16
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws17
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws18
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws19
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws20
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws21
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws22
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws23
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws24
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws25
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws26
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws27
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws28
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws29
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws30
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws31
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws32
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws33
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws34
+  - https://aaai.org/aaai-24-conference/aaai-24-workshop-list/#ws35
+  - https://llmcp.cause-lab.net/llmcp
+  - https://digitalhumanworkshop.github.io/
+  - https://ai4ed.cc/workshops/aaai2024
+  - https://sites.google.com/view/aifin-aaai2024/home
+  - https://openreview.net/group?id=AAAI.org/2024/Workshop/AIBED
+  - https://sites.google.com/view/aibed2024/
+  - http://aics.site/AICS2024/
+  - https://ai-or.github.io/2024/
+  - https://ai4ts.github.io/aaai2024
+  - https://aibsdworkshop.github.io/2024/index.html
+  - https://www.is3rlab.org/aaai24-cmasdl-workshop.github.io/
+  - https://sites.google.com/view/dai-2024/home
+  - https://eiw2024.github.io/
+  - https://sites.google.com/view/gclr2024/
+  - http://w3phiai2024.w3phi.com/
+  - https://hcrl-workshop.github.io/2024/
+  - https://openreview.net/group?id=AAAI.org/2024/Workshop/Imageomics
+  - https://llms4science-community.github.io/aaai2024.html
+  - https://winterlightlabs.github.io/ml4cmh2024/
+  - https://winterlightlabs.github.io/ml4cmh2024/program/index.html
+  - https://openreview.net/group?id=AAAI.org/2024/Workshop/NuCLeaR
+  - https://nuclear-workshop.github.io/
+  - https://ppai-workshop.github.io/
+  - https://openreview.net/group?id=AAAI.org/2024/Workshop/PubLLM
+  - https://sites.google.com/vectorinstitute.ai/relm2024/home
+  - https://sites.google.com/view/sdu-aaai24
+  - https://ceur-ws.org/
+  - https://personal.ntu.edu.sg/xlli/sai.htm
+  - https://sites.google.com/view/rl-llm-aaai2024
+  - https://openreview.net/group?id=AAAI.org/2024/Workshop/XAI4DRL
+  - https://xai4drl.github.io/
+  notes: 'AAAI 2024 remains pending, and tracks_checked covers only screened main records, while tracks_pending records unresolved
+    main and workshop coverage. The main/non-workshop audit maps all 21 OJS issue containers 576-596 but retains seven exact
+    blocker groups: Technical Tracks issues 576-593 need a complete article-and-abstract screen; issue 594 needs its complete
+    Safe, Robust and Responsible AI article-and-abstract screen; issue 595 needs its complete AI for Social Impact, Senior
+    Member, New Faculty, and Journal Track article/section screen; issue 596 needs its complete IAAI, EAAI, Student Abstracts,
+    Undergraduate Consortium, and Demonstrations article/section screen; and the Bridge, Demonstrations, and Student Abstracts/Posters
+    programs each need complete title-and-author rosters and issue mappings. The five existing AAAI papers are a verified
+    lower bound, not an exhaustive result. The cached official workshop list and schedule establish this exact W1-W35 ledger.
+    W1 “Are Large Language Models Simply Causal Parrots?” (LLM-CP) — unresolved; missing complete accepted/contributed-paper
+    roster with titles, ordered authors, acceptance status, and presentation type. W2 AI for Credible Elections: A Call To
+    Action with Trusted AI — unresolved; missing organizer/program URL plus every accepted/contributed title and ordered author.
+    W3 AI for Digital Human — unresolved; missing complete 2024 accepted oral/poster program with titles, ordered authors,
+    and public artifacts. W4 AI for Education: Bridging Innovation and Responsibility — unresolved; missing complete AI4ED
+    accepted/contributed-paper list or program with titles, ordered authors, and paper links. W5 AI in Finance for Social
+    Impact — unresolved high-priority finance blocker; missing complete AIFinSI accepted-paper/program roster with every title,
+    ordered author, acceptance status, presentation type, and public paper/forum URL. W6 AI to Accelerate Science and Engineering
+    — unresolved; missing organizer/program URL plus complete accepted/contributed-paper roster with titles and ordered authors.
+    W7 AI-based Planning for Cyber-Physical Systems (CAIPI) — unresolved; missing organizer/program URL plus complete accepted/contributed-paper
+    roster with titles and ordered authors. W8 AIBED: Artificial Intelligence for Brain Encoding and Decoding — resolved as
+    officially cancelled; no missing paper artifact. W9 Artificial Intelligence for Cyber Security (AICS) — unresolved; missing
+    complete accepted/contributed-paper program with titles, ordered authors, presentation types, and public artifacts. W10
+    Artificial Intelligence for Operations Research — unresolved; missing complete AI-OR accepted-paper roster with titles,
+    ordered authors, workshop acceptance/presentation status, and public paper links. W11 Artificial Intelligence for Time
+    Series Analysis (AI4TS): Theory, Algorithms, and Applications — unresolved; missing complete AAAI-24 program or accepted-paper
+    list with every title, ordered author, presentation type, and paper link. W12 Artificial Intelligence with Biased or Scarce
+    Data — unresolved; missing complete accepted/contributed-paper program with titles, ordered authors, presentation types,
+    and public artifacts. W13 Cooperative Multi-Agent Systems Decision-Making and Learning: From Individual Needs to Swarm
+    Intelligence — unresolved; missing final organizer program/accepted-paper roster, ordered authors, presentation mapping,
+    and hosted paper links. W14 Deployable AI (DAI) — unresolved; missing final accepted-paper roster, contributed-talk titles,
+    poster titles, ordered authors, and public paper links. W15 Bootstrapping Developmental AIs: From Simple Competences to
+    Intelligent Human-Compatible AIs — resolved as officially cancelled; no missing paper artifact. W16 EIW-III: The 3rd Edge
+    Intelligence Workshop on Large Language and Vision Models — unresolved; missing final accepted-paper roster across both
+    poster sessions, oral selections, ordered authors, and public paper links. W17 FACTIFY 3.0 – Workshop Series on Multimodal
+    Fact-Checking and Hate Speech Detection — unresolved; missing official organizer/program URL plus complete accepted-paper
+    roster, ordered authors, presentation mapping, and paper links. W18 Graphs and more Complex Structures For Learning and
+    Reasoning (GCLR) — unresolved; missing final accepted-paper roster, poster titles, oral selections, ordered authors, and
+    paper links. W19 Health Intelligence (W3PHIAI-24) — unresolved; missing final accepted full/short-paper, poster, demonstration,
+    and special-track roster with ordered authors and paper links. W20 Human-Centric Representation Learning (HCRL) — unresolved;
+    missing complete accepted-paper list, ordered authors, oral/poster mapping, and hosted paper links. W21 Imageomics: Discovering
+    Biological Knowledge from Images using AI — unresolved; missing complete accepted-note list with decisions, titles, ordered
+    authors, forum IDs, presentation types, and paper links. W22 Large Language Models for Biological Discoveries (LLMs4Bio)
+    — unresolved; missing final program/accepted-paper roster with titles, ordered authors, presentation types, and linked
+    manuscripts. W23 Learnable Optimization (LEANOPT) — unresolved; missing official organizer/program URL plus complete accepted-paper
+    roster, ordered authors, presentation mapping, and paper links. W24 Machine Learning for Cognitive and Mental Health —
+    unresolved; missing final accepted paper/poster titles, ordered authors, presentation mapping, and manuscript links. W25
+    Neuro-Symbolic Learning and Reasoning in the era of Large Language Models (NuCLeaR) — unresolved; missing complete accepted/contributed-paper
+    roster with titles, ordered authors, forum/paper URLs, and presentation mapping. W26 Privacy-Preserving Artificial Intelligence
+    — unresolved; missing accepted technical/short/position-paper roster with titles, ordered authors, presentation status,
+    and public artifact URLs. W27 Public Sector Large Language Models: Algorithmic and Sociotechnical Design — unresolved;
+    missing public accepted-submission list with titles, ordered authors, forum IDs, acceptance decisions/venues, presentation
+    types, and paper links. W28 Recommendation Ecosystems: Modeling, Optimization and Incentive Design — unresolved; missing
+    organizer/program URL plus complete accepted-paper roster with titles, ordered authors, and public artifacts. W29 Responsible
+    Language Models (ReLM) — unresolved; missing complete accepted-paper/program list with titles, ordered authors, presentation
+    types, and public paper URLs. W30 Scientific Document Understanding — unresolved; missing exact CEUR proceedings volume/index
+    or organizer-hosted accepted-paper list with titles, ordered authors, presentation types, and paper URLs. W31 Sustainable
+    AI — unresolved; missing accepted oral/poster roster with titles, ordered authors, presentation types, and public paper
+    URLs. W32 Synergy of Reinforcement Learning and Large Language Models — unresolved; missing complete paper-presentation/poster
+    roster with titles, ordered authors, acceptance status, and public artifacts. W33 Workshop on Ad Hoc Teamwork (WAHT) —
+    unresolved; missing organizer/program URL plus complete accepted-paper roster with titles, ordered authors, presentation
+    mapping, and public artifacts. W34 XAI4DRL: eXplainable Artificial Intelligence for Deep Reinforcement Learning — unresolved;
+    missing accepted long/short-paper list with titles, ordered authors, OpenReview forum IDs, acceptance decisions/venues,
+    presentation mapping, and public artifacts. W35 XAI4Sci: Explainable machine learning for sciences — unresolved; missing
+    organizer/program URL plus complete accepted-paper roster with titles, ordered authors, presentation types, and public
+    artifacts. Final workshop disposition is 2/35 resolved by official cancellation and 33/35 access-constrained unresolved
+    because complete paper rosters are absent from the recovered evidence. This is not a demonstrated zero-eligible result
+    or proof that current official/organizer sources are genuinely unavailable. No complete workshop roster was recovered,
+    no AAAI workshop paper was verified for addition or exhaustive exclusion, and W5 remains the highest-priority blocker.
+    Workshop therefore remains pending in tracks_pending; neither main nor workshop coverage is complete.'
 - venue: IJCAI
   year: 2024
   status: pending
   checked_on: 2026-07-11
+  eligible_paper_count: 14
   tracks_checked:
-    - main
+  - main
+  - workshop
+  tracks_pending:
+  - track: workshop
+    state: partial
+    note: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.
   official_sources:
-    - https://www.ijcai.org/proceedings/2024/
-    - https://ijcai24.org/workshops/index.html
-    - https://trustaiijcai.github.io/trustai-ijcai24/program/
-    - https://trustaiijcai.github.io/trustai-ijcai24/papers/
-    - https://federated-learning.org/fl@fm-ijcai-2024/
-    - https://keyplay.github.io/ijcai2024_workshop/#planed-schedule
-    - https://lkm2024.openkg.org/#accepted-papers
-    - https://ceur-ws.org/Vol-3818/
-    - https://sites.google.com/view/aiforci-ijcai24/home/accepted-papers
-    - https://iarml2024-ijcai.loria.fr/accepted-papers-2/
-    - https://cv-ac.github.io/MiGA2/#workshop-program
-    - https://sites.google.com/view/xai2024/proceedings
-    - https://sites.google.com/view/tai4h2024/accepted-papers
-    - https://ceur-ws.org/Vol-3856/
-    - https://sites.google.com/view/ijcai-2024-dso-workshop/program
-    - https://analogy-angle.github.io/2024/#accepted-papers
-    - https://hbai2024.github.io/#Program
-    - https://aigovernance.github.io/ijcai2024/#accepted-papers
-    - https://ai4dtcp.github.io/#program
-    - https://sites.google.com/view/democrai2024/program
-    - https://stai.jeju.ai/
-    - https://glow-ijcai.github.io/#accepted-papers
-    - https://adfmw.github.io/ijcai24/index.html#accepted-papers
-    - https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-agentscen/accepted-papers
-    - https://aclanthology.org/volumes/2024.finnlp-2/
-    - https://repss-w.github.io/Event%20schedule.html
-    - https://sites.google.com/view/automatesworkshop/home#agenda
-    - https://sites.google.com/view/fin-recsys2024/program
-    - https://www.lirmm.fr/strl2024/#Program
-    - https://ceur-ws.org/Vol-3827/
-    - https://sites.google.com/view/lnsai2024/program
-    - https://ceur-ws.org/Vol-3819/
-    - https://wasn.csie.ncu.edu.tw/workshop/IT4PSS2024.html
-    - https://sites.google.com/view/fairdivisionworkshop2024/schedule/accepted-papers
-    - https://ai4research.github.io/#schedule
-    - https://sites.google.com/view/arial2024/accepted-papersprogram
-    - https://sites.google.com/view/ijcai24-tfm/accepted-papers
-    - https://ai4ts.github.io/ijcai2024#program
-    - https://smart.sist.shanghaitech.edu.cn/MechanismNet/index.html#acceptList
-    - https://botzone.org.cn/static/gaamalworkshop2024.html#schedule
-    - https://ijcai-aiaa-2024.org/
-    - https://sites.google.com/view/qai2024ijcaiworkshop/program
-  notes: >-
-    The complete main proceedings and all 35 official workshop-roster events were resolved by a complete paper screen or an exact artifact blocker; nine strict workshop papers were added. Cached official programs closed three former false blockers with zero eligible papers: Democracy and AI screened 5/5 contributed rows, RePSS screened all six challenge Top-3 talks and 3/3 workshop presentations, and LNSAI screened 13/13 paper presentations. Workshop remains omitted from tracks_checked because exactly three paper rosters are unavailable: (1) STAI, https://stai.jeju.ai/, has no retrievable official 2024 program or accepted-paper roster; (2) IT4PSS, https://wasn.csie.ncu.edu.tw/workshop/IT4PSS2024.html, lacks a complete program/accepted-paper artifact and its official host returns 404; and (3) AIAA, https://ijcai-aiaa-2024.org/, no longer exposes its official 2024 program and redirects to unrelated content.
-
+  - https://www.ijcai.org/proceedings/2024/
+  - https://ijcai24.org/workshops/index.html
+  - https://trustaiijcai.github.io/trustai-ijcai24/program/
+  - https://trustaiijcai.github.io/trustai-ijcai24/papers/
+  - https://federated-learning.org/fl@fm-ijcai-2024/
+  - https://keyplay.github.io/ijcai2024_workshop/#planed-schedule
+  - https://lkm2024.openkg.org/#accepted-papers
+  - https://ceur-ws.org/Vol-3818/
+  - https://sites.google.com/view/aiforci-ijcai24/home/accepted-papers
+  - https://iarml2024-ijcai.loria.fr/accepted-papers-2/
+  - https://cv-ac.github.io/MiGA2/#workshop-program
+  - https://sites.google.com/view/xai2024/proceedings
+  - https://sites.google.com/view/tai4h2024/accepted-papers
+  - https://ceur-ws.org/Vol-3856/
+  - https://sites.google.com/view/ijcai-2024-dso-workshop/program
+  - https://analogy-angle.github.io/2024/#accepted-papers
+  - https://hbai2024.github.io/#Program
+  - https://aigovernance.github.io/ijcai2024/#accepted-papers
+  - https://ai4dtcp.github.io/#program
+  - https://sites.google.com/view/democrai2024/program
+  - https://stai.jeju.ai/
+  - https://glow-ijcai.github.io/#accepted-papers
+  - https://adfmw.github.io/ijcai24/index.html#accepted-papers
+  - https://sites.google.com/nlg.csie.ntu.edu.tw/finnlp-agentscen/accepted-papers
+  - https://aclanthology.org/volumes/2024.finnlp-2/
+  - https://repss-w.github.io/Event%20schedule.html
+  - https://sites.google.com/view/automatesworkshop/home#agenda
+  - https://sites.google.com/view/fin-recsys2024/program
+  - https://www.lirmm.fr/strl2024/#Program
+  - https://ceur-ws.org/Vol-3827/
+  - https://sites.google.com/view/lnsai2024/program
+  - https://ceur-ws.org/Vol-3819/
+  - https://wasn.csie.ncu.edu.tw/workshop/IT4PSS2024.html
+  - https://sites.google.com/view/fairdivisionworkshop2024/schedule/accepted-papers
+  - https://ai4research.github.io/#schedule
+  - https://sites.google.com/view/arial2024/accepted-papersprogram
+  - https://sites.google.com/view/ijcai24-tfm/accepted-papers
+  - https://ai4ts.github.io/ijcai2024#program
+  - https://smart.sist.shanghaitech.edu.cn/MechanismNet/index.html#acceptList
+  - https://botzone.org.cn/static/gaamalworkshop2024.html#schedule
+  - https://ijcai-aiaa-2024.org/
+  - https://sites.google.com/view/qai2024ijcaiworkshop/program
+  notes: 'The complete main proceedings and all 35 official workshop-roster events were resolved by a complete paper screen
+    or an exact artifact blocker; nine strict workshop papers were added. Cached official programs closed three former false
+    blockers with zero eligible papers: Democracy and AI screened 5/5 contributed rows, RePSS screened all six challenge Top-3
+    talks and 3/3 workshop presentations, and LNSAI screened 13/13 paper presentations. Workshop remains pending in tracks_pending
+    because exactly three paper rosters are unavailable: (1) STAI, https://stai.jeju.ai/, has no retrievable official 2024
+    program or accepted-paper roster; (2) IT4PSS, https://wasn.csie.ncu.edu.tw/workshop/IT4PSS2024.html, lacks a complete
+    program/accepted-paper artifact and its official host returns 404; and (3) AIAA, https://ijcai-aiaa-2024.org/, no longer
+    exposes its official 2024 program and redirects to unrelated content.'
 - venue: WWW
   year: 2024
   status: complete
   checked_on: 2026-07-11
+  eligible_paper_count: 4
   tracks_checked:
-    - main
-    - workshop
+  - main
+  - workshop
+  tracks_pending: []
   official_sources:
-    - https://www2024.thewebconf.org/accepted/research-tracks/
-    - https://www2024.thewebconf.org/accepted/industry/
-    - https://www2024.thewebconf.org/accepted/web4good/
-    - https://www2024.thewebconf.org/accepted/short-papers/
-    - https://www2024.thewebconf.org/accepted/demo/
-    - https://www2024.thewebconf.org/accepted/resource/
-    - https://www2024.thewebconf.org/accepted/health-day/
-    - https://www2024.thewebconf.org/accepted/history-web/
-    - https://www2024.thewebconf.org/accepted/phd-symposium/
-    - https://www2024.thewebconf.org/program/overview
-    - https://www2024.thewebconf.org/program/workshops/
-    - https://federated-learning.org/fl@fm-www-2024/
-    - https://sites.google.com/view/socialnlp2024/
-    - https://advanced-recommender-systems.github.io/llm4graph/
-    - https://sites.google.com/view/mm4sg
-    - https://caaw.io/2024/
-  notes: >-
-    Every official accepted-track page was screened at paper level, covering Research, Industry, Web4Good, Short Papers, Demo, Resource, Health Day, History of the Web, and PhD Symposium. All 16 organizer-linked workshop programs were also audited, including the exact FL@FM, SocialNLP, LLM4Graph, MM4SG, and Cryptoasset Analytics pages above; Measuring Arbitrage Losses and Profitability of AMM Liquidity was added from CAAW, and no material program gap remains.
-
+  - https://www2024.thewebconf.org/accepted/research-tracks/
+  - https://www2024.thewebconf.org/accepted/industry/
+  - https://www2024.thewebconf.org/accepted/web4good/
+  - https://www2024.thewebconf.org/accepted/short-papers/
+  - https://www2024.thewebconf.org/accepted/demo/
+  - https://www2024.thewebconf.org/accepted/resource/
+  - https://www2024.thewebconf.org/accepted/health-day/
+  - https://www2024.thewebconf.org/accepted/history-web/
+  - https://www2024.thewebconf.org/accepted/phd-symposium/
+  - https://www2024.thewebconf.org/program/overview
+  - https://www2024.thewebconf.org/program/workshops/
+  - https://federated-learning.org/fl@fm-www-2024/
+  - https://sites.google.com/view/socialnlp2024/
+  - https://advanced-recommender-systems.github.io/llm4graph/
+  - https://sites.google.com/view/mm4sg
+  - https://caaw.io/2024/
+  notes: Every official accepted-track page was screened at paper level, covering Research, Industry, Web4Good, Short Papers,
+    Demo, Resource, Health Day, History of the Web, and PhD Symposium. All 16 organizer-linked workshop programs were also
+    audited, including the exact FL@FM, SocialNLP, LLM4Graph, MM4SG, and Cryptoasset Analytics pages above; Measuring Arbitrage
+    Losses and Profitability of AMM Liquidity was added from CAAW, and no material program gap remains.
 - venue: WSDM
   year: 2024
   status: pending
   checked_on: 2026-07-11
+  eligible_paper_count: 0
   tracks_checked:
-    - main
+  - main
+  tracks_pending:
+  - track: workshop
+    state: source_mapped
+    note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://www.wsdm-conference.org/2024/accepted-papers/
-    - https://www.wsdm-conference.org/2024/workshops/
-    - https://sites.google.com/view/integrity-workshop-2024
-    - https://llm-for-individuals-groups-and-society.github.io/2024
-    - https://sites.google.com/view/psyias/program
-    - https://isir-ecom.github.io/2024/index.html
-    - https://mlog-workshop.github.io/
-    - https://sites.google.com/view/rlc24-wsdm-workshop/programschedule
-  notes: The complete main list and five of six workshop paper programs were screened with no strict direct-investment match. Workshop remains omitted from tracks_checked because Representation Learning and Clustering (RLC'24), https://sites.google.com/view/rlc24-wsdm-workshop/programschedule, exposes its final paper roster only as an embedded workbook named Final Tentative WSDM RLC'24 workshop Programvf.xlsx; the page yields no paper rows and the embedded object resolves only to a Drive icon.
-
+  - https://www.wsdm-conference.org/2024/accepted-papers/
+  - https://www.wsdm-conference.org/2024/workshops/
+  - https://sites.google.com/view/integrity-workshop-2024
+  - https://llm-for-individuals-groups-and-society.github.io/2024
+  - https://sites.google.com/view/psyias/program
+  - https://isir-ecom.github.io/2024/index.html
+  - https://mlog-workshop.github.io/
+  - https://sites.google.com/view/rlc24-wsdm-workshop/programschedule
+  notes: The complete main list and five of six workshop paper programs were screened with no strict direct-investment match.
+    Workshop remains pending in tracks_pending because Representation Learning and Clustering (RLC'24), https://sites.google.com/view/rlc24-wsdm-workshop/programschedule,
+    exposes its final paper roster only as an embedded workbook named Final Tentative WSDM RLC'24 workshop Programvf.xlsx;
+    the page yields no paper rows and the embedded object resolves only to a Drive icon.
 - venue: SIGIR
   year: 2024
   status: pending
   checked_on: 2026-07-11
+  eligible_paper_count: 0
   tracks_checked:
-    - main
+  - main
+  tracks_pending:
+  - track: workshop
+    state: source_mapped
+    note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
   official_sources:
-    - https://sigir-2024.github.io/program_papers.html
-    - https://sigir-2024.github.io/proceedings.html
-    - https://sigir-2024.github.io/attend_workshops.html
-    - https://sigir-2024.github.io/program.html
-    - https://paris-workshop.github.io/www/sigir2024/schedule.html
-    - https://paris-workshop.github.io/www/sigir2024/submissions.html
-    - https://llm4eval.github.io/SIGIR2024/papers/
-    - https://coda.io/@sigir/gen-ir-24/accepted-papers-43
-    - https://coda.io/@rstless-group/ir-rag-sigir24#_luO9sMZD
-    - https://biasinrecsys.github.io/sigir2024#program
-    - https://reneuir.org/2024/program.html
-    - https://agentirworkshop.github.io/schedule
-    - https://sigir-ecom.github.io/ecom2024/accepted-papers.html
-    - http://ifs.tuwien.ac.at/patentsemtech/2024/programme.html
-    - https://sim4ia.org/sigir2024/#accepted-presentations
-    - https://llm-for-individuals-groups-and-society.github.io/2024_2#accepted-papers
-    - https://sites.google.com/view/ir-for-climate-impact/2024/manila24-workshop-page
-    - https://mrr-workshop.github.io/2024/#accepted_papers
-  notes: >-
-    The official main-paper program and all 13 official workshop events were audited, producing no strict direct-investment paper. Workshop remains omitted from tracks_checked because the PaRiS contributed-paper roster is unavailable at https://paris-workshop.github.io/www/sigir2024/schedule.html: its only contributed-paper row is the placeholder Paper Presentations / Authors, the official submissions page at https://paris-workshop.github.io/www/sigir2024/submissions.html contains an empty commented-out Accepted Submissions block, and the organizer exposes no separate accepted-paper page. The other 12 workshop programs were completely screened.
-
+  - https://sigir-2024.github.io/program_papers.html
+  - https://sigir-2024.github.io/proceedings.html
+  - https://sigir-2024.github.io/attend_workshops.html
+  - https://sigir-2024.github.io/program.html
+  - https://paris-workshop.github.io/www/sigir2024/schedule.html
+  - https://paris-workshop.github.io/www/sigir2024/submissions.html
+  - https://llm4eval.github.io/SIGIR2024/papers/
+  - https://coda.io/@sigir/gen-ir-24/accepted-papers-43
+  - https://coda.io/@rstless-group/ir-rag-sigir24#_luO9sMZD
+  - https://biasinrecsys.github.io/sigir2024#program
+  - https://reneuir.org/2024/program.html
+  - https://agentirworkshop.github.io/schedule
+  - https://sigir-ecom.github.io/ecom2024/accepted-papers.html
+  - http://ifs.tuwien.ac.at/patentsemtech/2024/programme.html
+  - https://sim4ia.org/sigir2024/#accepted-presentations
+  - https://llm-for-individuals-groups-and-society.github.io/2024_2#accepted-papers
+  - https://sites.google.com/view/ir-for-climate-impact/2024/manila24-workshop-page
+  - https://mrr-workshop.github.io/2024/#accepted_papers
+  notes: 'The official main-paper program and all 13 official workshop events were audited, producing no strict direct-investment
+    paper. Workshop remains pending in tracks_pending because the PaRiS contributed-paper roster is unavailable at https://paris-workshop.github.io/www/sigir2024/schedule.html:
+    its only contributed-paper row is the placeholder Paper Presentations / Authors, the official submissions page at https://paris-workshop.github.io/www/sigir2024/submissions.html
+    contains an empty commented-out Accepted Submissions block, and the organizer exposes no separate accepted-paper page.
+    The other 12 workshop programs were completely screened.'
 - venue: AISTATS
   year: 2024
   status: no-eligible-papers
   checked_on: 2026-07-11
+  eligible_paper_count: 0
   tracks_checked:
-    - main
+  - main
+  tracks_pending: []
   official_sources:
-    - https://proceedings.mlr.press/v238/
-    - https://aistats.org/aistats2024/
-    - https://aistats.org/aistats2024/call-for-papers.html
-    - https://virtual.aistats.org/virtual/2024/papers.html
-    - https://virtual.aistats.org/virtual/2024/calendar
-  notes: The single archival Proceedings Track was fixed-vocabulary screened across the complete official PMLR index and official virtual metadata, with no strict direct-investment paper found; the official program contains social and mentoring events but no workshop-paper, affinity-paper, or position-paper family.
-
+  - https://proceedings.mlr.press/v238/
+  - https://aistats.org/aistats2024/
+  - https://aistats.org/aistats2024/call-for-papers.html
+  - https://virtual.aistats.org/virtual/2024/papers.html
+  - https://virtual.aistats.org/virtual/2024/calendar
+  notes: The single archival Proceedings Track was fixed-vocabulary screened across the complete official PMLR index and official
+    virtual metadata, with no strict direct-investment paper found; the official program contains social and mentoring events
+    but no workshop-paper, affinity-paper, or position-paper family.
 - venue: ACM ICAIF
   year: 2024
   status: pending
   checked_on: 2026-07-11
+  eligible_paper_count: 49
   tracks_checked:
-    - main
+  - main
+  - workshop
+  tracks_pending:
+  - track: workshop
+    state: partial
+    note: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.
   official_sources:
-    - https://ai-finance.org/technical-program/
-    - https://ai-finance.org/workshops-and-tutorials/
-    - https://ai-finance.org/wp-content/uploads/2024/11/workshop-4.pdf
-    - https://sites.google.com/view/aia2024/schedule
-    - https://sites.google.com/view/icaif-synthetic/program
-    - https://sites.google.com/nyu.edu/aisrf2024/accepted-papers
-    - https://ai4f.org/
-    - https://sites.google.com/view/sfmes/home/accepted-papers
-    - https://sites.google.com/view/2024-workshop-explainable-ai/accepted-papers
-    - https://sites.google.com/view/ml-for-investor-recsys/program
-    - https://sites.google.com/view/iwmffm2024/accepted-papers
-    - https://from-prototype-to-production.github.io/papers.html
-    - https://sites.google.com/view/fm4ts/accepted-papers
-    - https://sites.google.com/view/icaif-women-ai-finance-2024/home
-    - https://largeagentcollider.github.io/icaif_tutorial/
-    - https://sites.google.com/view/raasta2024icaif
-    - https://sites.google.com/view/translation-in-finance
-  notes: All 100 main papers and every accessible linked workshop, reception, and tutorial program were screened; five strict workshop papers were added, while non-paper tutorials and the Women in AI reception were closed from their schedules. Workshop remains omitted from tracks_checked because AI in Africa, https://sites.google.com/view/aia2024/schedule, names only an oral-presentations slot without paper titles; Synthetic Data and GenAI, https://sites.google.com/view/icaif-synthetic/program, labels Towards Neural Jump Diffusions paper to be posted and exposes no paper or abstract; LLMs and Generative AI for Finance, https://ai4f.org/, now serves only its 2025 edition and preserves no 2024 accepted program; and Machine Learning for Financial Wellness, https://sites.google.com/view/ml-for-investor-recsys/program, still displays its November 27, 2023 program rather than the 2024 accepted papers.
+  - https://ai-finance.org/technical-program/
+  - https://ai-finance.org/workshops-and-tutorials/
+  - https://ai-finance.org/wp-content/uploads/2024/11/workshop-4.pdf
+  - https://sites.google.com/view/aia2024/schedule
+  - https://sites.google.com/view/icaif-synthetic/program
+  - https://sites.google.com/nyu.edu/aisrf2024/accepted-papers
+  - https://ai4f.org/
+  - https://sites.google.com/view/sfmes/home/accepted-papers
+  - https://sites.google.com/view/2024-workshop-explainable-ai/accepted-papers
+  - https://sites.google.com/view/ml-for-investor-recsys/program
+  - https://sites.google.com/view/iwmffm2024/accepted-papers
+  - https://from-prototype-to-production.github.io/papers.html
+  - https://sites.google.com/view/fm4ts/accepted-papers
+  - https://sites.google.com/view/icaif-women-ai-finance-2024/home
+  - https://largeagentcollider.github.io/icaif_tutorial/
+  - https://sites.google.com/view/raasta2024icaif
+  - https://sites.google.com/view/translation-in-finance
+  notes: All 100 main papers and every accessible linked workshop, reception, and tutorial program were screened; five strict
+    workshop papers were added, while non-paper tutorials and the Women in AI reception were closed from their schedules.
+    Workshop remains pending in tracks_pending because AI in Africa, https://sites.google.com/view/aia2024/schedule, names
+    only an oral-presentations slot without paper titles; Synthetic Data and GenAI, https://sites.google.com/view/icaif-synthetic/program,
+    labels Towards Neural Jump Diffusions paper to be posted and exposes no paper or abstract; LLMs and Generative AI for
+    Finance, https://ai4f.org/, now serves only its 2025 edition and preserves no 2024 accepted program; and Machine Learning
+    for Financial Wellness, https://sites.google.com/view/ml-for-investor-recsys/program, still displays its November 27,
+    2023 program rather than the 2024 accepted papers.

@@ -6,11 +6,17 @@
 
 **Checked on:** 2026-07-11
 
+**Cataloged eligible papers:** 49
+
+**Tracks checked:** Main · Workshop
+
+**Tracks pending:** Workshop (partially screened: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.)
+
 **Official audit sources:** [Source 1](<https://ai-finance.org/technical-program/>) · [Source 2](<https://ai-finance.org/workshops-and-tutorials/>) · [Source 3](<https://ai-finance.org/wp-content/uploads/2024/11/workshop-4.pdf>) · [Source 4](<https://sites.google.com/view/aia2024/schedule>) · [Source 5](<https://sites.google.com/view/icaif-synthetic/program>) · [Source 6](<https://sites.google.com/nyu.edu/aisrf2024/accepted-papers>) · [Source 7](<https://ai4f.org/>) · [Source 8](<https://sites.google.com/view/sfmes/home/accepted-papers>) · [Source 9](<https://sites.google.com/view/2024-workshop-explainable-ai/accepted-papers>) · [Source 10](<https://sites.google.com/view/ml-for-investor-recsys/program>) · [Source 11](<https://sites.google.com/view/iwmffm2024/accepted-papers>) · [Source 12](<https://from-prototype-to-production.github.io/papers.html>) · [Source 13](<https://sites.google.com/view/fm4ts/accepted-papers>) · [Source 14](<https://sites.google.com/view/icaif-women-ai-finance-2024/home>) · [Source 15](<https://largeagentcollider.github.io/icaif_tutorial/>) · [Source 16](<https://sites.google.com/view/raasta2024icaif>) · [Source 17](<https://sites.google.com/view/translation-in-finance>)
 
-**Coverage notes:** All 100 main papers and every accessible linked workshop, reception, and tutorial program were screened; five strict workshop papers were added, while non-paper tutorials and the Women in AI reception were closed from their schedules. Workshop remains omitted from tracks\_checked because AI in Africa, https://sites.google.com/view/aia2024/schedule, names only an oral-presentations slot without paper titles; Synthetic Data and GenAI, https://sites.google.com/view/icaif-synthetic/program, labels Towards Neural Jump Diffusions paper to be posted and exposes no paper or abstract; LLMs and Generative AI for Finance, https://ai4f.org/, now serves only its 2025 edition and preserves no 2024 accepted program; and Machine Learning for Financial Wellness, https://sites.google.com/view/ml-for-investor-recsys/program, still displays its November 27, 2023 program rather than the 2024 accepted papers.
+**Coverage notes:** All 100 main papers and every accessible linked workshop, reception, and tutorial program were screened; five strict workshop papers were added, while non-paper tutorials and the Women in AI reception were closed from their schedules. Workshop remains pending in tracks\_pending because AI in Africa, https://sites.google.com/view/aia2024/schedule, names only an oral-presentations slot without paper titles; Synthetic Data and GenAI, https://sites.google.com/view/icaif-synthetic/program, labels Towards Neural Jump Diffusions paper to be posted and exposes no paper or abstract; LLMs and Generative AI for Finance, https://ai4f.org/, now serves only its 2025 edition and preserves no 2024 accepted program; and Machine Learning for Financial Wellness, https://sites.google.com/view/ml-for-investor-recsys/program, still displays its November 27, 2023 program rather than the 2024 accepted papers.
 
-49 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, position, and workshop status remains visible.
+49 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 
