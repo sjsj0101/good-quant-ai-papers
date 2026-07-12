@@ -6,7 +6,7 @@
 
 Curated top-conference research for quantitative finance and asset management.
 
-[![Papers-122](https://img.shields.io/badge/Papers-122-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--11](https://img.shields.io/badge/Last_verified-2026--07--11-5F3DC4?style=flat-square)](data/papers.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
+[![Papers-128](https://img.shields.io/badge/Papers-128-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--12](https://img.shields.io/badge/Last_verified-2026--07--12-5F3DC4?style=flat-square)](data/papers.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
 
 </div>
 
@@ -24,7 +24,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 
 | Venue | 2026 | 2025 | 2024 |
 | --- | ---: | ---: | ---: |
-| ICML | [23 papers](papers/2026/icml.md) · Pending | 0 papers · Pending | [3 papers](papers/2024/icml.md) · Pending |
+| ICML | [23 papers](papers/2026/icml.md) · Pending | [5 papers](papers/2025/icml.md) · Pending | [3 papers](papers/2024/icml.md) · Pending |
 | NeurIPS | 0 papers · Pending | 0 papers · Pending | [15 papers](papers/2024/neurips.md) · Complete |
 | ICLR | 0 papers · Pending | 0 papers · Pending | [3 papers](papers/2024/iclr.md) · Complete |
 | KDD | 0 papers · Pending | 0 papers · Pending | [6 papers](papers/2024/kdd.md) · Pending |
@@ -33,7 +33,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | WWW | 0 papers · Pending | 0 papers · Pending | [4 papers](papers/2024/www.md) · Complete |
 | WSDM | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
 | SIGIR | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
-| AISTATS | 0 papers · Pending | 0 papers · Pending | 0 papers · No eligible papers |
+| AISTATS | 0 papers · Pending | [1 paper](papers/2025/aistats.md) · Pending | 0 papers · No eligible papers |
 | ACM ICAIF | 0 papers · Pending | 0 papers · Pending | [49 papers](papers/2024/acm-icaif.md) · Pending |
 
 ## Browse by Topic
@@ -79,6 +79,28 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | [One Token per Trade: Multi-Resolution Limit Order Book Forecasting with a Foundation Model](<https://openreview.net/forum?id=ZMEIc25o0a>)<br><sub>Srijan Sood, Maxime Kawawa-Beaudan, Z. Guo, Daniel Borrajo</sub> | Workshop<br><sub>Poster</sub> | Represents individual trades as tokens and forecasts limit-order-book behavior across several temporal resolutions. | — | Offers a shared sequence model for short-horizon order-flow signals that otherwise require separately calibrated models. |
 | [Reflexivity as Prompt: Does Awareness of Self-Reinforcing Market Dynamics Improve LLMs as Financial Market Forecasters?](<https://arxiv.org/abs/2606.00061>)<br><sub>Eugene Park</sub> | Workshop<br><sub>Poster</sub> | Tests whether prompts describing reflexive boom-bust dynamics change language-model forecasts across historical market cycles. | — | Examines whether economic mechanism awareness improves directional and risk-adjusted forecasts rather than only narrative quality. |
 | [TradeFM: A Generative Foundation Model for Trade-flow and Market Microstructure](<https://openreview.net/forum?id=anK6dppdfa>)<br><sub>Srijan Sood, Maxime Kawawa-Beaudan, Daniel Borrajo, Manuela Veloso</sub> | Workshop<br><sub>Poster</sub> | Trains a generative trade-event model with scale-invariant features designed to transfer across equity markets. | — | Supports cross-asset order-flow simulation and synthetic microstructure data without asset-specific tokenization. |
+
+
+## ICML 2025
+
+### Main Conference (5)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [AlphaQCM: Alpha Discovery in Finance with Distributional Reinforcement Learning](<https://openreview.net/forum?id=3sXMHlhBSs>)<br><sub>Zhoufan Zhu, Ke Zhu</sub> | Main<br><sub>Not Specified</sub> | Uses distributional reinforcement learning to search for complementary formulaic stock alphas under sparse, non-stationary rewards. | Equities | Automates the discovery of combined signals intended to improve stock selection across large equity universes. |
+| [Decision Making under the Exponential Family: Distributionally Robust Optimisation with Bayesian Ambiguity Sets](<https://openreview.net/forum?id=r9HlTuCQfr>)<br><sub>Charita Dellaporta, Patrick O’Hara, Theodoros Damoulas</sub> | Main<br><sub>Not Specified</sub> | Builds posterior-informed ambiguity sets for distributionally robust decisions and evaluates them on portfolio optimization under model uncertainty. | — | Offers portfolio decisions that hedge estimation uncertainty while retaining tractable solve times and comparable robustness. |
+| [HyperIV: Real-time Implied Volatility Smoothing](<https://openreview.net/forum?id=o9jtS7HupI>)<br><sub>Yongxin Yang, Wenqi Chen, Chao Shu, Timothy Hospedales</sub> | Main<br><sub>Not Specified</sub> | Constructs arbitrage-free implied-volatility surfaces in real time from sparse option quotes and evaluates them across eight index options. | Derivatives | Supports faster, more stable derivative valuation and trading decisions when full volatility surfaces must be updated from limited market observations. |
+| [Latent Variable Estimation in Bayesian Black-Litterman Models](<https://openreview.net/forum?id=v8ipdsBPEx>)<br><sub>Thomas Yuan-Lung Lin, Jerry Yao-Chieh Hu, Paul W. Chiou, Peter Lin</sub> | Main<br><sub>Not Specified</sub> | Treats Black–Litterman views and their uncertainty as latent variables learned from market data to generate stable portfolio weights. | Equities | Improves risk-adjusted allocation while reducing turnover relative to Markowitz and index baselines. |
+| [LOB-Bench: Benchmarking Generative AI for Finance - an Application to Limit Order Book Data](<https://openreview.net/forum?id=CXPpYJpYXQ>)<br><sub>Peer Nagy, Sascha Yves Frey, Kang Li, Bidipta Sarkar, Svitlana Vyetrenko, Stefan Zohren, Ani Calinescu, Jakob Nicolaus Foerster</sub> | Main<br><sub>Not Specified</sub> | Benchmarks generative limit-order-book streams with distributional, order-flow, price-response, and market-impact diagnostics. | Tick | Provides a decision-facing test suite for deciding whether synthetic microstructure data are credible enough for trading-model development. |
+
+
+## AISTATS 2025
+
+### Main Conference (1)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [Approximate Equivariance in Reinforcement Learning](<https://openreview.net/forum?id=SOrZWcuz3j>)<br><sub>Jung Yeon Park, Sujay Bhatt, Sihan Zeng, Lawson L.S. Wong, Alec Koppel, Sumitra Ganesh, Robin Walters</sub> | Main<br><sub>Not Specified</sub> | Relaxes exact symmetry in reinforcement-learning policies and evaluates the resulting architecture on stock trading with real financial data. | Equities | Tests whether approximate market symmetries improve trading-policy performance and noise robustness without imposing unrealistic invariances. |
 
 
 ## ICML 2024
@@ -291,6 +313,8 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 ## Browse by Year and Venue
 
 - **2026** · [ICML 2026](papers/2026/icml.md) — 23 papers
+- **2025** · [ICML 2025](papers/2025/icml.md) — 5 papers
+- **2025** · [AISTATS 2025](papers/2025/aistats.md) — 1 papers
 - **2024** · [ICML 2024](papers/2024/icml.md) — 3 papers
 - **2024** · [NeurIPS 2024](papers/2024/neurips.md) — 15 papers
 - **2024** · [ICLR 2024](papers/2024/iclr.md) — 3 papers

@@ -111,112 +111,153 @@
 - venue: ICML
   year: 2025
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
+    - position
   official_sources:
+    - https://proceedings.mlr.press/v267/
+    - https://github.com/mlresearch/v267/tree/3a328812b192086cd80b20eb56a5bb99c69a3afd/_posts
     - https://icml.cc/virtual/2025/papers.html
-  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+    - https://icml.cc/virtual/2025/events/workshop
+    - https://icml.cc/virtual/2025/affinity_events
+  notes: >-
+    All 3,330 archival PMLR records were screened: 3,257 main and 73 Position. Five eligible main papers were cataloged, and no Position paper passed the strict scope screen. Workshop and affinity remain omitted from tracks_checked because their exact official event and contributed-paper rosters could not be read.
 
 - venue: NeurIPS
   year: 2025
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://neurips.cc/virtual/2025/papers.html
-  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+    - https://proceedings.neurips.cc/paper/2025
+    - https://neurips.cc/Conferences/2025/DatasetsBenchmarks/AcceptedPapers
+    - https://neurips.cc/virtual/2025/events/workshop
+    - https://neurips.cc/virtual/2025/affinity_events
+  notes: >-
+    Zero official accepted rows were screened. Main and Datasets and Benchmarks accepted rosters, workshop and affinity rosters, and mirror mappings remain exact missing artifacts; main is not complete. tracks_checked main is only an attempted and source-mapped family marker.
 
 - venue: ICLR
   year: 2025
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://iclr.cc/virtual/2025/papers.html
-  notes: The official main-paper list is available; the finance-scope eligibility review remains pending.
+    - https://proceedings.iclr.cc/paper_files/paper/2025
+    - https://openreview.net/group?id=ICLR.cc%2F2025%2FConference
+    - https://iclr.cc/virtual/2025/events/workshop
+    - https://iclr.cc/virtual/2025/affinity_events
+    - https://openreview.net/group?id=ICLR.cc%2F2025%2FTinyPapers
+    - https://openreview.net/group?id=ICLR.cc%2F2025%2FBlogPosts
+  notes: >-
+    Zero official accepted rows were screened. Main, workshop, affinity, Tiny Papers, and Blog Posts accepted rosters remain missing; main is not complete. tracks_checked main is only an attempted and source-mapped family marker.
 
 - venue: KDD
   year: 2025
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
+    - https://kdd2025.kdd.org/
     - https://kdd2025.kdd.org/research-track-papers/
-  notes: The official research-track paper list is available; the finance-scope eligibility review remains pending.
+    - https://kdd2025.kdd.org/research-track-papers-2/
+    - https://kdd2025.kdd.org/datasets-and-benchmarks-track-papers-2/
+    - https://dl.acm.org/doi/proceedings/10.1145/3690624
+    - https://dl.acm.org/doi/proceedings/10.1145/3711896
+  notes: >-
+    Zero official rows were screened; an 844-title secondary mirror was candidate discovery only and cannot prove acceptance. The official main, ADS, Datasets and Benchmarks, demo, student, and special-program lists, workshop rosters, and ACM volume reconciliation remain missing; main is not complete. tracks_checked main is only an attempted and source-mapped family marker.
 
 - venue: AAAI
   year: 2025
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://aaai.org/conference/aaai/aaai-25/
-  notes: The official conference page links the main technical-track program; the finance-scope eligibility review remains pending.
+    - https://aaai.org/conference/aaai/aaai-25/main-technical-track/
+    - https://ojs.aaai.org/index.php/AAAI/issue/archive
+  notes: >-
+    Zero official rows were screened under the explicit AAAI/OJS access boundary. Exact proceedings issues and sections, named co-programs, demos, student, consortium, and Bridge programs, and all workshop rosters remain missing; main is not complete. tracks_checked main is only an attempted and source-mapped family marker.
 
 - venue: IJCAI
   year: 2025
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
+    - https://2025.ijcai.org/
     - https://www.ijcai.org/proceedings/2025/
-  notes: The official proceedings include the main track; the finance-scope eligibility review remains pending.
+  notes: >-
+    Zero official rows were screened; a 1,280-title secondary mirror was discovery only and cannot prove acceptance. The official central track records, presentation metadata, workshop and special-program inventory, and accepted rosters remain missing; main is not complete. tracks_checked main is only an attempted and source-mapped family marker.
 
 - venue: WWW
   year: 2025
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://www2025.thewebconf.org/
-  notes: The official conference site exposes the main program and schedule; the finance-scope eligibility review remains pending.
+    - https://dl.acm.org/
+  notes: >-
+    Zero official paper rows and zero affiliated units were screened because the named WWW conference host and ACM publisher surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster; affiliated workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing. Main is not complete, and this is not a zero-eligible finding. tracks_checked main is only an attempted and source-mapped family marker.
 
 - venue: WSDM
   year: 2025
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://www.wsdm-conference.org/2025/
-  notes: The official conference site links accepted papers and proceedings; the finance-scope eligibility review remains pending.
+    - https://dl.acm.org/
+  notes: >-
+    Zero official paper rows and zero affiliated units were screened because the named WSDM conference host and ACM publisher surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster; affiliated workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing. Main is not complete, and this is not a zero-eligible finding. tracks_checked main is only an attempted and source-mapped family marker.
 
 - venue: SIGIR
   year: 2025
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://sigir2025.dei.unipd.it/accepted-papers.html
-  notes: The official accepted-papers page includes the main research tracks; the finance-scope eligibility review remains pending.
+    - https://sigir2025.dei.unipd.it/
+    - https://dl.acm.org/
+  notes: >-
+    Zero official paper rows and zero affiliated units were screened because the named SIGIR conference host and ACM publisher surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster; affiliated workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing. Main is not complete, and this is not a zero-eligible finding. tracks_checked main is only an attempted and source-mapped family marker.
 
 - venue: AISTATS
   year: 2025
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
+    - https://proceedings.mlr.press/v258/
+    - https://github.com/mlresearch/v258/tree/f9b46f555d3501fe4cc7e31329af9ab55a7b66c6/_posts
     - https://aistats.org/aistats2025/
-  notes: The official conference page links accepted submissions and proceedings; the finance-scope eligibility review remains pending.
+  notes: >-
+    The immutable tree enumerates 583 main records. Nineteen official blobs were screened through the allowed connector, one verified paper was cataloged, and 564 title and abstract records remain unscreened. The existence and rosters of any side programs are also unresolved; main is not complete.
 
 - venue: ACM ICAIF
   year: 2025
   status: pending
-  checked_on: 2026-07-11
+  checked_on: 2026-07-12
   tracks_checked:
     - main
   official_sources:
     - https://icaif25.org/
-  notes: The official conference site links accepted papers and the main program; the finance-scope eligibility review remains pending.
+    - https://dl.acm.org/
+  notes: >-
+    Zero official paper rows and zero affiliated units were screened because the named ACM ICAIF conference host and ACM publisher surface were explicitly safety-denied. The official accepted title, author, track, and presentation roster; affiliated workshop, tutorial, demo, student, and special-program map; and proceedings article metadata remain missing. Main is not complete, and this is not a zero-eligible finding. tracks_checked main is only an attempted and source-mapped family marker.
 
 - venue: ICML
   year: 2024

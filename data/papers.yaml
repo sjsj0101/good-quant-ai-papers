@@ -513,6 +513,152 @@
   status: accepted
   verified_on: 2026-07-11
 
+- id: 2025-icml-yang-hyperiv
+  title: "HyperIV: Real-time Implied Volatility Smoothing"
+  authors:
+    - Yongxin Yang
+    - Wenqi Chen
+    - Chao Shu
+    - Timothy Hospedales
+  venue: ICML
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.mlr.press/v267/yang25d.html
+  paper_url: https://openreview.net/forum?id=o9jtS7HupI
+  openreview_id: o9jtS7HupI
+  topics:
+    - derivatives
+    - market-microstructure
+  asset_classes:
+    - derivatives
+  summary: Constructs arbitrage-free implied-volatility surfaces in real time from sparse option quotes and evaluates them across eight index options.
+  why_it_matters: Supports faster, more stable derivative valuation and trading decisions when full volatility surfaces must be updated from limited market observations.
+  status: published
+  verified_on: 2026-07-12
+
+- id: 2025-icml-lin-bayesian-black-litterman
+  title: Latent Variable Estimation in Bayesian Black-Litterman Models
+  authors:
+    - Thomas Yuan-Lung Lin
+    - Jerry Yao-Chieh Hu
+    - Paul W. Chiou
+    - Peter Lin
+  venue: ICML
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.mlr.press/v267/lin25g.html
+  paper_url: https://openreview.net/forum?id=v8ipdsBPEx
+  openreview_id: v8ipdsBPEx
+  topics:
+    - asset-allocation
+    - portfolio-optimization
+  asset_classes:
+    - equities
+  summary: Treats Black–Litterman views and their uncertainty as latent variables learned from market data to generate stable portfolio weights.
+  why_it_matters: Improves risk-adjusted allocation while reducing turnover relative to Markowitz and index baselines.
+  status: published
+  verified_on: 2026-07-12
+
+- id: 2025-icml-zhu-alphaqcm
+  title: "AlphaQCM: Alpha Discovery in Finance with Distributional Reinforcement Learning"
+  authors:
+    - Zhoufan Zhu
+    - Ke Zhu
+  venue: ICML
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.mlr.press/v267/zhu25ag.html
+  paper_url: https://openreview.net/forum?id=3sXMHlhBSs
+  openreview_id: 3sXMHlhBSs
+  topics:
+    - alpha-modeling
+  asset_classes:
+    - equities
+  summary: Uses distributional reinforcement learning to search for complementary formulaic stock alphas under sparse, non-stationary rewards.
+  why_it_matters: Automates the discovery of combined signals intended to improve stock selection across large equity universes.
+  status: published
+  verified_on: 2026-07-12
+
+- id: 2025-icml-nagy-lob-bench
+  title: "LOB-Bench: Benchmarking Generative AI for Finance - an Application to Limit Order Book Data"
+  authors:
+    - Peer Nagy
+    - Sascha Yves Frey
+    - Kang Li
+    - Bidipta Sarkar
+    - Svitlana Vyetrenko
+    - Stefan Zohren
+    - Ani Calinescu
+    - Jakob Nicolaus Foerster
+  venue: ICML
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.mlr.press/v267/nagy25a.html
+  paper_url: https://openreview.net/forum?id=CXPpYJpYXQ
+  openreview_id: CXPpYJpYXQ
+  topics:
+    - market-microstructure
+    - synthetic-data
+    - evaluation
+  data_frequency: tick
+  summary: Benchmarks generative limit-order-book streams with distributional, order-flow, price-response, and market-impact diagnostics.
+  why_it_matters: Provides a decision-facing test suite for deciding whether synthetic microstructure data are credible enough for trading-model development.
+  status: published
+  verified_on: 2026-07-12
+
+- id: 2025-icml-dellaporta-bayesian-ambiguity-sets
+  title: "Decision Making under the Exponential Family: Distributionally Robust Optimisation with Bayesian Ambiguity Sets"
+  authors:
+    - Charita Dellaporta
+    - Patrick O’Hara
+    - Theodoros Damoulas
+  venue: ICML
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.mlr.press/v267/dellaporta25a.html
+  paper_url: https://openreview.net/forum?id=r9HlTuCQfr
+  openreview_id: r9HlTuCQfr
+  topics:
+    - portfolio-optimization
+    - risk-management
+  summary: Builds posterior-informed ambiguity sets for distributionally robust decisions and evaluates them on portfolio optimization under model uncertainty.
+  why_it_matters: Offers portfolio decisions that hedge estimation uncertainty while retaining tractable solve times and comparable robustness.
+  status: published
+  verified_on: 2026-07-12
+
+- id: 2025-aistats-park-approximate-equivariance
+  title: Approximate Equivariance in Reinforcement Learning
+  authors:
+    - Jung Yeon Park
+    - Sujay Bhatt
+    - Sihan Zeng
+    - Lawson L.S. Wong
+    - Alec Koppel
+    - Sumitra Ganesh
+    - Robin Walters
+  venue: AISTATS
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.mlr.press/v258/park25d.html
+  paper_url: https://openreview.net/forum?id=SOrZWcuz3j
+  openreview_id: SOrZWcuz3j
+  topics:
+    - alpha-modeling
+    - financial-agents
+    - evaluation
+  asset_classes:
+    - equities
+  summary: Relaxes exact symmetry in reinforcement-learning policies and evaluates the resulting architecture on stock trading with real financial data.
+  why_it_matters: Tests whether approximate market symmetries improve trading-policy performance and noise robustness without imposing unrealistic invariances.
+  status: published
+  verified_on: 2026-07-12
+
 - id: 2024-icml-lin-autonomous-sparse-mean-cvar
   title: Autonomous Sparse Mean-CVaR Portfolio Optimization
   authors:

@@ -37,7 +37,7 @@ class ReadmeRenderingTests(unittest.TestCase):
         )
         self.assertIn(f"Papers-{len(CATALOG)}", rendered)
         self.assertIn("Venues-11", rendered)
-        self.assertIn("Last verified-2026--07--11", rendered)
+        self.assertIn("Last verified-2026--07--12", rendered)
         self.assertIn("License-CC BY 4.0", rendered)
         self.assertIn("sjsj0101/good-quant-ai-papers", rendered)
         self.assertIn("## Scope", rendered)
