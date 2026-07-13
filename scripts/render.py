@@ -400,6 +400,16 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
                 "not be edited by hand."
             ),
             "",
+            "## Research Watchlists",
+            "",
+            (
+                "- [`docs/finance-journal-ai-seed-list.md`]"
+                "(docs/finance-journal-ai-seed-list.md): exploratory seed list "
+                "for technical AI, machine learning, and high-dimensional-data "
+                "papers in finance journals. It is intentionally separate from "
+                "the canonical conference catalog."
+            ),
+            "",
             "## Contributing",
             "",
             (

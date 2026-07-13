@@ -82,6 +82,10 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 - [`data/coverage.yaml`](data/coverage.yaml): venue-year audit status, official sources, checked tracks, pending tracks, and coverage notes.
 - Generated Markdown lives in [`papers/`](papers/) and should not be edited by hand.
 
+## Research Watchlists
+
+- [`docs/finance-journal-ai-seed-list.md`](docs/finance-journal-ai-seed-list.md): exploratory seed list for technical AI, machine learning, and high-dimensional-data papers in finance journals. It is intentionally separate from the canonical conference catalog.
+
 ## Contributing
 
 Contributions to [`sjsj0101/good-quant-ai-papers`](https://github.com/sjsj0101/good-quant-ai-papers) are welcome. Add or correct paper metadata in [`data/papers.yaml`](data/papers.yaml), update systematic coverage evidence in [`data/coverage.yaml`](data/coverage.yaml) when the venue-year audit state changes, provide an official venue source, and write original summary prose. Do not edit generated indexes by hand.

@@ -67,6 +67,8 @@ class ReadmeRenderingTests(unittest.TestCase):
         self.assertIn("## Data Files", rendered)
         self.assertIn("canonical paper records with authors", rendered)
         self.assertIn("venue-year audit status", rendered)
+        self.assertIn("## Research Watchlists", rendered)
+        self.assertIn("finance-journal-ai-seed-list.md", rendered)
         self.assertIn("## Contributing", rendered)
         self.assertIn("[`data/papers.yaml`](data/papers.yaml)", rendered)
         self.assertIn("[`data/coverage.yaml`](data/coverage.yaml)", rendered)
@@ -78,6 +80,7 @@ class ReadmeRenderingTests(unittest.TestCase):
         self.assertIn("## License", rendered)
         self.assertLess(rendered.index("## Browse by Year and Venue"), rendered.index("## Paper Index"))
         self.assertLess(rendered.index("## Contributing"), rendered.index("## Paper Index"))
+        self.assertLess(rendered.index("## Research Watchlists"), rendered.index("## Contributing"))
         self.assertEqual(
             sum(line.startswith("| [") for line in rendered.splitlines()),
             len(CATALOG),
