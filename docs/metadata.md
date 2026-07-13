@@ -8,6 +8,14 @@ public contracts in `schema/paper.schema.json` and
 `schema/coverage.schema.json`, define which fields and controlled values are
 accepted.
 
+The exploratory finance-journal watchlist in
+`data/finance_journal_ai_watchlist.yaml` is intentionally non-canonical for now.
+It records EDITH-local-corpus metadata for JF/JFE/RFS AI + finance papers, but
+it does not use the conference-only schema below. It is checked by
+`scripts/finance_journal_watchlist.py` as part of `python3 scripts/validate.py`.
+Treat its `year` field as the EDITH local corpus year and check
+`metadata_quality` before relying on publication-year precision.
+
 The file contains a YAML list of mappings, one mapping per paper. Field names
 are case-sensitive, unlisted fields are rejected, and every list must be
 non-empty, contain no duplicates, and use non-empty strings.

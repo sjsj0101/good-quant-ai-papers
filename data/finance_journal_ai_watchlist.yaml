@@ -1,0 +1,601 @@
+source:
+  name: EDITH local literature corpus
+  checked_on: 2026-07-13
+  search_scope: JF, JFE, and RFS records available in the local EDITH corpus
+  search_methods:
+    - EDITH literature CLI BM25 search with journal filters
+    - SQLite read-only screening of the EDITH v_papers view
+  journals:
+    - code: JF
+      name: The Journal of Finance
+      local_records: 3229
+      local_year_range: 1990-2026
+    - code: JFE
+      name: Journal of Financial Economics
+      local_records: 3224
+      local_year_range: 1990-2026
+    - code: RFS
+      name: The Review of Financial Studies
+      local_records: 2700
+      local_year_range: 1955-2026
+  notes:
+    - No internet search was used for this watchlist pass.
+    - The year field below is the EDITH local corpus year. A few records have year_needs_review when the local year appears inconsistent with the DOI/title context.
+    - This file is intentionally separate from data/papers.yaml, whose schema is limited to top-computer-science conference records.
+
+papers:
+  - id: edith-jf-30427
+    edith_paper_id: 30427
+    title: (Re-)Imag(in)ing Price Trends
+    authors: [Jingwen Jiang, Bryan Kelly, Dacheng Xiu]
+    venue: JF
+    journal_name: The Journal of Finance
+    year: 2023
+    year_source: edith_local_db
+    doi: 10.1111/jofi.13268
+    field: asset_pricing
+    priority: core
+    topics: [return_prediction, technical_analysis, deep_learning, image_models]
+    methods: [cnn, transfer_learning, machine_learning]
+    methodology_type: ML-Computational
+    keywords: Machine Learning, Deep Learning, CNN, Technical Analysis, Asset Pricing, Image Analysis
+
+  - id: edith-jf-8896
+    edith_paper_id: 8896
+    title: Informed Trading Intensity
+    authors: [Vincent Bogousslavsky, Vyacheslav Fos, Dmitriy Muravyev]
+    venue: JF
+    journal_name: The Journal of Finance
+    year: 2024
+    year_source: edith_local_db
+    doi: 10.1111/jofi.13320
+    field: market_microstructure
+    priority: core
+    topics: [informed_trading, market_microstructure, asset_pricing]
+    methods: [gradient_boosted_trees, machine_learning]
+    methodology_type: ML-Computational
+    keywords: Informed Trading, Machine Learning, Market Microstructure, Gradient Boosted Trees, Asset Pricing
+
+  - id: edith-jf-9960
+    edith_paper_id: 9960
+    title: The Virtue of Complexity in Return Prediction
+    authors: [Bryan Kelly, Semyon Malamud, Kangying Zhou]
+    venue: JF
+    journal_name: The Journal of Finance
+    year: 2024
+    year_source: edith_local_db
+    doi: 10.1111/jofi.13298
+    field: asset_pricing
+    priority: core
+    topics: [return_prediction, market_timing, model_complexity]
+    methods: [random_matrix_theory, ridge_regression, machine_learning]
+    methodology_type: Theoretical
+    keywords: Machine Learning, Return Predictability, Random Matrix Theory, Market Timing, Ridge Regression
+
+  - id: edith-jf-9134
+    edith_paper_id: 9134
+    title: Sparse Signals in the Cross-Section of Returns
+    authors: [Alexander M. Chinco, Adam D. Clark-Joseph, Mao Ye]
+    venue: JF
+    journal_name: The Journal of Finance
+    year: 2019
+    year_source: edith_local_db
+    doi: 10.1111/jofi.12733
+    field: asset_pricing
+    priority: core
+    topics: [return_prediction, sparse_signals, high_frequency_trading]
+    methods: [lasso, sparse_modeling]
+    methodology_type: ML-Computational
+    keywords: LASSO, High-Frequency Trading, Return Predictability, Sparse Signals, Machine Learning
+
+  - id: edith-jf-9500
+    edith_paper_id: 9500
+    title: 'Taming the Factor Zoo: A Test of New Factors'
+    authors: [Guanhao Feng, Stefano Giglio, Dacheng Xiu]
+    venue: JF
+    journal_name: The Journal of Finance
+    year: 2020
+    year_source: edith_local_db
+    doi: 10.1111/jofi.12883
+    field: factor_investing
+    priority: core
+    topics: [factor_selection, factor_zoo, asset_pricing]
+    methods: [lasso, double_selection, stochastic_discount_factor]
+    methodology_type: ML-Computational
+    keywords: Factor Zoo, LASSO, Double-Selection, Asset Pricing, Machine Learning, Stochastic Discount Factor
+
+  - id: edith-jf-8994
+    edith_paper_id: 8994
+    title: 'Forest through the Trees: Building Cross-Sections of Stock Returns'
+    authors: [Svetlana Bryzgalova, Markus Pelger, Jason Zhu]
+    venue: JF
+    journal_name: The Journal of Finance
+    year: 2025
+    year_source: edith_local_db
+    doi: 10.1111/jofi.13477
+    field: asset_pricing
+    priority: core
+    topics: [cross_sectional_returns, stochastic_discount_factor, portfolio_sorts]
+    methods: [asset_pricing_trees, decision_trees, machine_learning]
+    methodology_type: ML-Computational
+    keywords: Asset Pricing Trees, Stochastic Discount Factor, Machine Learning, Portfolio Sorts, Characteristic Interactions
+
+  - id: edith-jf-9371
+    edith_paper_id: 9371
+    title: Anomalies and the Expected Market Return
+    authors: [Xi Dong, Yan Li, David E. Rapach, Guofu Zhou]
+    venue: JF
+    journal_name: The Journal of Finance
+    year: 2022
+    year_source: edith_local_db
+    doi: 10.1111/jofi.13099
+    field: asset_pricing
+    priority: core
+    topics: [anomaly_portfolios, market_return_forecasting, out_of_sample_prediction]
+    methods: [elastic_net, machine_learning]
+    methodology_type: ML-Computational
+    keywords: stock return predictability, anomaly portfolios, machine learning, out-of-sample forecasting, elastic net
+
+  - id: edith-jf-9406
+    edith_paper_id: 9406
+    title: Equilibrium Data Mining and Data Abundance
+    authors: [Jérome Dugast, Thierry Foucault]
+    venue: JF
+    journal_name: The Journal of Finance
+    year: 2025
+    year_source: edith_local_db
+    doi: 10.1111/jofi.13397
+    field: asset_management
+    priority: core
+    topics: [data_mining, active_asset_management, price_informativeness]
+    methods: [noisy_rational_expectations, theoretical_model]
+    methodology_type: Theoretical
+    keywords: Big Data, Active Asset Management, Data Mining, Price Informativeness, Noisy Rational Expectations
+
+  - id: edith-jfe-11391
+    edith_paper_id: 11391
+    title: 'Deep surrogates for finance: With an application to option pricing'
+    authors: [Hui Chen, Antoine Didisheim, Simon Scheidegger]
+    venue: JFE
+    journal_name: Journal of Financial Economics
+    year: 2026
+    year_source: edith_local_db
+    doi: 10.1016/j.jfineco.2025.104222
+    field: derivatives
+    priority: core
+    topics: [option_pricing, tail_risk, surrogate_modeling]
+    methods: [deep_neural_network, universal_approximation, deep_surrogate]
+    methodology_type: ML-Computational
+    keywords: Surrogate, Deep neural network, Universal approximation, Option pricing, Tail risk index, Parameter instability
+
+  - id: edith-jfe-12729
+    edith_paper_id: 12729
+    title: "Machine learning from a 'Universe' of signals: The role of feature engineering"
+    authors: [Bin Li, Alberto G. Rossi, Xuemin Sterling Yan, Lingling Zheng]
+    venue: JFE
+    journal_name: Journal of Financial Economics
+    year: 2025
+    year_source: edith_local_db
+    field: asset_pricing
+    priority: core
+    topics: [signal_combination, feature_engineering, cross_sectional_returns]
+    methods: [machine_learning, feature_engineering, inductive_bias]
+    methodology_type: ML-Computational
+    keywords: Machine learning, Feature engineering, Return predictability, Cross-section of stock returns, Inductive bias
+
+  - id: edith-jfe-12954
+    edith_paper_id: 12954
+    title: Charting by machines
+    authors: [Scott Murray, Yusen Xia, Houping Xiao]
+    venue: JFE
+    journal_name: Journal of Financial Economics
+    year: 2024
+    year_source: edith_local_db
+    doi: 10.1016/j.jfineco.2024.103791
+    field: asset_pricing
+    priority: core
+    topics: [return_prediction, technical_analysis, cross_sectional_returns]
+    methods: [machine_learning, deep_learning]
+    methodology_type: ML-Computational
+    keywords: Efficient market hypothesis, Machine learning, Deep learning, Charting, Technical analysis, Cross-section of stock returns
+
+  - id: edith-jfe-11354
+    edith_paper_id: 11354
+    title: Missing Values Handling for Machine Learning Portfolios
+    authors: [Andrew Y. Chen, Jack McCoy]
+    venue: JFE
+    journal_name: Journal of Financial Economics
+    year: 2024
+    year_source: edith_local_db
+    doi: 10.1016/j.jfineco.2024.103815
+    field: portfolio_construction
+    priority: core
+    topics: [machine_learning_portfolios, missing_data, anomalies]
+    methods: [missing_value_imputation, machine_learning]
+    methodology_type: ML-Computational
+    keywords: stock market predictability, stock market anomalies, missing values, machine learning
+
+  - id: edith-jfe-12512
+    edith_paper_id: 12512
+    title: Machine-Learning the Skill of Mutual Fund Managers
+    authors: [Ron Kaniel, Zihan Lin, Markus Pelger, Stijn Van Nieuwerburgh]
+    venue: JFE
+    journal_name: Journal of Financial Economics
+    year: 2023
+    year_source: edith_local_db
+    doi: 10.1016/j.jfineco.2023.07.004
+    field: asset_management
+    priority: core
+    topics: [mutual_funds, manager_skill, fund_selection]
+    methods: [neural_networks, machine_learning]
+    methodology_type: ML-Computational
+    keywords: Mutual fund performance, fund flow, momentum, machine learning, sentiment, big data, neural networks
+
+  - id: edith-jfe-11649
+    edith_paper_id: 11649
+    title: Machine learning and fund characteristics help to select mutual funds with positive alpha
+    authors: [Victor DeMiguel, Javier Gil-Bazo, Francisco J. Nogales, André A.P. Santos]
+    venue: JFE
+    journal_name: Journal of Financial Economics
+    year: 2023
+    year_source: edith_local_db
+    doi: 10.1016/j.jfineco.2023.103737
+    field: asset_management
+    priority: core
+    topics: [mutual_funds, alpha, fund_selection]
+    methods: [machine_learning, nonlinear_interactions]
+    methodology_type: ML-Computational
+    keywords: Active asset management, Mutual-fund performance, Mutual-fund misallocation, Machine learning, Tradable strategies, Nonlinearities and interactions
+
+  - id: edith-jfe-12669
+    edith_paper_id: 12669
+    title: Machine learning in the Chinese stock market
+    authors: [Markus Leippold, Qian Wang, Wenyu Zhou]
+    venue: JFE
+    journal_name: Journal of Financial Economics
+    year: 2022
+    year_source: edith_local_db
+    doi: 10.1016/j.jfineco.2021.08.017
+    field: factor_investing
+    priority: core
+    topics: [return_prediction, factor_investing, chinese_equities]
+    methods: [machine_learning, model_selection]
+    methodology_type: ML-Computational
+    keywords: Chinese stock market, Factor investing, Machine learning, Model selection, Return predictability
+
+  - id: edith-jfe-12606
+    edith_paper_id: 12606
+    title: Shrinking the Cross-Section
+    authors: [Serhiy Kozak, Stefan Nagel, Shrihari Santosh]
+    venue: JFE
+    journal_name: Journal of Financial Economics
+    year: 2020
+    year_source: edith_local_db
+    doi: 10.1016/j.jfineco.2019.06.008
+    field: asset_pricing
+    priority: core
+    topics: [cross_sectional_returns, factor_models, stochastic_discount_factor]
+    methods: [shrinkage, machine_learning]
+    methodology_type: Empirical AP
+    keywords: Factor models, SDF, Cross section, Shrinkage, Machine learning
+
+  - id: edith-jfe-12861
+    edith_paper_id: 12861
+    title: Market efficiency in the age of big data
+    authors: [Ian W.R. Martin, Stefan Nagel]
+    venue: JFE
+    journal_name: Journal of Financial Economics
+    year: 2022
+    year_source: edith_local_db
+    doi: 10.1016/j.jfineco.2021.10.006
+    field: asset_pricing
+    priority: core
+    topics: [market_efficiency, high_dimensional_prediction, return_predictability]
+    methods: [bayesian_learning, equilibrium_model]
+    methodology_type: Theoretical
+    keywords: Bayesian learning, High-dimensional prediction problems, Return predictability, Out-of-sample tests
+
+  - id: edith-jfe-13136
+    edith_paper_id: 13136
+    title: The diversification and welfare effects of robo-advising
+    authors: [Alberto G. Rossi, Stephen Utkus]
+    venue: JFE
+    journal_name: Journal of Financial Economics
+    year: 2024
+    year_source: edith_local_db
+    doi: 10.1016/j.jfineco.2024.103869
+    field: portfolio_choice
+    priority: core
+    topics: [robo_advising, portfolio_choice, diversification]
+    methods: [machine_learning]
+    methodology_type: ML-Computational
+    keywords: FinTech, Portfolio choice, Machine learning, Individual investors, Financial literacy, Technology adoption
+
+  - id: edith-rfs-24800
+    edith_paper_id: 24800
+    title: Empirical Asset Pricing via Machine Learning
+    authors: [Shihao Gu, Bryan Kelly, Dacheng Xiu]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2020
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhaa009
+    field: asset_pricing
+    priority: core
+    topics: [return_prediction, empirical_asset_pricing, cross_sectional_returns]
+    methods: [neural_networks, random_forests, machine_learning]
+    methodology_type: ML-Computational
+    keywords: Machine Learning, Asset Pricing, Return Predictability, Neural Networks, Random Forests
+
+  - id: edith-rfs-24414
+    edith_paper_id: 24414
+    title: Machine Learning for Continuous-Time Finance
+    authors: [Victor Duarte, Diogo Duarte, Dejanir H. Silva]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2018
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhae043
+    field: continuous_time_finance
+    priority: core
+    topics: [continuous_time_finance, dynamic_programming, asset_pricing]
+    methods: [deep_learning, automatic_differentiation, dynamic_programming]
+    methodology_type: Theoretical
+    metadata_quality: year_needs_review
+    keywords: Deep Learning, Continuous-Time Finance, Dynamic Programming, Curse of Dimensionality, Machine Learning
+
+  - id: edith-rfs-23687
+    edith_paper_id: 23687
+    title: Option Return Predictability with Machine Learning and Big Data
+    authors: [Turan G. Bali, Heiner Beckmeyer, Mathis Mörke, Florian Weigert]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 1996
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhad017
+    field: derivatives
+    priority: core
+    topics: [option_returns, return_prediction, big_data]
+    methods: [gradient_boosting, machine_learning]
+    methodology_type: ML-Computational
+    metadata_quality: year_needs_review
+    keywords: Option Returns, Machine Learning, Asset Pricing, Delta-Hedged Returns, Gradient Boosting
+
+  - id: edith-rfs-23847
+    edith_paper_id: 23847
+    title: Bond Risk Premia with Machine Learning
+    authors: [Daniele Bianchi, Matthias Büchner, Andrea Tamoni]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2021
+    year_source: edith_local_db
+    field: fixed_income
+    priority: core
+    topics: [bond_return_prediction, term_structure, risk_premia]
+    methods: [neural_networks, machine_learning]
+    methodology_type: ML-Computational
+    keywords: Machine Learning, Neural Networks, Bond Return Predictability, Term Structure, Unspanned Risk
+
+  - id: edith-rfs-24586
+    edith_paper_id: 24586
+    title: Dissecting Characteristics Nonparametrically
+    authors: [Joachim Freyberger, Andreas Neuhierl, Michael Weber]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2020
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhz123
+    field: asset_pricing
+    priority: core
+    topics: [characteristics, anomalies, cross_sectional_returns]
+    methods: [lasso, nonparametric_estimation, machine_learning]
+    methodology_type: ML-Computational
+    keywords: Machine Learning, LASSO, Nonparametric Estimation, Cross-Section of Returns, Anomalies, Asset Pricing
+
+  - id: edith-rfs-24691
+    edith_paper_id: 24691
+    title: Thousands of Alpha Tests
+    authors: [Stefano Giglio, Yuan Liao, Dacheng Xiu]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2021
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhaa111
+    field: asset_pricing
+    priority: core
+    topics: [alpha_testing, multiple_testing, hedge_funds]
+    methods: [false_discovery_rate, data_snooping_controls]
+    methodology_type: Empirical AP
+    keywords: Multiple testing, Data snooping, False discovery rate, Asset pricing, Hedge funds
+
+  - id: edith-rfs-24433
+    edith_paper_id: 24433
+    title: Microstructure in the Machine Age
+    authors: [David Easley, Marcos López de Prado, Maureen O’Hara, Zhibai Zhang]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2021
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhaa078
+    field: market_microstructure
+    priority: core
+    topics: [market_microstructure, high_frequency_trading, cross_asset_effects]
+    methods: [random_forests, machine_learning, vpin]
+    methodology_type: ML-Computational
+    keywords: Machine Learning, Market Microstructure, Random Forests, VPIN, High-Frequency Trading, Cross-Asset Effects
+
+  - id: edith-rfs-25511
+    edith_paper_id: 25511
+    title: 'Risk Price Variation: The Missing Half of Empirical Asset Pricing'
+    authors: [Andrew J. Patton, Brian M. Weller]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2022
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhac012
+    field: asset_pricing
+    priority: core
+    topics: [risk_prices, market_segmentation, empirical_asset_pricing]
+    methods: [clustering, machine_learning]
+    methodology_type: ML-Computational
+    keywords: Market Segmentation, Risk Prices, Clustering, Asset Pricing, Machine Learning
+
+  - id: edith-rfs-24012
+    edith_paper_id: 24012
+    title: 'Narrative Asset Pricing: Interpretable Systematic Risk Factors from News Text'
+    authors: [Leland Bybee, Bryan Kelly, Yinan Su]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2022
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhad042
+    field: asset_pricing
+    priority: core
+    topics: [news_text, systematic_risk, interpretable_factors]
+    methods: [topic_modeling, lda, sparse_ipca]
+    methodology_type: ML-Computational
+    keywords: Asset Pricing, Textual Analysis, Topic Modeling, LDA, Sparse IPCA
+
+  - id: edith-rfs-25736
+    edith_paper_id: 25736
+    title: Confident Risk Premiums and Investments Using Machine Learning Uncertainties
+    authors: [Rohit Allena]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2023
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhaf087
+    field: asset_pricing
+    priority: core
+    topics: [risk_premia, uncertainty_quantification, portfolio_sorting]
+    methods: [neural_networks, confidence_intervals, machine_learning]
+    methodology_type: ML-Computational
+    keywords: Machine Learning, Risk Premiums, Confidence Intervals, Neural Networks, Portfolio Sorting, Ambiguity Aversion
+
+  - id: edith-rfs-25739
+    edith_paper_id: 25739
+    title: 'Man versus Machine Learning: The Term Structure of Earnings Expectations and Conditional Biases'
+    authors: [Jules H. van Binsbergen, Xiao Han, Alejandro Lopez-Lira]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2023
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhac085
+    field: analyst_expectations
+    priority: core_caution
+    topics: [earnings_expectations, analyst_forecasts, asset_pricing]
+    methods: [machine_learning]
+    methodology_type: ML-Computational
+    keywords: Machine Learning, Analyst Forecasts, Earnings Expectations, Conditional Biases, Asset Pricing
+
+  - id: edith-rfs-25811
+    edith_paper_id: 25811
+    title: Man versus Machine Learning Revisited
+    authors: [Yingguang Zhang, Yandi Zhu, Juhani T. Linnainmaa]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2023
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhaf066
+    field: analyst_expectations
+    priority: core_caution
+    topics: [earnings_expectations, look_ahead_bias, analyst_forecasts]
+    methods: [random_forest, machine_learning]
+    methodology_type: ML-Computational
+    keywords: Machine Learning, Look-Ahead Bias, Analyst Forecasts, Asset Pricing, Random Forest
+
+  - id: edith-rfs-23563
+    edith_paper_id: 23563
+    title: 'News and Asset Pricing: A High-Frequency Anatomy of the SDF'
+    authors: [Saketh Aleti, Tim Bollerslev]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2023
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhae019
+    field: asset_pricing
+    priority: core
+    topics: [news_risk_premia, high_frequency_data, stochastic_discount_factor]
+    methods: [neural_networks, textual_analysis]
+    methodology_type: ML-Computational
+    keywords: Stochastic Discount Factor, High-Frequency Data, News Risk Premiums, Neural Networks, Textual Analysis
+
+  - id: edith-rfs-25104
+    edith_paper_id: 25104
+    title: Unmasking Mutual Fund Derivative Use
+    authors: [Ron Kaniel, Pingle Wang]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2022
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhaf001
+    field: asset_management
+    priority: core
+    topics: [mutual_funds, derivatives, amplification]
+    methods: [k_means_clustering, machine_learning]
+    methodology_type: ML-Computational
+    keywords: Mutual funds, Derivatives, Machine learning, K-Means Clustering, Amplification
+
+  - id: edith-rfs-23727
+    edith_paper_id: 23727
+    title: 'The Market Inside the Market: Odd-Lot Quotes'
+    authors: [Robert P. Bartlett, Justin McCrary, Maureen O’Hara]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2022
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhad074
+    field: market_microstructure
+    priority: core
+    topics: [odd_lot_quotes, market_microstructure, high_frequency_trading]
+    methods: [xgboost, shap]
+    methodology_type: ML-Computational
+    keywords: odd-lot quotes, market microstructure, high-frequency trading, XGBoost, SHAP, NBBO
+
+  - id: edith-rfs-23969
+    edith_paper_id: 23969
+    title: 'Finding Fortune: How Do Institutional Investors Pick Asset Managers?'
+    authors: [Gregory W. Brown, Oleg R. Gredil, Preetesh Kantak]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2021
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhac090
+    field: asset_management
+    priority: core
+    topics: [asset_manager_selection, due_diligence, hedge_funds]
+    methods: [machine_learning, nlp]
+    methodology_type: ML-Computational
+    keywords: Asset Allocation, Due Diligence, Machine Learning, NLP, Hedge Funds
+
+  - id: edith-rfs-23620
+    edith_paper_id: 23620
+    title: Approaching Mean-Variance Efficiency for Large Portfolios
+    authors: [Mengmeng Ao, Yingying Li, Xinghua Zheng]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2019
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhy105
+    field: portfolio_construction
+    priority: core
+    topics: [mean_variance_efficiency, sparse_portfolios, factor_investing]
+    methods: [high_dimensional_regression, lasso]
+    methodology_type: Empirical AP
+    keywords: Mean-variance portfolio, High-dimensional regression, LASSO, Sparse portfolio, Factor investing
+
+  - id: edith-rfs-24515
+    edith_paper_id: 24515
+    title: Valuing Financial Data
+    authors: [Maryam Farboodi, Dhruv Singal, Laura Veldkamp, Venky Venkateswaran]
+    venue: RFS
+    journal_name: The Review of Financial Studies
+    year: 2022
+    year_source: edith_local_db
+    doi: 10.1093/rfs/hhae034
+    field: financial_data_economics
+    priority: core
+    topics: [data_valuation, market_liquidity, investor_heterogeneity]
+    methods: [sufficient_statistics, rational_expectations]
+    methodology_type: Structural
+    keywords: Data Valuation, Sufficient Statistics, Rational Expectations, Market Liquidity, Investor Heterogeneity

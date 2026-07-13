@@ -404,10 +404,13 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
             "",
             (
                 "- [`docs/finance-journal-ai-seed-list.md`]"
-                "(docs/finance-journal-ai-seed-list.md): exploratory seed list "
-                "for technical AI, machine learning, and high-dimensional-data "
-                "papers in finance journals. It is intentionally separate from "
-                "the canonical conference catalog."
+                "(docs/finance-journal-ai-seed-list.md): EDITH-local-corpus-backed "
+                "seed list for technical AI, machine learning, and "
+                "high-dimensional-data papers in JF, JFE, and RFS. Machine-readable "
+                "metadata lives in "
+                "[`data/finance_journal_ai_watchlist.yaml`]"
+                "(data/finance_journal_ai_watchlist.yaml). It is intentionally "
+                "separate from the canonical conference catalog."
             ),
             "",
             "## Contributing",
