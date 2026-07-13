@@ -281,13 +281,14 @@
 - venue: NeurIPS
   year: 2025
   status: pending
-  checked_on: 2026-07-12
-  eligible_paper_count: 0
-  tracks_checked: []
+  checked_on: 2026-07-13
+  eligible_paper_count: 4
+  tracks_checked:
+  - main
   tracks_pending:
   - track: main
-    state: source_mapped
-    note: Main accepted-paper roster was source-mapped but not fully screened at paper level.
+    state: partial
+    note: Main proceedings list was keyword-screened and four candidates were paper-level verified, but a full abstract-level adjudication remains open.
   - track: workshop
     state: source_mapped
     note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
@@ -300,19 +301,25 @@
   - https://neurips.cc/Conferences/2025/DatasetsBenchmarks/AcceptedPapers
   - https://neurips.cc/virtual/2025/events/workshop
   - https://neurips.cc/virtual/2025/affinity_events
-  notes: Zero official accepted rows were screened. Main and Datasets and Benchmarks accepted rosters, workshop and affinity
-    rosters, and mirror mappings remain exact missing artifacts; main is not complete. main is represented in tracks_pending
-    rather than tracks_checked.
+  notes: >-
+    The official proceedings and virtual paper lists were re-screened on 2026-07-13 with finance, market, portfolio,
+    trading, volatility, asset, and related terms, then candidate abstracts were checked at paper level. Four eligible main
+    papers were cataloged: Robust Reinforcement Learning in Finance, OPHR, TwinMarket, and Online Portfolio Selection with
+    ML Predictions. PHANTOM and central-bank-communication candidates were excluded because they are financial QA/text-analysis
+    resources rather than direct quant trading, risk, execution, or asset-management methods. Main remains partial rather
+    than complete because this was not a full abstract-level adjudication of every accepted paper; workshop and affinity rosters
+    remain pending.
 - venue: ICLR
   year: 2025
   status: pending
-  checked_on: 2026-07-12
-  eligible_paper_count: 0
-  tracks_checked: []
+  checked_on: 2026-07-13
+  eligible_paper_count: 3
+  tracks_checked:
+  - main
   tracks_pending:
   - track: main
-    state: source_mapped
-    note: Main accepted-paper roster was source-mapped but not fully screened at paper level.
+    state: partial
+    note: Main proceedings list was keyword-screened and three candidates were paper-level verified, but a full abstract-level adjudication remains open.
   - track: workshop
     state: source_mapped
     note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
@@ -327,8 +334,12 @@
   - https://iclr.cc/virtual/2025/affinity_events
   - https://openreview.net/group?id=ICLR.cc%2F2025%2FTinyPapers
   - https://openreview.net/group?id=ICLR.cc%2F2025%2FBlogPosts
-  notes: Zero official accepted rows were screened. Main, workshop, affinity, Tiny Papers, and Blog Posts accepted rosters
-    remain missing; main is not complete. main is represented in tracks_pending rather than tracks_checked.
+  notes: >-
+    The official ICLR proceedings and virtual paper lists were re-screened on 2026-07-13 with finance, market, portfolio,
+    trading, derivatives, option, volatility, and related terms, then candidate abstracts were checked at paper level. Three
+    eligible main papers were cataloged: MarS, Operator Deep Smoothing for Implied Volatility, and An Online Learning Theory
+    of Trading-Volume Maximization. Main remains partial rather than complete because this was not a full abstract-level adjudication
+    of every accepted paper; workshop, affinity, Tiny Papers, and Blog Posts rosters remain pending.
 - venue: KDD
   year: 2025
   status: pending

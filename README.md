@@ -6,7 +6,7 @@
 
 Curated top-conference research for quantitative finance and asset management.
 
-[![Papers-136](https://img.shields.io/badge/Papers-136-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--12](https://img.shields.io/badge/Last_verified-2026--07--12-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
+[![Papers-143](https://img.shields.io/badge/Papers-143-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--13](https://img.shields.io/badge/Last_verified-2026--07--13-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
 
 </div>
 
@@ -26,7 +26,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 
 | Metric | Value |
 | --- | ---: |
-| Curated papers | 136 |
+| Curated papers | 143 |
 | Coverage units | 33 |
 | Covered years | 2024-2026 |
 | Conferences | 11 |
@@ -43,8 +43,8 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | Venue | 2026 | 2025 | 2024 |
 | --- | ---: | ---: | ---: |
 | ICML | [20 papers](papers/2026/icml.md) · Pending | [5 papers](papers/2025/icml.md) · Pending | [3 papers](papers/2024/icml.md) · Pending |
-| NeurIPS | 0 papers · Pending | 0 papers · Pending | [14 papers](papers/2024/neurips.md) · Complete |
-| ICLR | 0 papers · Pending | 0 papers · Pending | [3 papers](papers/2024/iclr.md) · Complete |
+| NeurIPS | 0 papers · Pending | [4 papers](papers/2025/neurips.md) · Pending | [14 papers](papers/2024/neurips.md) · Complete |
+| ICLR | 0 papers · Pending | [3 papers](papers/2025/iclr.md) · Pending | [3 papers](papers/2024/iclr.md) · Complete |
 | KDD | 0 papers · Pending | 0 papers · Pending | [6 papers](papers/2024/kdd.md) · Pending |
 | AAAI | 0 papers · Pending | 0 papers · Pending | [5 papers](papers/2024/aaai.md) · Pending |
 | IJCAI | [5 papers](papers/2026/ijcai.md) · Pending | 0 papers · Pending | [14 papers](papers/2024/ijcai.md) · Pending |
@@ -60,6 +60,8 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 - **2026** · [IJCAI 2026](papers/2026/ijcai.md) — 5 papers
 - **2026** · [WWW 2026](papers/2026/www.md) — 7 papers
 - **2025** · [ICML 2025](papers/2025/icml.md) — 5 papers
+- **2025** · [NeurIPS 2025](papers/2025/neurips.md) — 4 papers
+- **2025** · [ICLR 2025](papers/2025/iclr.md) — 3 papers
 - **2025** · [AISTATS 2025](papers/2025/aistats.md) — 1 paper
 - **2024** · [ICML 2024](papers/2024/icml.md) — 3 papers
 - **2024** · [NeurIPS 2024](papers/2024/neurips.md) — 14 papers
@@ -176,6 +178,29 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the complete submission checklist.
 | [HyperIV: Real-time Implied Volatility Smoothing](<https://openreview.net/forum?id=o9jtS7HupI>)<br><sub>Yongxin Yang, Wenqi Chen, Chao Shu, Timothy Hospedales</sub> | Main<br><sub>Not Specified</sub> | Constructs arbitrage-free implied-volatility surfaces in real time from sparse option quotes and evaluates them across eight index options. | Derivatives | Supports faster, more stable derivative valuation and trading decisions when full volatility surfaces must be updated from limited market observations. |
 | [Latent Variable Estimation in Bayesian Black-Litterman Models](<https://openreview.net/forum?id=v8ipdsBPEx>)<br><sub>Thomas Yuan-Lung Lin, Jerry Yao-Chieh Hu, Paul W. Chiou, Peter Lin</sub> | Main<br><sub>Not Specified</sub> | Treats Black–Litterman views and their uncertainty as latent variables learned from market data to generate stable portfolio weights. | Equities | Improves risk-adjusted allocation while reducing turnover relative to Markowitz and index baselines. |
 | [LOB-Bench: Benchmarking Generative AI for Finance - an Application to Limit Order Book Data](<https://openreview.net/forum?id=CXPpYJpYXQ>)<br><sub>Peer Nagy, Sascha Yves Frey, Kang Li, Bidipta Sarkar, Svitlana Vyetrenko, Stefan Zohren, Ani Calinescu, Jakob Nicolaus Foerster</sub> | Main<br><sub>Not Specified</sub> | Benchmarks generative limit-order-book streams with distributional, order-flow, price-response, and market-impact diagnostics. | Tick | Provides a decision-facing test suite for deciding whether synthetic microstructure data are credible enough for trading-model development. |
+
+
+### NeurIPS 2025
+
+#### Main Conference (4)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [Online Portfolio Selection with ML Predictions](<https://proceedings.neurips.cc/paper_files/paper/2025/file/76981cb7a06b5ad53639f5bbe9924388-Paper-Conference.pdf>)<br><sub>Ziliang Zhang, Tianming Zhao, Albert Zomaya</sub> | Main<br><sub>Not Specified</sub> | Formalizes online portfolio selection with possibly wrong ML predictions and proposes an allocation rule with guarantees under perfect and adversarial forecasts. | Equities | Shows how modest predictive signals can be converted into wealth growth without discarding worst-case portfolio-selection guarantees. |
+| [OPHR: Mastering Volatility Trading with Multi-Agent Deep Reinforcement Learning](<https://proceedings.neurips.cc/paper_files/paper/2025/file/4c7dbef8023a15c4b81dc95a6ea08bf3-Paper-Conference.pdf>)<br><sub>Zeting Chen, Xinyu Cai, Molei Qin, Bo An</sub> | Main<br><sub>Not Specified</sub> | Uses a multi-agent reinforcement-learning architecture to time long/short volatility positions and route hedging strategies in cryptocurrency options. | Derivatives, Crypto | Converts volatility forecasts into explicit option-trading and hedging decisions evaluated by profit and risk-adjusted performance. |
+| [Robust Reinforcement Learning in Finance: Modeling Market Impact with Elliptic Uncertainty Sets](<https://proceedings.neurips.cc/paper_files/paper/2025/file/3c129892b4f9c8326aba665425a470c5-Paper-Conference.pdf>)<br><sub>Shaocong Ma, Heng Huang</sub> | Main<br><sub>Not Specified</sub> | Models market impact as asymmetric uncertainty and evaluates robust reinforcement-learning traders on single-asset and multi-asset trading tasks. | Multi Asset | Addresses the live-trading gap where a strategy's own orders move prices, improving robustness under larger trade volumes. |
+| [TwinMarket: A Scalable Behavioral and Social Simulation for Financial Markets](<https://proceedings.neurips.cc/paper_files/paper/2025/file/5bf234ecf83cd77bc5b77a24ba9338b0-Paper-Conference.pdf>)<br><sub>Yuzhe YANG, Yifei Zhang, Minghao Wu, Kaidi Zhang, Yunmiao Zhang, Honghai Yu, Yan Hu, Benyou Wang</sub> | Main<br><sub>Not Specified</sub> | Simulates behavioral and social interactions among LLM agents in a stock-market environment to study bubbles, recessions, and other emergent market outcomes. | Equities | Provides a scalable experimental environment for stress-testing market dynamics that arise from interacting investor behaviors. |
+
+
+### ICLR 2025
+
+#### Main Conference (3)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [An Online Learning Theory of Trading-Volume Maximization](<https://proceedings.iclr.cc/paper_files/paper/2025/file/2e809adc337594e0fee330a64acbb982-Paper-Conference.pdf>)<br><sub>Tommaso Cesari, Roberto Colomboni</sub> | Main<br><sub>Not Specified</sub> | Studies how an online broker should set prices between two traders to maximize the number of mutually beneficial asset exchanges. | — | Gives regret guarantees for a microstructure-style execution objective where the broker observes trader responses rather than complete valuations. |
+| [MarS: a Financial Market Simulation Engine Powered by Generative Foundation Model](<https://proceedings.iclr.cc/paper_files/paper/2025/file/6261d3bc9e9326ddff055595aabd54e1-Paper-Conference.pdf>)<br><sub>Junjie Li, Yang Liu, Weiqing Liu, Shikai Fang, Lewen Wang, Chang XU, Jiang Bian</sub> | Main<br><sub>Not Specified</sub> | Builds an order-level generative foundation model and simulation engine for realistic, controllable financial-market trajectories. | Tick | Turns limit-order-book style data into a simulator for forecasting, risk detection, market-impact analysis, and trading-agent training. |
+| [Operator Deep Smoothing for Implied Volatility](<https://proceedings.iclr.cc/paper_files/paper/2025/file/f115f619b62833aadc5acb058975b0e6-Paper-Conference.pdf>)<br><sub>Ruben Wiedemann, Antoine (Jack) Jacquier, Lukas Gonon</sub> | Main<br><sub>Not Specified</sub> | Uses graph neural operators to map irregular option quotes into no-arbitrage-aware implied-volatility surfaces on intraday S&amp;P 500 options data. | Derivatives · Intraday | Replaces repeated hand-calibrated option-surface fitting with a single learned operator for faster valuation, hedging, and risk workflows. |
 
 
 ### AISTATS 2025

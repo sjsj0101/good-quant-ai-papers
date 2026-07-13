@@ -998,6 +998,202 @@
   status: published
   verified_on: 2026-07-12
 
+- id: 2025-neurips-ma-robust-rl-market-impact
+  title: "Robust Reinforcement Learning in Finance: Modeling Market Impact with Elliptic Uncertainty Sets"
+  authors:
+    - Shaocong Ma
+    - Heng Huang
+  venue: NeurIPS
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2025/hash/3c129892b4f9c8326aba665425a470c5-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2025/file/3c129892b4f9c8326aba665425a470c5-Paper-Conference.pdf
+  topics:
+    - execution
+    - risk-management
+    - financial-agents
+  asset_classes:
+    - multi-asset
+  tasks:
+    - market-impact-aware trading
+    - robust reinforcement-learning policy evaluation
+  summary: Models market impact as asymmetric uncertainty and evaluates robust reinforcement-learning traders on single-asset and multi-asset trading tasks.
+  why_it_matters: Addresses the live-trading gap where a strategy's own orders move prices, improving robustness under larger trade volumes.
+  status: published
+  verified_on: 2026-07-13
+
+- id: 2025-neurips-chen-ophr-volatility-trading
+  title: "OPHR: Mastering Volatility Trading with Multi-Agent Deep Reinforcement Learning"
+  authors:
+    - Zeting Chen
+    - Xinyu Cai
+    - Molei Qin
+    - Bo An
+  venue: NeurIPS
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2025/hash/4c7dbef8023a15c4b81dc95a6ea08bf3-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2025/file/4c7dbef8023a15c4b81dc95a6ea08bf3-Paper-Conference.pdf
+  code_url: https://github.com/Edwicn/OPHR-MasteringVolatilityTradingwithMultiAgentDeepReinforcementLearning
+  topics:
+    - derivatives
+    - alpha-modeling
+    - financial-agents
+    - risk-management
+  asset_classes:
+    - derivatives
+    - crypto
+  tasks:
+    - volatility trading
+    - options hedging
+  summary: Uses a multi-agent reinforcement-learning architecture to time long/short volatility positions and route hedging strategies in cryptocurrency options.
+  why_it_matters: Converts volatility forecasts into explicit option-trading and hedging decisions evaluated by profit and risk-adjusted performance.
+  status: published
+  verified_on: 2026-07-13
+
+- id: 2025-neurips-yang-twinmarket
+  title: "TwinMarket: A Scalable Behavioral and Social Simulation for Financial Markets"
+  authors:
+    - Yuzhe YANG
+    - Yifei Zhang
+    - Minghao Wu
+    - Kaidi Zhang
+    - Yunmiao Zhang
+    - Honghai Yu
+    - Yan Hu
+    - Benyou Wang
+  venue: NeurIPS
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2025/hash/5bf234ecf83cd77bc5b77a24ba9338b0-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2025/file/5bf234ecf83cd77bc5b77a24ba9338b0-Paper-Conference.pdf
+  topics:
+    - market-simulation
+    - synthetic-data
+    - financial-agents
+    - market-regimes
+  asset_classes:
+    - equities
+  tasks:
+    - stock-market simulation
+    - behavioral market scenario analysis
+  summary: Simulates behavioral and social interactions among LLM agents in a stock-market environment to study bubbles, recessions, and other emergent market outcomes.
+  why_it_matters: Provides a scalable experimental environment for stress-testing market dynamics that arise from interacting investor behaviors.
+  status: published
+  verified_on: 2026-07-13
+
+- id: 2025-neurips-zhang-online-portfolio-selection
+  title: Online Portfolio Selection with ML Predictions
+  authors:
+    - Ziliang Zhang
+    - Tianming Zhao
+    - Albert Zomaya
+  venue: NeurIPS
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.neurips.cc/paper_files/paper/2025/hash/76981cb7a06b5ad53639f5bbe9924388-Abstract-Conference.html
+  paper_url: https://proceedings.neurips.cc/paper_files/paper/2025/file/76981cb7a06b5ad53639f5bbe9924388-Paper-Conference.pdf
+  topics:
+    - portfolio-optimization
+    - asset-allocation
+    - alpha-modeling
+    - risk-management
+  asset_classes:
+    - equities
+  tasks:
+    - online portfolio selection
+    - learning-augmented allocation
+  summary: Formalizes online portfolio selection with possibly wrong ML predictions and proposes an allocation rule with guarantees under perfect and adversarial forecasts.
+  why_it_matters: Shows how modest predictive signals can be converted into wealth growth without discarding worst-case portfolio-selection guarantees.
+  status: published
+  verified_on: 2026-07-13
+
+- id: 2025-iclr-li-mars-financial-market-simulation
+  title: "MarS: a Financial Market Simulation Engine Powered by Generative Foundation Model"
+  authors:
+    - Junjie Li
+    - Yang Liu
+    - Weiqing Liu
+    - Shikai Fang
+    - Lewen Wang
+    - Chang XU
+    - Jiang Bian
+  venue: ICLR
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.iclr.cc/paper_files/paper/2025/hash/6261d3bc9e9326ddff055595aabd54e1-Abstract-Conference.html
+  paper_url: https://proceedings.iclr.cc/paper_files/paper/2025/file/6261d3bc9e9326ddff055595aabd54e1-Paper-Conference.pdf
+  code_url: https://github.com/microsoft/MarS/
+  topics:
+    - market-simulation
+    - synthetic-data
+    - market-microstructure
+    - financial-agents
+  data_frequency: tick
+  tasks:
+    - order-level market simulation
+    - market-impact analysis
+    - trading-agent training
+  summary: Builds an order-level generative foundation model and simulation engine for realistic, controllable financial-market trajectories.
+  why_it_matters: Turns limit-order-book style data into a simulator for forecasting, risk detection, market-impact analysis, and trading-agent training.
+  status: published
+  verified_on: 2026-07-13
+
+- id: 2025-iclr-wiedemann-operator-deep-smoothing
+  title: Operator Deep Smoothing for Implied Volatility
+  authors:
+    - Ruben Wiedemann
+    - Antoine (Jack) Jacquier
+    - Lukas Gonon
+  venue: ICLR
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.iclr.cc/paper_files/paper/2025/hash/f115f619b62833aadc5acb058975b0e6-Abstract-Conference.html
+  paper_url: https://proceedings.iclr.cc/paper_files/paper/2025/file/f115f619b62833aadc5acb058975b0e6-Paper-Conference.pdf
+  code_url: https://github.com/rwicl/operator-deep-smoothing-for-implied-volatility
+  topics:
+    - derivatives
+    - risk-management
+    - market-microstructure
+  asset_classes:
+    - derivatives
+  data_frequency: intraday
+  tasks:
+    - implied-volatility smoothing
+    - option-surface nowcasting
+  summary: Uses graph neural operators to map irregular option quotes into no-arbitrage-aware implied-volatility surfaces on intraday S&P 500 options data.
+  why_it_matters: Replaces repeated hand-calibrated option-surface fitting with a single learned operator for faster valuation, hedging, and risk workflows.
+  status: published
+  verified_on: 2026-07-13
+
+- id: 2025-iclr-cesari-online-learning-trading-volume
+  title: An Online Learning Theory of Trading-Volume Maximization
+  authors:
+    - Tommaso Cesari
+    - Roberto Colomboni
+  venue: ICLR
+  year: 2025
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.iclr.cc/paper_files/paper/2025/hash/2e809adc337594e0fee330a64acbb982-Abstract-Conference.html
+  paper_url: https://proceedings.iclr.cc/paper_files/paper/2025/file/2e809adc337594e0fee330a64acbb982-Paper-Conference.pdf
+  topics:
+    - market-microstructure
+    - execution
+  tasks:
+    - brokerage price learning
+    - trading-volume maximization
+  summary: Studies how an online broker should set prices between two traders to maximize the number of mutually beneficial asset exchanges.
+  why_it_matters: Gives regret guarantees for a microstructure-style execution objective where the broker observes trader responses rather than complete valuations.
+  status: published
+  verified_on: 2026-07-13
+
 - id: 2025-aistats-park-approximate-equivariance
   title: Approximate Equivariance in Reinforcement Learning
   authors:
