@@ -3602,3 +3602,413 @@
   notes: The workshop accepted this paper as an AI4Research poster; the DOI identifies its 2024 Finance Research Letters publication.
   status: accepted
   verified_on: 2026-07-11
+
+- id: 2026-iclr-song-trade-in-minutes
+  title: "Trade in Minutes! Rationality-Driven Agentic System for Quantitative Financial Trading"
+  authors:
+    - Zifan Song
+    - Kaitao Song
+    - Guosheng Hu
+    - Ding Qi
+    - Junyao Gao
+    - Xiaohua Wang
+    - Dongsheng Li
+    - Cairong Zhao
+  venue: ICLR
+  year: 2026
+  track: main
+  presentation: poster
+  official_url: "https://openreview.net/submissions?page=273&venue=ICLR.cc%2F2026%2FConference"
+  paper_url: https://arxiv.org/abs/2510.04787
+  arxiv_id: "2510.04787"
+  doi: 10.48550/arXiv.2510.04787
+  topics:
+    - financial-agents
+    - execution
+    - alpha-modeling
+    - risk-management
+  asset_classes:
+    - equities
+    - crypto
+  data_frequency: intraday
+  tasks:
+    - quantitative trading
+    - strategy generation
+    - trading-agent deployment
+  methods:
+    - large language models
+    - multi-agent systems
+    - closed-loop optimization
+  summary: Uses a rationality-driven multi-agent system to separate LLM strategy development from minute-level trading-bot deployment across stock and crypto markets.
+  why_it_matters: Connects language-model strategy generation to executable trading policies with profitability, action-efficiency, and risk-control tests.
+  status: accepted
+  verified_on: 2026-08-12
+
+- id: 2026-aaai-yuan-metatrader
+  title: "MetaTrader: Learning to Generalize RL Trading Policies Beyond Offline Data"
+  authors:
+    - Haochen Yuan
+    - Minting Pan
+    - Yunbo Wang
+    - Siyu Gao
+    - Xiaokang Yang
+  venue: AAAI
+  year: 2026
+  track: main
+  subvenue: AAAI Technical Track on Machine Learning X
+  presentation: not-specified
+  official_url: https://ojs.aaai.org/index.php/AAAI/article/view/40027
+  paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/40027
+  doi: 10.1609/aaai.v40i33.40027
+  topics:
+    - portfolio-optimization
+    - asset-allocation
+    - financial-forecasting
+    - risk-management
+  asset_classes:
+    - equities
+  tasks:
+    - portfolio optimization
+    - offline reinforcement learning
+    - stock trading
+  methods:
+    - reinforcement learning
+    - bilevel optimization
+    - conservative temporal-difference learning
+  summary: Learns offline reinforcement-learning trading policies for sequential portfolio optimization with transformation-based conservative temporal-difference updates.
+  why_it_matters: Targets the offline-to-live generalization gap that often causes backtested RL trading policies to fail under new market conditions.
+  status: published
+  verified_on: 2026-08-12
+
+- id: 2026-aaai-chen-mars
+  title: "MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management"
+  authors:
+    - Jiayi Chen
+    - Jing Li
+    - Guiling Wang
+  venue: AAAI
+  year: 2026
+  track: main
+  subvenue: AAAI Technical Track on Machine Learning I
+  presentation: not-specified
+  official_url: https://ojs.aaai.org/index.php/AAAI/article/view/39095
+  paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/39095
+  doi: 10.1609/aaai.v40i24.39095
+  topics:
+    - portfolio-optimization
+    - asset-allocation
+    - risk-management
+    - market-regimes
+  asset_classes:
+    - equities
+  tasks:
+    - portfolio management
+    - risk-aware allocation
+  methods:
+    - reinforcement learning
+    - multi-agent reinforcement learning
+    - meta-adaptive control
+  summary: Combines heterogeneous portfolio-management agents with a safety critic and meta-adaptive controller to trade off return and downside risk.
+  why_it_matters: Puts drawdown and volatility control directly into an RL allocation framework, which is closer to asset-management deployment constraints.
+  status: published
+  verified_on: 2026-08-12
+
+- id: 2026-aaai-jin-finrpt
+  title: "FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation"
+  authors:
+    - Song Jin
+    - Shuqi Li
+    - Shukun Zhang
+    - Rui Yan
+  venue: AAAI
+  year: 2026
+  track: main
+  subvenue: AAAI Technical Track on Application Domains I
+  presentation: not-specified
+  official_url: https://ojs.aaai.org/index.php/AAAI/article/view/37014
+  paper_url: https://ojs.aaai.org/index.php/AAAI/article/view/37014
+  arxiv_id: "2511.07322"
+  doi: 10.1609/aaai.v40i1.37014
+  code_url: https://github.com/jinsong8/FinRpt
+  project_url: https://huggingface.co/datasets/jinsong8/FinRpt
+  topics:
+    - financial-agents
+    - evaluation
+    - alternative-data
+  asset_classes:
+    - equities
+  data_frequency: mixed
+  tasks:
+    - equity research report generation
+    - financial-agent evaluation
+  methods:
+    - large language models
+    - multi-agent systems
+    - supervised fine-tuning
+    - reinforcement learning
+  datasets:
+    - FinRpt
+  summary: Introduces an equity-research-report benchmark, evaluation system, and LLM multi-agent framework using multiple financial data types.
+  why_it_matters: Moves LLM finance evaluation toward analyst-style research artifacts that can inform equity investment decisions and recommendations.
+  status: published
+  verified_on: 2026-08-12
+
+- id: 2025-kdd-tang-alphaagent
+  title: "AlphaAgent: LLM-Driven Alpha Mining with Regularized Exploration to Counteract Alpha Decay"
+  authors:
+    - Ziyi Tang
+    - Zechuan Chen
+    - Jiarui Yang
+    - Jiayao Mai
+    - Yongsen Zheng
+    - Keze Wang
+    - Jinrui Chen
+    - Liang Lin
+  venue: KDD
+  year: 2025
+  track: main
+  subvenue: Research Track
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3711896.3736838
+  paper_url: https://doi.org/10.1145/3711896.3736838
+  arxiv_id: "2502.16789"
+  doi: 10.1145/3711896.3736838
+  code_url: https://github.com/RndmVariableQ/AlphaAgent
+  topics:
+    - alpha-modeling
+    - factor-investing
+    - financial-agents
+  asset_classes:
+    - equities
+  data_frequency: daily
+  tasks:
+    - alpha mining
+    - factor generation
+    - backtesting
+  methods:
+    - large language models
+    - multi-agent systems
+    - regularized exploration
+  datasets:
+    - CSI 500
+    - S&P 500
+  summary: Builds an autonomous LLM-agent framework for generating, testing, and regularizing alpha factors to reduce crowding and decay.
+  why_it_matters: Converts market hypotheses into candidate factor signals while explicitly penalizing repetitive, decay-prone alpha discovery.
+  status: published
+  verified_on: 2026-08-12
+
+- id: 2025-kdd-zhang-camef
+  title: "CAMEF: Causal-Augmented Multi-Modality Event-Driven Financial Forecasting by Integrating Time Series Patterns and Salient Macroeconomic Announcements"
+  authors:
+    - Yang Zhang
+    - Wenbo Yang
+    - Jun Wang
+    - Qiang Ma
+    - Jie Xiong
+  venue: KDD
+  year: 2025
+  track: main
+  subvenue: Research Track
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3711896.3736872
+  paper_url: https://doi.org/10.1145/3711896.3736872
+  doi: 10.1145/3711896.3736872
+  topics:
+    - financial-forecasting
+    - alternative-data
+    - risk-management
+    - market-regimes
+  asset_classes:
+    - multi-asset
+  data_frequency: mixed
+  tasks:
+    - event-driven forecasting
+    - macro-announcement forecasting
+  methods:
+    - causal learning
+    - multimodal learning
+    - large language models
+    - counterfactual augmentation
+  datasets:
+    - macroeconomic announcements
+  summary: Integrates market time series with salient macroeconomic announcement text using causal and counterfactual augmentation for event-driven forecasting.
+  why_it_matters: Links point-in-time macro news to tradable asset moves, which is central for event-risk monitoring and tactical allocation.
+  status: published
+  verified_on: 2026-08-12
+
+- id: 2025-kdd-feng-cryptomixer
+  title: "CryptoMixer: Fine-grained market information-aware MLP Networks for Individual Cryptocurrency Trading Prediction"
+  authors:
+    - Tingsheng Feng
+    - Zhihao Shen
+    - Xi Zhao
+    - Xiaoni Lu
+    - Yuyang Zhou
+  venue: KDD
+  year: 2025
+  track: main
+  subvenue: Research Track
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3711896.3736900
+  paper_url: https://doi.org/10.1145/3711896.3736900
+  doi: 10.1145/3711896.3736900
+  topics:
+    - financial-forecasting
+    - alpha-modeling
+    - execution
+  asset_classes:
+    - crypto
+  tasks:
+    - cryptocurrency trading prediction
+  methods:
+    - MLP
+    - market-information-aware modeling
+  summary: Uses fine-grained market-information-aware MLP networks for individual cryptocurrency trading prediction.
+  why_it_matters: Focuses on asset-level crypto trading signals rather than generic market movement classification.
+  status: published
+  verified_on: 2026-08-12
+
+- id: 2025-kdd-chen-enhancer
+  title: "Enhancer: A Distribution-Aware Framework with Temporal-Relational Meta-Learning for Stock Prediction"
+  authors:
+    - Weijun Chen
+    - Shun Li
+    - Heyuan Wang
+    - Tengjiao Wang
+  venue: KDD
+  year: 2025
+  track: main
+  subvenue: Research Track
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3711896.3736934
+  paper_url: https://doi.org/10.1145/3711896.3736934
+  doi: 10.1145/3711896.3736934
+  topics:
+    - financial-forecasting
+    - alpha-modeling
+    - market-regimes
+  asset_classes:
+    - equities
+  data_frequency: daily
+  tasks:
+    - stock prediction
+    - stock investment recommendation
+  methods:
+    - meta-learning
+    - temporal-relational learning
+    - point-process attention
+  summary: Provides a model-agnostic temporal-relational meta-learning framework for adapting stock predictors under temporal and relational distribution shifts.
+  why_it_matters: Addresses nonstationary market shifts that can degrade portfolio profitability, drawdown, and Sharpe ratios.
+  status: published
+  verified_on: 2026-08-12
+
+- id: 2025-kdd-wang-pretraining-stock-data
+  title: Pre-training Time Series Models with Stock Data Customization
+  authors:
+    - Mengyu Wang
+    - Tiejun Ma
+    - Shay B. Cohen
+  venue: KDD
+  year: 2025
+  track: main
+  subvenue: Research Track
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3711896.3737005
+  paper_url: https://doi.org/10.1145/3711896.3737005
+  arxiv_id: "2506.16746"
+  doi: 10.1145/3711896.3737005
+  code_url: https://github.com/astudentuser/Pre-training-Time-Series-Models-with-Stock-Data-Customization
+  topics:
+    - financial-forecasting
+    - alpha-modeling
+    - evaluation
+  asset_classes:
+    - equities
+  data_frequency: daily
+  tasks:
+    - stock selection
+    - time-series pretraining
+  methods:
+    - transformers
+    - self-supervised pretraining
+    - moving-average prediction
+  datasets:
+    - NASDAQ
+    - NYSE
+    - FTSE-100
+    - TOPIX-100
+  summary: Introduces stock-specific pretraining tasks for time-series transformers and evaluates downstream stock selection across multiple equity markets.
+  why_it_matters: Improves return- and Sharpe-oriented stock selection by tailoring representation learning to market data structure.
+  status: published
+  verified_on: 2026-08-12
+
+- id: 2025-kdd-lyu-timing-fund-allocation
+  title: "Timing is important: Risk-aware Fund Allocation based on Time-Series Forecasting"
+  authors:
+    - Fuyuan Lyu
+    - Linfeng Du
+    - Yunpeng Weng
+    - Qiufang Ying
+    - Zhiyan Xu
+    - Wen Zou
+    - Haolun Wu
+    - Xiuqiang He
+    - Xing Tang
+  venue: KDD
+  year: 2025
+  track: main
+  subvenue: Applied Data Science Track
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3711896.3737268
+  paper_url: https://doi.org/10.1145/3711896.3737268
+  doi: 10.1145/3711896.3737268
+  topics:
+    - asset-allocation
+    - portfolio-optimization
+    - financial-forecasting
+    - risk-management
+  tasks:
+    - fund allocation
+    - time-series forecasting
+  methods:
+    - time-series forecasting
+    - risk-aware allocation
+  summary: Uses time-series forecasting to drive timing-sensitive, risk-aware fund allocation decisions.
+  why_it_matters: Maps forecasts into fund-allocation choices under risk constraints rather than optimizing prediction error alone.
+  status: published
+  verified_on: 2026-08-12
+
+- id: 2025-kdd-zhang-multiperiod-financial-forecasting
+  title: Multi-period Learning for Financial Time Series Forecasting
+  authors:
+    - Xu Zhang
+    - Zhengang Huang
+    - Yunzhi Wu
+    - Xun Lu
+    - Erpeng Qi
+    - Yunkai Chen
+    - Zhongya Xue
+    - Qitong Wang
+    - Peng Wang
+    - Wei Wang
+  venue: KDD
+  year: 2025
+  track: main
+  subvenue: Applied Data Science Track
+  presentation: not-specified
+  official_url: https://doi.org/10.1145/3690624.3709422
+  paper_url: https://doi.org/10.1145/3690624.3709422
+  doi: 10.1145/3690624.3709422
+  topics:
+    - financial-forecasting
+    - market-regimes
+    - risk-management
+  tasks:
+    - financial time-series forecasting
+  methods:
+    - multi-period learning
+    - time-series forecasting
+  summary: Learns from short-, medium-, and long-horizon financial time-series signals for forecasting under changing market and policy conditions.
+  why_it_matters: Helps investment and risk systems combine fast market changes with slower trend information in a single forecasting workflow.
+  status: published
+  verified_on: 2026-08-12

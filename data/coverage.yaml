@@ -55,13 +55,14 @@
 - venue: ICLR
   year: 2026
   status: pending
-  checked_on: 2026-07-12
-  eligible_paper_count: 0
-  tracks_checked: []
+  checked_on: 2026-08-12
+  eligible_paper_count: 1
+  tracks_checked:
+  - main
   tracks_pending:
   - track: main
-    state: source_mapped
-    note: Main accepted-paper roster was source-mapped but not fully screened at paper level.
+    state: partial
+    note: Main accepted-paper and proceedings surfaces were partially screened, but not exhaustively adjudicated at paper level.
   - track: workshop
     state: source_mapped
     note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
@@ -78,9 +79,9 @@
   - https://iclr.cc/virtual/2026/affinity_events
   - https://openreview.net/group?id=ICLR.cc%2F2026%2FTinyPapers
   - https://openreview.net/group?id=ICLR.cc%2F2026%2FBlogPosts
-  notes: Zero official accepted rows were screened. A complete deduplicated main roster and proceedings mapping, workshop
-    programs, affinity child-event and poster mappings, Tiny Papers roster, and Blog Posts roster all remain exact missing
-    artifacts. Main is not complete; main is represented in tracks_pending rather than tracks_checked.
+  notes: One eligible main/poster paper, Trade in Minutes!, was cataloged from OpenReview and proceedings search evidence
+    on 2026-08-12. A complete deduplicated main roster and proceedings mapping, workshop programs, affinity child-event
+    and poster mappings, Tiny Papers roster, and Blog Posts roster remain unresolved; ICLR 2026 therefore stays pending.
 - venue: KDD
   year: 2026
   status: pending
@@ -113,13 +114,14 @@
 - venue: AAAI
   year: 2026
   status: pending
-  checked_on: 2026-07-12
-  eligible_paper_count: 0
-  tracks_checked: []
+  checked_on: 2026-08-12
+  eligible_paper_count: 3
+  tracks_checked:
+  - main
   tracks_pending:
   - track: main
-    state: blocked
-    note: Main accepted-paper roster remains blocked by an access or source-availability boundary.
+    state: partial
+    note: OJS technical-track article pages were partially screened, but the full AAAI-26 issue and section map was not exhaustively adjudicated.
   - track: workshop
     state: blocked
     note: Workshop or organizer paper roster remains blocked by an access or source-availability boundary.
@@ -127,10 +129,10 @@
   - https://aaai.org/conference/aaai/aaai-26/
   - https://aaai.org/conference/aaai/aaai-26/main-technical-track/
   - https://ojs.aaai.org/index.php/AAAI/issue/archive
-  notes: Zero official rows were screened because the inherited AAAI and OJS security denial was honored. The OJS volume,
-    issue, section, and article map; main and special or co-program rosters; workshop programs; demonstrations; student, undergraduate,
-    and doctoral consortium programs; IAAI and EAAI sections; and presentation and duplicate mappings remain exact missing
-    artifacts. Main is not complete; main is represented in tracks_pending rather than tracks_checked.
+  notes: Three eligible AAAI-26 proceedings papers were cataloged from official OJS article pages on 2026-08-12. The full
+    OJS volume, issue, section, and article map; workshop programs; demonstrations; student, undergraduate, and doctoral
+    consortium programs; IAAI and EAAI sections; and presentation and duplicate mappings remain unresolved; AAAI 2026
+    therefore stays pending.
 - venue: IJCAI
   year: 2026
   status: pending
@@ -343,13 +345,14 @@
 - venue: KDD
   year: 2025
   status: pending
-  checked_on: 2026-07-12
-  eligible_paper_count: 0
-  tracks_checked: []
+  checked_on: 2026-08-12
+  eligible_paper_count: 7
+  tracks_checked:
+  - main
   tracks_pending:
   - track: main
-    state: source_mapped
-    note: Main accepted-paper roster was source-mapped but not fully screened at paper level.
+    state: partial
+    note: Research and ADS accepted-paper pages were partially screened, but full proceedings reconciliation remains open.
   - track: workshop
     state: source_mapped
     note: Workshop or organizer paper roster was source-mapped but not fully screened at paper level.
@@ -358,11 +361,13 @@
   - https://kdd2025.kdd.org/research-track-papers/
   - https://kdd2025.kdd.org/research-track-papers-2/
   - https://kdd2025.kdd.org/datasets-and-benchmarks-track-papers-2/
+  - https://kdd2025.kdd.org/applied-data-science-ads-track-papers-2/
   - https://dl.acm.org/doi/proceedings/10.1145/3690624
   - https://dl.acm.org/doi/proceedings/10.1145/3711896
-  notes: Zero official rows were screened; an 844-title secondary mirror was candidate discovery only and cannot prove acceptance.
-    The official main, ADS, Datasets and Benchmarks, demo, student, and special-program lists, workshop rosters, and ACM volume
-    reconciliation remain missing; main is not complete. main is represented in tracks_pending rather than tracks_checked.
+  notes: Official KDD 2025 Research and Applied Data Science pages plus DOI records were partially screened on 2026-08-12,
+    and seven eligible quantitative-finance or asset-management records were cataloged. Datasets and Benchmarks, demos,
+    student and special programs, workshop rosters, and full ACM volume reconciliation remain unresolved; KDD 2025 therefore
+    stays pending.
 - venue: AAAI
   year: 2025
   status: pending

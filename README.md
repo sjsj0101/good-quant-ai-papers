@@ -6,7 +6,7 @@
 
 Curated top-conference research for quantitative finance and asset management.
 
-[![Papers-143](https://img.shields.io/badge/Papers-143-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--07--13](https://img.shields.io/badge/Last_verified-2026--07--13-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
+[![Papers-154](https://img.shields.io/badge/Papers-154-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--08--12](https://img.shields.io/badge/Last_verified-2026--08--12-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
 
 </div>
 
@@ -26,7 +26,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 
 | Metric | Value |
 | --- | ---: |
-| Curated papers | 143 |
+| Curated papers | 154 |
 | Coverage units | 33 |
 | Covered years | 2024-2026 |
 | Conferences | 11 |
@@ -44,9 +44,9 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | --- | ---: | ---: | ---: |
 | ICML | [20 papers](papers/2026/icml.md) · Pending | [5 papers](papers/2025/icml.md) · Pending | [3 papers](papers/2024/icml.md) · Pending |
 | NeurIPS | 0 papers · Pending | [4 papers](papers/2025/neurips.md) · Pending | [14 papers](papers/2024/neurips.md) · Complete |
-| ICLR | 0 papers · Pending | [3 papers](papers/2025/iclr.md) · Pending | [3 papers](papers/2024/iclr.md) · Complete |
-| KDD | 0 papers · Pending | 0 papers · Pending | [6 papers](papers/2024/kdd.md) · Pending |
-| AAAI | 0 papers · Pending | 0 papers · Pending | [5 papers](papers/2024/aaai.md) · Pending |
+| ICLR | [1 paper](papers/2026/iclr.md) · Pending | [3 papers](papers/2025/iclr.md) · Pending | [3 papers](papers/2024/iclr.md) · Complete |
+| KDD | 0 papers · Pending | [7 papers](papers/2025/kdd.md) · Pending | [6 papers](papers/2024/kdd.md) · Pending |
+| AAAI | [3 papers](papers/2026/aaai.md) · Pending | 0 papers · Pending | [5 papers](papers/2024/aaai.md) · Pending |
 | IJCAI | [5 papers](papers/2026/ijcai.md) · Pending | 0 papers · Pending | [14 papers](papers/2024/ijcai.md) · Pending |
 | WWW | [7 papers](papers/2026/www.md) · Pending | 0 papers · Pending | [4 papers](papers/2024/www.md) · Complete |
 | WSDM | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
@@ -57,11 +57,14 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 ## Browse by Year and Venue
 
 - **2026** · [ICML 2026](papers/2026/icml.md) — 20 papers
+- **2026** · [ICLR 2026](papers/2026/iclr.md) — 1 paper
+- **2026** · [AAAI 2026](papers/2026/aaai.md) — 3 papers
 - **2026** · [IJCAI 2026](papers/2026/ijcai.md) — 5 papers
 - **2026** · [WWW 2026](papers/2026/www.md) — 7 papers
 - **2025** · [ICML 2025](papers/2025/icml.md) — 5 papers
 - **2025** · [NeurIPS 2025](papers/2025/neurips.md) — 4 papers
 - **2025** · [ICLR 2025](papers/2025/iclr.md) — 3 papers
+- **2025** · [KDD 2025](papers/2025/kdd.md) — 7 papers
 - **2025** · [AISTATS 2025](papers/2025/aistats.md) — 1 paper
 - **2024** · [ICML 2024](papers/2024/icml.md) — 3 papers
 - **2024** · [NeurIPS 2024](papers/2024/neurips.md) — 14 papers
@@ -138,6 +141,26 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the complete submission checklist.
 | [TradeFM: A Generative Foundation Model for Trade-flow and Market Microstructure](<https://openreview.net/forum?id=anK6dppdfa>)<br><sub>Srijan Sood, Maxime Kawawa-Beaudan, Daniel Borrajo, Manuela Veloso</sub> | Workshop<br><sub>Poster</sub><br><sub>Foundation Models for Structured Data</sub> | Trains a generative trade-event model with scale-invariant features designed to transfer across equity markets. | Equities · Tick | Supports cross-market equity order-flow simulation and synthetic microstructure data without asset-specific tokenization. |
 
 
+### ICLR 2026
+
+#### Main Conference (1)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [Trade in Minutes! Rationality-Driven Agentic System for Quantitative Financial Trading](<https://arxiv.org/abs/2510.04787>)<br><sub>Zifan Song, Kaitao Song, Guosheng Hu, Ding Qi, Junyao Gao, Xiaohua Wang, Dongsheng Li, Cairong Zhao</sub> | Main<br><sub>Poster</sub> | Uses a rationality-driven multi-agent system to separate LLM strategy development from minute-level trading-bot deployment across stock and crypto markets. | Equities, Crypto · Intraday | Connects language-model strategy generation to executable trading policies with profitability, action-efficiency, and risk-control tests. |
+
+
+### AAAI 2026
+
+#### Main Conference (3)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [FinRpt: Dataset, Evaluation System and LLM-based Multi-agent Framework for Equity Research Report Generation](<https://ojs.aaai.org/index.php/AAAI/article/view/37014>)<br><sub>Song Jin, Shuqi Li, Shukun Zhang, Rui Yan</sub> | Main<br><sub>Not Specified</sub><br><sub>AAAI Technical Track on Application Domains I</sub> | Introduces an equity-research-report benchmark, evaluation system, and LLM multi-agent framework using multiple financial data types. | Equities · Mixed | Moves LLM finance evaluation toward analyst-style research artifacts that can inform equity investment decisions and recommendations. |
+| [MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](<https://ojs.aaai.org/index.php/AAAI/article/view/39095>)<br><sub>Jiayi Chen, Jing Li, Guiling Wang</sub> | Main<br><sub>Not Specified</sub><br><sub>AAAI Technical Track on Machine Learning I</sub> | Combines heterogeneous portfolio-management agents with a safety critic and meta-adaptive controller to trade off return and downside risk. | Equities | Puts drawdown and volatility control directly into an RL allocation framework, which is closer to asset-management deployment constraints. |
+| [MetaTrader: Learning to Generalize RL Trading Policies Beyond Offline Data](<https://ojs.aaai.org/index.php/AAAI/article/view/40027>)<br><sub>Haochen Yuan, Minting Pan, Yunbo Wang, Siyu Gao, Xiaokang Yang</sub> | Main<br><sub>Not Specified</sub><br><sub>AAAI Technical Track on Machine Learning X</sub> | Learns offline reinforcement-learning trading policies for sequential portfolio optimization with transformation-based conservative temporal-difference updates. | Equities | Targets the offline-to-live generalization gap that often causes backtested RL trading policies to fail under new market conditions. |
+
+
 ### IJCAI 2026
 
 #### Main Conference (5)
@@ -205,6 +228,21 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the complete submission checklist.
 | [An Online Learning Theory of Trading-Volume Maximization](<https://proceedings.iclr.cc/paper_files/paper/2025/file/2e809adc337594e0fee330a64acbb982-Paper-Conference.pdf>)<br><sub>Tommaso Cesari, Roberto Colomboni</sub> | Main<br><sub>Not Specified</sub> | Studies how an online broker should set prices between two traders to maximize the number of mutually beneficial asset exchanges. | — | Gives regret guarantees for a microstructure-style execution objective where the broker observes trader responses rather than complete valuations. |
 | [MarS: a Financial Market Simulation Engine Powered by Generative Foundation Model](<https://proceedings.iclr.cc/paper_files/paper/2025/file/6261d3bc9e9326ddff055595aabd54e1-Paper-Conference.pdf>)<br><sub>Junjie Li, Yang Liu, Weiqing Liu, Shikai Fang, Lewen Wang, Chang XU, Jiang Bian</sub> | Main<br><sub>Not Specified</sub> | Builds an order-level generative foundation model and simulation engine for realistic, controllable financial-market trajectories. | Tick | Turns limit-order-book style data into a simulator for forecasting, risk detection, market-impact analysis, and trading-agent training. |
 | [Operator Deep Smoothing for Implied Volatility](<https://proceedings.iclr.cc/paper_files/paper/2025/file/f115f619b62833aadc5acb058975b0e6-Paper-Conference.pdf>)<br><sub>Ruben Wiedemann, Antoine (Jack) Jacquier, Lukas Gonon</sub> | Main<br><sub>Not Specified</sub> | Uses graph neural operators to map irregular option quotes into no-arbitrage-aware implied-volatility surfaces on intraday S&amp;P 500 options data. | Derivatives · Intraday | Replaces repeated hand-calibrated option-surface fitting with a single learned operator for faster valuation, hedging, and risk workflows. |
+
+
+### KDD 2025
+
+#### Main Conference (7)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [AlphaAgent: LLM-Driven Alpha Mining with Regularized Exploration to Counteract Alpha Decay](<https://doi.org/10.1145/3711896.3736838>)<br><sub>Ziyi Tang, Zechuan Chen, Jiarui Yang, Jiayao Mai, Yongsen Zheng, Keze Wang, Jinrui Chen, Liang Lin</sub> | Main<br><sub>Not Specified</sub><br><sub>Research Track</sub> | Builds an autonomous LLM-agent framework for generating, testing, and regularizing alpha factors to reduce crowding and decay. | Equities · Daily | Converts market hypotheses into candidate factor signals while explicitly penalizing repetitive, decay-prone alpha discovery. |
+| [CAMEF: Causal-Augmented Multi-Modality Event-Driven Financial Forecasting by Integrating Time Series Patterns and Salient Macroeconomic Announcements](<https://doi.org/10.1145/3711896.3736872>)<br><sub>Yang Zhang, Wenbo Yang, Jun Wang, Qiang Ma, Jie Xiong</sub> | Main<br><sub>Not Specified</sub><br><sub>Research Track</sub> | Integrates market time series with salient macroeconomic announcement text using causal and counterfactual augmentation for event-driven forecasting. | Multi Asset · Mixed | Links point-in-time macro news to tradable asset moves, which is central for event-risk monitoring and tactical allocation. |
+| [CryptoMixer: Fine-grained market information-aware MLP Networks for Individual Cryptocurrency Trading Prediction](<https://doi.org/10.1145/3711896.3736900>)<br><sub>Tingsheng Feng, Zhihao Shen, Xi Zhao, Xiaoni Lu, Yuyang Zhou</sub> | Main<br><sub>Not Specified</sub><br><sub>Research Track</sub> | Uses fine-grained market-information-aware MLP networks for individual cryptocurrency trading prediction. | Crypto | Focuses on asset-level crypto trading signals rather than generic market movement classification. |
+| [Enhancer: A Distribution-Aware Framework with Temporal-Relational Meta-Learning for Stock Prediction](<https://doi.org/10.1145/3711896.3736934>)<br><sub>Weijun Chen, Shun Li, Heyuan Wang, Tengjiao Wang</sub> | Main<br><sub>Not Specified</sub><br><sub>Research Track</sub> | Provides a model-agnostic temporal-relational meta-learning framework for adapting stock predictors under temporal and relational distribution shifts. | Equities · Daily | Addresses nonstationary market shifts that can degrade portfolio profitability, drawdown, and Sharpe ratios. |
+| [Multi-period Learning for Financial Time Series Forecasting](<https://doi.org/10.1145/3690624.3709422>)<br><sub>Xu Zhang, Zhengang Huang, Yunzhi Wu, Xun Lu, Erpeng Qi, Yunkai Chen, Zhongya Xue, Qitong Wang, Peng Wang, Wei Wang</sub> | Main<br><sub>Not Specified</sub><br><sub>Applied Data Science Track</sub> | Learns from short-, medium-, and long-horizon financial time-series signals for forecasting under changing market and policy conditions. | — | Helps investment and risk systems combine fast market changes with slower trend information in a single forecasting workflow. |
+| [Pre-training Time Series Models with Stock Data Customization](<https://doi.org/10.1145/3711896.3737005>)<br><sub>Mengyu Wang, Tiejun Ma, Shay B. Cohen</sub> | Main<br><sub>Not Specified</sub><br><sub>Research Track</sub> | Introduces stock-specific pretraining tasks for time-series transformers and evaluates downstream stock selection across multiple equity markets. | Equities · Daily | Improves return- and Sharpe-oriented stock selection by tailoring representation learning to market data structure. |
+| [Timing is important: Risk-aware Fund Allocation based on Time-Series Forecasting](<https://doi.org/10.1145/3711896.3737268>)<br><sub>Fuyuan Lyu, Linfeng Du, Yunpeng Weng, Qiufang Ying, Zhiyan Xu, Wen Zou, Haolun Wu, Xiuqiang He, Xing Tang</sub> | Main<br><sub>Not Specified</sub><br><sub>Applied Data Science Track</sub> | Uses time-series forecasting to drive timing-sensitive, risk-aware fund allocation decisions. | — | Maps forecasts into fund-allocation choices under risk constraints rather than optimizing prediction error alone. |
 
 
 ### AISTATS 2025
