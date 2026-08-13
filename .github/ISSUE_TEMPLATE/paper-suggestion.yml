@@ -1,0 +1,22 @@
+name: Suggest a paper
+description: Submit one paper link for maintainer review
+title: "[Paper suggestion] "
+body:
+  - type: input
+    id: paper-url
+    attributes:
+      label: Paper URL
+      description: Paste one OpenReview, arXiv, DOI, or supported official conference link.
+      placeholder: https://openreview.net/forum?id=...
+    validations:
+      required: true
+  - type: checkboxes
+    id: scope-acknowledgement
+    attributes:
+      label: Scope acknowledgement
+      description: Maintainers make the final inclusion decision.
+      options:
+        - label: I understand maintainers decide scope and venue eligibility.
+          required: true
+    validations:
+      required: true

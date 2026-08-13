@@ -1,0 +1,13 @@
+{
+  "notes": [
+    {
+      "id": "abc123",
+      "content": {
+        "title": {"value": "Portfolio Learning"},
+        "authors": {"value": ["Ada A.", "Bo B."]},
+        "venue": {"value": "ICML 2025 Conference"},
+        "abstract": {"value": "This text must never enter an artifact."}
+      }
+    }
+  ]
+}

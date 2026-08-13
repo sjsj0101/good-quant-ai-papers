@@ -41,6 +41,11 @@ class ReadmeRenderingTests(unittest.TestCase):
         self.assertIn(f"Last verified-{latest_checked_on}", rendered)
         self.assertIn("License-CC BY 4.0", rendered)
         self.assertIn("sjsj0101/good-quant-ai-papers", rendered)
+        self.assertIn("Suggest a Paper", rendered)
+        self.assertIn(
+            "https://github.com/sjsj0101/good-quant-ai-papers/issues/new?template=paper-suggestion.yml",
+            rendered,
+        )
         self.assertIn("## Scope", rendered)
         self.assertIn("evidence-bounded lower-bound catalog", rendered)
         self.assertIn("Coverage rows are deliberately conservative", rendered)
@@ -83,6 +88,7 @@ class ReadmeRenderingTests(unittest.TestCase):
         self.assertLess(rendered.index("## Browse by Year and Venue"), rendered.index("## Paper Index"))
         self.assertLess(rendered.index("## Contributing"), rendered.index("## Paper Index"))
         self.assertLess(rendered.index("## Research Watchlists"), rendered.index("## Contributing"))
+        self.assertLess(rendered.index("Suggest a Paper"), rendered.index("## Paper Index"))
         self.assertEqual(
             sum(line.startswith("| [") for line in rendered.splitlines()),
             len(CATALOG),
