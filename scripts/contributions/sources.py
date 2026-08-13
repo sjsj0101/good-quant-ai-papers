@@ -58,6 +58,7 @@ _VENUE_ALIASES = (
     ("association for the advancement of artificial intelligence", "AAAI"),
     ("international joint conference on artificial intelligence", "IJCAI"),
     ("international world wide web conference", "WWW"),
+    ("acm web conference", "WWW"),
     ("the web conference", "WWW"),
     ("web search and data mining", "WSDM"),
     ("information retrieval", "SIGIR"),

@@ -117,6 +117,30 @@ class SourceExtractionTests(unittest.TestCase):
                 extract_metadata(url, fetcher)
         self.assertEqual(fetcher.requested, [])
 
+    def test_maps_common_publication_names_for_every_controlled_conference(self) -> None:
+        cases = (
+            ("icml.cc", "Proceedings of the International Conference on Machine Learning", "ICML"),
+            ("neurips.cc", "Advances in Neural Information Processing Systems", "NeurIPS"),
+            ("iclr.cc", "International Conference on Learning Representations", "ICLR"),
+            ("kdd.org", "Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining", "KDD"),
+            ("aaai.org", "Proceedings of the AAAI Conference on Artificial Intelligence", "AAAI"),
+            ("ijcai.org", "International Joint Conference on Artificial Intelligence", "IJCAI"),
+            ("thewebconf.org", "Proceedings of the ACM Web Conference", "WWW"),
+            ("wsdm-conference.org", "ACM International Conference on Web Search and Data Mining", "WSDM"),
+            ("sigir.org", "ACM SIGIR Conference on Research and Development in Information Retrieval", "SIGIR"),
+            ("aistats.org", "International Conference on Artificial Intelligence and Statistics", "AISTATS"),
+            ("icaif.org", "ACM International Conference on AI in Finance", "ACM ICAIF"),
+        )
+        for host, publication, expected in cases:
+            with self.subTest(publication=publication):
+                url = f"https://{host}/paper/123"
+                html = f"""<meta name="citation_title" content="Paper">
+<meta name="citation_author" content="Author">
+<meta name="citation_conference_title" content="{publication}">
+<meta name="citation_publication_date" content="2025">""".encode()
+                result = extract_metadata(url, FixtureFetcher({url: (url, html)}))
+                self.assertEqual(result.venue, expected)
+
 
 if __name__ == "__main__":
     unittest.main()
