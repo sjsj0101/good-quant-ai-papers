@@ -1,54 +1,49 @@
-# Link-Only Paper Contribution Implementation Plan
+# Link-Only Paper Contribution MVP Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Let a signed-in GitHub visitor suggest one paper URL, receive an automated evidence report, and let a maintainer create a validated draft catalog PR by applying `approved`.
+**Goal:** Let a GitHub visitor submit one paper URL, automate reliable base-metadata extraction and duplicate checks, and let an authorized maintainer create a partial-record draft PR for manual completion.
 
-**Architecture:** A read-only verification workflow parses the Issue Form, resolves safe source adapters, performs deterministic venue and duplicate checks, optionally asks OpenAI for schema-constrained editorial suggestions, and synchronizes one managed issue report. A separate write-capable workflow verifies the triggering maintainer, recomputes the result from the original URL, atomically appends one canonical YAML record, regenerates indexes, runs all checks, and creates or updates one bot-owned draft PR.
+**Architecture:** A read-only Issue workflow runs a small Python metadata pipeline and synchronizes one managed comment plus one machine-state label. A separate maintainer-gated workflow re-runs the same pipeline, appends a syntactically valid partial YAML record, and uses GitHub CLI to create or update one draft PR. Existing catalog validation remains unchanged and intentionally blocks merge until a maintainer completes the extended metadata and rendered files.
 
-**Tech Stack:** Python 3.11, Python standard library, PyYAML 6.0.3, `unittest`, GitHub Issue Forms, GitHub Actions, GitHub CLI, OpenAI Responses API with strict JSON-schema output.
+**Tech Stack:** Python 3.11, Python standard library, PyYAML 6.0.3, `unittest`, GitHub Issue Forms, GitHub Actions, GitHub REST API, GitHub CLI.
 
 ## Global Constraints
 
-- Preserve `data/papers.yaml` as the only canonical paper catalog and never edit generated Markdown by hand.
-- Do not change `data/coverage.yaml` for an individual visitor suggestion.
-- Accept only verified 2024--2026 papers from the existing controlled venue, track, presentation, topic, asset-class, frequency, and status values in `scripts/catalog.py`.
-- Only deterministic official-source evidence may set `venue_verified`; arXiv text, contributor text, and AI output are never venue proof.
-- AI output is advisory, must pass local controlled-value validation, and must not bypass `validate_catalog`.
-- Without `OPENAI_API_KEY`, deterministic verification continues but automatic materialization remains blocked by an incomplete record.
-- Only HTTPS source URLs may be fetched; private, loopback, link-local, oversized, redirected-to-unknown, and unrecognized-host targets are rejected.
-- The issue verification workflow has `contents: read` and `issues: write`; repository writes occur only in the approval workflow after a permission check returns `write` or `admin`.
-- Store links, metadata, and original editorial prose only; do not store PDFs, copied abstracts, HTML snapshots, or third-party text.
-- Use the existing offline commands as final gates: `python3 scripts/validate.py`, `python3 scripts/render.py --check`, `python3 -m unittest discover -s tests -v`, and `git diff --check`.
+- Work from the approved MVP design in `docs/superpowers/specs/2026-08-13-link-contribution-ingestion-design.md`.
+- Preserve `data/papers.yaml` as the only canonical paper catalog and never hand-edit generated Markdown.
+- Never change `data/coverage.yaml` for an individual suggestion.
+- Accept exactly one HTTPS URL and fetch only recognized public source hosts.
+- Extract bibliographic facts only; do not infer conference acceptance or topical eligibility.
+- Do not add AI/model dependencies, AI configuration, automatic summaries, classifications, or scope advice.
+- Base metadata is title, at least one author, controlled venue, year 2024--2026, and a canonical paper URL.
+- Exact duplicates block PR creation; possible title matches remain a maintainer decision and must be visible in the Issue report and PR body.
+- Only a repository actor with `write`, `maintain`, or `admin` permission may trigger repository writes through the `approved` label.
+- The approval workflow opens a draft PR containing a partial record; it never writes directly to `main`, never merges, and never weakens existing CI.
+- Do not persist HTML, PDFs, copied abstracts, credentials, raw upstream bodies, or third-party prose.
+- Keep URL controls minimal and local: HTTPS, allowlisted host, public IP, bounded redirects/timeouts/body size.
+- Final offline gates remain `python3 scripts/validate.py`, `python3 scripts/render.py --check`, `python3 -m unittest discover -s tests -v`, and `git diff --check`.
 
 ## File Map
 
-- `scripts/contributions/models.py`: immutable submission, source, enrichment, and verification-result contracts plus versioned JSON serialization.
-- `scripts/contributions/issue_form.py`: strict parser for GitHub's rendered Issue Form Markdown.
-- `scripts/contributions/http.py`: HTTPS-only bounded fetcher and redirect/IP safety policy.
-- `scripts/contributions/sources.py`: OpenReview, DOI/Crossref, arXiv, and trusted official-HTML metadata adapters.
-- `scripts/contributions/verify.py`: official-evidence, duplicate, scope, completeness, and stable-ID policy.
-- `scripts/contributions/enrich.py`: optional OpenAI structured-output request and local response validation.
-- `scripts/contributions/report.py`: managed Markdown report and machine-owned label state.
-- `scripts/contributions/github.py`: small GitHub REST client for reports, labels, and maintainer permission checks.
-- `scripts/contributions/materialize.py`: atomic one-record YAML append.
-- `scripts/contributions/cli.py`: workflow-facing `verify-event`, `sync-issue`, `authorize-event`, and `materialize` commands.
-- `.github/ISSUE_TEMPLATE/paper-suggestion.yml`: visitor entry form.
-- `.github/workflows/verify-paper-suggestion.yml`: read-only candidate workflow.
-- `.github/workflows/materialize-paper-suggestion.yml`: maintainer-gated write workflow.
-- `tests/contributions/`: fixture-backed unit and integration tests with no live network or model calls.
-
-## Platform References Checked on 2026-08-13
-
-- GitHub Issue Form syntax: <https://docs.github.com/en/enterprise-cloud@latest/communities/using-templates-to-encourage-useful-issues-and-pull-requests/syntax-for-issue-forms>
-- GitHub workflow-trigger behavior for `GITHUB_TOKEN`: <https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow>
-- GitHub collaborator permission endpoint: <https://docs.github.com/en/rest/collaborators/collaborators#get-repository-permissions-for-a-user>
-- OpenReview API v2 note endpoint: <https://docs.openreview.net/reference/api-v2/openapi-definition>
-- OpenAI Responses structured-output format: <https://platform.openai.com/docs/api-reference/responses>
+- `scripts/contributions/models.py`: immutable base-metadata and pipeline-result contracts with strict JSON serialization.
+- `scripts/contributions/issue_form.py`: strict parser for the stable Issue Form headings.
+- `scripts/contributions/http.py`: bounded HTTPS fetcher for recognized public hosts.
+- `scripts/contributions/sources.py`: OpenReview, arXiv, Crossref/DOI, and official-page base-metadata adapters.
+- `scripts/contributions/check.py`: metadata-readiness and catalog duplicate checks; no scope or acceptance policy.
+- `scripts/contributions/report.py`: managed Issue comment and five-label state derivation.
+- `scripts/contributions/github.py`: minimal GitHub REST operations for the managed comment, labels, and actor permission.
+- `scripts/contributions/materialize.py`: partial-record YAML append and stable branch/record slug generation.
+- `scripts/contributions/cli.py`: workflow-facing `inspect-event`, `sync-issue`, `authorize-event`, and `materialize` commands.
+- `.github/ISSUE_TEMPLATE/paper-suggestion.yml`: one-link visitor form with fixed Issue-title prefix.
+- `.github/workflows/inspect-paper-suggestion.yml`: read-only metadata workflow.
+- `.github/workflows/materialize-paper-suggestion.yml`: maintainer-gated draft-PR workflow.
+- `scripts/render.py`, `README.md`, and `CONTRIBUTING.md`: generated entry point and maintainer instructions.
+- `tests/contributions/`: offline fixtures, units, integrations, and static workflow contracts.
 
 ---
 
-### Task 1: Contribution Contracts and Issue Form Parser
+### Task 1: Issue Form and Strict Data Contracts
 
 **Files:**
 - Create: `scripts/contributions/__init__.py`
@@ -58,487 +53,320 @@
 - Create: `tests/contributions/test_issue_form.py`
 
 **Interfaces:**
-- Produces: `Submission(paper_url: str, relevance_note: str | None)`.
-- Produces: `SourceMetadata`, `Enrichment`, and `VerificationResult` frozen dataclasses with `to_dict()` and `from_dict()` methods and `RESULT_VERSION = 1`.
-- Produces: `parse_issue_form(body: str) -> Submission`, raising `SubmissionError` for a missing heading, non-HTTPS URL, multiple URLs, or unchecked acknowledgement.
-- Consumes: GitHub-rendered headings `### Paper URL`, `### Why is it relevant?`, and `### Scope acknowledgement`.
+- Produces: `Submission(paper_url: str)`.
+- Produces: `BaseMetadata`, `DuplicateResult`, and `InspectionResult` frozen dataclasses.
+- Produces: `InspectionResult.to_dict() -> dict[str, object]` and `InspectionResult.from_dict(value: object) -> InspectionResult` with `RESULT_VERSION = 1` and strict type checks.
+- Produces: `parse_issue_form(body: str) -> Submission`, raising `SubmissionError(code: str)`.
+- Consumes headings `### Paper URL` and `### Scope acknowledgement`.
 
-- [ ] **Step 1: Write the failing Issue Form parser tests**
+- [ ] **Step 1: Write failing form and serialization tests**
 
 ```python
-class IssueFormParsingTests(unittest.TestCase):
-    def test_parses_required_url_optional_note_and_checked_scope(self):
+class IssueFormTests(unittest.TestCase):
+    def test_parses_one_https_url_and_checked_acknowledgement(self):
         body = """### Paper URL
 
-https://openreview.net/forum?id=paper123
-
-### Why is it relevant?
-
-Portfolio construction under transaction costs.
+https://openreview.net/forum?id=abc123
 
 ### Scope acknowledgement
 
-- [x] I confirm this is a 2024-2026 top-conference paper.
+- [x] I understand maintainers decide scope and venue eligibility.
 """
-        submission = parse_issue_form(body)
-        self.assertEqual(submission.paper_url, "https://openreview.net/forum?id=paper123")
         self.assertEqual(
-            submission.relevance_note,
-            "Portfolio construction under transaction costs.",
+            parse_issue_form(body),
+            Submission("https://openreview.net/forum?id=abc123"),
         )
 
-    def test_rejects_http_and_unchecked_acknowledgement(self):
-        body = """### Paper URL
+    def test_rejects_http_multiple_urls_duplicate_headings_and_unchecked_scope(self):
+        invalid_bodies = (
+            VALID_BODY.replace("https://", "http://"),
+            VALID_BODY.replace("\n\n### Scope", " https://arxiv.org/abs/2401.1\n\n### Scope"),
+            VALID_BODY + "\n### Paper URL\n\nhttps://doi.org/10.1/x\n",
+            VALID_BODY.replace("- [x]", "- [ ]"),
+        )
+        for body in invalid_bodies:
+            with self.subTest(body=body), self.assertRaises(SubmissionError):
+                parse_issue_form(body)
 
-http://example.com/paper
-
-### Why is it relevant?
-
-_No response_
-
-### Scope acknowledgement
-
-- [ ] I confirm this is a 2024-2026 top-conference paper.
-"""
-        with self.assertRaises(SubmissionError):
-            parse_issue_form(body)
+    def test_result_round_trip_rejects_bool_version_and_string_authors(self):
+        payload = READY_RESULT.to_dict()
+        self.assertEqual(InspectionResult.from_dict(payload), READY_RESULT)
+        for version in (True, 1.0, "1"):
+            malformed = {**payload, "version": version}
+            with self.assertRaises(ResultError):
+                InspectionResult.from_dict(malformed)
+        malformed = {**payload, "metadata": {**payload["metadata"], "authors": "Ada"}}
+        with self.assertRaises(ResultError):
+            InspectionResult.from_dict(malformed)
 ```
 
-- [ ] **Step 2: Run the parser tests and confirm the module is missing**
+- [ ] **Step 2: Run the focused test and observe the missing module**
 
 Run: `python3 -m unittest tests.contributions.test_issue_form -v`
 
 Expected: FAIL with `ModuleNotFoundError: No module named 'scripts.contributions'`.
 
-- [ ] **Step 3: Implement immutable contracts and strict heading parsing**
+- [ ] **Step 3: Implement only the contracts and strict form parser**
 
 ```python
 @dataclass(frozen=True)
 class Submission:
     paper_url: str
-    relevance_note: str | None = None
 
 
 @dataclass(frozen=True)
-class SourceMetadata:
+class BaseMetadata:
     submitted_url: str
     canonical_url: str | None
-    source_resolved: bool
     title: str | None
     authors: tuple[str, ...]
-    abstract: str | None
-    official_url: str | None
-    paper_url: str
     venue: str | None
     year: int | None
-    track: str | None
-    subvenue: str | None
-    presentation: str | None
-    status: str | None
-    doi: str | None
-    arxiv_id: str | None
-    openreview_id: str | None
-    evidence_kind: str
-    evidence_details: tuple[str, ...]
+    paper_url: str | None
+    official_url: str | None = None
+    doi: str | None = None
+    arxiv_id: str | None = None
+    openreview_id: str | None = None
+    track: str | None = None
+    subvenue: str | None = None
+    presentation: str | None = None
     errors: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
-class Enrichment:
-    scope_assessment: str
-    scope_reasons: tuple[str, ...]
-    topics: tuple[str, ...]
-    summary: str
-    why_it_matters: str
-    asset_classes: tuple[str, ...] = ()
-    data_frequency: str | None = None
-    tasks: tuple[str, ...] = ()
-    methods: tuple[str, ...] = ()
-    datasets: tuple[str, ...] = ()
+class DuplicateResult:
+    status: str
+    matching_ids: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)
-class VerificationResult:
+class InspectionResult:
     version: int
     submission: Submission
-    source: SourceMetadata
-    enrichment: Enrichment | None
-    venue_verified: bool
-    duplicate_status: str
-    duplicate_ids: tuple[str, ...]
-    record_complete: bool
-    ready_for_approval: bool
-    blockers: tuple[str, ...]
-    validation_errors: tuple[str, ...]
-    advisory_errors: tuple[str, ...]
-    record: dict[str, object] | None
-
-
-def parse_issue_form(body: str) -> Submission:
-    sections = _sections_by_heading(body)
-    raw_url = sections.get("Paper URL", "").strip()
-    urls = re.findall(r"https?://[^\s<>]+", raw_url)
-    if len(urls) != 1 or not urls[0].startswith("https://"):
-        raise SubmissionError("Paper URL must contain exactly one HTTPS URL")
-    acknowledgement = sections.get("Scope acknowledgement", "")
-    if not re.search(r"^- \[[xX]\] ", acknowledgement, flags=re.MULTILINE):
-        raise SubmissionError("Scope acknowledgement must be checked")
-    note = sections.get("Why is it relevant?", "").strip()
-    return Submission(
-        paper_url=urls[0].rstrip(".,)"),
-        relevance_note=None if note in {"", "_No response_"} else note,
-    )
+    metadata: BaseMetadata
+    missing_fields: tuple[str, ...]
+    duplicate: DuplicateResult
+    metadata_ready: bool
 ```
 
-`VerificationResult.to_dict()` must emit `{"version": 1, ...}` with tuples converted to JSON lists; `from_dict()` must reject any version other than `1` and reconstruct nested dataclasses.
+`parse_issue_form()` must require exactly one occurrence of each required
+heading, exactly one URL token, `https` scheme, no credentials, a non-empty
+hostname, and at least one checked box in the acknowledgement section. Omit all
+abstract, contributor-note, scope, acceptance, enrichment, and record fields
+from these contracts.
 
-- [ ] **Step 4: Run the parser and serialization tests**
+- [ ] **Step 4: Run focused and existing tests**
 
-Run: `python3 -m unittest tests.contributions.test_issue_form -v`
+Run: `python3 -m unittest tests.contributions.test_issue_form tests.test_validate tests.test_render -v`
 
 Expected: PASS.
 
 - [ ] **Step 5: Commit the contracts**
 
 ```bash
-git add scripts/contributions tests/contributions
-git commit -m "feat: parse link-only paper suggestions"
+git add scripts/contributions/__init__.py scripts/contributions/models.py scripts/contributions/issue_form.py tests/contributions
+git commit -m "feat: parse paper suggestion issues"
 ```
 
 ---
 
-### Task 2: Safe Source Resolution
+### Task 2: Bounded Base-Metadata Sources
 
 **Files:**
 - Create: `scripts/contributions/http.py`
 - Create: `scripts/contributions/sources.py`
 - Create: `tests/contributions/fixtures/openreview-note.json`
-- Create: `tests/contributions/fixtures/crossref-work.json`
 - Create: `tests/contributions/fixtures/arxiv-entry.xml`
+- Create: `tests/contributions/fixtures/crossref-work.json`
 - Create: `tests/contributions/fixtures/official-paper.html`
 - Create: `tests/contributions/test_http.py`
 - Create: `tests/contributions/test_sources.py`
 
 **Interfaces:**
-- Consumes: `Submission` from Task 1.
-- Produces: `HttpResponse(url: str, status: int, headers: Mapping[str, str], body: bytes)`.
-- Produces: `Fetcher` protocol with `get(url: str) -> HttpResponse`.
-- Produces: `SafeHttpFetcher(timeout_seconds=15, max_bytes=2_000_000, max_redirects=3)`.
-- Produces: `resolve_source(submission: Submission, fetcher: Fetcher) -> SourceMetadata`.
-- Produces: `SourceResolutionError(code: str, message: str)` where `code` is one of `unsafe-url`, `unsupported-host`, `not-found`, `rate-limited`, `upstream-error`, or `unparseable`.
+- Consumes: `BaseMetadata` from Task 1.
+- Produces: `SafeFetcher.get(url: str, *, accepted_hosts: frozenset[str]) -> HttpResponse`.
+- Produces: `extract_metadata(url: str, fetcher: SafeFetcher) -> BaseMetadata`.
+- Produces: `SourceError(code: str)` with stable non-secret codes.
 
-- [ ] **Step 1: Write failing safety and adapter tests**
+- [ ] **Step 1: Write failing fetch-policy and adapter tests**
 
 ```python
-class SafeHttpTests(unittest.TestCase):
-    def test_rejects_loopback_and_private_addresses(self):
-        for address in ("127.0.0.1", "10.0.0.2", "169.254.1.2", "::1"):
-            with self.subTest(address=address):
-                with self.assertRaises(UnsafeUrlError):
-                    require_public_addresses([address])
-
-
-class SourceResolutionTests(unittest.TestCase):
-    def test_openreview_adapter_extracts_structured_venue_evidence(self):
-        fetcher = FixtureFetcher.openreview("openreview-note.json")
-        result = resolve_source(
-            Submission("https://openreview.net/forum?id=paper123"), fetcher
-        )
-        self.assertEqual(result.openreview_id, "paper123")
+class SourceTests(unittest.TestCase):
+    def test_extracts_openreview_base_metadata_without_acceptance_decision(self):
+        result = extract_metadata(OPENREVIEW_URL, fixture_fetcher("openreview-note.json"))
+        self.assertEqual(result.title, "Portfolio Learning")
+        self.assertEqual(result.authors, ("Ada A.", "Bo B."))
         self.assertEqual(result.venue, "ICML")
-        self.assertEqual(result.year, 2026)
-        self.assertEqual(result.track, "main")
-        self.assertEqual(result.evidence_kind, "official-openreview")
+        self.assertEqual(result.year, 2025)
+        self.assertEqual(result.openreview_id, "abc123")
+        self.assertFalse(hasattr(result, "venue_verified"))
 
-    def test_arxiv_without_official_doi_remains_unverified(self):
-        result = resolve_source(
-            Submission("https://arxiv.org/abs/2601.12345"),
-            FixtureFetcher.arxiv("arxiv-entry.xml"),
-        )
-        self.assertEqual(result.arxiv_id, "2601.12345")
-        self.assertIsNone(result.official_url)
-        self.assertEqual(result.evidence_kind, "preprint-only")
+    def test_rejects_unknown_host_private_ip_http_redirect_and_oversized_body(self):
+        for fetcher, url in SAFETY_CASES:
+            with self.subTest(url=url), self.assertRaises(SourceError):
+                extract_metadata(url, fetcher)
 ```
 
-- [ ] **Step 2: Run the source tests and verify the imports fail**
+Add fixture-backed cases for arXiv, DOI/Crossref, a controlled-conference HTML
+page, missing authors, and missing venue. Assert that returned/serialized
+objects contain no abstract or raw response body.
+
+- [ ] **Step 2: Run source tests and observe missing modules**
 
 Run: `python3 -m unittest tests.contributions.test_http tests.contributions.test_sources -v`
 
 Expected: FAIL because `http.py` and `sources.py` do not exist.
 
-- [ ] **Step 3: Implement bounded HTTPS fetching and redirect checks**
+- [ ] **Step 3: Implement the minimal safe fetcher**
 
 ```python
-def require_public_addresses(addresses: Iterable[str]) -> None:
-    for address in addresses:
-        ip = ipaddress.ip_address(address)
-        if not ip.is_global:
-            raise UnsafeUrlError(f"non-public target address: {ip.compressed}")
+MAX_REDIRECTS = 3
+MAX_RESPONSE_BYTES = 2_000_000
+CONNECT_TIMEOUT_SECONDS = 5
+READ_TIMEOUT_SECONDS = 15
 
-
-def validate_fetch_url(url: str, allowed_hosts: frozenset[str]) -> ParseResult:
-    parsed = urlparse(url)
-    host = (parsed.hostname or "").casefold().rstrip(".")
-    if parsed.scheme != "https" or parsed.username or parsed.password:
-        raise UnsafeUrlError("source URL must be credential-free HTTPS")
-    if not any(host == item or host.endswith(f".{item}") for item in allowed_hosts):
-        raise UnsafeUrlError(f"unsupported source host: {host}")
-    return parsed
-```
-
-`SafeHttpFetcher.get()` must resolve every hop before opening it, disable automatic redirects, permit only `301`, `302`, `303`, `307`, and `308`, re-run the full URL/IP policy on each `Location`, read at most `max_bytes + 1`, and raise `SourceResolutionError("upstream-error", ...)` when the limit is exceeded.
-
-- [ ] **Step 4: Implement source adapters and evidence extraction**
-
-Use these exact routes and evidence rules:
-
-```python
-OPENREVIEW_API_V2 = "https://api2.openreview.net/notes?id={forum_id}"
-OPENREVIEW_API_V1 = "https://api.openreview.net/notes?id={forum_id}"
-CROSSREF_API = "https://api.crossref.org/works/{quoted_doi}"
-ARXIV_API = "https://export.arxiv.org/api/query?id_list={arxiv_id}"
-
-TRUSTED_HTML_HOSTS = frozenset({
-    "aaai.org", "ojs.aaai.org", "aistats.org", "virtual.aistats.org",
-    "icml.cc", "iclr.cc", "proceedings.iclr.cc", "neurips.cc",
-    "proceedings.neurips.cc", "proceedings.mlr.press", "kdd.org",
-    "ijcai.org", "thewebconf.org", "wsdm-conference.org", "sigir.org",
-    "dl.acm.org", "ai-finance.org", "icaif25.org", "icaif2026.org",
-})
-
-ALLOWED_FETCH_HOSTS = TRUSTED_HTML_HOSTS | frozenset({
-    "openreview.net", "api2.openreview.net", "api.openreview.net",
-    "doi.org", "api.crossref.org",
-    "arxiv.org", "export.arxiv.org",
+ALLOWED_SOURCE_HOSTS = frozenset({
+    "openreview.net", "api.openreview.net", "api2.openreview.net",
+    "arxiv.org", "export.arxiv.org", "doi.org", "api.crossref.org",
+    "icml.cc", "neurips.cc", "iclr.cc", "kdd.org", "aaai.org",
+    "ijcai.org", "thewebconf.org", "wsdm-conference.org",
+    "sigir.org", "aistats.org", "icaif.org",
 })
 ```
 
-- Query OpenReview API v2 by note `id`; fall back to API v1 only on a v2
-  not-found response. Unwrap v2 content fields from their `value` members.
-  OpenReview is official only when structured `venue`, `venueid`, or invitation
-  data maps unambiguously to one controlled venue, year, and track.
-- A DOI is official only when Crossref's event or container title maps unambiguously to a controlled venue and year; its `type` determines `published`.
-- arXiv supplies title, authors, abstract, and identifier. If it exposes a DOI, resolve that DOI and merge the official result; otherwise keep `evidence_kind="preprint-only"`.
-- Trusted HTML supplies `citation_title`, repeated `citation_author`, `citation_conference_title`, `citation_publication_date`, `citation_doi`, and `citation_pdf_url`. The page is official only when trusted-host content maps the title, controlled venue, year, and track without inference from the contributor note.
+Require HTTPS at the original and every redirect hop, resolve the hostname
+before connecting, reject every non-global address, keep the hostname as TLS
+SNI/Host, and stop after the declared redirect/body/time bounds. Follow a
+trusted source subdomain only when its hostname is exactly trusted or ends in a
+dot plus the trusted hostname; never accept suffix lookalikes.
 
-- [ ] **Step 5: Run all source tests**
+- [ ] **Step 4: Implement source-specific bibliographic extraction**
+
+OpenReview reads public note content; arXiv reads the Atom entry; DOI reads
+Crossref; official HTML reads citation meta tags (`citation_title`,
+`citation_author`, `citation_conference_title`, `citation_publication_date`,
+`citation_pdf_url`, `citation_doi`). Normalize controlled venue aliases through
+one explicit map imported from `scripts.catalog.VENUES`. Do not derive an
+acceptance boolean, scope field, summary, taxonomy, or status.
+
+```python
+def extract_metadata(url: str, fetcher: SafeFetcher) -> BaseMetadata:
+    parsed = validated_https_url(url)
+    if parsed.hostname == "openreview.net":
+        return _from_openreview(url, fetcher)
+    if parsed.hostname == "arxiv.org":
+        return _from_arxiv(url, fetcher)
+    if parsed.hostname == "doi.org":
+        return _from_crossref(url, fetcher)
+    if _is_controlled_conference_host(parsed.hostname):
+        return _from_citation_meta(url, fetcher)
+    raise SourceError("unsupported-source")
+```
+
+- [ ] **Step 5: Run focused tests and compile checks**
 
 Run: `python3 -m unittest tests.contributions.test_http tests.contributions.test_sources -v`
 
-Expected: PASS with no network access.
+Run: `python3 -m py_compile scripts/contributions/http.py scripts/contributions/sources.py`
 
-- [ ] **Step 6: Commit safe source resolution**
+Expected: both commands PASS.
+
+- [ ] **Step 6: Commit source extraction**
 
 ```bash
 git add scripts/contributions/http.py scripts/contributions/sources.py tests/contributions
-git commit -m "feat: resolve safe official paper sources"
+git commit -m "feat: extract paper base metadata"
 ```
 
 ---
 
-### Task 3: Deterministic Verification and Duplicate Policy
+### Task 3: Readiness and Duplicate Inspection
 
 **Files:**
-- Modify: `scripts/catalog.py`
-- Create: `scripts/contributions/verify.py`
-- Create: `tests/contributions/test_verify.py`
-- Modify: `tests/test_validate.py`
+- Create: `scripts/contributions/check.py`
+- Create: `tests/contributions/test_check.py`
 
 **Interfaces:**
-- Consumes: `Submission`, `SourceMetadata`, optional `Enrichment`, and catalog `list[dict]`.
-- Produces: public `normalize_title(value: str) -> str` in `scripts.catalog`; retain `_normalized_title = normalize_title` during this change so existing internal callers remain stable.
-- Produces: `find_duplicates(source: SourceMetadata, catalog: Sequence[dict]) -> tuple[str, tuple[str, ...]]` returning `clear`, `possible`, or `duplicate` and catalog IDs.
-- Produces: `build_candidate_record(source, enrichment, verified_on: date) -> dict | None`.
-- Produces: `verify_candidate(submission, source, catalog, enrichment=None, verified_on=None, advisory_errors=()) -> VerificationResult`.
+- Consumes: `Submission`, `BaseMetadata`, `DuplicateResult`, and `InspectionResult`.
+- Consumes: `load_catalog(path: Path) -> list[dict]` from `scripts.catalog`.
+- Produces: `normalize_title(value: str) -> str`.
+- Produces: `check_duplicates(metadata: BaseMetadata, records: list[dict]) -> DuplicateResult`.
+- Produces: `inspect_submission(submission: Submission, metadata: BaseMetadata, records: list[dict]) -> InspectionResult`.
 
-- [ ] **Step 1: Write failing duplicate, evidence, year, and scope tests**
-
-```python
-class VerificationTests(unittest.TestCase):
-    def test_preprint_cannot_be_verified_even_when_ai_says_in_scope(self):
-        result = verify_candidate(
-            SUBMISSION,
-            dataclasses.replace(SOURCE, evidence_kind="preprint-only", official_url=None),
-            [],
-            VALID_ENRICHMENT,
-            verified_on=date(2026, 8, 13),
-        )
-        self.assertFalse(result.venue_verified)
-        self.assertFalse(result.ready_for_approval)
-        self.assertIn("needs-official-source", result.blockers)
-
-    def test_duplicate_doi_blocks_materialization(self):
-        catalog = [{"id": "2025-kdd-doe-paper", "title": "Different", "doi": "10.1/x"}]
-        source = dataclasses.replace(SOURCE, doi="10.1/X")
-        result = verify_candidate(SUBMISSION, source, catalog, VALID_ENRICHMENT)
-        self.assertEqual(result.duplicate_status, "duplicate")
-        self.assertEqual(result.duplicate_ids, ("2025-kdd-doe-paper",))
-
-    def test_complete_official_in_scope_record_is_ready(self):
-        result = verify_candidate(
-            SUBMISSION, SOURCE, [], VALID_ENRICHMENT, verified_on=date(2026, 8, 13)
-        )
-        self.assertTrue(result.record_complete)
-        self.assertTrue(result.ready_for_approval)
-        self.assertEqual(validate_catalog([result.record]), [])
-```
-
-- [ ] **Step 2: Run verification tests and confirm failure**
-
-Run: `python3 -m unittest tests.contributions.test_verify -v`
-
-Expected: FAIL because `verify_candidate` is missing.
-
-- [ ] **Step 3: Expose normalized-title reuse and implement duplicate matching**
+- [ ] **Step 1: Write failing readiness and duplicate tests**
 
 ```python
-def find_duplicates(source: SourceMetadata, catalog: Sequence[dict]) -> tuple[str, tuple[str, ...]]:
-    exact: set[str] = set()
-    possible: set[str] = set()
-    for record in catalog:
-        if source.doi and record.get("doi", "").casefold() == source.doi.casefold():
-            exact.add(record["id"])
-        if source.openreview_id and record.get("openreview_id") == source.openreview_id:
-            exact.add(record["id"])
-        if source.official_url and record.get("official_url") == source.official_url:
-            exact.add(record["id"])
-        if normalize_title(record.get("title", "")) == normalize_title(source.title or ""):
-            possible.add(record["id"])
-    if exact:
-        return "duplicate", tuple(sorted(exact))
-    if possible:
-        return "possible", tuple(sorted(possible))
-    return "clear", ()
+class InspectionTests(unittest.TestCase):
+    def test_base_fields_are_the_only_readiness_gate(self):
+        result = inspect_submission(SUBMISSION, COMPLETE_METADATA, [])
+        self.assertEqual(result.missing_fields, ())
+        self.assertTrue(result.metadata_ready)
+        self.assertFalse(hasattr(result, "scope_assessment"))
+        self.assertFalse(hasattr(result, "venue_verified"))
+
+    def test_exact_identifier_url_and_normalized_title_matches_block(self):
+        for metadata in (SAME_DOI, SAME_OPENREVIEW, SAME_ARXIV, SAME_URL, SAME_TITLE):
+            with self.subTest(metadata=metadata):
+                duplicate = check_duplicates(metadata, EXISTING_RECORDS)
+                self.assertEqual(duplicate.status, "duplicate")
+
+    def test_conservative_similar_title_is_possible_not_duplicate(self):
+        duplicate = check_duplicates(SIMILAR_TITLE, EXISTING_RECORDS)
+        self.assertEqual(duplicate.status, "possible")
 ```
 
-- [ ] **Step 4: Implement record construction and gate composition**
+Also cover missing title/authors/venue/year/paper URL, invalid controlled venue,
+out-of-range year, URL normalization preserving path/query case, and generated
+ID collision detection at materialization recheck time.
 
-`build_candidate_record()` must insert fields in the repository's documented order, derive the stable ID as `<year>-<venue-slug>-<first-author-family>-<first-four-material-title-words>`, set `presentation="not-specified"` when official evidence does not specify one, and return `None` without complete enrichment.
+- [ ] **Step 2: Run the focused test and observe the missing module**
 
-Use this exact slug rule: normalize with Unicode NFKD, drop non-ASCII marks,
-case-fold, tokenize on `[a-z0-9]+`, take the final token of the first author for
-`first-author-family`, remove `a`, `an`, `and`, `for`, `in`, `of`, `on`, `the`,
-`to`, and `with` from the title tokens, and keep the first four remaining title
-tokens. Fail completeness when the author or material title tokens are empty;
-do not invent an ID fallback.
+Run: `python3 -m unittest tests.contributions.test_check -v`
+
+Expected: FAIL with `ModuleNotFoundError` for `scripts.contributions.check`.
+
+- [ ] **Step 3: Implement deterministic inspection only**
 
 ```python
-ready = all((
-    source.source_resolved,
-    venue_verified,
-    source.year in {2024, 2025, 2026},
-    duplicate_status == "clear",
-    enrichment is not None and enrichment.scope_assessment == "in-scope",
-    record_complete,
-))
+BASE_FIELDS = ("title", "authors", "venue", "year", "paper_url")
+EXACT_FIELDS = ("doi", "openreview_id", "arxiv_id")
+
+def inspect_submission(submission, metadata, records):
+    missing = missing_base_fields(metadata)
+    duplicate = check_duplicates(metadata, records)
+    ready = not missing and duplicate.status != "duplicate"
+    return InspectionResult(
+        version=RESULT_VERSION,
+        submission=submission,
+        metadata=metadata,
+        missing_fields=missing,
+        duplicate=duplicate,
+        metadata_ready=ready,
+    )
 ```
 
-Calculate `record_complete` by running `validate_catalog([record])`. Store those validation errors in `VerificationResult.validation_errors` rather than dropping them.
+Use NFKC/casefold/alphanumeric title normalization. Exact normalized-title
+equality is `duplicate`; only a conservative `SequenceMatcher` threshold of
+`>= 0.96` with at least six normalized tokens is `possible`. Compare
+identifiers case-insensitively and URLs after lowercasing scheme/host, removing
+the default HTTPS port and fragment, and preserving path/query bytes and case.
 
-- [ ] **Step 5: Run verification and existing catalog tests**
+- [ ] **Step 4: Run check, catalog, and validation tests**
 
-Run: `python3 -m unittest tests.contributions.test_verify tests.test_validate -v`
+Run: `python3 -m unittest tests.contributions.test_check tests.test_validate tests.test_coverage -v`
 
 Expected: PASS.
 
-- [ ] **Step 6: Commit deterministic verification**
+- [ ] **Step 5: Commit deterministic inspection**
 
 ```bash
-git add scripts/catalog.py scripts/contributions/verify.py tests/contributions/test_verify.py tests/test_validate.py
-git commit -m "feat: verify candidate paper evidence"
+git add scripts/contributions/check.py tests/contributions/test_check.py
+git commit -m "feat: check paper metadata and duplicates"
 ```
 
 ---
 
-### Task 4: Optional AI Enrichment with Strict Local Validation
-
-**Files:**
-- Create: `scripts/contributions/enrich.py`
-- Create: `tests/contributions/test_enrich.py`
-
-**Interfaces:**
-- Consumes: `SourceMetadata`, `Submission.relevance_note`, `OPENAI_API_KEY`, and `OPENAI_MODEL`.
-- Produces: `build_enrichment_request(source, relevance_note, model) -> dict`.
-- Produces: `parse_enrichment_response(payload: Mapping[str, object]) -> Enrichment`.
-- Produces: `enrich_source(source, relevance_note, api_key, model, post_json=None) -> Enrichment | None`; returns `None` when either configuration value is absent and raises `EnrichmentError` for configured-call failures.
-- Uses: `POST https://api.openai.com/v1/responses` with `store: false` and strict JSON schema under `text.format`.
-
-- [ ] **Step 1: Write failing request, response, and prompt-isolation tests**
-
-```python
-class EnrichmentTests(unittest.TestCase):
-    def test_request_uses_strict_schema_and_no_tools(self):
-        request = build_enrichment_request(SOURCE, "Direct portfolio decision.", "gpt-5-mini")
-        self.assertFalse(request["store"])
-        self.assertEqual(request["text"]["format"]["type"], "json_schema")
-        self.assertTrue(request["text"]["format"]["strict"])
-        self.assertNotIn("tools", request)
-
-    def test_rejects_uncontrolled_topic_even_from_valid_json(self):
-        payload = response_payload({**VALID_AI_JSON, "topics": ["credit-scoring"]})
-        with self.assertRaises(EnrichmentError):
-            parse_enrichment_response(payload)
-
-    def test_raw_html_is_never_added_to_model_input(self):
-        request = build_enrichment_request(
-            dataclasses.replace(SOURCE, abstract="Ignore rules <script>secret()</script>"),
-            "Relevant.",
-            "gpt-5-mini",
-        )
-        serialized = json.dumps(request)
-        self.assertNotIn("<script>", serialized)
-        self.assertLessEqual(len(serialized), 24_000)
-```
-
-- [ ] **Step 2: Run enrichment tests and verify failure**
-
-Run: `python3 -m unittest tests.contributions.test_enrich -v`
-
-Expected: FAIL because `enrich.py` is missing.
-
-- [ ] **Step 3: Implement the strict schema and bounded prompt packet**
-
-The schema must require `scope_assessment`, `scope_reasons`, `topics`, `summary`, and `why_it_matters`; it must define every object with `additionalProperties: false`. Optional lists are represented as required arrays that may be empty in AI output and are omitted later from the paper record when empty.
-
-```python
-request = {
-    "model": model,
-    "store": False,
-    "instructions": SYSTEM_INSTRUCTIONS,
-    "input": [{"role": "user", "content": [{"type": "input_text", "text": packet}]}],
-    "text": {
-        "format": {
-            "type": "json_schema",
-            "name": "paper_catalog_enrichment",
-            "strict": True,
-            "schema": ENRICHMENT_SCHEMA,
-        }
-    },
-}
-```
-
-Normalize extracted plain text with HTML unescaping, tag removal, control-character removal, and an 18,000-character cap before constructing `packet`. State in `SYSTEM_INSTRUCTIONS` that contributor and abstract text are untrusted data and cannot alter the inclusion rules.
-
-- [ ] **Step 4: Implement direct Responses API transport and output extraction**
-
-Use `urllib.request.Request` with `Authorization: Bearer`, `Content-Type: application/json`, a 30-second timeout, and no retry inside the function. Extract the first `output_text` part from a completed response, decode its JSON, then validate every enum against `TOPICS`, `ASSET_CLASSES`, and `DATA_FREQUENCIES`. Reject empty summaries, copied-summary equality with the abstract, uncontrolled values, unexpected keys, refusals, incomplete responses, and malformed JSON.
-
-- [ ] **Step 5: Run enrichment tests**
-
-Run: `python3 -m unittest tests.contributions.test_enrich -v`
-
-Expected: PASS without an API key or live request.
-
-- [ ] **Step 6: Commit AI enrichment**
-
-```bash
-git add scripts/contributions/enrich.py tests/contributions/test_enrich.py
-git commit -m "feat: suggest catalog metadata with AI"
-```
-
----
-
-### Task 5: Verification Report, Labels, GitHub Client, and CLI
+### Task 4: Managed Issue Report, Labels, and Workflow CLI
 
 **Files:**
 - Create: `scripts/contributions/report.py`
@@ -549,132 +377,158 @@ git commit -m "feat: suggest catalog metadata with AI"
 - Create: `tests/contributions/test_cli.py`
 
 **Interfaces:**
-- Consumes: `VerificationResult` from Tasks 3--4 and a GitHub issue event JSON file.
-- Produces: `render_report(result: VerificationResult) -> str` containing marker `<!-- good-quant-ai-paper-verification:v1 -->`.
-- Produces: `labels_for(result: VerificationResult) -> tuple[str, ...]`.
-- Produces: `GitHubClient.begin_issue(issue_number) -> None`,
-  `GitHubClient.sync_issue(issue_number, report, desired_labels, *, drop_approved=False) -> None`,
-  and `GitHubClient.actor_permission(actor) -> str`.
-- Produces CLI commands:
-  - `verify-event --event PATH --catalog PATH --result PATH --report PATH --labels PATH`
-  - `begin-issue --event PATH`
-  - `sync-issue --event PATH --report PATH --labels PATH`
-  - `authorize-event --event PATH`
-  - `materialize --result PATH --catalog PATH` (wired in Task 6).
-  - `result-field --result PATH --field record.id` (wired in Task 9).
-  - `mark-error --result PATH --report PATH --labels PATH --message TEXT`.
-  - `attach-pr --report PATH --url URL`.
+- Consumes: source extraction and inspection from Tasks 1--3.
+- Produces: `render_report(result: InspectionResult) -> str` with exactly one `<!-- paper-suggestion-report:v1 -->` marker.
+- Produces: `render_problem_report(code: str) -> str` for allowlisted form/source failures.
+- Produces: `state_label(result: InspectionResult) -> str`, returning exactly one of `metadata-ready`, `needs-metadata`, or `duplicate`.
+- Produces: `GitHubClient.sync_issue(issue_number: int, report: str, state: str) -> None`.
+- Produces: `GitHubClient.actor_can_write(actor: str) -> bool` accepting base permission `write`, `maintain`, or `admin`.
+- Produces CLI commands `inspect-event`, `sync-issue`, and `authorize-event`.
 
-- [ ] **Step 1: Write failing report, idempotency, escaping, and CLI tests**
+- [ ] **Step 1: Write failing report, REST, and CLI tests**
 
 ```python
 class ReportTests(unittest.TestCase):
-    def test_report_separates_deterministic_evidence_from_ai_suggestions(self):
+    def test_report_contains_only_base_facts_duplicates_missing_fields_and_next_action(self):
         report = render_report(READY_RESULT)
-        self.assertIn("<!-- good-quant-ai-paper-verification:v1 -->", report)
-        self.assertIn("## Official evidence", report)
-        self.assertIn("## AI suggestions — maintainer review required", report)
-        self.assertIn("Safe to apply `approved`", report)
+        self.assertEqual(report.count(REPORT_MARKER), 1)
+        self.assertIn("Portfolio Learning", report)
+        self.assertIn("ICML", report)
+        self.assertNotIn("scope assessment", report.casefold())
+        self.assertNotIn("acceptance verified", report.casefold())
+        self.assertNotIn("summary suggestion", report.casefold())
 
-    def test_markdown_escapes_untrusted_pipe_and_html(self):
-        result = with_title(READY_RESULT, "Alpha | Beta <script>")
-        report = render_report(result)
-        self.assertIn(r"Alpha \| Beta &lt;script&gt;", report)
-
-
-class GitHubClientTests(unittest.TestCase):
-    def test_sync_updates_existing_marker_comment_and_reconciles_owned_labels(self):
-        api = FakeGitHubApi(existing_marker_comment_id=41, labels=["approved", "verifying"])
-        GitHubClient(api=api).sync_issue(12, "report", ("verified-candidate",))
-        self.assertEqual(api.updated_comment_id, 41)
-        self.assertIn("approved", api.final_labels)
-        self.assertIn("verified-candidate", api.final_labels)
-        self.assertNotIn("verifying", api.final_labels)
-
-    def test_approval_sync_drops_consumed_approved_label(self):
-        api = FakeGitHubApi(labels=["approved", "verifying"])
-        GitHubClient(api=api).sync_issue(
-            12, "blocked report", ("needs-official-source",), drop_approved=True
-        )
-        self.assertNotIn("approved", api.final_labels)
-        self.assertIn("needs-official-source", api.final_labels)
+    def test_untrusted_metadata_cannot_create_mentions_or_bare_links(self):
+        report = render_report(adversarial_result("@owner https://evil.test ~x~"))
+        self.assertNotIn("@owner", report)
+        self.assertNotIn("https://evil.test", report)
 ```
 
-- [ ] **Step 2: Run report and CLI tests and confirm failure**
+GitHub client tests must model real REST semantics: paginate comments and
+labels, update the single marker comment, delete only the three old
+automation-owned state labels, add the desired label, preserve `approved` and
+other human labels, validate exactly one report marker before an API call, and
+reject pagination links outside `https://api.github.com/repos/<owner>/<repo>/`.
+CLI tests use fixture transports and temporary files; they assert strict event
+field types, stable category-only errors, no raw body/response/token in
+formatted tracebacks, and no live network. A malformed form must still write a
+managed problem report plus `needs-metadata`, must not write a result JSON, and
+must not raise a workflow-internal error.
+
+- [ ] **Step 2: Run focused tests and observe missing modules**
 
 Run: `python3 -m unittest tests.contributions.test_report tests.contributions.test_github tests.contributions.test_cli -v`
 
-Expected: FAIL because the three modules are missing.
+Expected: FAIL because the report, GitHub, and CLI modules are missing.
 
-- [ ] **Step 3: Implement state-to-label mapping and managed report rendering**
+- [ ] **Step 3: Implement the minimal report and label state**
+
+Render one fact table for title, authors, venue, year, URLs, and identifiers;
+one duplicate section; one missing-fields section; and one maintainer-next-step
+section. Escape HTML/Markdown, insert zero-width breaks into untrusted `@`,
+`http://`, `https://`, and `~`, and construct trusted submitted/canonical links
+only through a dedicated link helper.
 
 ```python
-MACHINE_LABELS = frozenset({
-    "paper-suggestion", "verifying", "verified-candidate",
-    "needs-official-source", "possible-duplicate", "duplicate",
-    "likely-out-of-scope", "needs-metadata", "automation-error",
-})
+REPORT_MARKER = "<!-- paper-suggestion-report:v1 -->"
+MACHINE_STATES = frozenset({"metadata-ready", "needs-metadata", "duplicate"})
 
-def labels_for(result: VerificationResult) -> tuple[str, ...]:
-    labels = {"paper-suggestion"}
-    if result.ready_for_approval:
-        labels.add("verified-candidate")
-    labels.update(BLOCKER_TO_LABEL[item] for item in result.blockers if item in BLOCKER_TO_LABEL)
-    return tuple(sorted(labels))
+def state_label(result: InspectionResult) -> str:
+    if result.duplicate.status == "duplicate":
+        return "duplicate"
+    return "metadata-ready" if result.metadata_ready else "needs-metadata"
+
+def render_report(result: InspectionResult) -> str:
+    return "\n".join((
+        REPORT_MARKER,
+        "## Paper metadata check",
+        _fact_table(result.metadata),
+        _duplicate_section(result.duplicate),
+        _missing_section(result.missing_fields),
+        _next_action(result),
+        "",
+    ))
 ```
 
-Render URLs as Markdown links only after escaping link labels; encode untrusted plain text with `html.escape` and escape Markdown table characters. Never include the abstract, API key, request headers, or raw model response.
+- [ ] **Step 4: Implement the small GitHub client**
 
-- [ ] **Step 4: Implement the minimal GitHub REST client**
+Use `urllib.request` with `Authorization: Bearer`,
+`Accept: application/vnd.github+json`, and `X-GitHub-Api-Version: 2022-11-28`.
+Paginate the three relevant collections. Synchronization must validate the
+report marker and state label locally before any request, update/create the
+managed comment, remove only obsolete machine-state labels, and add the one
+desired state. Authorization reads
+`GET /repos/{owner}/{repo}/collaborators/{actor}/permission`.
 
-Use `https://api.github.com/repos/{owner}/{repo}` with headers `Authorization: Bearer`, `Accept: application/vnd.github+json`, and `X-GitHub-Api-Version: 2026-03-10`. `sync_issue()` must list comments, update the one containing the marker or create one, create missing machine labels with fixed colors/descriptions, remove only labels in `MACHINE_LABELS`, and preserve `approved` and all unrelated labels.
+```python
+class GitHubClient:
+    def sync_issue(self, issue_number: int, report: str, state: str) -> None:
+        _validate_managed_report(report)
+        _validate_state(state)
+        self._upsert_marker_comment(issue_number, report)
+        current = self._issue_labels(issue_number)
+        for label in sorted((current & MACHINE_STATES) - {state}):
+            self._delete_issue_label(issue_number, label)
+        if state not in current:
+            self._add_issue_label(issue_number, state)
 
-`begin_issue()` creates missing machine labels, removes prior machine status
-labels, and applies `paper-suggestion` plus `verifying`. `sync_issue()` preserves
-`approved` by default; the approval workflow passes `drop_approved=True` after
-consuming the label so a blocked or completed event cannot retrigger from stale
-approval state.
+    def actor_can_write(self, actor: str) -> bool:
+        return self._collaborator_permission(actor) in {"write", "maintain", "admin"}
+```
 
-`actor_permission()` calls `/collaborators/{actor}/permission` and returns the base `permission`; only `write` and `admin` are accepted by `authorize-event` because GitHub maps maintain to base write.
+- [ ] **Step 5: Implement strict JSON-file CLI boundaries**
 
-- [ ] **Step 5: Implement workflow-facing CLI orchestration**
+`inspect-event --event PATH --catalog PATH --result PATH --report PATH --labels PATH`
+must parse the Issue body, extract metadata, inspect it, and write a strict
+result plus the report/single-label artifacts. A recognized form with a source
+failure writes an unresolved `InspectionResult`; a malformed form writes only
+an allowlisted problem report and `needs-metadata`. `sync-issue` reads the
+report/label artifacts and updates GitHub. `authorize-event` prints only
+`authorized=true` or `authorized=false` to `$GITHUB_OUTPUT`. Unexpected CLI
+errors print a stable category to stderr and exit non-zero with suppressed
+causes.
 
-`verify-event` reads `github.event.issue.body` from the event JSON, loads the catalog, resolves the source, optionally enriches using environment variables, verifies it, and atomically writes UTF-8 JSON/Markdown/label-list outputs. Expected candidate failures produce a report and exit `0`; malformed workflow input or an unwritable output path exits `2`.
+```python
+def _inspect_event(args: argparse.Namespace) -> int:
+    event = _load_issue_event(args.event)
+    try:
+        submission = parse_issue_form(event.body)
+    except SubmissionError as error:
+        _write_report_and_label(
+            args.report, args.labels,
+            render_problem_report(error.code), "needs-metadata",
+        )
+        return 0
+    try:
+        metadata = extract_metadata(submission.paper_url, SafeFetcher())
+    except SourceError as error:
+        metadata = unresolved_metadata(submission.paper_url, error.code)
+    result = inspect_submission(submission, metadata, load_catalog(args.catalog))
+    _write_result(args.result, result)
+    _write_report_and_label(
+        args.report, args.labels, render_report(result), state_label(result)
+    )
+    return 0
+```
 
-An unsupported submitted host or source failure becomes an unresolved
-`SourceMetadata` that retains the submitted URL as `paper_url` and records the
-typed source error; it is not fetched. A configured AI failure is recorded in
-`VerificationResult.advisory_errors`, applies `needs-metadata`, and leaves
-deterministic venue evidence intact. The report renders source, AI, catalog,
-and internal failures in separate sections.
-
-`begin-issue` and `sync-issue` read `GITHUB_REPOSITORY` and `GITHUB_TOKEN` from
-the environment. `sync-issue --drop-approved` passes the approval-consumption
-flag. `authorize-event` reads `github.event.sender.login`, fails with exit `3`
-unless permission is `write` or `admin`, and prints no token or event body.
-
-`mark-error` replaces the current machine state with `automation-error`, rerenders
-the managed report, and preserves deterministic evidence already obtained.
-`attach-pr` inserts or replaces a `## Draft pull request` section containing
-one validated `https://github.com/` URL. `result-field` supports only the
-allowlisted field `record.id`; it rejects arbitrary dotted paths.
-
-- [ ] **Step 6: Run report, GitHub, and CLI tests**
+- [ ] **Step 6: Run focused and full offline tests**
 
 Run: `python3 -m unittest tests.contributions.test_report tests.contributions.test_github tests.contributions.test_cli -v`
 
-Expected: PASS.
+Run: `python3 -m unittest discover -s tests -v`
 
-- [ ] **Step 7: Commit workflow-facing orchestration**
+Expected: both commands PASS.
+
+- [ ] **Step 7: Commit Issue orchestration**
 
 ```bash
 git add scripts/contributions/report.py scripts/contributions/github.py scripts/contributions/cli.py tests/contributions
-git commit -m "feat: report and route paper suggestions"
+git commit -m "feat: report paper metadata suggestions"
 ```
 
 ---
 
-### Task 6: Atomic Catalog Materialization
+### Task 5: Partial Catalog Record and Draft-PR Inputs
 
 **Files:**
 - Create: `scripts/contributions/materialize.py`
@@ -682,243 +536,271 @@ git commit -m "feat: report and route paper suggestions"
 - Create: `tests/contributions/test_materialize.py`
 
 **Interfaces:**
-- Consumes: a version-1 `VerificationResult` JSON with `ready_for_approval=True` and non-null `record`.
-- Produces: `append_record_atomic(path: Path, record: dict) -> None`.
-- Produces: `materialize_result(result: VerificationResult, catalog_path: Path) -> str`, returning the new paper ID.
-- Extends: CLI `materialize --result PATH --catalog PATH`.
+- Consumes: a strict version-1 `InspectionResult` JSON.
+- Produces: `partial_record(result: InspectionResult) -> dict[str, object]`.
+- Produces: `append_partial_record(path: Path, result: InspectionResult) -> str`, returning the record ID.
+- Produces: `branch_name(issue_number: int, record_id: str) -> str`.
+- Extends CLI with `materialize --result PATH --catalog PATH --issue-number INT --pr-body PATH --github-output PATH`.
 
-- [ ] **Step 1: Write failing atomicity, duplicate, and coverage-isolation tests**
+- [ ] **Step 1: Write failing partial-record tests**
 
 ```python
-class MaterializationTests(unittest.TestCase):
-    def test_appends_one_record_without_reformatting_existing_yaml(self):
-        original = yaml.safe_dump(
-            [VALID_EXISTING_RECORD], sort_keys=False, allow_unicode=True, width=1000
-        )
-        catalog = self.temp_path("papers.yaml", original)
-        append_record_atomic(catalog, READY_RESULT.record)
-        updated = catalog.read_text(encoding="utf-8")
-        self.assertTrue(updated.startswith(original.rstrip() + "\n\n"))
-        self.assertEqual(len(load_catalog(catalog)), 2)
+class MaterializeTests(unittest.TestCase):
+    def test_appends_only_reliable_base_metadata_and_keeps_valid_yaml(self):
+        catalog = copy_catalog()
+        before_coverage = COVERAGE.read_bytes()
+        record_id = append_partial_record(catalog, READY_RESULT)
+        records = load_catalog(catalog)
+        added = records[-1]
+        self.assertEqual(added["id"], record_id)
+        self.assertEqual(added["title"], "Portfolio Learning")
+        self.assertEqual(added["authors"], ["Ada A.", "Bo B."])
+        self.assertNotIn("summary", added)
+        self.assertNotIn("topics", added)
+        self.assertEqual(COVERAGE.read_bytes(), before_coverage)
 
-    def test_duplicate_or_not_ready_result_leaves_file_byte_identical(self):
-        catalog = self.valid_catalog_file()
-        before = catalog.read_bytes()
-        with self.assertRaises(MaterializationError):
-            materialize_result(NOT_READY_RESULT, catalog)
-        self.assertEqual(catalog.read_bytes(), before)
+    def test_not_ready_and_exact_duplicate_leave_catalog_byte_identical(self):
+        for result in (NOT_READY_RESULT, DUPLICATE_RESULT):
+            catalog = copy_catalog()
+            before = catalog.read_bytes()
+            with self.assertRaises(MaterializeError):
+                append_partial_record(catalog, result)
+            self.assertEqual(catalog.read_bytes(), before)
 ```
 
-- [ ] **Step 2: Run materialization tests and confirm failure**
+Also assert: current catalog is reloaded and rechecked before append; an ID
+collision blocks; the appended YAML parses as a list; the partial record omits
+unknown extended fields rather than inventing placeholders; branch/record IDs
+contain only `[a-z0-9/-]`; and the PR body lists every missing schema field plus
+the exact existing validation/render commands.
+
+- [ ] **Step 2: Run materialization tests and observe the missing module**
 
 Run: `python3 -m unittest tests.contributions.test_materialize -v`
 
-Expected: FAIL because `materialize.py` is missing.
+Expected: FAIL because `materialize.py` does not exist.
 
-- [ ] **Step 3: Implement append-only YAML serialization through a validated temporary file**
+- [ ] **Step 3: Implement partial-record generation and safe append**
 
 ```python
-FIELD_ORDER = (
+PARTIAL_FIELD_ORDER = (
     "id", "title", "authors", "venue", "year", "track", "subvenue",
-    "presentation", "official_url", "paper_url", "arxiv_id", "openreview_id",
-    "doi", "code_url", "project_url", "topics", "asset_classes",
-    "data_frequency", "tasks", "methods", "datasets", "summary",
-    "why_it_matters", "status", "verified_on", "notes",
+    "presentation", "official_url", "paper_url", "arxiv_id",
+    "openreview_id", "doi",
 )
-
-def append_record_atomic(path: Path, record: dict) -> None:
-    ordered = {key: record[key] for key in FIELD_ORDER if key in record}
-    snippet = yaml.safe_dump(
-        [ordered], sort_keys=False, allow_unicode=True, width=1000,
-    ).rstrip() + "\n"
-    original = path.read_text(encoding="utf-8").rstrip() + "\n\n"
-    candidate = original + snippet
-    temp_path = path.with_name(f".{path.name}.candidate")
-    temp_path.write_text(candidate, encoding="utf-8")
-    try:
-        records = load_catalog(temp_path)
-        errors = validate_catalog(records)
-        if errors:
-            raise MaterializationError("; ".join(errors))
-        os.replace(temp_path, path)
-    finally:
-        if temp_path.exists():
-            temp_path.unlink()
 ```
 
-Before writing, `materialize_result()` must reload the current catalog and rerun duplicate matching against the result's source. It must refuse an existing ID, title, DOI, OpenReview ID, official URL, or paper URL.
+Generate the stable ID as `<year>-<venue-slug>-<first-author-slug>-<title-slug>`.
+Re-run `check_duplicates()` against the current file, reject a current exact
+duplicate or ID collision, render one YAML list-item snippet with
+`yaml.safe_dump`, validate that the combined candidate parses as a YAML list,
+and replace the catalog from a same-directory temporary file. Do not call
+`validate_catalog()` because a partial draft record is intentionally incomplete.
 
-- [ ] **Step 4: Wire and test the CLI materialize command**
+- [ ] **Step 4: Wire the materialize CLI and PR checklist**
+
+The command must reject non-ready/exact-duplicate results before writing, append
+one record, write a Markdown PR body that links the Issue and possible matches,
+and append only validated `record_id=...` and `branch=...` lines to the supplied
+GitHub output file. Never print arbitrary result data to shell output.
+
+```python
+def _materialize(args: argparse.Namespace) -> int:
+    result = _load_result(args.result)
+    record_id = append_partial_record(args.catalog, result)
+    branch = branch_name(args.issue_number, record_id)
+    args.pr_body.write_text(render_pr_body(args.issue_number, result), encoding="utf-8")
+    _append_github_output(args.github_output, {"record_id": record_id, "branch": branch})
+    return 0
+```
+
+- [ ] **Step 5: Run materialize and CLI tests**
 
 Run: `python3 -m unittest tests.contributions.test_materialize tests.contributions.test_cli -v`
 
-Expected: PASS, including byte-identical failure cases.
+Expected: PASS, including byte-identical refusal cases.
 
-- [ ] **Step 5: Commit materialization**
+- [ ] **Step 6: Commit partial materialization**
 
 ```bash
 git add scripts/contributions/materialize.py scripts/contributions/cli.py tests/contributions
-git commit -m "feat: materialize approved paper candidates"
+git commit -m "feat: prepare partial paper records"
 ```
 
 ---
 
-### Task 7: Visitor Entry Point and Contribution Documentation
+### Task 6: Visitor Entry Point and Maintainer Documentation
 
 **Files:**
 - Create: `.github/ISSUE_TEMPLATE/paper-suggestion.yml`
-- Create: `.github/ISSUE_TEMPLATE/config.yml`
 - Modify: `scripts/render.py`
 - Modify: `tests/test_render.py`
+- Modify: `README.md` through `python3 scripts/render.py`
 - Modify: `CONTRIBUTING.md`
-- Regenerate: `README.md`
+- Create: `tests/contributions/test_issue_template.py`
 
 **Interfaces:**
-- Produces: `SUGGEST_PAPER_URL = "https://github.com/sjsj0101/good-quant-ai-papers/issues/new?template=paper-suggestion.yml"`.
-- Produces: form title prefix `[Paper suggestion]` used by both workflows.
-- Consumes: exact Issue Form headings required by `parse_issue_form()`.
+- Consumes: fixed Issue headings from Task 1 and title prefix `[Paper suggestion]`.
+- Produces: generated README links to the Issue Form URL.
+- Produces: Issue Form with one URL field and one required acknowledgement.
 
-- [ ] **Step 1: Write failing README and Issue Form contract tests**
+- [ ] **Step 1: Write failing README and Issue Form tests**
 
 ```python
-def test_readme_has_prominent_link_only_contribution_entry(self):
+def test_readme_links_to_paper_suggestion_form(self):
     rendered = render_readme(CATALOG, COVERAGE)
-    expected = (
-        "[Suggest a paper](https://github.com/sjsj0101/"
-        "good-quant-ai-papers/issues/new?template=paper-suggestion.yml)"
-    )
-    self.assertIn(expected, rendered)
-    self.assertLess(rendered.index(expected), rendered.index("## Scope"))
+    self.assertIn("Suggest a Paper", rendered)
+    self.assertIn("/issues/new?template=paper-suggestion.yml", rendered)
 
 
-def test_issue_form_headings_match_parser_contract(self):
-    form = yaml.safe_load((ROOT / ".github/ISSUE_TEMPLATE/paper-suggestion.yml").read_text())
+def test_issue_form_has_stable_prefix_and_parser_headings(self):
+    form = yaml.safe_load(FORM_PATH.read_text(encoding="utf-8"))
     self.assertEqual(form["title"], "[Paper suggestion] ")
-    labels = [item["attributes"]["label"] for item in form["body"] if "id" in item]
-    self.assertEqual(
-        labels,
-        ["Paper URL", "Why is it relevant?", "Scope acknowledgement"],
-    )
+    self.assertEqual([item["attributes"]["label"] for item in form["body"]], [
+        "Paper URL", "Scope acknowledgement",
+    ])
 ```
 
-- [ ] **Step 2: Run targeted tests and verify failure**
+Assert the URL uses an input with `validations.required: true`, the
+acknowledgement uses required checkboxes, the form does not require an automatic
+routing label, and README keeps the contribution link above the paper index.
 
-Run: `python3 -m unittest tests.test_render.ReadmeRenderingTests.test_readme_has_prominent_link_only_contribution_entry tests.contributions.test_issue_form -v`
+- [ ] **Step 2: Run the focused tests and observe failure**
 
-Expected: FAIL because the README link and form are absent.
+Run: `python3 -m unittest tests.test_render tests.contributions.test_issue_template -v`
 
-- [ ] **Step 3: Add the Issue Form and chooser config**
+Expected: FAIL because the form and generated README entry do not exist.
+
+- [ ] **Step 3: Add the form and generated README CTA**
+
+Use exactly the two parser headings, the fixed title prefix, and no AI/scope
+questions. Add the CTA to `render_readme()` near the centered header and repeat
+it under Contributing. Run `python3 scripts/render.py` to update generated files;
+never patch `README.md` directly.
 
 ```yaml
-name: Suggest a quant-finance paper
-description: Submit one paper link for automated parsing and verification.
+name: Suggest a paper
+description: Submit one paper link for maintainer review
 title: "[Paper suggestion] "
-labels: [paper-suggestion]
 body:
   - type: input
     id: paper-url
     attributes:
       label: Paper URL
-      description: Use an official venue, OpenReview, DOI, arXiv, or paper page URL.
-      placeholder: https://openreview.net/forum?id=example
+      placeholder: https://openreview.net/forum?id=...
     validations:
       required: true
-  - type: textarea
-    id: relevance
-    attributes:
-      label: Why is it relevant?
-      description: Optionally name the investment, trading, portfolio, derivatives, or market-risk decision.
-    validations:
-      required: false
   - type: checkboxes
-    id: scope
+    id: scope-acknowledgement
     attributes:
       label: Scope acknowledgement
       options:
-        - label: I confirm this is a 2024-2026 top-conference paper directly related to quantitative finance or asset management.
+        - label: I understand maintainers decide scope and venue eligibility.
           required: true
+    validations:
+      required: true
 ```
 
-Set `.github/ISSUE_TEMPLATE/config.yml` to `blank_issues_enabled: true` so ordinary repository issues remain possible.
+In `render_readme()`, construct the repository-owned form URL once and insert
+`[Suggest a Paper](<URL>)` in the centered header and Contributing section.
 
-- [ ] **Step 4: Add generated README calls to action and update contributor guidance**
+- [ ] **Step 4: Document the human-review and partial-PR flow**
 
-Place `[Suggest a paper]` and `[Contribution guide]` immediately under the badge row in `render_readme()`. Replace the Contributing section's first sentence with a two-path explanation: link-only visitors use the Issue Form; code contributors may still edit YAML and open a PR. Add the automated status labels, official-proof boundary, and `approved` behavior to `CONTRIBUTING.md`.
+Add a short `Suggesting a paper by link` section to `CONTRIBUTING.md`: automation
+extracts only base facts, maintainers decide scope and acceptance, `approved`
+opens a draft partial-record PR, and the existing full checklist/CI must be
+completed before merge.
 
-- [ ] **Step 5: Render and run README tests**
+```markdown
+## Suggesting a paper by link
 
-Run: `python3 scripts/render.py && python3 -m unittest tests.test_render tests.contributions.test_issue_form -v && python3 scripts/render.py --check`
+Use **Suggest a Paper** to submit one HTTPS paper URL. Automation extracts only
+base bibliographic facts and checks duplicates. Maintainers decide topical fit,
+venue eligibility, track, and acceptance before applying `approved`. The
+resulting draft PR is intentionally partial; complete the normal metadata and
+verification checklist below before merging it.
+```
 
-Expected: renderer updates README, all tests PASS, and freshness check reports `Generated files are current`.
+- [ ] **Step 5: Run renderer and form tests**
 
-- [ ] **Step 6: Commit visitor UX**
+Run: `python3 -m unittest tests.test_render tests.contributions.test_issue_template -v`
+
+Run: `python3 scripts/render.py --check`
+
+Expected: both commands PASS.
+
+- [ ] **Step 6: Commit the visitor entry point**
 
 ```bash
-git add .github/ISSUE_TEMPLATE scripts/render.py tests/test_render.py CONTRIBUTING.md README.md
-git commit -m "feat: add link-only paper suggestion entry"
+git add .github/ISSUE_TEMPLATE/paper-suggestion.yml scripts/render.py tests/test_render.py tests/contributions/test_issue_template.py README.md CONTRIBUTING.md
+git commit -m "feat: add paper suggestion entry point"
 ```
 
 ---
 
-### Task 8: Read-Only Verification Workflow
+### Task 7: GitHub Workflows and End-to-End Contracts
 
 **Files:**
-- Create: `.github/workflows/verify-paper-suggestion.yml`
+- Create: `.github/workflows/inspect-paper-suggestion.yml`
+- Create: `.github/workflows/materialize-paper-suggestion.yml`
 - Create: `tests/contributions/test_workflows.py`
+- Modify: `tests/contributions/test_cli.py`
 
 **Interfaces:**
-- Consumes: `issues` events of type `opened`, `edited`, or `reopened` whose title starts with `[Paper suggestion]`.
-- Consumes: optional secret `OPENAI_API_KEY` and required-for-enrichment variable `OPENAI_MODEL`.
-- Produces: one managed issue comment and reconciled machine labels.
-- Permissions: exactly `contents: read`, `issues: write`.
+- Consumes: CLI commands from Tasks 4--5 and Issue title prefix from Task 6.
+- Produces: read workflow for Issue metadata and write workflow for authorized draft PR creation.
 
-- [ ] **Step 1: Write failing static workflow tests**
+- [ ] **Step 1: Write failing static workflow and end-to-end CLI tests**
 
 ```python
 class WorkflowContractTests(unittest.TestCase):
-    def test_verify_workflow_is_issue_only_and_cannot_write_contents(self):
-        workflow = load_workflow("verify-paper-suggestion.yml")
+    def test_inspect_workflow_has_read_contents_and_issue_write_only(self):
+        workflow = load_workflow("inspect-paper-suggestion.yml")
         self.assertEqual(workflow["permissions"], {"contents": "read", "issues": "write"})
-        self.assertEqual(
-            workflow["on"]["issues"]["types"],
-            ["opened", "edited", "reopened"],
-        )
-        self.assertIn("startsWith(github.event.issue.title", workflow["jobs"]["verify"]["if"])
+        self.assertEqual(set(workflow["on"]["issues"]["types"]), {"opened", "edited", "reopened"})
 
-    def test_verify_workflow_has_per_issue_concurrency(self):
-        workflow = load_workflow("verify-paper-suggestion.yml")
-        self.assertEqual(
-            workflow["concurrency"]["group"],
-            "paper-verification-${{ github.event.issue.number }}",
-        )
-        self.assertTrue(workflow["concurrency"]["cancel-in-progress"])
+    def test_materialize_workflow_checks_actor_before_checkout_write_or_gh_pr(self):
+        text = workflow_text("materialize-paper-suggestion.yml")
+        self.assertLess(text.index("authorize-event"), text.index("materialize --result"))
+        self.assertIn("github.event.label.name == 'approved'", text)
+        self.assertIn("gh pr create --draft", text)
+        self.assertNotIn("OPENAI", text)
+        self.assertNotIn("merge", text.casefold())
 ```
 
-- [ ] **Step 2: Run workflow test and verify missing file failure**
+Add an end-to-end offline test from a fixture Issue event through
+`inspect-event`, strict JSON reload, report/label generation, `authorize-event`
+with a fake GitHub client, and `materialize` into a temporary catalog. Assert
+that no scope, acceptance, summary, or taxonomy field is introduced.
 
-Run: `python3 -m unittest tests.contributions.test_workflows -v`
+- [ ] **Step 2: Run workflow tests and observe missing files**
 
-Expected: FAIL with `FileNotFoundError` for the workflow.
+Run: `python3 -m unittest tests.contributions.test_workflows tests.contributions.test_cli -v`
 
-- [ ] **Step 3: Implement the verification workflow**
+Expected: FAIL because the workflows do not exist.
+
+- [ ] **Step 3: Implement the read workflow**
+
+Trigger on Issue `opened`, `edited`, and `reopened`; guard jobs with
+`startsWith(github.event.issue.title, '[Paper suggestion]')`; set
+`contents: read` and `issues: write`; install `requirements-dev.txt`; run
+`inspect-event`; then run `sync-issue` under `if: always()` only when artifacts
+exist. Use `concurrency: paper-suggestion-${{ github.event.issue.number }}` with
+`cancel-in-progress: true`. Do not define any AI secret or model variable.
 
 ```yaml
-name: Verify paper suggestion
-
+name: Inspect paper suggestion
 "on":
   issues:
     types: [opened, edited, reopened]
-
 permissions:
   contents: read
   issues: write
-
 concurrency:
-  group: paper-verification-${{ github.event.issue.number }}
+  group: paper-suggestion-${{ github.event.issue.number }}
   cancel-in-progress: true
-
 jobs:
-  verify:
+  inspect:
     if: startsWith(github.event.issue.title, '[Paper suggestion]')
     runs-on: ubuntu-latest
     steps:
@@ -926,272 +808,127 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-          cache: pip
-          cache-dependency-path: requirements-dev.txt
       - run: python3 -m pip install -r requirements-dev.txt
-      - name: Mark verification in progress
+      - id: inspect
+        run: python3 -m scripts.contributions.cli inspect-event --event "${{ github.event_path }}" --catalog data/papers.yaml --result "$RUNNER_TEMP/result.json" --report "$RUNNER_TEMP/report.md" --labels "$RUNNER_TEMP/label.txt"
+      - if: always() && steps.inspect.outcome == 'success'
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: >-
-          python3 -m scripts.contributions.cli begin-issue
-          --event "$GITHUB_EVENT_PATH"
-      - name: Verify candidate
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
-        run: >-
-          python3 -m scripts.contributions.cli verify-event
-          --event "$GITHUB_EVENT_PATH"
-          --catalog data/papers.yaml
-          --result "$RUNNER_TEMP/result.json"
-          --report "$RUNNER_TEMP/report.md"
-          --labels "$RUNNER_TEMP/labels.json"
-      - name: Synchronize issue report
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: >-
-          python3 -m scripts.contributions.cli sync-issue
-          --event "$GITHUB_EVENT_PATH"
-          --report "$RUNNER_TEMP/report.md"
-          --labels "$RUNNER_TEMP/labels.json"
+          GH_TOKEN: ${{ github.token }}
+        run: python3 -m scripts.contributions.cli sync-issue --event "${{ github.event_path }}" --report "$RUNNER_TEMP/report.md" --labels "$RUNNER_TEMP/label.txt"
 ```
 
-- [ ] **Step 4: Run static workflow and CLI integration tests**
+- [ ] **Step 4: Implement the approval workflow**
 
-Run: `python3 -m unittest tests.contributions.test_workflows tests.contributions.test_cli -v`
-
-Expected: PASS.
-
-- [ ] **Step 5: Commit the read-only workflow**
-
-```bash
-git add .github/workflows/verify-paper-suggestion.yml tests/contributions/test_workflows.py
-git commit -m "ci: verify submitted paper links"
-```
-
----
-
-### Task 9: Maintainer-Gated Draft PR Workflow and Final Verification
-
-**Files:**
-- Create: `.github/workflows/materialize-paper-suggestion.yml`
-- Modify: `tests/contributions/test_workflows.py`
-- Modify: `CONTRIBUTING.md`
-- Modify: `.github/workflows/validate.yml`
-
-**Interfaces:**
-- Consumes: an `issues:labeled` event where the title starts with `[Paper suggestion]` and label name is `approved`.
-- Requires: triggering actor base permission `write` or `admin` from the GitHub collaborators permission endpoint.
-- Produces: branch `contrib/issue-{issue_number}-{paper_slug}` and one draft PR whose body contains `Closes #{issue_number}`.
-- Permissions: exactly `contents: write`, `issues: write`, and `pull-requests: write`.
-
-- [ ] **Step 1: Extend failing workflow tests for the write boundary**
-
-```python
-def test_materialize_workflow_is_label_gated_and_has_only_required_writes(self):
-    workflow = load_workflow("materialize-paper-suggestion.yml")
-    self.assertEqual(workflow["on"]["issues"]["types"], ["labeled"])
-    self.assertEqual(
-        workflow["permissions"],
-        {"contents": "write", "issues": "write", "pull-requests": "write"},
-    )
-    condition = workflow["jobs"]["materialize"]["if"]
-    self.assertIn("github.event.label.name == 'approved'", condition)
-    self.assertIn("startsWith(github.event.issue.title", condition)
-
-def test_materialize_workflow_authorizes_before_materializing(self):
-    workflow = load_workflow("materialize-paper-suggestion.yml")
-    names = [step.get("name") for step in workflow["jobs"]["materialize"]["steps"]]
-    self.assertLess(names.index("Authorize maintainer"), names.index("Reverify candidate"))
-    self.assertLess(names.index("Prepare bot branch"), names.index("Materialize record"))
-    self.assertLess(names.index("Reverify candidate"), names.index("Materialize record"))
-```
-
-- [ ] **Step 2: Run workflow tests and verify the write workflow is missing**
-
-Run: `python3 -m unittest tests.contributions.test_workflows -v`
-
-Expected: FAIL with `FileNotFoundError` for `materialize-paper-suggestion.yml`.
-
-- [ ] **Step 3: Implement authorization, reverification, and materialization steps**
-
-The workflow must check out `main`, authorize before exposing `OPENAI_API_KEY`, recompute from `GITHUB_EVENT_PATH`, require `ready_for_approval`, append the record, render, and run every gate.
+Trigger on Issue `labeled`; guard on the title prefix and label `approved`.
+Use `contents: write`, `issues: write`, and `pull-requests: write`. The first
+mutating-capable logical gate is `authorize-event`; every later step has
+`if: steps.auth.outputs.authorized == 'true'`. Re-run `inspect-event` from the
+Issue body and current `main` catalog, call `materialize`, create/switch the
+validated branch, commit only `data/papers.yaml`, push the Issue branch, and
+create or update one draft PR with `gh pr create --draft`/`gh pr edit`. Add
+`pr-created` only after a PR URL exists. Never run merge, render, or validation
+as a prerequisite to opening the intentionally incomplete draft.
 
 ```yaml
 name: Materialize approved paper suggestion
-
 "on":
   issues:
     types: [labeled]
-
 permissions:
   contents: write
   issues: write
   pull-requests: write
-
 concurrency:
-  group: paper-materialization-${{ github.event.issue.number }}
+  group: paper-suggestion-${{ github.event.issue.number }}
   cancel-in-progress: false
-
 jobs:
   materialize:
-    if: >-
-      github.event.label.name == 'approved' &&
-      startsWith(github.event.issue.title, '[Paper suggestion]')
+    if: startsWith(github.event.issue.title, '[Paper suggestion]') && github.event.label.name == 'approved'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-        with:
-          ref: main
-          fetch-depth: 0
       - uses: actions/setup-python@v6
         with:
           python-version: "3.11"
-          cache: pip
-          cache-dependency-path: requirements-dev.txt
       - run: python3 -m pip install -r requirements-dev.txt
-      - name: Authorize maintainer
+      - id: auth
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: python3 -m scripts.contributions.cli authorize-event --event "$GITHUB_EVENT_PATH"
-      - name: Reverify candidate
-        id: reverify
+          GH_TOKEN: ${{ github.token }}
+        run: python3 -m scripts.contributions.cli authorize-event --event "${{ github.event_path }}" --github-output "$GITHUB_OUTPUT"
+      - if: steps.auth.outputs.authorized == 'true'
+        run: python3 -m scripts.contributions.cli inspect-event --event "${{ github.event_path }}" --catalog data/papers.yaml --result "$RUNNER_TEMP/result.json" --report "$RUNNER_TEMP/report.md" --labels "$RUNNER_TEMP/label.txt"
+      - id: materialize
+        if: steps.auth.outputs.authorized == 'true'
+        run: python3 -m scripts.contributions.cli materialize --result "$RUNNER_TEMP/result.json" --catalog data/papers.yaml --issue-number "${{ github.event.issue.number }}" --pr-body "$RUNNER_TEMP/pr.md" --github-output "$GITHUB_OUTPUT"
+      - if: steps.auth.outputs.authorized == 'true'
         env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL }}
-        run: >-
-          python3 -m scripts.contributions.cli verify-event
-          --event "$GITHUB_EVENT_PATH"
-          --catalog data/papers.yaml
-          --result "$RUNNER_TEMP/result.json"
-          --report "$RUNNER_TEMP/report.md"
-          --labels "$RUNNER_TEMP/labels.json"
-          --require-ready
-      - name: Prepare bot branch
-        id: branch
+          BRANCH: ${{ steps.materialize.outputs.branch }}
         run: |
-          PAPER_ID="$(python3 -m scripts.contributions.cli result-field --result "$RUNNER_TEMP/result.json" --field record.id)"
-          BRANCH="contrib/issue-${{ github.event.issue.number }}-${PAPER_ID}"
-          git fetch origin main
-          if git ls-remote --exit-code --heads origin "$BRANCH"; then
-            git fetch origin "$BRANCH:refs/remotes/origin/$BRANCH"
+          git fetch origin "+refs/heads/$BRANCH:refs/remotes/origin/$BRANCH" || true
+          git switch -C "$BRANCH" "$GITHUB_SHA"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/papers.yaml
+          git commit -m "data: stage paper suggestion #${{ github.event.issue.number }}"
+          git push --force-with-lease origin "$BRANCH"
+      - id: pr
+        if: steps.auth.outputs.authorized == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: ${{ steps.materialize.outputs.branch }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: |
+          existing="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            gh pr edit "$existing" --body-file "$RUNNER_TEMP/pr.md"
+            gh pr view "$existing" --json url --jq '.url'
+          else
+            gh pr create --draft --head "$BRANCH" --base main --title "Paper suggestion #$ISSUE_NUMBER" --body-file "$RUNNER_TEMP/pr.md"
           fi
-          git switch -C "$BRANCH" origin/main
-          printf 'name=%s\n' "$BRANCH" >> "$GITHUB_OUTPUT"
-      - name: Materialize record
-        run: >-
-          python3 -m scripts.contributions.cli materialize
-          --result "$RUNNER_TEMP/result.json"
-          --catalog data/papers.yaml
-      - name: Render and validate
-        run: |
-          python3 scripts/render.py
-          python3 scripts/validate.py
-          python3 scripts/render.py --check
-          python3 -m unittest discover -s tests -v
-          git diff --check
-```
-
-- [ ] **Step 4: Implement idempotent bot-branch push and draft PR creation**
-
-Use the already-sanitized branch emitted by `Prepare bot branch`. That step
-rebuilds the bot branch from current `origin/main` before any catalog write;
-force-with-lease is allowed only for this exact `contrib/issue-` branch owned by
-the workflow.
-
-```bash
-PAPER_ID="$(python3 -m scripts.contributions.cli result-field --result "$RUNNER_TEMP/result.json" --field record.id)"
-BRANCH="${{ steps.branch.outputs.name }}"
-git config user.name "good-quant-ai-papers[bot]"
-git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-git add data/papers.yaml README.md papers topics
-git commit -m "data: add ${PAPER_ID}"
-git push --force-with-lease origin "$BRANCH"
-
-PR_URL="$(gh pr list --head "$BRANCH" --state open --json url --jq '.[0].url // empty')"
-if [ -z "$PR_URL" ]; then
-  PR_URL="$(gh pr create --draft --head "$BRANCH" --base main \
-    --title "data: add ${PAPER_ID}" \
-    --body "Automated candidate from #${{ github.event.issue.number }}.\n\nCloses #${{ github.event.issue.number }}")"
-fi
-printf '%s\n' "$PR_URL"
-python3 -m scripts.contributions.cli attach-pr --report "$RUNNER_TEMP/report.md" --url "$PR_URL"
-```
-
-Set `GH_TOKEN: ${{ github.token }}` only on the push/PR step. Add these final
-steps so a blocked verification retains its blocker, while a later internal
-failure becomes `automation-error`:
-
-```yaml
-      - name: Mark internal materialization failure
-        if: failure() && steps.reverify.outcome == 'success'
-        run: >-
-          python3 -m scripts.contributions.cli mark-error
-          --result "$RUNNER_TEMP/result.json"
-          --report "$RUNNER_TEMP/report.md"
-          --labels "$RUNNER_TEMP/labels.json"
-          --message "The approval workflow failed after reverification; inspect the workflow log and retry approved."
-      - name: Synchronize approval result
-        if: always() && steps.reverify.outcome != 'skipped'
+      - if: steps.auth.outputs.authorized == 'true' && steps.pr.outcome == 'success'
         env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: >-
-          python3 -m scripts.contributions.cli sync-issue
-          --event "$GITHUB_EVENT_PATH"
-          --report "$RUNNER_TEMP/report.md"
-          --labels "$RUNNER_TEMP/labels.json"
-          --drop-approved
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue edit "${{ github.event.issue.number }}" --add-label pr-created
 ```
 
-- [ ] **Step 5: Keep validation reusable for automated PRs**
+- [ ] **Step 5: Run focused, full, and repository gates**
 
-Add `workflow_dispatch` to `.github/workflows/validate.yml` while preserving `push` and `pull_request`. Document that a PR opened with `GITHUB_TOKEN` may show GitHub's approval-required CI banner; the materialization workflow has already run the identical local gates, and a maintainer should still approve the PR workflow before merge.
+Run: `python3 -m unittest tests.contributions.test_workflows tests.contributions.test_cli -v`
 
-- [ ] **Step 6: Run the complete offline verification suite**
+Run: `python3 -m unittest discover -s tests -v`
 
-Run:
+Run: `python3 scripts/validate.py`
+
+Run: `python3 scripts/render.py --check`
+
+Run: `git diff --check`
+
+Expected: all commands PASS on the implementation branch before any live Issue
+is materialized. The catalog remains unchanged during tests.
+
+- [ ] **Step 6: Commit the workflows**
 
 ```bash
-python3 scripts/validate.py
-python3 scripts/render.py --check
-python3 -m unittest discover -s tests -v
-git diff --check
+git add .github/workflows/inspect-paper-suggestion.yml .github/workflows/materialize-paper-suggestion.yml tests/contributions
+git commit -m "feat: automate paper suggestion draft PRs"
 ```
 
-Expected:
+---
 
-- catalog validation reports 154 papers and 33 venue-year coverage units;
-- generated files are current;
-- every existing and contribution test passes without live network or AI;
-- `git diff --check` prints no output.
+## Final Verification and Deployment
 
-- [ ] **Step 7: Review the final diff for scope and secret safety**
-
-Run:
-
-```bash
-git diff --stat
-git diff -- .github scripts/contributions tests/contributions scripts/render.py CONTRIBUTING.md README.md
-rg -n "OPENAI_API_KEY|GITHUB_TOKEN" .github scripts tests
-```
-
-Expected: secrets appear only as environment-variable names; no value, event body, raw abstract, or authorization header is printed or committed; `data/coverage.yaml` is unchanged.
-
-- [ ] **Step 8: Commit the approval workflow and final documentation**
-
-```bash
-git add .github/workflows/materialize-paper-suggestion.yml .github/workflows/validate.yml tests/contributions/test_workflows.py CONTRIBUTING.md
-git commit -m "ci: materialize approved paper suggestions"
-```
-
-- [ ] **Step 9: Configure the model variable and deploy**
-
-After pushing `main`, configure the repository variable with the pinned model supported by the implemented schema:
-
-```bash
-gh variable set OPENAI_MODEL --repo sjsj0101/good-quant-ai-papers --body gpt-5-mini-2025-08-07
-```
-
-Leave enrichment visibly degraded until the repository owner supplies `OPENAI_API_KEY` through GitHub's encrypted secret UI or `gh secret set OPENAI_API_KEY --repo sjsj0101/good-quant-ai-papers`. Never place the secret in shell history, a plan file, an issue, or a command argument.
-
-Perform one manual smoke submission with an already-cataloged official URL. Success means the issue receives a `duplicate` report and no branch or PR is created. Then submit one fixture-equivalent non-cataloged test only if a real eligible paper is available; do not add synthetic records to the public catalog.
+- [ ] Review the complete branch diff against the MVP design and confirm there
+  is no AI/enrichment module, automatic scope decision, acceptance inference,
+  coverage mutation, direct `main` write, merge command, or CI bypass.
+- [ ] Run `python3 scripts/validate.py` and record the paper/coverage counts.
+- [ ] Run `python3 scripts/render.py --check` and confirm generated files are current.
+- [ ] Run `python3 -m unittest discover -s tests -v` and record the test count.
+- [ ] Run `python3 -m py_compile scripts/contributions/*.py`.
+- [ ] Run `git diff --check` and inspect `git status --short --branch`.
+- [ ] Push the feature branch, open a draft implementation PR, and confirm the
+  remote repository setting permits GitHub Actions to create pull requests.
+- [ ] Create labels `metadata-ready`, `needs-metadata`, `duplicate`, `approved`,
+  and `pr-created` in `sjsj0101/good-quant-ai-papers` before the first live test.
+- [ ] Open one real test Issue with a known non-duplicate paper link, verify the
+  managed comment and label, then apply `approved` as the maintainer and confirm
+  that one partial-record draft PR is created without merging it.
