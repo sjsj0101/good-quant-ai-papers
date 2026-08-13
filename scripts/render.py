@@ -23,6 +23,7 @@ else:
 ROOT = Path(__file__).resolve().parents[1]
 REPOSITORY = "sjsj0101/good-quant-ai-papers"
 REPOSITORY_URL = f"https://github.com/{REPOSITORY}"
+SUGGEST_PAPER_URL = f"{REPOSITORY_URL}/issues/new?template=paper-suggestion.yml"
 GENERATED_NOTICE = (
     "<!-- Generated from data/papers.yaml and data/coverage.yaml by "
     "scripts/render.py. Do not edit directly. -->"
@@ -297,6 +298,8 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
             )
         ),
         "",
+        f"[**Suggest a Paper**]({SUGGEST_PAPER_URL})",
+        "",
         "</div>",
         "",
         "## Scope",
@@ -414,6 +417,12 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
             ),
             "",
             "## Contributing",
+            "",
+            (
+                f"Have one candidate link? [Suggest a Paper]({SUGGEST_PAPER_URL}) "
+                "and the repository will extract base bibliographic metadata for "
+                "maintainer review."
+            ),
             "",
             (
                 f"Contributions to [`{REPOSITORY}`]({REPOSITORY_URL}) are welcome. "

@@ -5,6 +5,19 @@ requests may add a paper, correct existing metadata, or improve the repository's
 curation documentation. Issues are welcome for candidate papers and proposed
 taxonomy changes.
 
+## Suggesting a paper by link
+
+Use **Suggest a Paper** in the README to submit one HTTPS paper URL. Automation
+extracts only base bibliographic facts and checks the current catalog for
+duplicates. It does not decide topical fit, conference eligibility, track, or
+acceptance. A maintainer reviews those questions and applies `approved` only
+when the candidate should proceed.
+
+Approval opens a draft pull request containing a deliberately partial record.
+Complete the normal metadata, primary-source, original-prose, rendering, and
+verification checklist below before merging it. The automation never merges a
+pull request or writes directly to `main`.
+
 ## Inclusion decision test
 
 A paper is eligible only when **every** answer below is yes:

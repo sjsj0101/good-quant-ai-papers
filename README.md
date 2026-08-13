@@ -8,6 +8,8 @@ Curated top-conference research for quantitative finance and asset management.
 
 [![Papers-154](https://img.shields.io/badge/Papers-154-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--08--12](https://img.shields.io/badge/Last_verified-2026--08--12-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
 
+[**Suggest a Paper**](https://github.com/sjsj0101/good-quant-ai-papers/issues/new?template=paper-suggestion.yml)
+
 </div>
 
 ## Scope
@@ -90,6 +92,8 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 - [`docs/finance-journal-ai-seed-list.md`](docs/finance-journal-ai-seed-list.md): EDITH-local-corpus-backed seed list for technical AI, machine learning, and high-dimensional-data papers in JF, JFE, and RFS. Machine-readable metadata lives in [`data/finance_journal_ai_watchlist.yaml`](data/finance_journal_ai_watchlist.yaml). It is intentionally separate from the canonical conference catalog.
 
 ## Contributing
+
+Have one candidate link? [Suggest a Paper](https://github.com/sjsj0101/good-quant-ai-papers/issues/new?template=paper-suggestion.yml) and the repository will extract base bibliographic metadata for maintainer review.
 
 Contributions to [`sjsj0101/good-quant-ai-papers`](https://github.com/sjsj0101/good-quant-ai-papers) are welcome. Add or correct paper metadata in [`data/papers.yaml`](data/papers.yaml), update systematic coverage evidence in [`data/coverage.yaml`](data/coverage.yaml) when the venue-year audit state changes, provide an official venue source, and write original summary prose. Do not edit generated indexes by hand.
 
