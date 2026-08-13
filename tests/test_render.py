@@ -64,6 +64,8 @@ class ReadmeRenderingTests(unittest.TestCase):
         self.assertIn("## Browse by Topic", rendered)
         self.assertIn("Asset Allocation", rendered)
         self.assertIn("Market Microstructure", rendered)
+        self.assertIn("[Synthetic Data](topics/synthetic-data.md)", rendered)
+        self.assertNotIn("github.com/sjsj0101/good-quant-ai-papers/search?", rendered)
         self.assertIn("## Data Files", rendered)
         self.assertIn("canonical paper records with authors", rendered)
         self.assertIn("venue-year audit status", rendered)
@@ -109,6 +111,17 @@ class ReadmeRenderingTests(unittest.TestCase):
 
 
 class VenueRenderingTests(unittest.TestCase):
+    def test_render_outputs_include_stable_topic_pages_without_github_search(self) -> None:
+        outputs = render_outputs(CATALOG, COVERAGE)
+        topic_path = Path("topics/synthetic-data.md")
+
+        self.assertIn(topic_path, outputs)
+        rendered = outputs[topic_path]
+        self.assertIn("# Synthetic Data", rendered)
+        self.assertIn("verified papers tagged `synthetic-data`", rendered)
+        self.assertIn("| Paper | Venue | Track | Focus |", rendered)
+        self.assertNotIn("github.com/sjsj0101/good-quant-ai-papers/search?", rendered)
+
     def test_venue_page_has_every_record_sorted_by_title_within_tracks(self) -> None:
         pages = render_venue_pages(list(reversed(CATALOG)), COVERAGE)
 

@@ -9,7 +9,6 @@ import re
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Iterable, Mapping, Optional, Sequence
-from urllib.parse import urlencode
 
 import yaml
 
@@ -92,11 +91,12 @@ def _topic_label(topic: str) -> str:
     return _display_label(topic)
 
 
+def _topic_page_path(topic: str) -> Path:
+    return Path("topics", f"{topic}.md")
+
+
 def _topic_link(topic: str) -> str:
-    query = urlencode(
-        {"q": f'path:data/papers.yaml "{topic}"', "type": "code"}
-    )
-    return f"[{_topic_label(topic)}]({REPOSITORY_URL}/search?{query})"
+    return f"[{_topic_label(topic)}]({_topic_page_path(topic).as_posix()})"
 
 
 def _track_sort_key(track: str) -> tuple:
@@ -350,8 +350,8 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
             "when you want a conference-specific list."
         ),
         (
-            "- Use [Browse by Topic](#browse-by-topic) for GitHub search links "
-            "over the controlled topic tags."
+            "- Use [Browse by Topic](#browse-by-topic) for stable generated topic "
+            "pages over the controlled topic tags."
         ),
         (
             "- Use [`data/papers.yaml`](data/papers.yaml) for machine-readable "
@@ -396,8 +396,8 @@ def render_readme(records: list[dict], coverage: list[dict]) -> str:
                 "coverage notes."
             ),
             (
-                "- Generated Markdown lives in [`papers/`](papers/) and should "
-                "not be edited by hand."
+                "- Generated Markdown lives in [`papers/`](papers/) and "
+                "[`topics/`](topics/) and should not be edited by hand."
             ),
             "",
             "## Research Watchlists",
@@ -648,11 +648,69 @@ def render_venue_pages(
     return pages
 
 
+def _topic_record_row(record: dict) -> str:
+    venue_path = f"../papers/{record['year']}/{_venue_slug(record['venue'])}.md"
+    venue_label = f"{record['venue']} {record['year']}"
+    return (
+        "| "
+        + " | ".join(
+            (
+                _paper_cell(record),
+                _markdown_link(venue_label, venue_path),
+                _track_cell(record),
+                _escape_markdown(record["summary"]),
+            )
+        )
+        + " |"
+    )
+
+
+def _render_topic_page(topic: str, records: list[dict]) -> str:
+    lines = [
+        GENERATED_NOTICE,
+        "",
+        f"# {_topic_label(topic)}",
+        "",
+        f"{len(records)} verified papers tagged `{topic}`.",
+        "",
+        "[← Back to the main index](../README.md)",
+        "",
+        "| Paper | Venue | Track | Focus |",
+        "| --- | --- | --- | --- |",
+    ]
+    for record in sorted(
+        records,
+        key=lambda item: (
+            -item["year"],
+            _venue_sort_key(item["venue"]),
+            _track_sort_key(item["track"]),
+            item["title"].casefold(),
+            item["id"],
+        ),
+    ):
+        lines.append(_topic_record_row(record))
+    return "\n".join(lines).rstrip() + "\n"
+
+
+def render_topic_pages(records: list[dict]) -> dict[Path, str]:
+    """Return generated topic pages, keyed by repository-relative path."""
+
+    by_topic: dict[str, list[dict]] = defaultdict(list)
+    for record in records:
+        for topic in record["topics"]:
+            by_topic[topic].append(record)
+    return {
+        _topic_page_path(topic): _render_topic_page(topic, by_topic[topic])
+        for topic in sorted(by_topic)
+    }
+
+
 def render_outputs(records: list[dict], coverage: list[dict]) -> dict[Path, str]:
     """Return every generated repository file in deterministic path order."""
 
     outputs = {Path("README.md"): render_readme(records, coverage)}
     outputs.update(render_venue_pages(records, coverage))
+    outputs.update(render_topic_pages(records))
     return outputs
 
 
@@ -674,16 +732,7 @@ def check_generated_files(root: Path, outputs: Mapping[Path, str]) -> list[str]:
         if actual != outputs[relative_path]:
             problems.append(f"stale: {relative_path.as_posix()}")
 
-    papers_dir = root / "papers"
-    actual_venue_pages = (
-        {
-            path.relative_to(root)
-            for path in papers_dir.rglob("*.md")
-            if path.is_file()
-        }
-        if papers_dir.exists()
-        else set()
-    )
+    actual_venue_pages = _generated_markdown_paths(root)
     for relative_path in sorted(
         actual_venue_pages - expected, key=lambda path: path.as_posix()
     ):
@@ -698,21 +747,31 @@ def _write_outputs(root: Path, outputs: Mapping[Path, str]) -> None:
         path.write_text(outputs[relative_path], encoding="utf-8")
 
 
-def _remove_obsolete_generated_venue_pages(
+def _generated_markdown_paths(root: Path) -> set[Path]:
+    paths: set[Path] = set()
+    for directory_name in ("papers", "topics"):
+        directory = root / directory_name
+        if not directory.exists():
+            continue
+        paths.update(
+            path.relative_to(root)
+            for path in directory.rglob("*.md")
+            if path.is_file()
+        )
+    return paths
+
+
+def _remove_obsolete_generated_pages(
     root: Path, outputs: Mapping[Path, str]
 ) -> list[str]:
     expected = set(outputs)
-    papers_dir = root / "papers"
-    if not papers_dir.exists():
-        return []
-
     problems: list[str] = []
-    for path in sorted(papers_dir.rglob("*.md")):
-        if not path.is_file():
-            continue
-        relative_path = path.relative_to(root)
+    for relative_path in sorted(
+        _generated_markdown_paths(root), key=lambda path: path.as_posix()
+    ):
         if relative_path in expected:
             continue
+        path = root / relative_path
         try:
             with path.open("r", encoding="utf-8") as stream:
                 first_line = stream.readline().rstrip("\r\n")
@@ -767,11 +826,9 @@ def main(
         print("Generated files are current")
         return 0
 
-    cleanup_problems = _remove_obsolete_generated_venue_pages(
-        repository_root, outputs
-    )
+    cleanup_problems = _remove_obsolete_generated_pages(repository_root, outputs)
     if cleanup_problems:
-        print("Could not remove obsolete generated venue pages:")
+        print("Could not remove obsolete generated pages:")
         print("\n".join(cleanup_problems))
         return 1
     _write_outputs(repository_root, outputs)

@@ -1,0 +1,18 @@
+<!-- Generated from data/papers.yaml and data/coverage.yaml by scripts/render.py. Do not edit directly. -->
+
+# Factor Investing
+
+8 verified papers tagged `factor-investing`.
+
+[← Back to the main index](../README.md)
+
+| Paper | Venue | Track | Focus |
+| --- | --- | --- | --- |
+| [Leakage-Aware Benchmarking of LLM Forecasting: Real-Time Nowcasts as the Decision-Time Input for Macro Factor Ranking](<https://arxiv.org/abs/2606.22719>)<br><sub>Mao Guan, Qian Chen</sub> | [ICML 2026](<../papers/2026/icml.md>) | Workshop<br><sub>Poster</sub><br><sub>Forecasting as a New Frontier of Intelligence</sub> | Benchmarks macro-conditioned equity-factor ranking using only data and nowcasts available at each historical decision time. |
+| [Dual-Adversarial Dynamic Variational Asset Pricing with Adaptive Spatio-Temporal Feature Clustering for Portfolio Recommendation](<https://2026.ijcai.org/accepted-papers/#:~:text=%235993>)<br><sub>Yupeng Fang, Ruirui Liu, Xinyu Xia, Huichou Huang, Johannes Ruf, Qingyao Wu</sub> | [IJCAI 2026](<../papers/2026/ijcai.md>) | Main<br><sub>Oral</sub><br><sub>Main Track</sub> | Learns dynamic risk factors and exposures with variational, adversarial, and spatio-temporal components in a joint asset-pricing and portfolio-recommendation model. |
+| [Vector-Quantized Discrete Latent Factors Meet Financial Priors: Dynamic Cross-Sectional Stock Ranking Prediction for Portfolio Construction](<https://2026.ijcai.org/accepted-papers/#:~:text=%232878>)<br><sub>Namhyoung Kim, Jae Wook Song</sub> | [IJCAI 2026](<../papers/2026/ijcai.md>) | Main<br><sub>Oral</sub><br><sub>Main Track</sub> | Combines prior factors, vector-quantized latent factors, and regime-conditioned experts to rank CSI 300 and S&amp;P 500 stocks and evaluate constructed portfolios. |
+| [AlphaAgent: LLM-Driven Alpha Mining with Regularized Exploration to Counteract Alpha Decay](<https://doi.org/10.1145/3711896.3736838>)<br><sub>Ziyi Tang, Zechuan Chen, Jiarui Yang, Jiayao Mai, Yongsen Zheng, Keze Wang, Jinrui Chen, Liang Lin</sub> | [KDD 2025](<../papers/2025/kdd.md>) | Main<br><sub>Not Specified</sub><br><sub>Research Track</sub> | Builds an autonomous LLM-agent framework for generating, testing, and regularizing alpha factors to reduce crowding and decay. |
+| [RSAP-DFM: Regime-Shifting Adaptive Posterior Dynamic Factor Model for Stock Returns Prediction](<https://www.ijcai.org/proceedings/2024/676>)<br><sub>Quanzhou Xiang, Zhan Chen, Qi Sun, Rujun Jiang</sub> | [IJCAI 2024](<../papers/2024/ijcai.md>) | Main<br><sub>Not Specified</sub> | Adapts a dynamic stock-return factor model when latent market regimes shift. |
+| [Augmenting Equity Factor Investing with Global Macro Regimes](<https://doi.org/10.1145/3677052.3698620>)<br><sub>Dmitriy Nuriyev, Songyun Duan, Lingjie Yi</sub> | [ACM ICAIF 2024](<../papers/2024/acm-icaif.md>) | Main<br><sub>Poster</sub> | Conditions equity-factor strategies on learned global macroeconomic regimes. |
+| [NeuralFactors: A Novel Factor Learning Approach to Generative Modeling of Equities](<https://doi.org/10.1145/3677052.3698647>)<br><sub>Achintya Gopal</sub> | [ACM ICAIF 2024](<../papers/2024/acm-icaif.md>) | Main<br><sub>Not Specified</sub> | Learns latent equity factors inside a generative model of cross-sectional return behavior. |
+| [RiskMiner: Discovering Formulaic Alphas via Risk Seeking Monte Carlo Tree Search](<https://doi.org/10.1145/3677052.3698613>)<br><sub>Tao Ren, Ruihan Zhou, Jinyang Jiang, Jiafeng Liang, Qinghao Wang, Yijie Peng</sub> | [ACM ICAIF 2024](<../papers/2024/acm-icaif.md>) | Main<br><sub>Poster</sub> | Searches symbolic factor expressions with a risk-seeking Monte Carlo tree policy to discover return signals. |

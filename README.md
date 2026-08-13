@@ -34,7 +34,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 ## How to Use
 
 - Start with [Browse by Year and Venue](#browse-by-year-and-venue) when you want a conference-specific list.
-- Use [Browse by Topic](#browse-by-topic) for GitHub search links over the controlled topic tags.
+- Use [Browse by Topic](#browse-by-topic) for stable generated topic pages over the controlled topic tags.
 - Use [`data/papers.yaml`](data/papers.yaml) for machine-readable paper metadata and [`data/coverage.yaml`](data/coverage.yaml) for the venue-year audit ledger.
 - Read [`docs/metadata.md`](docs/metadata.md) before changing fields or [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request.
 
@@ -77,13 +77,13 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 
 ## Browse by Topic
 
-[Alpha Modeling](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22alpha-modeling%22&type=code) · [Alternative Data](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22alternative-data%22&type=code) · [Asset Allocation](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22asset-allocation%22&type=code) · [Derivatives](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22derivatives%22&type=code) · [Evaluation](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22evaluation%22&type=code) · [Execution](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22execution%22&type=code) · [Factor Investing](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22factor-investing%22&type=code) · [Financial Agents](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22financial-agents%22&type=code) · [Financial Forecasting](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22financial-forecasting%22&type=code) · [Market Microstructure](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22market-microstructure%22&type=code) · [Market Regimes](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22market-regimes%22&type=code) · [Market Simulation](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22market-simulation%22&type=code) · [Portfolio Optimization](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22portfolio-optimization%22&type=code) · [Risk Management](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22risk-management%22&type=code) · [Synthetic Data](https://github.com/sjsj0101/good-quant-ai-papers/search?q=path%3Adata%2Fpapers.yaml+%22synthetic-data%22&type=code)
+[Alpha Modeling](topics/alpha-modeling.md) · [Alternative Data](topics/alternative-data.md) · [Asset Allocation](topics/asset-allocation.md) · [Derivatives](topics/derivatives.md) · [Evaluation](topics/evaluation.md) · [Execution](topics/execution.md) · [Factor Investing](topics/factor-investing.md) · [Financial Agents](topics/financial-agents.md) · [Financial Forecasting](topics/financial-forecasting.md) · [Market Microstructure](topics/market-microstructure.md) · [Market Regimes](topics/market-regimes.md) · [Market Simulation](topics/market-simulation.md) · [Portfolio Optimization](topics/portfolio-optimization.md) · [Risk Management](topics/risk-management.md) · [Synthetic Data](topics/synthetic-data.md)
 
 ## Data Files
 
 - [`data/papers.yaml`](data/papers.yaml): canonical paper records with authors, field/topic tags, venue, year, track, URLs, identifiers, and original editorial summaries.
 - [`data/coverage.yaml`](data/coverage.yaml): venue-year audit status, official sources, checked tracks, pending tracks, and coverage notes.
-- Generated Markdown lives in [`papers/`](papers/) and should not be edited by hand.
+- Generated Markdown lives in [`papers/`](papers/) and [`topics/`](topics/) and should not be edited by hand.
 
 ## Research Watchlists
 
