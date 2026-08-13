@@ -168,6 +168,52 @@ class CliTests(unittest.TestCase):
         self.assertNotIn("TOPSECRET", stderr.getvalue())
         self.assertFalse(self.result.exists())
 
+    def test_materialize_writes_partial_record_pr_body_and_safe_outputs(self) -> None:
+        self.assertEqual(
+            main(self._inspect_args(), fetcher=FixtureFetcher(self._openreview_fixture())),
+            0,
+        )
+        pr_body = self.root / "pr.md"
+        exit_code = main(
+            [
+                "materialize",
+                "--result", str(self.result),
+                "--catalog", str(self.catalog),
+                "--issue-number", "7",
+                "--pr-body", str(pr_body),
+                "--github-output", str(self.output),
+            ]
+        )
+
+        self.assertEqual(exit_code, 0)
+        self.assertIn("Portfolio Learning", self.catalog.read_text(encoding="utf-8"))
+        self.assertIn("Issue #7", pr_body.read_text(encoding="utf-8"))
+        self.assertEqual(
+            self.output.read_text(encoding="utf-8"),
+            "record_id=2025-icml-ada-a-portfolio-learning\n"
+            "branch=contrib/issue-7-2025-icml-ada-a-portfolio-learning\n",
+        )
+
+    def test_materialize_rejects_invalid_issue_before_catalog_write(self) -> None:
+        self.assertEqual(
+            main(self._inspect_args(), fetcher=FixtureFetcher(self._openreview_fixture())),
+            0,
+        )
+        before = self.catalog.read_bytes()
+        with contextlib.redirect_stderr(io.StringIO()):
+            exit_code = main(
+                [
+                    "materialize",
+                    "--result", str(self.result),
+                    "--catalog", str(self.catalog),
+                    "--issue-number", "0",
+                    "--pr-body", str(self.root / "pr.md"),
+                    "--github-output", str(self.output),
+                ]
+            )
+        self.assertNotEqual(exit_code, 0)
+        self.assertEqual(self.catalog.read_bytes(), before)
+
 
 if __name__ == "__main__":
     unittest.main()

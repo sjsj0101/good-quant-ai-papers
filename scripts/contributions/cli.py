@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 import tempfile
 from dataclasses import dataclass
@@ -17,6 +18,13 @@ from .github import GitHubClient, GitHubError
 from .http import SourceError
 from .issue_form import SubmissionError, parse_issue_form
 from .models import BaseMetadata, InspectionResult, ResultError
+from .materialize import (
+    MaterializeError,
+    append_partial_record,
+    branch_name,
+    partial_record,
+    render_pr_body,
+)
 from .report import render_problem_report, render_report, state_label
 from .sources import Fetcher, extract_metadata
 
@@ -163,7 +171,14 @@ def _sync_issue(args: argparse.Namespace, *, github_client: object | None) -> in
 
 
 def _append_output(path: Path, key: str, value: str) -> None:
-    if key not in {"authorized"} or value not in {"true", "false"}:
+    valid = False
+    if key == "authorized":
+        valid = value in {"true", "false"}
+    elif key == "record_id":
+        valid = re.fullmatch(r"[0-9]{4}-[a-z0-9]+(?:-[a-z0-9]+){2,}", value) is not None
+    elif key == "branch":
+        valid = re.fullmatch(r"contrib/issue-[1-9][0-9]*-[a-z0-9]+(?:-[a-z0-9]+)+", value) is not None
+    if not valid:
         raise CliError("invalid-output")
     path.parent.mkdir(parents=True, exist_ok=True)
     try:
@@ -178,6 +193,30 @@ def _authorize_event(args: argparse.Namespace, *, github_client: object | None) 
     client = _client(github_client)
     allowed = client.actor_can_write(event.actor)  # type: ignore[attr-defined]
     _append_output(args.github_output, "authorized", "true" if allowed else "false")
+    return 0
+
+
+def _load_result(path: Path) -> InspectionResult:
+    try:
+        return InspectionResult.from_dict(_load_json(path))
+    except ResultError:
+        raise CliError("invalid-result") from None
+
+
+def _materialize(args: argparse.Namespace) -> int:
+    result = _load_result(args.result)
+    preview = partial_record(result)
+    record_id = preview["id"]
+    if not isinstance(record_id, str):
+        raise MaterializeError("invalid-record-id")
+    branch = branch_name(args.issue_number, record_id)
+    written_id = append_partial_record(args.catalog, result)
+    if written_id != record_id:
+        raise MaterializeError("record-id-changed")
+    body = render_pr_body(args.issue_number, result)
+    _atomic_write(args.pr_body, body.encode("utf-8"))
+    _append_output(args.github_output, "record_id", record_id)
+    _append_output(args.github_output, "branch", branch)
     return 0
 
 
@@ -200,6 +239,13 @@ def _parser() -> argparse.ArgumentParser:
     authorize = commands.add_parser("authorize-event")
     authorize.add_argument("--event", type=Path, required=True)
     authorize.add_argument("--github-output", type=Path, required=True)
+
+    materialize = commands.add_parser("materialize")
+    materialize.add_argument("--result", type=Path, required=True)
+    materialize.add_argument("--catalog", type=Path, required=True)
+    materialize.add_argument("--issue-number", type=int, required=True)
+    materialize.add_argument("--pr-body", type=Path, required=True)
+    materialize.add_argument("--github-output", type=Path, required=True)
     return parser
 
 
@@ -217,12 +263,17 @@ def main(
             return _sync_issue(args, github_client=github_client)
         if args.command == "authorize-event":
             return _authorize_event(args, github_client=github_client)
+        if args.command == "materialize":
+            return _materialize(args)
         raise CliError("invalid-command")
     except CliError as error:
         print(f"contribution-error: {error.code}", file=sys.stderr)
         return 2
     except (GitHubError, ResultError):
         print("contribution-error: invalid-artifact", file=sys.stderr)
+        return 2
+    except MaterializeError:
+        print("contribution-error: materialization-blocked", file=sys.stderr)
         return 2
     except Exception:
         print("contribution-error: internal-error", file=sys.stderr)
