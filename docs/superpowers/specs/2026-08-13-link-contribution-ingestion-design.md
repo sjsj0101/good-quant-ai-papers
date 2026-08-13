@@ -1,264 +1,268 @@
-# Link-Only Paper Contribution Design
+# Link-Only Paper Contribution MVP Design
 
-## Objective
+**Date:** 2026-08-13
 
-Give a GitHub visitor a low-friction way to suggest one paper by submitting one
-link. The repository will parse and verify the candidate, explain the result in
-the issue, and create a validated draft pull request only after a maintainer
-approves the candidate.
+## Goal
 
-The feature preserves the repository's existing standard: a paper is not
-verified unless an official venue source proves the venue, year, and track.
-Artificial intelligence may advise on scope and editorial metadata, but it may
-not establish acceptance or bypass deterministic validation.
+Let a signed-in GitHub visitor suggest one paper by pasting its link. The
+automation extracts reliable bibliographic metadata and checks for duplicates;
+a maintainer decides whether the paper belongs in this quantitative-finance and
+asset-management catalog. An approved suggestion produces a draft data-change
+pull request, never a direct change to `main`.
 
-## First-Version Scope
+## Scope
 
-The first version will:
+The MVP automates clerical work only:
 
-- expose a prominent **Suggest a paper** link in the generated README;
-- collect a required paper URL and an optional relevance note through a GitHub
-  Issue Form;
-- accept official conference pages, OpenReview pages, proceedings pages, DOI
-  links, and arXiv links as starting points;
-- extract available metadata, resolve official venue evidence, detect likely
-  duplicates, and evaluate the repository's conference-only quant-finance
-  scope;
-- post one idempotently updated verification report to the issue;
-- use an optional language-model call to suggest controlled metadata and draft
-  original `summary` and `why_it_matters` prose;
-- require a maintainer-applied `approved` label before any repository write;
+- collect one HTTPS paper link through a GitHub Issue Form;
+- extract title, authors, venue, year, identifiers, and paper URLs when the
+  submitted source provides them;
+- compare the candidate with `data/papers.yaml` for exact and likely
+  duplicates;
+- show the extracted facts and duplicate result in one managed Issue comment;
+- wait for a maintainer to review topical fit and target-conference eligibility;
   and
-- reverify the candidate, edit the canonical YAML, render generated Markdown,
-  run all checks, and open a draft pull request.
+- after maintainer approval, open a draft pull request containing a partial
+  catalog record with the reliable base metadata.
 
-The first version will not accept taxonomy changes, venue-scope changes,
-coverage-ledger audits, bulk submissions, anonymous submissions, or journal
-papers. It will not merge pull requests automatically.
+The MVP does not generate summaries or classifications, decide topical scope,
+infer acceptance status, modify coverage records, merge pull requests, or write
+directly to `main`.
 
-## Visitor Experience
+## Visitor Flow
 
-The generated README will show **Suggest a paper** near the top and repeat the
-entry point in the Contributing section. Both links open
-`.github/ISSUE_TEMPLATE/paper-suggestion.yml`.
+1. The generated README shows a prominent **Suggest a Paper** link.
+2. The link opens `.github/ISSUE_TEMPLATE/paper-suggestion.yml`.
+3. The form supplies a stable `[Paper suggestion]` Issue-title prefix for
+   workflow routing. It does not depend on a pre-existing routing label.
+4. The visitor supplies one HTTPS paper URL and checks an acknowledgement that
+   the repository is limited to target top conferences and quantitative finance
+   or asset management.
+5. The metadata workflow validates the form, extracts available base metadata,
+   checks the catalog for duplicates, and updates one bot-managed Issue comment.
+6. A maintainer reviews the source, conference eligibility, and topical fit.
+7. If accepted, the maintainer applies the `approved` label.
+8. The approval workflow re-extracts the candidate from the original Issue and
+   opens a draft pull request.
+9. The maintainer completes the repository's extended metadata fields in the
+   pull request. Existing validation and rendering checks must pass before the
+   pull request is merged.
 
-The form contains:
+The visitor never edits YAML or supplies controlled taxonomy values.
 
-1. `Paper URL` (required): one HTTPS URL.
-2. `Why is it relevant?` (optional): a short explanation of the investment,
-   trading, portfolio, derivatives, or market-risk decision affected.
-3. A required acknowledgement that the repository covers only verified
-   2024--2026 top-conference work in quantitative finance and asset management.
+## Reliable Base Metadata
 
-The contributor does not edit YAML, choose controlled metadata, run code, or
-write a summary. The form automatically applies the `paper-suggestion` label.
-Deployment creates every automation-owned label before enabling the form, so a
-missing label cannot silently prevent routing.
+A candidate is `metadata-ready` only when extraction yields all of:
 
-## Architecture
+- a non-empty title;
+- at least one author;
+- a controlled conference name;
+- an integer year from 2024 through 2026; and
+- at least one canonical paper URL.
 
-The system has two workflows with different permissions.
+When available, the result also records DOI, arXiv ID, OpenReview ID, official
+venue URL, track, subvenue, and presentation. These optional fields do not make
+a candidate ready by themselves and do not replace maintainer review.
 
-### 1. Candidate verification
+The automation does not create placeholder authors, venue names, years, or
+links. A missing required base field produces `needs-metadata`; the Issue
+comment tells the maintainer which facts could not be extracted.
 
-An issue-opened or issue-edited workflow runs with `contents: read` and
-`issues: write`. A Python command reads the Issue Form body, validates the URL,
-resolves it through source-specific adapters, compares the candidate with the
-catalog, optionally enriches it with AI, and returns a structured result.
+## Source Support
 
-The workflow maintains one bot comment identified by an HTML marker rather
-than appending a new comment on every edit. It reconciles machine-owned status
-labels while leaving maintainer labels untouched. A per-issue concurrency key
-cancels stale verification runs after rapid edits.
+The MVP has small source adapters for:
 
-This workflow never modifies repository contents and never creates a branch or
-pull request.
+- OpenReview forum pages and their public API metadata;
+- arXiv abstract pages and public API metadata;
+- DOI links resolved through Crossref metadata; and
+- a limited allowlist of official pages for the repository's controlled
+  conferences.
 
-### 2. Approved candidate materialization
+Each adapter returns bibliographic facts, not an acceptance judgment. An arXiv
+or Crossref record may name a venue, but the maintainer still decides whether
+the submission is a qualifying conference paper.
 
-An issue-label workflow reacts to `approved`. Before using write permissions,
-it checks through the GitHub API that the triggering actor has `write`,
-`maintain`, or `admin` permission. It then parses and verifies the issue again
-from the original URL; the prior bot comment is informative and is not trusted
-as input.
+Unrecognized hosts are not fetched. Their submitted URL can be shown in the
+Issue report, but they produce `needs-metadata` unless the required base facts
+are available through a recognized identifier and adapter.
 
-Materialization proceeds only when all required paper fields are valid, the
-candidate has official venue proof, no duplicate exists, and the candidate is
-within scope. The workflow adds one record to `data/papers.yaml`, runs the
-renderer and the complete offline verification suite, and creates a branch
-named `contrib/issue-<number>-<paper-slug>` with a draft pull request that links
-the issue. It does not change `data/coverage.yaml`, because a single visitor
-suggestion is not a systematic venue-year audit.
+## Basic URL Safety
 
-If any gate fails, the workflow makes no repository commit and replaces the
-`approved` label with the appropriate blocking status.
+The implementation keeps only the security controls needed for public-link
+metadata extraction:
 
-## Component Boundaries
+- accept `https://` only;
+- fetch only recognized public hosts;
+- reject loopback, private, link-local, and non-HTTPS redirect targets;
+- use bounded connection/read timeouts, redirect counts, and response sizes;
+- never interpolate Issue text into shell commands, branch names, workflow
+  expressions, or repository paths; and
+- do not persist HTML, PDFs, copied abstracts, credentials, or response bodies.
 
-The implementation will keep the existing catalog and renderer as the source
-of truth and add focused modules:
+These controls are local to the fetch layer. The MVP does not add a general
+transaction framework, crawler, proxy service, website, or database.
 
-- `scripts/contributions/issue_form.py` parses the stable Issue Form headings
-  into a URL and optional note.
-- `scripts/contributions/sources.py` normalizes URLs and dispatches to
-  source-specific metadata adapters.
-- `scripts/contributions/verify.py` applies evidence, date, venue, scope, and
-  duplicate rules and emits a versioned JSON result.
-- `scripts/contributions/enrich.py` performs optional AI enrichment and
-  validates its response against controlled values.
-- `scripts/contributions/report.py` renders the human-readable issue report and
-  derives machine-owned labels.
-- `scripts/contributions/materialize.py` turns a fully verified result into one
-  schema-valid catalog record without modifying coverage data.
+## Duplicate Checks
 
-Network parsing, verification policy, AI advice, report formatting, and
-catalog mutation remain separate so each can be tested without GitHub or live
-network access.
+The metadata workflow compares the candidate with the current catalog using:
 
-## Verification Semantics
+1. exact DOI, OpenReview ID, or arXiv ID;
+2. normalized official URL or paper URL;
+3. normalized title equality; and
+4. a conservative normalized-title similarity check for a possible duplicate.
 
-The result uses separate facts rather than one ambiguous confidence score:
+The result is one of:
 
-- `source_resolved`: the submitted URL was recognized and safely read.
-- `venue_verified`: an official source proves the controlled venue, year, and
-  track.
-- `duplicate_status`: `clear`, `possible`, or `duplicate` based on stable ID,
-  normalized title, DOI, OpenReview ID, official URL, and paper URL.
-- `scope_assessment`: `in-scope`, `uncertain`, or `out-of-scope`, with reasons.
-- `record_complete`: every field required by `schema/paper.schema.json` is
-  present and valid.
-- `ready_for_approval`: all deterministic gates pass and the scope assessment
-  is `in-scope`.
+- `clear`: no catalog match was found;
+- `possible`: a title match needs maintainer review; or
+- `duplicate`: an exact identifier, URL, or normalized title already exists.
 
-Only deterministic evidence can set `venue_verified`. An arXiv page, author
-page, repository, or model statement cannot do so. If a DOI or arXiv record
-links to a recognized official proceedings or venue page, that official page
-is stored as `official_url`; otherwise the issue is labeled
-`needs-official-source`.
+The workflow reports matching catalog IDs. A `duplicate` cannot produce a
+draft PR. A `possible` match remains a human decision: approval is allowed, but
+the draft PR body must highlight the possible match.
 
-The existing controlled venues and the 2024--2026 year range are imported from
-repository code rather than duplicated in workflow YAML.
+## Human Review Boundary
 
-## AI Enrichment
+Automation does not decide whether a paper:
 
-AI enrichment runs only after deterministic extraction. It receives a bounded
-plain-text packet containing extracted bibliographic metadata, abstract text
-when available, the contributor's relevance note, the controlled taxonomy,
-and the inclusion/exclusion rules. It does not receive raw HTML, arbitrary
-linked content, repository secrets, or permission to fetch URLs.
+- makes a direct contribution to quantitative finance or asset management;
+- belongs to one of the target top conferences;
+- was formally accepted in the stated track; or
+- deserves particular topics, tasks, methods, asset classes, frequencies,
+  summaries, or investment-relevance prose.
 
-The model returns schema-constrained JSON containing:
+Applying `approved` is the maintainer's explicit decision on those questions.
+Before creating repository changes, the approval workflow verifies through the
+GitHub API that the label actor has `write`, `maintain`, or `admin` permission.
+It then re-reads the Issue, re-extracts metadata, and reruns duplicate checks;
+the earlier bot comment is not trusted as input.
 
-- a scope recommendation with concrete decision relevance and reasons;
-- suggested `topics`, `asset_classes`, `data_frequency`, `tasks`, `methods`,
-  and `datasets`;
-- an original one-sentence `summary`; and
-- an original `why_it_matters` tied to a quant-investment decision.
+Approval proceeds only when the candidate is `metadata-ready` and not an exact
+duplicate. Otherwise, no branch or pull request is created and the Issue report
+states the remaining problem.
 
-Every controlled value and required string is validated locally. Invalid AI
-output is discarded rather than repaired silently. The verification report
-labels all AI-derived fields as suggestions. The maintainer remains
-responsible for their correctness when applying `approved`.
+## Draft Pull Request
 
-`OPENAI_API_KEY` is optional. Without it, deterministic parsing and venue
-verification still run, the report states that enrichment was unavailable,
-and the candidate cannot reach `record_complete` or automatic materialization.
-The report directs the maintainer to the repository's existing manual pull-
-request workflow for that candidate. This is a service degradation, not a
-weaker verification standard.
+The approval workflow creates or updates one branch named from the Issue number
+and a sanitized paper slug. It appends one syntactically valid YAML record to
+`data/papers.yaml` containing only extracted base metadata and any reliable
+optional identifiers.
 
-The model name is supplied through an `OPENAI_MODEL` repository variable. It is
-not hard-coded into parsing or verification logic, and changing it cannot
-change any deterministic evidence rule.
+Fields required by the repository schema but not available from bibliographic
+sources are omitted. Consequently, the initial draft pull request may fail the
+existing catalog validator. This is intentional: the pull request body contains
+a checklist for the maintainer to add controlled topics, tasks, methods,
+original `summary`, original `why_it_matters`, status, and any other required
+catalog fields. The maintainer then runs the existing renderer so generated
+README, paper, and topic pages match the completed record.
 
-## Labels and State
+The existing CI remains the merge gate:
 
-The automation owns these labels:
+```bash
+python3 scripts/validate.py
+python3 scripts/render.py --check
+python3 -m unittest discover -s tests -v
+git diff --check
+```
 
-- `paper-suggestion`: identifies the submission type;
-- `verifying`: a run is in progress;
-- `verified-candidate`: deterministic proof and a complete candidate exist;
-- `needs-official-source`: venue, year, or track lacks primary-source proof;
-- `possible-duplicate`: a match requires maintainer review;
-- `duplicate`: the catalog already contains the paper;
-- `likely-out-of-scope`: the paper fails or probably fails the direct-decision
-  relevance test;
-- `needs-metadata`: required fields remain unresolved; and
-- `automation-error`: a transient or internal failure prevented a conclusion.
+The workflow opens a draft PR even when the new partial record makes validation
+fail. It never disables, bypasses, or weakens those checks, and it never merges
+the pull request.
 
-`approved` is maintainer-owned. Blocking labels and `verified-candidate` are
-mutually exclusive. Editing the issue reruns verification and may change
-machine-owned labels; it never restores `approved` automatically.
+## Labels and Managed Comment
 
-## Error Handling and Safety
+The MVP uses five state labels:
 
-- Only HTTPS URLs are accepted.
-- Network adapters fetch recognized public hosts only, use bounded timeouts,
-  response-size limits, redirect limits, and reject private, loopback,
-  link-local, and non-HTTP redirect targets.
-- Unknown hosts may be recorded as `paper_url` evidence but are not fetched and
-  cannot prove venue status.
-- Parser, upstream timeout, rate-limit, and AI failures appear as separate
-  report sections so maintainers know whether to retry or supply evidence.
-- Logs redact authorization headers, tokens, submitted query parameters, and
-  model credentials.
-- User text is treated as data, escaped in Markdown, and never interpolated
-  into shell commands, branch names, workflow expressions, or model system
-  instructions.
-- The read workflow has no content-write permission. The write workflow starts
-  only from a maintainer-authorized label event and reverifies all untrusted
-  input.
-- A branch conflict, duplicate branch, or already-linked open pull request is
-  handled idempotently: the existing draft pull request is updated rather than
-  creating another one.
+- `metadata-ready`: reliable base metadata is complete and no exact duplicate
+  exists;
+- `needs-metadata`: extraction failed or one or more base fields are missing;
+- `duplicate`: an exact catalog match exists;
+- `approved`: maintainer-owned approval trigger; and
+- `pr-created`: a draft pull request exists for the Issue.
 
-## Verification Report
+`metadata-ready`, `needs-metadata`, and `duplicate` are mutually exclusive and
+automation-owned. `approved` is maintainer-owned. The workflows maintain one
+Issue comment identified by a stable HTML marker so edits update the same
+report instead of adding comments.
 
-The managed issue comment contains:
+The report contains the submitted and canonical URLs, extracted base metadata,
+identifiers, duplicate result and matching IDs, missing base fields, and the
+next maintainer action. It does not contain AI advice, copied abstracts, or an
+automated scope or acceptance decision.
 
-1. an overall state and the next required action;
-2. submitted and canonical URLs;
-3. extracted title, authors, venue, year, track, and identifiers;
-4. the exact official evidence URL and deterministic checks;
-5. duplicate matches and their catalog IDs;
-6. the scope recommendation and explicit quant decision relevance;
-7. proposed controlled metadata and editorial prose, visibly marked as AI
-   suggestions; and
-8. a maintainer instruction explaining when `approved` is safe to apply.
+## Workflow Permissions and Idempotency
 
-The report never calls a paper verified when only the scope recommendation or
-an unverified preprint is available.
+The metadata workflow runs for opened, edited, and reopened Issues whose title
+has the stable `[Paper suggestion]` prefix, with `contents: read` and
+`issues: write`. It cannot change repository contents or create pull requests.
+
+The approval workflow runs when `approved` is added. It uses `contents: write`,
+`issues: write`, and `pull-requests: write` only after checking the triggering
+actor's repository permission. It derives all branch and file content through
+Python commands with validated structured inputs.
+
+Both workflows use an Issue-specific concurrency key. Repeated metadata runs
+update the managed comment. Repeated approval events update or reuse the same
+Issue branch and draft PR rather than creating duplicates.
+
+## Error Handling
+
+- Invalid form content produces `needs-metadata` with a short stable reason.
+- Unsupported links and upstream timeouts do not create a PR.
+- Exact duplicates produce `duplicate` and list matching IDs.
+- A possible title match is visible to the maintainer but does not silently
+  block an explicit approval.
+- Permission failure, incomplete metadata, or an exact duplicate leaves the
+  repository unchanged.
+- A failed branch, commit, or PR command leaves the Issue without `pr-created`
+  and reports a retryable automation failure without exposing secrets or raw
+  response bodies.
 
 ## Testing Strategy
 
-Tests use checked-in HTML/JSON fixtures and mocked HTTP responses; the normal
-test suite never requires live conference sites or an AI key.
+Tests use checked-in, minimal source fixtures and mocked network transports; no
+test depends on live conference sites.
 
-- Unit tests cover Issue Form parsing, URL normalization, each source adapter,
-  redirect and host safety, duplicate matching, controlled-value validation,
-  AI-response rejection, report rendering, label reconciliation, and catalog
-  materialization.
-- Integration tests run representative official-link, arXiv-with-official-
-  evidence, missing-evidence, duplicate, out-of-scope, unavailable-AI, and
-  malicious-input cases through the complete verifier.
-- Workflow tests validate event filters and least-privilege permissions as
-  static YAML contracts.
-- Existing catalog validation, rendering freshness, unit tests, and
-  `git diff --check` remain mandatory before a draft pull request is created.
+- Issue Form tests cover one-link parsing, HTTPS enforcement, duplicate
+  headings, and acknowledgement validation.
+- Source tests cover successful base extraction, missing fields, redirect and
+  private-address rejection, size/time bounds, and unsupported hosts.
+- Duplicate tests cover identifiers, canonical URLs, normalized titles,
+  possible-title matches, and catalog rechecks at approval time.
+- Report tests cover one managed marker, inert untrusted text, missing-field
+  display, and the five-label state model.
+- Materialization tests cover partial YAML record generation, duplicate refusal,
+  sanitized branch/slug output, and leaving `data/coverage.yaml` untouched.
+- Static workflow tests cover triggers, permissions, actor authorization,
+  concurrency, re-extraction, and the absence of AI configuration.
+- Existing catalog, rendering, unit, and diff checks remain unchanged.
 
 ## Acceptance Criteria
 
-The feature is ready when:
+The MVP is complete when:
 
-1. a signed-in visitor can open the form from README and submit one link;
-2. one managed issue comment reports extracted facts, official proof,
-   duplicates, scope advice, and the next action;
-3. a preprint without official proof cannot receive `verified-candidate`;
-4. AI output cannot set venue verification or bypass catalog validation;
-5. missing AI configuration leaves deterministic verification operational;
-6. an unprivileged issue author cannot trigger repository writes;
-7. for a complete candidate, a maintainer-applied `approved` label reverifies
-   the source and creates one valid draft pull request;
-8. a failed approval attempt creates no commit or pull request and explains
-   the blocking condition; and
-9. all generated files and existing repository checks remain current.
+1. README opens the paper-suggestion Issue Form.
+2. A visitor can submit exactly one HTTPS paper link without editing YAML.
+3. Recognized sources produce title, authors, venue, year, and paper URL when
+   those facts are available.
+4. Missing base facts are listed and prevent PR creation.
+5. Exact duplicates are listed and prevent PR creation; possible title matches
+   are highlighted for the maintainer.
+6. No automated component decides topical scope or acceptance status.
+7. Only an authorized maintainer applying `approved` can trigger a draft PR.
+8. The draft PR contains the reliable partial record and a checklist for the
+   missing extended metadata.
+9. Existing CI remains required before merge, even when the initial draft PR is
+   intentionally incomplete.
+10. No workflow merges a PR or writes directly to `main`.
+
+## Explicitly Out of Scope
+
+- AI-generated summaries, classifications, or scope advice;
+- automatic conference-acceptance inference or proof scoring;
+- automated topical eligibility decisions;
+- automatic completion of controlled taxonomy fields;
+- bulk submissions, journal papers, taxonomy changes, or coverage-ledger work;
+- a website, database, queueing service, or external ingestion API;
+- direct commits to `main`, automatic merging, or bypassing existing CI; and
+- a generalized crawler, security platform, or multi-file transaction system.
