@@ -4012,3 +4012,59 @@
   why_it_matters: Helps investment and risk systems combine fast market changes with slower trend information in a single forecasting workflow.
   status: published
   verified_on: 2026-08-12
+
+- id: 2026-acm-icaif-wang-flowlob
+  title: 'FlowLOB: Efficient and Controllable Limit Order Book Generation with Flow Matching'
+  authors:
+  - Zhuohan Wang
+  - Andreea Bacalum
+  - Ollie Olby
+  - Carmine Ventre
+  - Namid Stillman
+  venue: ACM ICAIF
+  year: 2026
+  track: main
+  presentation: oral
+  official_url: https://icaif2026.org/accepted-papers/#paper-772
+  paper_url: https://arxiv.org/abs/2608.13096
+  arxiv_id: '2608.13096'
+  topics:
+  - market-simulation
+  - synthetic-data
+  - market-microstructure
+  summary: Uses conditional flow matching to synthesize limit-order-book paths, with scenario controls and transfer to held-out
+    instruments.
+  why_it_matters: Provides controllable synthetic market trajectories for testing market-microstructure models; the reported
+    comparison concerns HKEX data rather than live trading profitability.
+  status: accepted
+  verified_on: '2026-11-10'
+  notes: Official main-conference oral roster confirms title and five authors. Content checked against arXiv abstract; code
+    URL not confirmed. This targeted check does not complete ICAIF 2026 coverage.
+- id: 2026-acm-icaif-unno-one-basket-many-experts
+  title: 'One Basket, Many Experts: Decorrelated Re-ranking for Financial Asset Recommendation'
+  authors:
+  - Ryuki Unno
+  - Keigo Sakurai
+  - Koshi Watanabe
+  - Keisuke Maeda
+  - Takahiro Ogawa
+  - Miki Haseyama
+  venue: ACM ICAIF
+  year: 2026
+  track: main
+  presentation: poster
+  official_url: https://icaif2026.org/accepted-papers/#paper-633
+  paper_url: https://arxiv.org/abs/2611.05952
+  arxiv_id: '2611.05952'
+  topics:
+  - asset-allocation
+  - portfolio-optimization
+  - evaluation
+  summary: Re-ranks an expert-following asset list by retaining leading recommendations and replacing selected positions with
+    less-correlated alternatives.
+  why_it_matters: Makes the recommendation-relevance versus portfolio-performance trade-off explicit; the authors attribute
+    gains in their dataset to return differences rather than a general reduction in basket volatility.
+  status: accepted
+  verified_on: '2026-11-10'
+  notes: Official main-conference poster roster confirms title and six authors. Content checked against arXiv abstract; code
+    URL not confirmed. Performance is protocol- and market-phase-dependent; not independently reproduced.

@@ -6,7 +6,7 @@
 
 Curated top-conference research for quantitative finance and asset management.
 
-[![Papers-154](https://img.shields.io/badge/Papers-154-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--08--12](https://img.shields.io/badge/Last_verified-2026--08--12-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
+[![Papers-156](https://img.shields.io/badge/Papers-156-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--11--10](https://img.shields.io/badge/Last_verified-2026--11--10-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
 
 [**Suggest a Paper**](https://github.com/sjsj0101/good-quant-ai-papers/issues/new?template=paper-suggestion.yml)
 
@@ -28,7 +28,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 
 | Metric | Value |
 | --- | ---: |
-| Curated papers | 154 |
+| Curated papers | 156 |
 | Coverage units | 33 |
 | Covered years | 2024-2026 |
 | Conferences | 11 |
@@ -54,7 +54,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 | WSDM | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
 | SIGIR | 0 papers · Pending | 0 papers · Pending | 0 papers · Pending |
 | AISTATS | 0 papers · Pending | [1 paper](papers/2025/aistats.md) · Pending | 0 papers · No eligible papers |
-| ACM ICAIF | 0 papers · Pending | 0 papers · Pending | [49 papers](papers/2024/acm-icaif.md) · Pending |
+| ACM ICAIF | [2 papers](papers/2026/acm-icaif.md) · Pending | 0 papers · Pending | [49 papers](papers/2024/acm-icaif.md) · Pending |
 
 ## Browse by Year and Venue
 
@@ -63,6 +63,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 - **2026** · [AAAI 2026](papers/2026/aaai.md) — 3 papers
 - **2026** · [IJCAI 2026](papers/2026/ijcai.md) — 5 papers
 - **2026** · [WWW 2026](papers/2026/www.md) — 7 papers
+- **2026** · [ACM ICAIF 2026](papers/2026/acm-icaif.md) — 2 papers
 - **2025** · [ICML 2025](papers/2025/icml.md) — 5 papers
 - **2025** · [NeurIPS 2025](papers/2025/neurips.md) — 4 papers
 - **2025** · [ICLR 2025](papers/2025/iclr.md) — 3 papers
@@ -196,6 +197,16 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the complete submission checklist.
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
 | [Learning-Based Optimization of Atomic Arbitrage in Decentralized Financial Systems](<https://doi.org/10.1145/3774905.3794707>)<br><sub>Syahirul Faiz, Huned Materwala, Davor Svetinovic</sub> | Workshop<br><sub>Not Specified</sub><br><sub>ZABAPAD 2026: 1st Workshop on Zero-knowledge Proof and Blockchain for WEB 4.0: Advancing the Post-quantum and Decentralized Era</sub> | Applies learning-based optimization to atomic arbitrage decisions in decentralized financial systems. | Crypto | Directly optimizes an executable DeFi trading strategy rather than merely describing protocol activity. |
+
+
+### ACM ICAIF 2026
+
+#### Main Conference (2)
+
+| Paper | Track | Focus | Assets / Frequency | Why it matters |
+| --- | --- | --- | --- | --- |
+| [FlowLOB: Efficient and Controllable Limit Order Book Generation with Flow Matching](<https://arxiv.org/abs/2608.13096>)<br><sub>Zhuohan Wang, Andreea Bacalum, Ollie Olby, Carmine Ventre, Namid Stillman</sub> | Main<br><sub>Oral</sub> | Uses conditional flow matching to synthesize limit-order-book paths, with scenario controls and transfer to held-out instruments. | — | Provides controllable synthetic market trajectories for testing market-microstructure models; the reported comparison concerns HKEX data rather than live trading profitability. |
+| [One Basket, Many Experts: Decorrelated Re-ranking for Financial Asset Recommendation](<https://arxiv.org/abs/2611.05952>)<br><sub>Ryuki Unno, Keigo Sakurai, Koshi Watanabe, Keisuke Maeda, Takahiro Ogawa, Miki Haseyama</sub> | Main<br><sub>Poster</sub> | Re-ranks an expert-following asset list by retaining leading recommendations and replacing selected positions with less-correlated alternatives. | — | Makes the recommendation-relevance versus portfolio-performance trade-off explicit; the authors attribute gains in their dataset to return differences rather than a general reduction in basket volatility. |
 
 
 ### ICML 2025

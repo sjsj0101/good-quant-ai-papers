@@ -236,23 +236,25 @@
 - venue: ACM ICAIF
   year: 2026
   status: pending
-  checked_on: 2026-07-12
-  eligible_paper_count: 0
-  tracks_checked: []
+  checked_on: '2026-11-10'
+  eligible_paper_count: 2
+  tracks_checked:
+  - main
   tracks_pending:
   - track: main
-    state: unpublished
-    note: Main accepted-paper roster is not yet published as an accepted-paper source.
+    state: partial
+    note: Two named main papers verified against the published official roster; the other 210 listed main records are not
+      screened in this batch.
   - track: workshop
-    state: unpublished
-    note: Workshop or organizer paper roster is not yet published as an accepted-paper source.
+    state: source_mapped
+    note: Official workshop-paper entry point is linked from the main roster; individual workshop records remain unscreened.
   official_sources:
-  - https://icaif2026.org/
-  - https://dl.acm.org/
-  notes: Zero official main paper rows were screened because the accepted program is future and unpublished. Submissions and
-    under-review repositories are not acceptance evidence. The future main program, workshop and side-event map, organizer
-    paper rosters, and proceedings volume remain missing. Main is not complete; main is represented in tracks_pending rather
-    than tracks_checked.
+  - https://icaif2026.org/accepted-papers/
+  - https://icaif2026.org/accepted-papers/#paper-772
+  - https://icaif2026.org/accepted-papers/#paper-633
+  notes: The official roster lists 212 accepted main papers in oral, poster and proceedings-only groups. This incremental
+    batch verifies FlowLOB (oral) and One Basket, Many Experts (poster), including author order. The remaining 210 main records
+    and paper-bearing side programs remain pending. No complete coverage or zero-result claim is made.
 - venue: ICML
   year: 2025
   status: pending
