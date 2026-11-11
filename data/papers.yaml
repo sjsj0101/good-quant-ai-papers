@@ -4068,3 +4068,35 @@
   verified_on: '2026-11-10'
   notes: Official main-conference poster roster confirms title and six authors. Content checked against arXiv abstract; code
     URL not confirmed. Performance is protocol- and market-phase-dependent; not independently reproduced.
+- id: 2026-acm-icaif-chionas-saife-gym
+  title: 'SAiFE-gym: Model-based Environments for Automated Market Making with Concentrated Liquidity'
+  authors:
+  - Georgios Chionas
+  - Charalampos Kleitsikas
+  - Stefanos Leonardos
+  - Leandro Sánchez-Betancourt
+  - Carmine Ventre
+  venue: ACM ICAIF
+  year: 2026
+  track: main
+  presentation: poster
+  official_url: https://icaif2026.org/accepted-papers/#paper-797
+  paper_url: https://arxiv.org/abs/2609.17788
+  arxiv_id: '2609.17788'
+  code_url: https://github.com/giorgoschionas/SAiFE_gym
+  topics:
+  - market-simulation
+  - market-microstructure
+  - asset-allocation
+  - evaluation
+  asset_classes:
+  - crypto
+  summary: Provides modular, vectorized environments for learning liquidity-allocation policies in constant-product
+    markets with concentrated liquidity.
+  why_it_matters: Makes liquidity ranges, market frictions and uncertain market parameters explicit when evaluating
+    reinforcement-learning market makers; simulation results do not establish live trading profitability.
+  status: accepted
+  verified_on: '2026-11-11'
+  notes: Official ICAIF main-conference roster lists paper 797 in the poster group, not oral. Five authors and author
+    order verified; arXiv abstract and introduction read. The paper directly links the public SAiFE_gym code repository;
+    code was not executed.
