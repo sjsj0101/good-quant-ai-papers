@@ -2,7 +2,7 @@
 
 # Execution
 
-20 verified papers tagged `execution`.
+21 verified papers tagged `execution`.
 
 [← Back to the main index](../README.md)
 
@@ -10,6 +10,7 @@
 | --- | --- | --- | --- |
 | [Trade in Minutes! Rationality-Driven Agentic System for Quantitative Financial Trading](<https://arxiv.org/abs/2510.04787>)<br><sub>Zifan Song, Kaitao Song, Guosheng Hu, Ding Qi, Junyao Gao, Xiaohua Wang, Dongsheng Li, Cairong Zhao</sub> | [ICLR 2026](<../papers/2026/iclr.md>) | Main<br><sub>Poster</sub> | Uses a rationality-driven multi-agent system to separate LLM strategy development from minute-level trading-bot deployment across stock and crypto markets. |
 | [Learning-Based Optimization of Atomic Arbitrage in Decentralized Financial Systems](<https://doi.org/10.1145/3774905.3794707>)<br><sub>Syahirul Faiz, Huned Materwala, Davor Svetinovic</sub> | [WWW 2026](<../papers/2026/www.md>) | Workshop<br><sub>Not Specified</sub><br><sub>ZABAPAD 2026: 1st Workshop on Zero-knowledge Proof and Blockchain for WEB 4.0: Advancing the Post-quantum and Decentralized Era</sub> | Applies learning-based optimization to atomic arbitrage decisions in decentralized financial systems. |
+| [LOB-Impact Benchmark: Emergent Market Impact in Generative Limit Order Book Models](<https://arxiv.org/abs/2610.27100>)<br><sub>George Nigmatulin, Valentin Mohl, Sascha Frey, Kang Li, Aramis Marti-Shahandeh, Mihai Cucuringu, Anisoara Calinescu, Jakob Foerster, Stefan Zohren</sub> | [ACM ICAIF 2026](<../papers/2026/acm-icaif.md>) | Main<br><sub>Oral</sub> | Tests generative order-book models by injecting execution metaorders and comparing their impact and relaxation with a blind simulator control. |
 | [Robust Reinforcement Learning in Finance: Modeling Market Impact with Elliptic Uncertainty Sets](<https://proceedings.neurips.cc/paper_files/paper/2025/file/3c129892b4f9c8326aba665425a470c5-Paper-Conference.pdf>)<br><sub>Shaocong Ma, Heng Huang</sub> | [NeurIPS 2025](<../papers/2025/neurips.md>) | Main<br><sub>Not Specified</sub> | Models market impact as asymmetric uncertainty and evaluates robust reinforcement-learning traders on single-asset and multi-asset trading tasks. |
 | [An Online Learning Theory of Trading-Volume Maximization](<https://proceedings.iclr.cc/paper_files/paper/2025/file/2e809adc337594e0fee330a64acbb982-Paper-Conference.pdf>)<br><sub>Tommaso Cesari, Roberto Colomboni</sub> | [ICLR 2025](<../papers/2025/iclr.md>) | Main<br><sub>Not Specified</sub> | Studies how an online broker should set prices between two traders to maximize the number of mutually beneficial asset exchanges. |
 | [CryptoMixer: Fine-grained market information-aware MLP Networks for Individual Cryptocurrency Trading Prediction](<https://doi.org/10.1145/3711896.3736900>)<br><sub>Tingsheng Feng, Zhihao Shen, Xi Zhao, Xiaoni Lu, Yuyang Zhou</sub> | [KDD 2025](<../papers/2025/kdd.md>) | Main<br><sub>Not Specified</sub><br><sub>Research Track</sub> | Uses fine-grained market-information-aware MLP networks for individual cryptocurrency trading prediction. |

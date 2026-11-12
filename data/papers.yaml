@@ -4100,3 +4100,41 @@
   notes: Official ICAIF main-conference roster lists paper 797 in the poster group, not oral. Five authors and author
     order verified; arXiv abstract and introduction read. The paper directly links the public SAiFE_gym code repository;
     code was not executed.
+- id: 2026-acm-icaif-nigmatulin-lob-impact
+  title: 'LOB-Impact Benchmark: Emergent Market Impact in Generative Limit Order Book Models'
+  authors:
+  - George Nigmatulin
+  - Valentin Mohl
+  - Sascha Frey
+  - Kang Li
+  - Aramis Marti-Shahandeh
+  - Mihai Cucuringu
+  - Anisoara Calinescu
+  - Jakob Foerster
+  - Stefan Zohren
+  venue: ACM ICAIF
+  year: 2026
+  track: main
+  presentation: oral
+  official_url: https://icaif2026.org/accepted-papers/#paper-1095
+  paper_url: https://arxiv.org/abs/2610.27100
+  arxiv_id: '2610.27100'
+  doi: 10.1145/3858063.3858909
+  code_url: https://github.com/george-nigmatulin/lob_impact
+  topics:
+  - market-simulation
+  - market-microstructure
+  - execution
+  - evaluation
+  asset_classes:
+  - equities
+  summary: Tests generative order-book models by injecting execution metaorders and comparing their impact and relaxation
+    with a blind simulator control.
+  why_it_matters: Checks whether trading-agent world models respond credibly to the agent’s own orders, rather than
+    matching only historical distributions; tested models did not reproduce impact decay.
+  status: accepted
+  verified_on: '2026-11-12'
+  notes: Official main roster lists paper 1095 as oral and confirms all nine authors. Content and DOI checked in
+    the author arXiv version, not independently in ACM proceedings. The paper links a code URL that redirects to
+    the canonical lob_impact repository; opened, not executed. Reported findings concern tested models and stocks,
+    not universal market-impact laws.
