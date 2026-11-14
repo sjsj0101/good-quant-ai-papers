@@ -4138,3 +4138,36 @@
     the author arXiv version, not independently in ACM proceedings. The paper links a code URL that redirects to
     the canonical lob_impact repository; opened, not executed. Reported findings concern tested models and stocks,
     not universal market-impact laws.
+
+- id: 2026-acm-icaif-yildiz-investment-mandates
+  title: 'Internalizing Investment Mandates: A Neurosymbolic RL Approach to Portfolio Allocation'
+  authors:
+  - Zeynep Yıldız
+  - Satchit Chatterji
+  - Ercan Atam
+  - Erman Acar
+  venue: ACM ICAIF
+  year: 2026
+  track: main
+  presentation: poster
+  official_url: https://icaif2026.org/accepted-papers/#paper-1068
+  paper_url: https://arxiv.org/abs/2611.17329
+  arxiv_id: '2611.17329'
+  doi: 10.1145/3858063.3858904
+  topics:
+  - asset-allocation
+  - portfolio-optimization
+  - risk-management
+  - market-regimes
+  summary: Trains a continuous portfolio policy with a differentiable Monte Carlo estimate of mandate compliance, using market-regime-dependent
+    allocation rules rather than a separate deployment-time rule-correction layer.
+  why_it_matters: 'Directly evaluates whether portfolio weights satisfy investment mandates. The reported compliance improvement
+    is not a hard guarantee or evidence of a production-ready profitable strategy: the tested setting uses one ETF universe
+    and omits transaction costs and slippage.'
+  status: accepted
+  verified_on: '2026-11-14'
+  notes: Official ICAIF main-conference poster roster confirms title and four authors. Content checked against the author
+    arXiv abstract and selected method/limitations sections; DOI transcribed from the author manuscript, not independently
+    used to claim ACM proceedings publication. Compliance concerns deterministic mean actions; stochastic actions can violate
+    more rules. Code URL not confirmed; no independent reproduction. One targeted addition does not complete the 212-paper
+    roster screen.

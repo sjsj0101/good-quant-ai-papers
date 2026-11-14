@@ -2,7 +2,7 @@
 
 # Market Regimes
 
-12 verified papers tagged `market-regimes`.
+13 verified papers tagged `market-regimes`.
 
 [← Back to the main index](../README.md)
 
@@ -10,6 +10,7 @@
 | --- | --- | --- | --- |
 | [Reflexivity as Prompt: Does Awareness of Self-Reinforcing Market Dynamics Improve LLMs as Financial Market Forecasters?](<https://arxiv.org/abs/2606.00061>)<br><sub>Eugene W Park</sub> | [ICML 2026](<../papers/2026/icml.md>) | Workshop<br><sub>Poster</sub><br><sub>Forecasting as a New Frontier of Intelligence</sub> | Tests whether reflexivity-aware prompts improve market forecasts and evaluates an implied long/cash strategy across historical boom-bust episodes. |
 | [MARS: A Meta-Adaptive Reinforcement Learning Framework for Risk-Aware Multi-Agent Portfolio Management](<https://ojs.aaai.org/index.php/AAAI/article/view/39095>)<br><sub>Jiayi Chen, Jing Li, Guiling Wang</sub> | [AAAI 2026](<../papers/2026/aaai.md>) | Main<br><sub>Not Specified</sub><br><sub>AAAI Technical Track on Machine Learning I</sub> | Combines heterogeneous portfolio-management agents with a safety critic and meta-adaptive controller to trade off return and downside risk. |
+| [Internalizing Investment Mandates: A Neurosymbolic RL Approach to Portfolio Allocation](<https://arxiv.org/abs/2611.17329>)<br><sub>Zeynep Yıldız, Satchit Chatterji, Ercan Atam, Erman Acar</sub> | [ACM ICAIF 2026](<../papers/2026/acm-icaif.md>) | Main<br><sub>Poster</sub> | Trains a continuous portfolio policy with a differentiable Monte Carlo estimate of mandate compliance, using market-regime-dependent allocation rules rather than a separate deployment-time rule-correction layer. |
 | [TwinMarket: A Scalable Behavioral and Social Simulation for Financial Markets](<https://proceedings.neurips.cc/paper_files/paper/2025/file/5bf234ecf83cd77bc5b77a24ba9338b0-Paper-Conference.pdf>)<br><sub>Yuzhe YANG, Yifei Zhang, Minghao Wu, Kaidi Zhang, Yunmiao Zhang, Honghai Yu, Yan Hu, Benyou Wang</sub> | [NeurIPS 2025](<../papers/2025/neurips.md>) | Main<br><sub>Not Specified</sub> | Simulates behavioral and social interactions among LLM agents in a stock-market environment to study bubbles, recessions, and other emergent market outcomes. |
 | [CAMEF: Causal-Augmented Multi-Modality Event-Driven Financial Forecasting by Integrating Time Series Patterns and Salient Macroeconomic Announcements](<https://doi.org/10.1145/3711896.3736872>)<br><sub>Yang Zhang, Wenbo Yang, Jun Wang, Qiang Ma, Jie Xiong</sub> | [KDD 2025](<../papers/2025/kdd.md>) | Main<br><sub>Not Specified</sub><br><sub>Research Track</sub> | Integrates market time series with salient macroeconomic announcement text using causal and counterfactual augmentation for event-driven forecasting. |
 | [Enhancer: A Distribution-Aware Framework with Temporal-Relational Meta-Learning for Stock Prediction](<https://doi.org/10.1145/3711896.3736934>)<br><sub>Weijun Chen, Shun Li, Heyuan Wang, Tengjiao Wang</sub> | [KDD 2025](<../papers/2025/kdd.md>) | Main<br><sub>Not Specified</sub><br><sub>Research Track</sub> | Provides a model-agnostic temporal-relational meta-learning framework for adapting stock predictors under temporal and relational distribution shifts. |

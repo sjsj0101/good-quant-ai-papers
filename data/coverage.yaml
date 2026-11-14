@@ -236,27 +236,28 @@
 - venue: ACM ICAIF
   year: 2026
   status: pending
-  checked_on: '2026-11-12'
-  eligible_paper_count: 4
+  checked_on: '2026-11-14'
+  eligible_paper_count: 5
   tracks_checked:
   - main
   tracks_pending:
   - track: main
     state: partial
-    note: Four named main papers verified in targeted batches; the other 208 listed main records remain unadjudicated.
+    note: Five named main papers verified in targeted batches; the other 207 listed main records remain unadjudicated.
   - track: workshop
     state: source_mapped
-    note: Official workshop-paper entry point is linked from the main roster; individual workshop records remain
-      unscreened.
+    note: Official workshop-paper entry point is linked from the main roster; individual workshop records remain unscreened.
   official_sources:
   - https://icaif2026.org/accepted-papers/
   - https://icaif2026.org/accepted-papers/#paper-772
   - https://icaif2026.org/accepted-papers/#paper-633
   - https://icaif2026.org/accepted-papers/#paper-797
   - https://icaif2026.org/accepted-papers/#paper-1095
-  notes: The official roster lists 212 accepted main papers. Targeted batches verified FlowLOB (oral), One Basket,
-    Many Experts (poster), SAiFE-gym (poster), and now LOB-Impact Benchmark (oral). These four individual checks
-    are not a completed roster screen. The remaining 208 main records and paper-bearing side programs remain pending.
+  - https://icaif2026.org/accepted-papers/#paper-1068
+  notes: The official roster lists 212 accepted main papers. Targeted batches verified FlowLOB (oral), One Basket, Many Experts
+    (poster), SAiFE-gym (poster), LOB-Impact Benchmark (oral), and Internalizing Investment Mandates (poster). These five
+    individual checks are not a completed roster screen. The remaining 207 main records and paper-bearing side programs remain
+    pending.
 - venue: ICML
   year: 2025
   status: pending

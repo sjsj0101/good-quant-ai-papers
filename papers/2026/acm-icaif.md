@@ -4,23 +4,23 @@
 
 **Coverage status:** Pending
 
-**Checked on:** 2026-11-12
+**Checked on:** 2026-11-14
 
-**Cataloged eligible papers:** 4
+**Cataloged eligible papers:** 5
 
 **Tracks checked:** Main
 
-**Tracks pending:** Main (partially screened: Four named main papers verified in targeted batches; the other 208 listed main records remain unadjudicated.) · Workshop (source mapped: Official workshop-paper entry point is linked from the main roster; individual workshop records remain unscreened.)
+**Tracks pending:** Main (partially screened: Five named main papers verified in targeted batches; the other 207 listed main records remain unadjudicated.) · Workshop (source mapped: Official workshop-paper entry point is linked from the main roster; individual workshop records remain unscreened.)
 
-**Official audit sources:** [Source 1](<https://icaif2026.org/accepted-papers/>) · [Source 2](<https://icaif2026.org/accepted-papers/#paper-772>) · [Source 3](<https://icaif2026.org/accepted-papers/#paper-633>) · [Source 4](<https://icaif2026.org/accepted-papers/#paper-797>) · [Source 5](<https://icaif2026.org/accepted-papers/#paper-1095>)
+**Official audit sources:** [Source 1](<https://icaif2026.org/accepted-papers/>) · [Source 2](<https://icaif2026.org/accepted-papers/#paper-772>) · [Source 3](<https://icaif2026.org/accepted-papers/#paper-633>) · [Source 4](<https://icaif2026.org/accepted-papers/#paper-797>) · [Source 5](<https://icaif2026.org/accepted-papers/#paper-1095>) · [Source 6](<https://icaif2026.org/accepted-papers/#paper-1068>)
 
-**Coverage notes:** The official roster lists 212 accepted main papers. Targeted batches verified FlowLOB (oral), One Basket, Many Experts (poster), SAiFE-gym (poster), and now LOB-Impact Benchmark (oral). These four individual checks are not a completed roster screen. The remaining 208 main records and paper-bearing side programs remain pending.
+**Coverage notes:** The official roster lists 212 accepted main papers. Targeted batches verified FlowLOB (oral), One Basket, Many Experts (poster), SAiFE-gym (poster), LOB-Impact Benchmark (oral), and Internalizing Investment Mandates (poster). These five individual checks are not a completed roster screen. The remaining 207 main records and paper-bearing side programs remain pending.
 
-4 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
+5 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 
-## Main Conference (4)
+## Main Conference (5)
 
 ### [FlowLOB: Efficient and Controllable Limit Order Book Generation with Flow Matching](<https://arxiv.org/abs/2608.13096>)
 
@@ -47,6 +47,34 @@
 **Notes:** Official main-conference oral roster confirms title and five authors. Content checked against arXiv abstract; code URL not confirmed. This targeted check does not complete ICAIF 2026 coverage.
 
 **Links:** [Official venue record](<https://icaif2026.org/accepted-papers/#paper-772>) · [Paper](<https://arxiv.org/abs/2608.13096>)
+
+---
+
+### [Internalizing Investment Mandates: A Neurosymbolic RL Approach to Portfolio Allocation](<https://arxiv.org/abs/2611.17329>)
+
+**Catalog ID:** 2026-acm-icaif-yildiz-investment-mandates
+
+**Authors:** Zeynep Yıldız, Satchit Chatterji, Ercan Atam, Erman Acar
+
+**Venue / year:** ACM ICAIF · 2026
+
+**Track / presentation:** Main · Poster
+
+**Status / verified:** Accepted · 2026-11-14
+
+**Topics:** Asset Allocation · Portfolio Optimization · Risk Management · Market Regimes
+
+**Assets / frequency:** Not specified
+
+**Identifiers:** arXiv 2611.17329 · DOI 10.1145/3858063.3858904
+
+**Focus:** Trains a continuous portfolio policy with a differentiable Monte Carlo estimate of mandate compliance, using market-regime-dependent allocation rules rather than a separate deployment-time rule-correction layer.
+
+**Why it matters:** Directly evaluates whether portfolio weights satisfy investment mandates. The reported compliance improvement is not a hard guarantee or evidence of a production-ready profitable strategy: the tested setting uses one ETF universe and omits transaction costs and slippage.
+
+**Notes:** Official ICAIF main-conference poster roster confirms title and four authors. Content checked against the author arXiv abstract and selected method/limitations sections; DOI transcribed from the author manuscript, not independently used to claim ACM proceedings publication. Compliance concerns deterministic mean actions; stochastic actions can violate more rules. Code URL not confirmed; no independent reproduction. One targeted addition does not complete the 212-paper roster screen.
+
+**Links:** [Official venue record](<https://icaif2026.org/accepted-papers/#paper-1068>) · [Paper](<https://arxiv.org/abs/2611.17329>)
 
 ---
 
