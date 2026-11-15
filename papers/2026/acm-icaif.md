@@ -4,23 +4,23 @@
 
 **Coverage status:** Pending
 
-**Checked on:** 2026-11-14
+**Checked on:** 2026-11-15
 
-**Cataloged eligible papers:** 5
+**Cataloged eligible papers:** 6
 
 **Tracks checked:** Main
 
-**Tracks pending:** Main (partially screened: Five named main papers verified in targeted batches; the other 207 listed main records remain unadjudicated.) · Workshop (source mapped: Official workshop-paper entry point is linked from the main roster; individual workshop records remain unscreened.)
+**Tracks pending:** Main (partially screened: Six named main papers verified in targeted batches; 208 of the current 214 main records remain unadjudicated.) · Workshop (source mapped: Official workshop-paper entry point is linked from the main roster; individual workshop records remain unscreened.)
 
-**Official audit sources:** [Source 1](<https://icaif2026.org/accepted-papers/>) · [Source 2](<https://icaif2026.org/accepted-papers/#paper-772>) · [Source 3](<https://icaif2026.org/accepted-papers/#paper-633>) · [Source 4](<https://icaif2026.org/accepted-papers/#paper-797>) · [Source 5](<https://icaif2026.org/accepted-papers/#paper-1095>) · [Source 6](<https://icaif2026.org/accepted-papers/#paper-1068>)
+**Official audit sources:** [Source 1](<https://icaif2026.org/accepted-papers/>) · [Source 2](<https://icaif2026.org/accepted-papers/#paper-772>) · [Source 3](<https://icaif2026.org/accepted-papers/#paper-633>) · [Source 4](<https://icaif2026.org/accepted-papers/#paper-797>) · [Source 5](<https://icaif2026.org/accepted-papers/#paper-1095>) · [Source 6](<https://icaif2026.org/accepted-papers/#paper-1068>) · [Source 7](<https://icaif2026.org/accepted-papers/#paper-329>)
 
-**Coverage notes:** The official roster lists 212 accepted main papers. Targeted batches verified FlowLOB (oral), One Basket, Many Experts (poster), SAiFE-gym (poster), LOB-Impact Benchmark (oral), and Internalizing Investment Mandates (poster). These five individual checks are not a completed roster screen. The remaining 207 main records and paper-bearing side programs remain pending.
+**Coverage notes:** The official roster now lists 214 accepted main papers (52 oral,108 poster,54 proceedings only), compared with 212 in the previous checkpoint. Targeted batches verified FlowLOB, One Basket Many Experts, SAiFE-gym, LOB-Impact, Internalizing Investment Mandates, and Signature Methods for Optimal Market Making. These six checks are not a completed roster screen; the remaining 208 main records and workshops remain pending. No complete-coverage claim is made.
 
-5 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
+6 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 
-## Main Conference (5)
+## Main Conference (6)
 
 ### [FlowLOB: Efficient and Controllable Limit Order Book Generation with Flow Matching](<https://arxiv.org/abs/2608.13096>)
 
@@ -159,5 +159,33 @@
 **Notes:** Official ICAIF main-conference roster lists paper 797 in the poster group, not oral. Five authors and author order verified; arXiv abstract and introduction read. The paper directly links the public SAiFE\_gym code repository; code was not executed.
 
 **Links:** [Official venue record](<https://icaif2026.org/accepted-papers/#paper-797>) · [Paper](<https://arxiv.org/abs/2609.17788>) · [Code](<https://github.com/giorgoschionas/SAiFE_gym>)
+
+---
+
+### [Signature Methods for Optimal Market Making](<https://arxiv.org/abs/2606.19772>)
+
+**Catalog ID:** 2026-acm-icaif-primavera-signature-market-making
+
+**Authors:** Francesca Primavera, Thibaut Mastrolia, Alberto Gennaro
+
+**Venue / year:** ACM ICAIF · 2026
+
+**Track / presentation:** Main · Oral
+
+**Status / verified:** Accepted · 2026-11-15
+
+**Topics:** Market Microstructure · Execution · Risk Management
+
+**Assets / frequency:** Not specified
+
+**Identifiers:** arXiv 2606.19772
+
+**Focus:** Uses path signatures to express a mean-variance market-making objective and learns bid and ask quotes with the Sig-REINFORCE algorithm.
+
+**Why it matters:** Directly studies quote selection and inventory-risk trade-offs for a market maker; the reported evaluation uses simulated Poisson and self-exciting Hawkes order arrivals against PPO, not live trading profitability.
+
+**Notes:** Official ICAIF main-conference oral roster confirms title and three authors. Author order follows that roster (Primavera, Mastrolia, Gennaro); the arXiv v2 metadata lists Gennaro, Mastrolia, Primavera. Same title and author set identify the version relation; not counted twice. Content checked at abstract level only. Code URL and formal ACM publication status not independently confirmed; no reproduction. Current official roster has 214 main papers, up from 212 in the previous checkpoint; this one-paper check does not complete its screening.
+
+**Links:** [Official venue record](<https://icaif2026.org/accepted-papers/#paper-329>) · [Paper](<https://arxiv.org/abs/2606.19772>)
 
 ---

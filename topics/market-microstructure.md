@@ -2,7 +2,7 @@
 
 # Market Microstructure
 
-27 verified papers tagged `market-microstructure`.
+28 verified papers tagged `market-microstructure`.
 
 [← Back to the main index](../README.md)
 
@@ -17,6 +17,7 @@
 | [FlowLOB: Efficient and Controllable Limit Order Book Generation with Flow Matching](<https://arxiv.org/abs/2608.13096>)<br><sub>Zhuohan Wang, Andreea Bacalum, Ollie Olby, Carmine Ventre, Namid Stillman</sub> | [ACM ICAIF 2026](<../papers/2026/acm-icaif.md>) | Main<br><sub>Oral</sub> | Uses conditional flow matching to synthesize limit-order-book paths, with scenario controls and transfer to held-out instruments. |
 | [LOB-Impact Benchmark: Emergent Market Impact in Generative Limit Order Book Models](<https://arxiv.org/abs/2610.27100>)<br><sub>George Nigmatulin, Valentin Mohl, Sascha Frey, Kang Li, Aramis Marti-Shahandeh, Mihai Cucuringu, Anisoara Calinescu, Jakob Foerster, Stefan Zohren</sub> | [ACM ICAIF 2026](<../papers/2026/acm-icaif.md>) | Main<br><sub>Oral</sub> | Tests generative order-book models by injecting execution metaorders and comparing their impact and relaxation with a blind simulator control. |
 | [SAiFE-gym: Model-based Environments for Automated Market Making with Concentrated Liquidity](<https://arxiv.org/abs/2609.17788>)<br><sub>Georgios Chionas, Charalampos Kleitsikas, Stefanos Leonardos, Leandro Sánchez-Betancourt, Carmine Ventre</sub> | [ACM ICAIF 2026](<../papers/2026/acm-icaif.md>) | Main<br><sub>Poster</sub> | Provides modular, vectorized environments for learning liquidity-allocation policies in constant-product markets with concentrated liquidity. |
+| [Signature Methods for Optimal Market Making](<https://arxiv.org/abs/2606.19772>)<br><sub>Francesca Primavera, Thibaut Mastrolia, Alberto Gennaro</sub> | [ACM ICAIF 2026](<../papers/2026/acm-icaif.md>) | Main<br><sub>Oral</sub> | Uses path signatures to express a mean-variance market-making objective and learns bid and ask quotes with the Sig-REINFORCE algorithm. |
 | [HyperIV: Real-time Implied Volatility Smoothing](<https://openreview.net/forum?id=o9jtS7HupI>)<br><sub>Yongxin Yang, Wenqi Chen, Chao Shu, Timothy Hospedales</sub> | [ICML 2025](<../papers/2025/icml.md>) | Main<br><sub>Not Specified</sub> | Constructs arbitrage-free implied-volatility surfaces in real time from sparse option quotes and evaluates them across eight index options. |
 | [LOB-Bench: Benchmarking Generative AI for Finance - an Application to Limit Order Book Data](<https://openreview.net/forum?id=CXPpYJpYXQ>)<br><sub>Peer Nagy, Sascha Yves Frey, Kang Li, Bidipta Sarkar, Svitlana Vyetrenko, Stefan Zohren, Ani Calinescu, Jakob Nicolaus Foerster</sub> | [ICML 2025](<../papers/2025/icml.md>) | Main<br><sub>Not Specified</sub> | Benchmarks generative limit-order-book streams with distributional, order-flow, price-response, and market-impact diagnostics. |
 | [An Online Learning Theory of Trading-Volume Maximization](<https://proceedings.iclr.cc/paper_files/paper/2025/file/2e809adc337594e0fee330a64acbb982-Paper-Conference.pdf>)<br><sub>Tommaso Cesari, Roberto Colomboni</sub> | [ICLR 2025](<../papers/2025/iclr.md>) | Main<br><sub>Not Specified</sub> | Studies how an online broker should set prices between two traders to maximize the number of mutually beneficial asset exchanges. |

@@ -4171,3 +4171,32 @@
     used to claim ACM proceedings publication. Compliance concerns deterministic mean actions; stochastic actions can violate
     more rules. Code URL not confirmed; no independent reproduction. One targeted addition does not complete the 212-paper
     roster screen.
+
+- id: 2026-acm-icaif-primavera-signature-market-making
+  title: Signature Methods for Optimal Market Making
+  authors:
+  - Francesca Primavera
+  - Thibaut Mastrolia
+  - Alberto Gennaro
+  venue: ACM ICAIF
+  year: 2026
+  track: main
+  presentation: oral
+  official_url: https://icaif2026.org/accepted-papers/#paper-329
+  paper_url: https://arxiv.org/abs/2606.19772
+  arxiv_id: '2606.19772'
+  topics:
+  - market-microstructure
+  - execution
+  - risk-management
+  summary: Uses path signatures to express a mean-variance market-making objective and learns bid and ask quotes with the
+    Sig-REINFORCE algorithm.
+  why_it_matters: Directly studies quote selection and inventory-risk trade-offs for a market maker; the reported evaluation
+    uses simulated Poisson and self-exciting Hawkes order arrivals against PPO, not live trading profitability.
+  status: accepted
+  verified_on: '2026-11-15'
+  notes: Official ICAIF main-conference oral roster confirms title and three authors. Author order follows that roster (Primavera,
+    Mastrolia, Gennaro); the arXiv v2 metadata lists Gennaro, Mastrolia, Primavera. Same title and author set identify the
+    version relation; not counted twice. Content checked at abstract level only. Code URL and formal ACM publication status
+    not independently confirmed; no reproduction. Current official roster has 214 main papers, up from 212 in the previous
+    checkpoint; this one-paper check does not complete its screening.
