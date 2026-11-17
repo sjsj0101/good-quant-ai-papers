@@ -6,7 +6,7 @@
 
 Curated top-conference research for quantitative finance and asset management.
 
-[![Papers-160](https://img.shields.io/badge/Papers-160-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--11--15](https://img.shields.io/badge/Last_verified-2026--11--15-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
+[![Papers-160](https://img.shields.io/badge/Papers-160-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--11--17](https://img.shields.io/badge/Last_verified-2026--11--17-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
 
 [**Suggest a Paper**](https://github.com/sjsj0101/good-quant-ai-papers/issues/new?template=paper-suggestion.yml)
 

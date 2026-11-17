@@ -4,17 +4,17 @@
 
 **Coverage status:** Pending
 
-**Checked on:** 2026-11-15
+**Checked on:** 2026-11-17
 
 **Cataloged eligible papers:** 6
 
 **Tracks checked:** Main
 
-**Tracks pending:** Main (partially screened: Six named main papers verified in targeted batches; 208 of the current 214 main records remain unadjudicated.) · Workshop (source mapped: Official workshop-paper entry point is linked from the main roster; individual workshop records remain unscreened.)
+**Tracks pending:** Main (partially screened: Six named main papers verified in targeted batches; 209 of the current 215 main records remain unadjudicated.) · Workshop (source mapped: Official workshop-paper entry point is linked from the main roster; individual workshop records remain unscreened.)
 
 **Official audit sources:** [Source 1](<https://icaif2026.org/accepted-papers/>) · [Source 2](<https://icaif2026.org/accepted-papers/#paper-772>) · [Source 3](<https://icaif2026.org/accepted-papers/#paper-633>) · [Source 4](<https://icaif2026.org/accepted-papers/#paper-797>) · [Source 5](<https://icaif2026.org/accepted-papers/#paper-1095>) · [Source 6](<https://icaif2026.org/accepted-papers/#paper-1068>) · [Source 7](<https://icaif2026.org/accepted-papers/#paper-329>)
 
-**Coverage notes:** The official roster now lists 214 accepted main papers (52 oral,108 poster,54 proceedings only), compared with 212 in the previous checkpoint. Targeted batches verified FlowLOB, One Basket Many Experts, SAiFE-gym, LOB-Impact, Internalizing Investment Mandates, and Signature Methods for Optimal Market Making. These six checks are not a completed roster screen; the remaining 208 main records and workshops remain pending. No complete-coverage claim is made.
+**Coverage notes:** The official roster now lists 215 accepted main papers (52 oral,107 poster,56 proceedings only), compared with 214 in the previous checkpoint. This checks source availability and roster totals only; the six individually verified papers and eligible count remain unchanged. BookDiT has an official poster identity but readable content evidence remains pending. The other 209 main records and workshops are not a completed screen. No complete-coverage claim is made.
 
 6 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
