@@ -2,7 +2,7 @@
 
 # Evaluation
 
-36 verified papers tagged `evaluation`.
+37 verified papers tagged `evaluation`.
 
 [← Back to the main index](../README.md)
 
@@ -11,6 +11,7 @@
 | [A Penalty Approach For Differentiation Through Black-box Quadratic Programming Solvers](<https://arxiv.org/abs/2602.14154>)<br><sub>Yuxuan Linghu, Zhiyuan Liu, Qi Deng</sub> | [ICML 2026](<../papers/2026/icml.md>) | Main<br><sub>Poster</sub> | Differentiates through black-box quadratic-program solvers using a smooth penalty surrogate and evaluates the method on multi-period portfolio optimization. |
 | [Adversarially Robust Control of Conditional Value-at-Risk via Kelly Conformal Inference](<https://openreview.net/forum?id=Vhesstbfg6>)<br><sub>Catherine Chen, Jingyan Shen, Xinyu Yang, Lihua Lei</sub> | [ICML 2026](<../papers/2026/icml.md>) | Main<br><sub>Poster</sub> | Controls empirical conditional value-at-risk online with distribution-free guarantees under shifting or adversarial data. |
 | [Design Linear Constrained Neural Layers with Implicit Convex Optimization](<https://openreview.net/forum?id=85vAL51Gmu>)<br><sub>Junchi Yan, Liangliang Shi, Jiaxi Liu, Fangyuan Zhou, Wenzheng Pan, Zhongteng Gui, Yihui Tu</sub> | [ICML 2026](<../papers/2026/icml.md>) | Main<br><sub>Poster</sub> | Enforces general linear constraints through implicit convex neural layers and evaluates the resulting constrained predictor on real portfolio allocation. |
+| [Evolving Quantitative Reasoning through Self-Play in Digital Twin Markets](<https://proceedings.mlr.press/v306/ma26m.html>)<br><sub>Tianmi Ma, Wenxin Huang, Jiawei Du, Lin Li, Xian Zhong, Joey Tianyi Zhou</sub> | [ICML 2026](<../papers/2026/icml.md>) | Main<br><sub>Not Specified</sub> | Separates an LLM trading agent’s planning from numerical execution, constructing explicit tools and refining strategies through self-play in the DecoupledMarket simulator. |
 | [Global Merger-Arbitrage Forecasting with Language Models](<https://icml.cc/virtual/2026/poster/60833>)<br><sub>Hinal Jajal, Michał Mucha, Charles Sweat, Chris Pulman, Charlie Flanagan, Peter Anderson</sub> | [ICML 2026](<../papers/2026/icml.md>) | Main<br><sub>Poster</sub> | Predicts announced merger outcomes for global merger-arbitrage selection and scores deal-closing probabilities with P&amp;L-weighted Brier loss. |
 | [Loss-aware distributionally robust optimization via trainable optimal transport ambiguity sets](<https://arxiv.org/abs/2509.12689>)<br><sub>Jonas Ohnemus, Marta Fochesato, Riccardo Zuliani, John Lygeros</sub> | [ICML 2026](<../papers/2026/icml.md>) | Main<br><sub>Poster</sub> | Learns loss-aware optimal-transport ambiguity sets end to end and tests whether they reduce conservatism in robust portfolio optimization. |
 | [Tail Annealing for Heavy-Tailed Flow Matching](<https://arxiv.org/abs/2605.20068>)<br><sub>Jean Pachebat</sub> | [ICML 2026](<../papers/2026/icml.md>) | Main<br><sub>Poster</sub> | Evaluates extreme-tail and CVaR99 fidelity on controlled heavy-tailed benchmarks, then validates generation on real Fama–French equity-factor returns. |

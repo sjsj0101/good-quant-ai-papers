@@ -6,7 +6,7 @@
 
 Curated top-conference research for quantitative finance and asset management.
 
-[![Papers-160](https://img.shields.io/badge/Papers-160-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--11--17](https://img.shields.io/badge/Last_verified-2026--11--17-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
+[![Papers-161](https://img.shields.io/badge/Papers-161-0B7285?style=flat-square)](papers/2026/icml.md) [![Venues-11](https://img.shields.io/badge/Venues-11-364FC7?style=flat-square)](#browse-by-year-and-venue) [![Last verified-2026--11--20](https://img.shields.io/badge/Last_verified-2026--11--20-5F3DC4?style=flat-square)](data/coverage.yaml) [![License-CC BY 4.0](https://img.shields.io/badge/License-CC_BY_4.0-2B8A3E?style=flat-square)](LICENSE)
 
 [**Suggest a Paper**](https://github.com/sjsj0101/good-quant-ai-papers/issues/new?template=paper-suggestion.yml)
 
@@ -28,7 +28,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 
 | Metric | Value |
 | --- | ---: |
-| Curated papers | 160 |
+| Curated papers | 161 |
 | Coverage units | 33 |
 | Covered years | 2024-2026 |
 | Conferences | 11 |
@@ -44,7 +44,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 
 | Venue | 2026 | 2025 | 2024 |
 | --- | ---: | ---: | ---: |
-| ICML | [20 papers](papers/2026/icml.md) · Pending | [5 papers](papers/2025/icml.md) · Pending | [3 papers](papers/2024/icml.md) · Pending |
+| ICML | [21 papers](papers/2026/icml.md) · Pending | [5 papers](papers/2025/icml.md) · Pending | [3 papers](papers/2024/icml.md) · Pending |
 | NeurIPS | 0 papers · Pending | [4 papers](papers/2025/neurips.md) · Pending | [14 papers](papers/2024/neurips.md) · Complete |
 | ICLR | [1 paper](papers/2026/iclr.md) · Pending | [3 papers](papers/2025/iclr.md) · Pending | [3 papers](papers/2024/iclr.md) · Complete |
 | KDD | 0 papers · Pending | [7 papers](papers/2025/kdd.md) · Pending | [6 papers](papers/2024/kdd.md) · Pending |
@@ -58,7 +58,7 @@ The catalog stores original one-sentence editorial summaries and links—not pap
 
 ## Browse by Year and Venue
 
-- **2026** · [ICML 2026](papers/2026/icml.md) — 20 papers
+- **2026** · [ICML 2026](papers/2026/icml.md) — 21 papers
 - **2026** · [ICLR 2026](papers/2026/iclr.md) — 1 paper
 - **2026** · [AAAI 2026](papers/2026/aaai.md) — 3 papers
 - **2026** · [IJCAI 2026](papers/2026/ijcai.md) — 5 papers
@@ -110,7 +110,7 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the complete submission checklist.
 
 ### ICML 2026
 
-#### Main Conference (12)
+#### Main Conference (13)
 
 | Paper | Track | Focus | Assets / Frequency | Why it matters |
 | --- | --- | --- | --- | --- |
@@ -120,6 +120,7 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md) for the complete submission checklist.
 | [Decision-focused Sparse Tangent Portfolio Optimization](<https://openreview.net/forum?id=KV7XHF0IbK>)<br><sub>Haeun Jeon, Seunghoon Choi, Hyunglip Bae, Yongjae Lee, Woo Chang Kim</sub> | Main<br><sub>Poster</sub> | Trains a return model through differentiable asset selection and sparse tangency-portfolio reoptimization. | Equities | Targets risk-adjusted portfolio quality under a fixed holding budget rather than forecast accuracy in isolation. |
 | [Design Linear Constrained Neural Layers with Implicit Convex Optimization](<https://openreview.net/forum?id=85vAL51Gmu>)<br><sub>Junchi Yan, Liangliang Shi, Jiaxi Liu, Fangyuan Zhou, Wenzheng Pan, Zhongteng Gui, Yihui Tu</sub> | Main<br><sub>Poster</sub> | Enforces general linear constraints through implicit convex neural layers and evaluates the resulting constrained predictor on real portfolio allocation. | — | Lets neural systems honor hard portfolio-allocation constraints through a differentiable optimization layer. |
 | [Error Propagation in Dynamic Programming: From Stochastic Control to American Option Pricing](<https://icml.cc/virtual/2026/poster/65273>)<br><sub>Andrea Della Vecchia, Damir Filipovic</sub> | Main<br><sub>Poster</sub> | Analyzes how approximation errors accumulate through dynamic programs, including learned American-option valuation schemes. | Not Applicable | Clarifies when local model errors remain controlled in sequential pricing and exercise decisions. |
+| [Evolving Quantitative Reasoning through Self-Play in Digital Twin Markets](<https://proceedings.mlr.press/v306/ma26m.html>)<br><sub>Tianmi Ma, Wenxin Huang, Jiawei Du, Lin Li, Xian Zhong, Joey Tianyi Zhou</sub> | Main<br><sub>Not Specified</sub> | Separates an LLM trading agent’s planning from numerical execution, constructing explicit tools and refining strategies through self-play in the DecoupledMarket simulator. | — | Provides a controlled setting for comparing trading-agent strategies and quantitative tool use; simulated strategy feedback does not establish live-market profitability or robustness outside the tested market. |
 | [Global Merger-Arbitrage Forecasting with Language Models](<https://icml.cc/virtual/2026/poster/60833>)<br><sub>Hinal Jajal, Michał Mucha, Charles Sweat, Chris Pulman, Charlie Flanagan, Peter Anderson</sub> | Main<br><sub>Poster</sub> | Predicts announced merger outcomes for global merger-arbitrage selection and scores deal-closing probabilities with P&amp;L-weighted Brier loss. | — | Aligns language-model probability forecasts with the economic impact of concrete merger-arbitrage decisions across more than 400 deals. |
 | [Learning the ESG Geometry with Domain Aware Language Models](<https://icml.cc/virtual/2026/poster/65502>)<br><sub>Kunal Pradeep Pimparkhede, Chirayu Chaurasia, Jatin Roy, Mahesh Mohan Mohanachandran Radhamany</sub> | Main<br><sub>Poster</sub> | Learns domain-aware ESG representations and uses latent-space search for asset selection and downstream portfolio rebalancing. | — | Connects unstructured sustainability information to explicit security-selection and portfolio-rebalancing decisions. |
 | [Loss-aware distributionally robust optimization via trainable optimal transport ambiguity sets](<https://arxiv.org/abs/2509.12689>)<br><sub>Jonas Ohnemus, Marta Fochesato, Riccardo Zuliani, John Lygeros</sub> | Main<br><sub>Poster</sub> | Learns loss-aware optimal-transport ambiguity sets end to end and tests whether they reduce conservatism in robust portfolio optimization. | — | Targets less conservative distributionally robust portfolio decisions by learning ambiguity sets for the downstream loss. |

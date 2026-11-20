@@ -2,12 +2,13 @@
 
 # Financial Agents
 
-31 verified papers tagged `financial-agents`.
+32 verified papers tagged `financial-agents`.
 
 [← Back to the main index](../README.md)
 
 | Paper | Venue | Track | Focus |
 | --- | --- | --- | --- |
+| [Evolving Quantitative Reasoning through Self-Play in Digital Twin Markets](<https://proceedings.mlr.press/v306/ma26m.html>)<br><sub>Tianmi Ma, Wenxin Huang, Jiawei Du, Lin Li, Xian Zhong, Joey Tianyi Zhou</sub> | [ICML 2026](<../papers/2026/icml.md>) | Main<br><sub>Not Specified</sub> | Separates an LLM trading agent’s planning from numerical execution, constructing explicit tools and refining strategies through self-play in the DecoupledMarket simulator. |
 | [MarketSim: Simulating Stock Markets with Large-Scale Generative Agents](<https://openreview.net/forum?id=EzpJxPDqXB>)<br><sub>Jinghua Piao, zhentao liu, Cheng Huang, Huang Jiarui, Songwei Li, Wang Ranran, Yong Li</sub> | [ICML 2026](<../papers/2026/icml.md>) | Main<br><sub>Poster</sub> | Simulates stock-market dynamics through a large population of generative agents with heterogeneous behaviors. |
 | [Position: Evaluating LLMs in Finance Requires Explicit Bias Consideration](<https://icml.cc/virtual/2026/poster/67204>)<br><sub>Yaxuan Kong, Hoyoung Lee, Yoontae Hwang, Alejandro Lopez-Lira, Bradford Levy, Dhagash Mehta, Qingsong Wen, CHANYEOL CHOI, Yongjae Lee, Stefan Zohren</sub> | [ICML 2026](<../papers/2026/icml.md>) | Position<br><sub>Poster</sub> | Argues that finance LLM evaluation must explicitly control look-ahead, survivorship, and trading-cost biases. |
 | [Forecast-to-Trade: Hierarchical Reinforcement Learning for Decision-Aware Financial Forecasting](<https://openreview.net/forum?id=pTiRAPtDzK>)<br><sub>Zijie Zhao, Roy E. Welsch</sub> | [ICML 2026](<../papers/2026/icml.md>) | Workshop<br><sub>Spotlight</sub><br><sub>Forecasting as a New Frontier of Intelligence</sub> | Separates directional asset selection from constrained portfolio weighting in a hierarchical reinforcement-learning trader. |

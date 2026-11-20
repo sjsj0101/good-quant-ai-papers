@@ -1,13 +1,17 @@
 - venue: ICML
   year: 2026
   status: pending
-  checked_on: 2026-07-12
-  eligible_paper_count: 20
+  checked_on: '2026-11-20'
+  eligible_paper_count: 21
   tracks_checked:
   - main
   - workshop
   - position
   tracks_pending:
+  - track: main
+    state: partial
+    note: One additional proceedings paper verified in a targeted follow-up; the historical main-roster screening was not
+      re-audited for present completeness.
   - track: workshop
     state: partial
     note: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.
@@ -23,10 +27,12 @@
   - https://icml.cc/virtual/2026/events/workshop
   - https://icml.cc/virtual/2026/affinity_events
   - https://icml.cc/virtual/2026/events/2026-Expo
-  notes: 'All 6,415 main and 213 Position poster records were completely screened. Twenty records are cataloged as a verified
-    lower bound: 12 main, one Position, and seven workshop. All 44 official workshop containers were mapped, but complete
-    contributed-paper rosters for 40 containers and the affinity child-event and paper-roster mappings remain unresolved,
-    so workshop remains partial and affinity remains pending in tracks_pending.'
+  - https://proceedings.mlr.press/v306/ma26m.html
+  notes: Earlier checkpoint reported screening 6,415 main and 213 Position poster records and cataloged twenty papers (12
+    main,one Position,seven workshop). This run adds DecoupledMarket from official PMLR proceedings, bringing the lower bound
+    to 21 (13 main,one Position,seven workshop). The newly found omission means the historical screen must not be treated
+    as a current exhaustive eligibility finding; main is retained as partial pending re-audit. The prior mapping of 44 workshop
+    containers and missing complete rosters for 40 containers,plus affinity mappings,are not resolved by this one-paper check.
 - venue: NeurIPS
   year: 2026
   status: pending

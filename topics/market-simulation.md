@@ -2,12 +2,13 @@
 
 # Market Simulation
 
-16 verified papers tagged `market-simulation`.
+17 verified papers tagged `market-simulation`.
 
 [← Back to the main index](../README.md)
 
 | Paper | Venue | Track | Focus |
 | --- | --- | --- | --- |
+| [Evolving Quantitative Reasoning through Self-Play in Digital Twin Markets](<https://proceedings.mlr.press/v306/ma26m.html>)<br><sub>Tianmi Ma, Wenxin Huang, Jiawei Du, Lin Li, Xian Zhong, Joey Tianyi Zhou</sub> | [ICML 2026](<../papers/2026/icml.md>) | Main<br><sub>Not Specified</sub> | Separates an LLM trading agent’s planning from numerical execution, constructing explicit tools and refining strategies through self-play in the DecoupledMarket simulator. |
 | [MarketSim: Simulating Stock Markets with Large-Scale Generative Agents](<https://openreview.net/forum?id=EzpJxPDqXB>)<br><sub>Jinghua Piao, zhentao liu, Cheng Huang, Huang Jiarui, Songwei Li, Wang Ranran, Yong Li</sub> | [ICML 2026](<../papers/2026/icml.md>) | Main<br><sub>Poster</sub> | Simulates stock-market dynamics through a large population of generative agents with heterogeneous behaviors. |
 | [Behavioral Proxy Conditioning for Financial Stress Scenario Generation with a Pretrained Diffusion Model](<https://openreview.net/forum?id=xrwkOUb8kp>)<br><sub>Elena Kuular, Junsuk Choe</sub> | [ICML 2026](<../papers/2026/icml.md>) | Workshop<br><sub>Poster</sub><br><sub>Foundation Models for Structured Data</sub> | Conditions a pretrained diffusion model on behavioral proxies to generate financially meaningful stress scenarios. |
 | [TradeFM: A Generative Foundation Model for Trade-flow and Market Microstructure](<https://openreview.net/forum?id=anK6dppdfa>)<br><sub>Srijan Sood, Maxime Kawawa-Beaudan, Daniel Borrajo, Manuela Veloso</sub> | [ICML 2026](<../papers/2026/icml.md>) | Workshop<br><sub>Poster</sub><br><sub>Foundation Models for Structured Data</sub> | Trains a generative trade-event model with scale-invariant features designed to transfer across equity markets. |

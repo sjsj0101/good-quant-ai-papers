@@ -62,9 +62,9 @@ class ReadmeRenderingTests(unittest.TestCase):
         self.assertIn("| ICML |", rendered)
         self.assertIn("| NeurIPS |", rendered)
         self.assertIn("| ACM ICAIF |", rendered)
-        self.assertIn("[20 papers](papers/2026/icml.md) · Pending", rendered)
+        self.assertIn("[21 papers](papers/2026/icml.md) · Pending", rendered)
         self.assertIn("## Browse by Year and Venue", rendered)
-        self.assertIn("[ICML 2026](papers/2026/icml.md) — 20 papers", rendered)
+        self.assertIn("[ICML 2026](papers/2026/icml.md) — 21 papers", rendered)
         self.assertIn("[AISTATS 2025](papers/2025/aistats.md) — 1 paper", rendered)
         self.assertIn("## Browse by Topic", rendered)
         self.assertIn("Asset Allocation", rendered)
@@ -81,7 +81,7 @@ class ReadmeRenderingTests(unittest.TestCase):
         self.assertIn("[`data/coverage.yaml`](data/coverage.yaml)", rendered)
         self.assertIn("## Paper Index", rendered)
         self.assertIn("### ICML 2026", rendered)
-        self.assertIn("#### Main Conference (12)", rendered)
+        self.assertIn("#### Main Conference (13)", rendered)
         self.assertIn("#### Position Papers (1)", rendered)
         self.assertIn("#### Workshops (7)", rendered)
         self.assertIn("## License", rendered)
@@ -217,9 +217,9 @@ class VenueRenderingTests(unittest.TestCase):
         ]
 
         self.assertIn("# ICML 2026", rendered)
-        self.assertIn("**Cataloged eligible papers:** 20", rendered)
+        self.assertIn("**Cataloged eligible papers:** 21", rendered)
         self.assertIn("**Tracks checked:** Main · Workshop · Position", rendered)
-        self.assertIn("**Tracks pending:** Workshop", rendered)
+        self.assertIn("**Tracks pending:** Main", rendered)
         self.assertIn("Affinity-event or poster roster", rendered)
         self.assertIn(
             "**Catalog ID:** 2026-icml-hwang-signature-informed-transformer",

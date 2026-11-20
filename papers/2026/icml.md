@@ -4,23 +4,23 @@
 
 **Coverage status:** Pending
 
-**Checked on:** 2026-07-12
+**Checked on:** 2026-11-20
 
-**Cataloged eligible papers:** 20
+**Cataloged eligible papers:** 21
 
 **Tracks checked:** Main · Workshop · Position
 
-**Tracks pending:** Workshop (partially screened: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.) · Position (partially screened: Position-paper roster was partially screened but still has unresolved paper-level artifacts.) · Affinity (source mapped: Affinity-event or poster roster was source-mapped but not fully screened at paper level.)
+**Tracks pending:** Main (partially screened: One additional proceedings paper verified in a targeted follow-up; the historical main-roster screening was not re-audited for present completeness.) · Workshop (partially screened: Workshop or organizer paper roster was partially screened but still has unresolved paper-level artifacts.) · Position (partially screened: Position-paper roster was partially screened but still has unresolved paper-level artifacts.) · Affinity (source mapped: Affinity-event or poster roster was source-mapped but not fully screened at paper level.)
 
-**Official audit sources:** [Source 1](<https://icml.cc/Downloads/2026>) · [Source 2](<https://icml.cc/virtual/2026/papers.html>) · [Source 3](<https://icml.cc/virtual/2026/events/workshop>) · [Source 4](<https://icml.cc/virtual/2026/affinity_events>) · [Source 5](<https://icml.cc/virtual/2026/events/2026-Expo>)
+**Official audit sources:** [Source 1](<https://icml.cc/Downloads/2026>) · [Source 2](<https://icml.cc/virtual/2026/papers.html>) · [Source 3](<https://icml.cc/virtual/2026/events/workshop>) · [Source 4](<https://icml.cc/virtual/2026/affinity_events>) · [Source 5](<https://icml.cc/virtual/2026/events/2026-Expo>) · [Source 6](<https://proceedings.mlr.press/v306/ma26m.html>)
 
-**Coverage notes:** All 6,415 main and 213 Position poster records were completely screened. Twenty records are cataloged as a verified lower bound: 12 main, one Position, and seven workshop. All 44 official workshop containers were mapped, but complete contributed-paper rosters for 40 containers and the affinity child-event and paper-roster mappings remain unresolved, so workshop remains partial and affinity remains pending in tracks\_pending.
+**Coverage notes:** Earlier checkpoint reported screening 6,415 main and 213 Position poster records and cataloged twenty papers (12 main,one Position,seven workshop). This run adds DecoupledMarket from official PMLR proceedings, bringing the lower bound to 21 (13 main,one Position,seven workshop). The newly found omission means the historical screen must not be treated as a current exhaustive eligibility finding; main is retained as partial pending re-audit. The prior mapping of 44 workshop containers and missing complete rosters for 40 containers,plus affinity mappings,are not resolved by this one-paper check.
 
-20 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
+21 verified papers curated for direct relevance to quantitative finance and asset management. Tracks are separated so main-conference, workshop, position, and affinity status remains visible.
 
 [← Back to the main index](../../README.md)
 
-## Main Conference (12)
+## Main Conference (13)
 
 ### [A Linearly Convergent Proximal Subgradient Algorithm for Sparse Portfolio Optimization with Transaction Cost](<https://openreview.net/forum?id=yZAo4TPqhE>)
 
@@ -179,6 +179,34 @@
 **Why it matters:** Clarifies when local model errors remain controlled in sequential pricing and exercise decisions.
 
 **Links:** [Official venue record](<https://icml.cc/virtual/2026/poster/65273>) · [Paper](<https://icml.cc/virtual/2026/poster/65273>)
+
+---
+
+### [Evolving Quantitative Reasoning through Self-Play in Digital Twin Markets](<https://proceedings.mlr.press/v306/ma26m.html>)
+
+**Catalog ID:** 2026-icml-ma-decoupledmarket
+
+**Authors:** Tianmi Ma, Wenxin Huang, Jiawei Du, Lin Li, Xian Zhong, Joey Tianyi Zhou
+
+**Venue / year:** ICML · 2026
+
+**Track / presentation:** Main · Not Specified
+
+**Status / verified:** Published · 2026-11-20
+
+**Topics:** Financial Agents · Market Simulation · Evaluation
+
+**Assets / frequency:** Not specified
+
+**Identifiers:** OpenReview j4SxlIyvRg
+
+**Focus:** Separates an LLM trading agent’s planning from numerical execution, constructing explicit tools and refining strategies through self-play in the DecoupledMarket simulator.
+
+**Why it matters:** Provides a controlled setting for comparing trading-agent strategies and quantitative tool use; simulated strategy feedback does not establish live-market profitability or robustness outside the tested market.
+
+**Notes:** PMLR 306:84428–84445 confirms ICML 2026 proceedings identity and six authors; the official ICML Downloads index corroborates the title. Content checked against the official abstract and author repository README only. Code subdirectory is linked by the author README, not executed. The shared repository also hosts a different EMNLP 2025 study; these works are not merged. OpenReview forum ID comes from PMLR, but that page requested browser verification and was not used as acceptance proof. This targeted addition does not complete current venue-year coverage.
+
+**Links:** [Official venue record](<https://proceedings.mlr.press/v306/ma26m.html>) · [Paper](<https://proceedings.mlr.press/v306/ma26m.html>) · [Code](<https://github.com/MTMQuantAI/Agent-Trading-Arena/tree/main/decoupledmarket>)
 
 ---
 

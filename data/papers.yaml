@@ -4200,3 +4200,36 @@
     version relation; not counted twice. Content checked at abstract level only. Code URL and formal ACM publication status
     not independently confirmed; no reproduction. Current official roster has 214 main papers, up from 212 in the previous
     checkpoint; this one-paper check does not complete its screening.
+
+- id: 2026-icml-ma-decoupledmarket
+  title: Evolving Quantitative Reasoning through Self-Play in Digital Twin Markets
+  authors:
+  - Tianmi Ma
+  - Wenxin Huang
+  - Jiawei Du
+  - Lin Li
+  - Xian Zhong
+  - Joey Tianyi Zhou
+  venue: ICML
+  year: 2026
+  track: main
+  presentation: not-specified
+  official_url: https://proceedings.mlr.press/v306/ma26m.html
+  paper_url: https://proceedings.mlr.press/v306/ma26m.html
+  openreview_id: j4SxlIyvRg
+  code_url: https://github.com/MTMQuantAI/Agent-Trading-Arena/tree/main/decoupledmarket
+  topics:
+  - financial-agents
+  - market-simulation
+  - evaluation
+  summary: Separates an LLM trading agent’s planning from numerical execution, constructing explicit tools and refining strategies
+    through self-play in the DecoupledMarket simulator.
+  why_it_matters: Provides a controlled setting for comparing trading-agent strategies and quantitative tool use; simulated
+    strategy feedback does not establish live-market profitability or robustness outside the tested market.
+  status: published
+  verified_on: '2026-11-20'
+  notes: PMLR 306:84428–84445 confirms ICML 2026 proceedings identity and six authors; the official ICML Downloads index corroborates
+    the title. Content checked against the official abstract and author repository README only. Code subdirectory is linked
+    by the author README, not executed. The shared repository also hosts a different EMNLP 2025 study; these works are not
+    merged. OpenReview forum ID comes from PMLR, but that page requested browser verification and was not used as acceptance
+    proof. This targeted addition does not complete current venue-year coverage.
